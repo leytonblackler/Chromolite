@@ -21,6 +21,9 @@ The Chromolite desktop application is written in the Java based programming lang
 * Clean and simple user interface.
 * Cross platform compatibility (Windows, macOS and Linux).
 
+###Downloads
+[Chromolite 1.0 for Windows 64-bit Installer](https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8)
+
 ###Set up
 <i>Coming soon...</i>
 
