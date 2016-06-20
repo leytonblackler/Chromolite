@@ -2,7 +2,7 @@
 ###About
 Chromolite is a universal desktop application that allows control of RGB WS2812B LED strips. The application offers many customisation options and modes through an easy to use interface.
 
-The Chromolite desktop application is written in the Java based programming language Processing 3. The application controls the LED strips through serial communication to an Arduino micrcontroller operating the Chromolite purpose built program. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order to interface with the LEDs, some initial set up is required and is detailed in the setup section below.
+The Chromolite desktop application is written in the Java based programming language Processing 3. The application controls the LED strips through serial communication to an Arduino microcontroller operating the Chromolite purpose built program. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order to interface with the LEDs, some initial set up is required and is detailed in the setup section below.
 
 ###Features
 * 7 unique modes:
@@ -36,7 +36,7 @@ The Chromolite desktop application is written in the Java based programming lang
 ###Demonstration
 <i>Coming soon...</i>
 
-###Acknowledments
+###Acknowledgements
 <i>Coming soon...</i>
 
 ###License
@@ -59,8 +59,8 @@ Changes made in each update reflect the code in both the desktop application and
   * Added spectrum mode.
   * Added strobe mode.
 * <b>Version 0.5</b>
-  * Converted previosuly white user interface into a dark theme.
-  * Refined layout of buttons and added mouseover colour change/ button selection colour change.
+  * Converted previously white user interface into a dark theme.
+  * Refined layout of buttons and added mouse over colour change/ button selection colour change.
 * <b>Version 0.4</b>
   * Added toggle for the controller LED.
   * Added exit button.
@@ -71,7 +71,7 @@ Changes made in each update reflect the code in both the desktop application and
   * Added random mode.
 * <b>Version 0.1</b>
   * Base desktop application structure complete.
-  * Base Arduino program structure compelte.
+  * Base Arduino program structure complete.
   * Static colour selection mode.
 
 ###Known Bugs and Issues
