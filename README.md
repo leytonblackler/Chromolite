@@ -1,7 +1,4 @@
-<p align="center"><img src="http://i.imgur.com/07zs70m.png" height="150"alt="Chromolite logo.">
-</br>
-<img src="http://i.imgur.com/LP5VDhT.png" height="550" alt="Chromolite desktop UI.">
-</p>
+<p align="center"><img src="http://i.imgur.com/07zs70m.png" height="150"alt="Chromolite logo."></p>
 ###About
 Chromolite is a universal desktop application that allows control of RGB WS2812B LED strips. The application offers many customisation options and modes through an easy to use interface.
 
@@ -20,6 +17,9 @@ The Chromolite desktop application is written in the Java based programming lang
 * Spectrum based colour selection.
 * Clean and simple user interface.
 * Cross platform compatibility (Windows, macOS and Linux).
+
+###User Interface
+<p align="center"><img src="http://i.imgur.com/LP5VDhT.png" height="550" alt="Chromolite desktop UI."></p>
 
 ###Downloads
 [Chromolite 1.0 for Windows 64-bit Installer](https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8)
