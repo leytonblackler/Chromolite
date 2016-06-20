@@ -74,7 +74,7 @@ Changes made in each update reflect the code in both the desktop applciation and
   * Base Arduino program structure compelte.
   * Static colour selection mode.
 
-  ###Known Bugs and Issues
+###Known Bugs and Issues
 * Will sometimes change out of music mode.
 * Selected music colours may randomly change.
 * Flickering delay when dragging over spectrum too fast.
