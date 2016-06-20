@@ -43,7 +43,7 @@ The Chromolite desktop application is written in the Java based programming lang
 Please refer to the LICENSE.md file for information regarding the licensing details.
 
 ###Change Log
-Changes made in each update reflect the code in both the desktop applciation and Arduino program.
+Changes made in each update reflect the code in both the desktop application and Arduino program.
 * <b>Version 1.0</b> <i>(Latest)</i>
   * Implemented keyboard shortcut/control functionality.
   * Fixed many bugs and errors.
