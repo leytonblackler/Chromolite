@@ -41,35 +41,65 @@ The Chromolite desktop application is written in the Java based programming lang
 
 ###Change Log
 Changes made in each update reflect the code in both the desktop application and Arduino program.
-* <b>Version 1.0</b> <i>(Latest)</i>
+
+<details> 
+  <summary><b>Version 1.0</b> <i>(Latest)</i></summary>
   * Implemented keyboard shortcut/control functionality.
   * Fixed many bugs and errors.
   * Minor usability and UI tweaks.
-* <b>Version 0.9</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.9</b></summary>
   * Added music mode colour customisation.
-* <b>Version 0.8</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.8</b></summary>
   * Added music mode.
-* <b>Version 0.7</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.7</b></summary>
   * Additionally implemented dragging over spectrum for selection instead of exclusively upon press.
   * Added circle indicator over spectrum to display which colour is selected.
-* <b>Version 0.6</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.6</b></summary>
   * Added spectrum mode.
   * Added strobe mode.
-* <b>Version 0.5</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.5</b></summary>
   * Converted previously white user interface into a dark theme.
   * Refined layout of buttons and added mouse over colour change/ button selection colour change.
-* <b>Version 0.4</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.4</b></summary>
   * Added toggle for the controller LED.
   * Added exit button.
-* <b>Version 0.3</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.3</b></summary>
   * Added wave mode.
-* <b>Version 0.2</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.2</b></summary>
   * Created button layout to change between modes.
   * Added random mode.
-* <b>Version 0.1</b>
+</details>
+
+<details> 
+  <summary><b>Version 0.1</b></summary>
   * Base desktop application structure complete.
   * Base Arduino program structure complete.
   * Static colour selection mode.
+</details>
 
 ###Known Bugs and Issues
 * Will sometimes change out of music mode.
