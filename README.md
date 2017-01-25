@@ -33,7 +33,7 @@ The Chromolite desktop application is written in the Java based programming lang
 
 <details> 
   <summary><b>Old Desktop UI</b> <i>(for desktop versions 0.1 - 1.0)</i></summary>
-  <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_user_interface.png" height="550" alt="Old Chromolite desktop UI."></p>
+  <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_ui.png" height="500" alt="Old Chromolite desktop UI."></p>
 </details>
 
 ###Downloads
@@ -58,62 +58,82 @@ The Chromolite desktop application is written in the Java based programming lang
 Changes made in each update reflect the code in both the desktop application and Arduino program.
 
 <details> 
-  <summary><b>Version 1.0</b> <i>(Latest)</i></summary>
+  <summary><b>Versions 2.x</b> <i></i></summary>
+
+<details> 
+  <summary><b><i>Version 2.0</i></b> <i>(Latest)</i></summary>
+  * //
+</details>
+
+</details>
+
+<details> 
+  <summary><b>Versions 1.x</b> <i></i></summary>
+
+<details> 
+  <summary><b><i>Version 1.0</i></b> <i>(Latest)</i></summary>
   * Implemented keyboard shortcut/control functionality.
   * Fixed many bugs and errors.
   * Minor usability and UI tweaks.
 </details>
 
+</details>
+
 <details> 
-  <summary><b>Version 0.9</b></summary>
+  <summary><b>Versions 0.x</b> <i></i></summary>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.9</i></b></summary>
   * Added music mode colour customisation.
 </details>
 
 <details> 
-  <summary><b>Version 0.8</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.8</i></b></summary>
   * Added music mode.
 </details>
 
 <details> 
-  <summary><b>Version 0.7</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.7</i></b></summary>
   * Additionally implemented dragging over spectrum for selection instead of exclusively upon press.
   * Added circle indicator over spectrum to display which colour is selected.
 </details>
 
 <details> 
-  <summary><b>Version 0.6</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.6</i></b></summary>
   * Added spectrum mode.
   * Added strobe mode.
 </details>
 
 <details> 
-  <summary><b>Version 0.5</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.5</i></b></summary>
   * Converted previously white user interface into a dark theme.
   * Refined layout of buttons and added mouse over colour change/ button selection colour change.
 </details>
 
 <details> 
-  <summary><b>Version 0.4</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.4</i></b></summary>
   * Added toggle for the controller LED.
   * Added exit button.
 </details>
 
 <details> 
-  <summary><b>Version 0.3</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.3</i></b></summary>
   * Added wave mode.
 </details>
 
 <details> 
-  <summary><b>Version 0.2</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.2</i></b></summary>
   * Created button layout to change between modes.
   * Added random mode.
 </details>
 
 <details> 
-  <summary><b>Version 0.1</b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.1</i></b></summary>
   * Base desktop application structure complete.
   * Base Arduino program structure complete.
   * Static colour selection mode.
+</details>
+
 </details>
 
 ###Known Bugs and Issues
