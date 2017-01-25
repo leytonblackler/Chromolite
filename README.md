@@ -37,13 +37,17 @@ The Chromolite desktop application is written in the Java based programming lang
 </details>
 
 ###Downloads
-[Chromolite 1.0 - Windows 64-bit Installer](https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8)
+<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon.">[Chromolite 1.0 - Windows 64-bit Installer](https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8)
 
-<strike>Chromolite 1.0 - Windows 32-bit Installer</strike><i> - Coming soon...</i>
+<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon."><strike>Chromolite 1.0 - Windows 32-bit Installer</strike><i> - Coming soon...</i>
 
-<strike>Chromolite 1.0 - macOS</strike><i> - Coming soon...</i>
+<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon."><strike>Chromolite 1.0 - macOS</strike><i> - Coming soon...</i>
 
-<strike>Chromolite 1.0 - Linux</strike><i> - Coming soon...</i>
+<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon."><strike>Chromolite 1.0 - Linux</strike><i> - Coming soon...</i>
+
+<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_icon.png" height="40"alt="Chromolite Android icon."><strike>Chromolite 1.0 - Android</strike><i> - Coming soon...</i>
+
+<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_arduino_icon.png" height="40"alt="Chromolite Arduino icon."><strike>Chromolite Arduino Controller</strike><i> - Coming soon...</i>
 
 ###Set up
 <i>Coming soon...</i>
