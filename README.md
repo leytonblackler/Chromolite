@@ -19,7 +19,16 @@ The Chromolite desktop application is written in the Java based programming lang
 * Cross platform compatibility (Windows, macOS and Linux).
 
 ###User Interface
+
+Desktop | Android
+--- | ---
+<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/desktop_user_interface.png" height="400" alt="Chromolite desktop UI."></p> | 2
+
 <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/desktop_user_interface.png" height="550" alt="Chromolite desktop UI."></p>
+<details> 
+  <summary><b>Old Desktop UI</b> <i>(for desktop versions 0.1 - 1.0)</i></summary>
+  <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_user_interface.png" height="550" alt="Old Chromolite desktop UI."></p>
+</details>
 
 ###Downloads
 [Chromolite 1.0 - Windows 64-bit Installer](https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8)
