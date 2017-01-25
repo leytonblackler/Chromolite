@@ -37,17 +37,59 @@ The Chromolite desktop application is written in the Java based programming lang
 </details>
 
 ###Downloads
-<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon.">[Chromolite 1.0 - Windows 64-bit Installer](https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8)
-
-<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon."><strike>Chromolite 1.0 - Windows 32-bit Installer</strike><i> - Coming soon...</i>
-
-<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon."><strike>Chromolite 1.0 - macOS</strike><i> - Coming soon...</i>
-
-<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40"alt="Chromolite desktop icon."><strike>Chromolite 1.0 - Linux</strike><i> - Coming soon...</i>
-
-<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_icon.png" height="40"alt="Chromolite Android icon."><strike>Chromolite 1.0 - Android</strike><i> - Coming soon...</i>
-
-<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_arduino_icon.png" height="40"alt="Chromolite Arduino icon."><strike>Chromolite Arduino Controller</strike><i> - Coming soon...</i>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
+      <td><a href="https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8">Chromolite 1.0 - Windows 64-bit Installer]</a></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+ <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
+      <td><strike>Chromolite 1.0 - Windows 32-bit Installer</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+  <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
+      <td><strike>Chromolite 1.0 - macOS</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+  <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
+      <td><strike>Chromolite 1.0 - Linux</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+  <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_icon.png" height="40" alt="Chromolite Android icon."></td>
+      <td><strike>Chromolite 1.0 - Android</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+  <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/arduino_icon.png" height="40" alt="Chromolite Arduino icon."></td>
+      <td><strike>Chromolite Arduino Program</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
 
 ###Set up
 <i>Coming soon...</i>
