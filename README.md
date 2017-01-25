@@ -57,6 +57,7 @@ The Chromolite desktop application is written in the Java based programming lang
 ###Change Log
 Changes made in each update reflect the code in both the desktop application and Arduino program.
 
+####Desktop Versions
 <details> 
   <summary><b>Versions 2.x</b> <i></i></summary>
 
@@ -69,11 +70,32 @@ Changes made in each update reflect the code in both the desktop application and
 
 <details> 
   <summary><b>Versions 1.x</b> <i></i></summary>
+  
+<details> 
+  <summary><b><i>Version 1.4</i></b></summary>
+  * Removed delay when switching from wave, spectrum and random modes.
+</details>
+  
+<details> 
+  <summary><b><i>Version 1.3</i></b></summary>
+  * Allow dragging across spectrum once the spectrum has been clicked and the cursor moves above or below the spectrum.
+  * Fixed flickering delay when dragging over the spectrum (caused by sending data to the LED controller at a rate faster than the Arduino serial port can handle).
+</details>
+  
+<details> 
+  <summary><b><i>Version 1.2</i></b></summary>
+  * Fixed issue where changing a music mode colour would also change the current colour for static and strobe modes.
+</details>
 
 <details> 
-  <summary><b><i>Version 1.0</i></b> <i>(Latest)</i></summary>
+  <summary><b><i>Version 1.1</i></b></summary>
+  * Fixed issue where sometimes the mode would change randomly when in music mode.
+</details>
+
+<details> 
+  <summary><b><i>Version 1.0</i></b></summary>
+  * Fixed many bugs and errors: First stable release.
   * Implemented keyboard shortcut/control functionality.
-  * Fixed many bugs and errors.
   * Minor usability and UI tweaks.
 </details>
 
@@ -136,17 +158,17 @@ Changes made in each update reflect the code in both the desktop application and
 
 </details>
 
+####Android Versions
+
 ###Known Bugs and Issues
-* Will sometimes change out of music mode.
-* Selected music colours may randomly change.
-* Flickering delay when dragging over spectrum too fast.
-* Changing a music colour will also change the current colour for static and strobe modes.
+* There are currently no known issues or bugs.
+
+<a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Bug%20Report">Click here to report a bug.</a>
 
 ###Planned Features and Changes
-* Remove delay when switching from wave, spectrum and random modes.
-* Allow dragging over spectrum despite mouse moving above or below the spectrum.
-* Ability to control speed for random, wave, spectrum and strobe modes.
-* Fix known issues and bugs.
+* Ability to control speed for random, wave, spectrum, strobe modes and scan modes.
+
+<a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Feature%20Suggestion">Click here to suggest a new feature.</a>
 
 ###License
 MIT License
