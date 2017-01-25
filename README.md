@@ -5,18 +5,22 @@ Chromolite is a universal desktop application that allows control of RGB WS2812B
 The Chromolite desktop application is written in the Java based programming language Processing 3. The application controls the LED strips through serial communication to an Arduino microcontroller operating the Chromolite purpose built program. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order to interface with the LEDs, some initial set up is required and is detailed in the setup section below.
 
 ###Features
-* 7 unique modes:
-  * <b>Static:</b> Sets the LED strips to a single selected colour.
+* 8 unique modes:
+  * <b>Static:</b> Sets the LED strips to either one, two or three non changing colours.
   * <b>Random:</b> Changes the LED strips to a randomly generated colour at short intervals.
   * <b>Wave:</b> Colours of the spectrum move across the LED strip in a wave-like motion.
   * <b>Music:</b> Reacts to an audio input signal, displaying 3 specified colours.
   * <b>Spectrum:</b> All LEDs gradually cycle through the colour spectrum together.
   * <b>Strobe:</b> Turns all LEDs on and off at a very fast rate to the selected colour.
+  * <b>Scan:</b> A short bar rapidly moves across the LED strips from one end to other and back.
   * <b>Off:</b> Turns all LEDs off.
-* Keyboard shortcut control.
+* Remote based control through the Android app to the desktop app over Wi-Fi.
+* Support for multiple Android devices connected at a single given time.
+* Keyboard shortcut control on the desktop app.
 * Spectrum based colour selection.
-* Clean and simple user interface.
-* Cross platform compatibility (Windows, macOS and Linux).
+* Ability to save custom default settings.
+* Clean, modern and simple user interface.
+* Cross desktop platform compatibility (Windows, macOS and Linux).
 
 ###User Interface
 <center>
