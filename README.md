@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_logo.png" height="200"alt="Chromolite logo."></p>
+<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="200"alt="Chromolite logo."></p>
 ###About
 Chromolite is a universal desktop application that allows control of RGB WS2812B LED strips. The application offers many customisation options and modes through an easy to use interface.
 
@@ -19,12 +19,14 @@ The Chromolite desktop application is written in the Java based programming lang
 * Cross platform compatibility (Windows, macOS and Linux).
 
 ###User Interface
+<center>
 
-Desktop | Android
---- | ---
-<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/desktop_user_interface.png" height="400" alt="Chromolite desktop UI."></p> | 2
+|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="120" alt="Chromolite logo."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo."></p>|
+|:-------------:|:-------------:|
+|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_ui.png" height="450" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_connect_ui.png" height="400" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_main_ui.png" height="400" alt="Chromolite Android UI."></p>|
 
-<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/desktop_user_interface.png" height="550" alt="Chromolite desktop UI."></p>
+</center>
+
 <details> 
   <summary><b>Old Desktop UI</b> <i>(for desktop versions 0.1 - 1.0)</i></summary>
   <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_user_interface.png" height="550" alt="Old Chromolite desktop UI."></p>
