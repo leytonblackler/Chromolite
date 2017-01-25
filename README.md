@@ -1,8 +1,8 @@
 <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="200"alt="Chromolite logo."></p>
 ###About
-Chromolite is a universal desktop application that allows control of RGB WS2812B LED strips. The application offers many customisation options and modes through an easy to use interface.
+Chromolite provides control of RGB WS2812B LED strips through a multi-platform desktop application, or remotely through an Android application. Chromolite offers many customisation options and modes through an easy to use interface.
 
-The Chromolite desktop application is written in the Java based programming language Processing 3. The application controls the LED strips through serial communication to an Arduino microcontroller operating the Chromolite purpose built program. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order to interface with the LEDs, some initial set up is required and is detailed in the setup section below.
+The Chromolite desktop and Android applications are written in the Java based programming language Processing 3. The desktop application controls the LED strips through serial communication with an Arduino microcontroller set up in configuration to operate the Chromolite purpose built program. The desktop application acts as a server, in which the Chromolite Android application can connect to via Wi-Fi for wireless control. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order for the Chromolite desktop application to interface with the program on the Arduino microcontroller, some initial circuitry set up is required and is detailed in the setup section below.
 
 ###Features
 * 8 unique modes:
@@ -27,7 +27,7 @@ The Chromolite desktop application is written in the Java based programming lang
 
 |<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="120" alt="Chromolite logo."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo."></p>|
 |:-------------:|:-------------:|
-|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_ui.png" height="450" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_connect_ui.png" height="400" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_main_ui.png" height="400" alt="Chromolite Android UI."></p>|
+|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_ui.png" height="420" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_connect_ui.png" height="420" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_main_ui.png" height="420" alt="Chromolite Android UI."></p>|
 
 </center>
 
@@ -35,6 +35,15 @@ The Chromolite desktop application is written in the Java based programming lang
   <summary><b>Old Desktop UI</b> <i>(for desktop versions 0.1 - 1.0)</i></summary>
   <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_ui.png" height="500" alt="Old Chromolite desktop UI."></p>
 </details>
+
+###Initial Setup
+<i>Coming soon...</i>
+
+###How to Operate the Software
+Before running the desktop application, the Chromolite compatible Arduino microcontroller must be connected via USB. The program will automatically detect which serial port it is connected to.
+
+###Demonstration
+<i>Coming soon...</i>
 
 ###Downloads
 <table>
@@ -90,12 +99,6 @@ The Chromolite desktop application is written in the Java based programming lang
     </tr>
    </tbody>
  </table>
-
-###Set up
-<i>Coming soon...</i>
-
-###Demonstration
-<i>Coming soon...</i>
 
 ###Acknowledgements
 <i>Coming soon...</i>
