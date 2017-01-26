@@ -6,7 +6,7 @@ The Chromolite desktop and Android applications are written in the Java based pr
 
 ###Features
 * 8 unique modes:
-  * <b>Static:</b> Sets the LED strips to either one, two or three non changing colours.
+  * <b>Static:</b> Sets the LED strips to either one, two or three non-changing colours.
   * <b>Random:</b> Changes the LED strips to a randomly generated colour at short intervals.
   * <b>Wave:</b> Colours of the spectrum move across the LED strip in a wave-like motion.
   * <b>Music:</b> Reacts to an audio input signal, displaying 3 specified colours.
@@ -18,7 +18,7 @@ The Chromolite desktop and Android applications are written in the Java based pr
 * Support for multiple Android devices connected at a single given time.
 * Keyboard shortcut control on the desktop app.
 * Spectrum based colour selection.
-* Ability to save custom default settings.
+* Ability to save custom default settings to both the desktop computer and Arduino's non-volatile EEPROM memory.
 * Clean, modern and simple user interface.
 * Cross desktop platform compatibility (Windows, macOS and Linux).
 
@@ -108,41 +108,41 @@ Changes made in each update reflect the code in both the desktop application and
 
 ####Desktop Versions
 <details> 
-  <summary><b>Versions 2.x</b> <i></i></summary>
+  <summary><b>Versions 2.x</b><i></i></summary>
 
 <details> 
-  <summary><b><i>Version 2.0</i></b> <i>(Latest)</i></summary>
+  <summary><b><i>Version 2.0</i></b><i>(Latest)</i></summary>
   * //
 </details>
 
 </details>
 
 <details> 
-  <summary><b>Versions 1.x</b> <i></i></summary>
+  <summary><b>Versions 1.x</b><i></i></summary>
   
 <details> 
-  <summary><b><i>Version 1.4</i></b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.4</i></b><i>(Latest)</i></summary>
   * Removed delay when switching from wave, spectrum and random modes.
 </details>
   
 <details> 
-  <summary><b><i>Version 1.3</i></b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.3</i></b></summary>
   * Allow dragging across spectrum once the spectrum has been clicked and the cursor moves above or below the spectrum.
   * Fixed flickering delay when dragging over the spectrum (caused by sending data to the LED controller at a rate faster than the Arduino serial port can handle).
 </details>
   
 <details> 
-  <summary><b><i>Version 1.2</i></b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.2</i></b></summary>
   * Fixed issue where changing a music mode colour would also change the current colour for static and strobe modes.
 </details>
 
 <details> 
-  <summary><b><i>Version 1.1</i></b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.1</i></b></summary>
   * Fixed issue where sometimes the mode would change randomly when in music mode.
 </details>
 
 <details> 
-  <summary><b><i>Version 1.0</i></b></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.0</i></b></summary>
   * Fixed many bugs and errors: First stable release.
   * Implemented keyboard shortcut/control functionality.
   * Minor usability and UI tweaks.
@@ -208,6 +208,85 @@ Changes made in each update reflect the code in both the desktop application and
 </details>
 
 ####Android Versions
+<details> 
+  <summary><b>Versions 1.x</b> <i></i></summary>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.4</i></b><i>(Latest)</i></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.3</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.2</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.1</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.0</i></b></summary>
+  * //
+</details>
+
+</details>
+
+<details> 
+  <summary><b>Versions 0.x</b> <i></i></summary>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.9</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.8</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.7</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.6</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.5</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.4</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.3</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.2</i></b></summary>
+  * //
+</details>
+
+<details> 
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 0.1</i></b></summary>
+  * //
+</details>
+
+</details>
 
 ###Known Bugs and Issues
 * There are currently no known issues or bugs.
