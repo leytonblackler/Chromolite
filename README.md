@@ -301,7 +301,7 @@ Changes made in each update reflect the code in both the desktop application and
 ###License
 MIT License
 
-Copyright &copy; 2016 Leyton Blackler
+Copyright &copy; 2017 Leyton Blackler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
