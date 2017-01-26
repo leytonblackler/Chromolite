@@ -1,4 +1,48 @@
 <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="200"alt="Chromolite logo."></p>
+
+<details>
+<summary><b>ReadMe Quick Access</b><i></i></summary>
+
+<table>
+  <tr>
+  <td width="200"><a href="https://github.com/leytonblackler/Chromolite#about">About</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#features">Features</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#user-interface">User Interface</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#initial-setup">Initial Setup</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#how-to-operate-the-software">How to Operate the Software</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#demonstration">Demonstration</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#downloads">Downloads</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#acknowledgements">Acknowledgements</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#change-log">Change Log</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#known-bugs-and-issues">Known Bugs and Issues</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#planned-features-and-changes">Planned Features and Changes</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/leytonblackler/Chromolite#license">License</a></td>
+  </tr>
+</table>
+</details>
+
 ###About
 Chromolite provides control of RGB WS2812B LED strips through a multi-platform desktop application, or remotely through an Android application. Chromolite offers many customisation options and modes through an easy to use interface.
 
