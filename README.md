@@ -94,7 +94,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_windows_icon.png" height="40" alt="Chromolite desktop icon (Windows)."></td>
-      <td><a href="https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8">Chromolite 1.0 - Windows 64-bit</a></td>
+      <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/2.6/Chromolite_Desktop_2.6_Windows64.zip">Chromolite 2.6 - Windows 64-bit</a></td>
     </tr>
    </tbody>
  </table>
@@ -103,7 +103,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_windows_icon.png" height="40" alt="Chromolite desktop icon (Windows)."></td>
-      <td><strike>Chromolite 1.0 - Windows 32-bit</strike><i> - Coming soon...</i></td>
+      <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/2.6/Chromolite_Desktop_2.6_Windows32.zip">Chromolite 2.6 - Windows 32-bit</a></td>
     </tr>
    </tbody>
  </table>
@@ -121,7 +121,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_linux_icon.png" height="40" alt="Chromolite desktop icon (Linux)."></td>
-      <td><strike>Chromolite 1.0 - Linux 64-bit</strike><i> - Coming soon...</i></td>
+      <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/2.6/Chromolite_Desktop_2.6_Linux64.zip">Chromolite 2.6 - Linux 64-bit</a></td>
     </tr>
    </tbody>
  </table>
@@ -130,7 +130,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_linux_icon.png" height="40" alt="Chromolite desktop icon (Linux)."></td>
-      <td><strike>Chromolite 1.0 - Linux 32-bit</strike><i> - Coming soon...</i></td>
+      <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/2.6/Chromolite_Desktop_2.6_Linux32.zip">Chromolite 2.6 - Linux 32-bit</a></td>
     </tr>
    </tbody>
  </table>
@@ -148,7 +148,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/arduino_icon.png" height="40" alt="Chromolite Arduino icon."></td>
-      <td><strike>Chromolite Arduino Program</strike><i> - Coming soon...</i></td>
+      <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/2.6/Chromolite_Arduino.zip">Chromolite Arduino Program</a></td>
     </tr>
    </tbody>
  </table>
