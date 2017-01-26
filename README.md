@@ -25,9 +25,9 @@ The Chromolite desktop and Android applications are written in the Java based pr
 ###User Interface
 <center>
 
-|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="120" alt="Chromolite logo."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo."></p>|
+|<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="120" alt="Chromolite logo.">|<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo.">|
 |:-------------:|:-------------:|
-|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_ui.png" height="420" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_connect_ui.png" height="420" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_main_ui.png" height="420" alt="Chromolite Android UI."></p>|
+|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_ui.png" height="425" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_connect_ui.png" height="425" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_main_ui.png" height="425" alt="Chromolite Android UI."></p>|
 
 </center>
 
@@ -50,7 +50,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
-      <td><a href="https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8">Chromolite 1.0 - Windows 64-bit Installer]</a></td>
+      <td><a href="https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8">Chromolite 1.0 - Windows 64-bit Installer</a></td>
     </tr>
    </tbody>
  </table>
