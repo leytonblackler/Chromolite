@@ -94,7 +94,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
-      <td><a href="https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8">Chromolite 1.0 - Windows 64-bit Installer</a></td>
+      <td><a href="https://drive.google.com/uc?export=download&confirm=c__-&id=0B8TU7kUyeVimMVc3UkNJRDVicm8">Chromolite 1.0 - Windows 64-bit</a></td>
     </tr>
    </tbody>
  </table>
@@ -103,7 +103,25 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
-      <td><strike>Chromolite 1.0 - Windows 32-bit Installer</strike><i> - Coming soon...</i></td>
+      <td><strike>Chromolite 1.0 - Windows 32-bit</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+  <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
+      <td><strike>Chromolite 1.0 - Linux 32-bit</strike><i> - Coming soon...</i></td>
+    </tr>
+   </tbody>
+ </table>
+ 
+ <table>
+  <tbody>
+    <tr>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
+      <td><strike>Chromolite 1.0 - Linux 64-bit</strike><i> - Coming soon...</i></td>
     </tr>
    </tbody>
  </table>
@@ -113,15 +131,6 @@ Before running the desktop application, the Chromolite compatible Arduino microc
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
       <td><strike>Chromolite 1.0 - macOS</strike><i> - Coming soon...</i></td>
-    </tr>
-   </tbody>
- </table>
- 
-  <table>
-  <tbody>
-    <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_icon.png" height="40" alt="Chromolite desktop icon."></td>
-      <td><strike>Chromolite 1.0 - Linux</strike><i> - Coming soon...</i></td>
     </tr>
    </tbody>
  </table>
