@@ -1,8 +1,8 @@
-/**=================================================
-Chromolite LED Controller
+/**===========================
+Chromolite Desktop
 Version: 1.0
 Made by Leyton Blackler
-=================================================**/
+===========================**/
 
 import processing.serial.*;
 
