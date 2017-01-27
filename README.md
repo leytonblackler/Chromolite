@@ -164,7 +164,7 @@ Changes made in each update reflect the code in both the desktop application and
   <summary><b>Versions 2.x</b><i></i></summary>
 
 <details> 
-  <summary><b><i>Version 2.0</i></b><i>(Latest)</i></summary>
+  <summary><b><i>Version 2.0</i></b> <i>(Latest)</i></summary>
   * //
 </details>
 
@@ -265,7 +265,7 @@ Changes made in each update reflect the code in both the desktop application and
   <summary><b>Versions 1.x</b> <i></i></summary>
 
 <details> 
-  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.4</i></b><i>(Latest)</i></summary>
+  <summary><b><i>&nbsp;&nbsp;&nbsp;&nbsp;Version 1.4</i></b> <i>(Latest)</i></summary>
   * //
 </details>
 
