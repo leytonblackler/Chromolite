@@ -139,7 +139,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <tbody>
     <tr>
       <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_icon.png" height="40" alt="Chromolite Android icon."></td>
-      <td><strike>Chromolite 1.0 - Android</strike><i> - Coming soon...</i></td>
+      <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/v1.4-android/Chromolite_Android_1.4.apk">Chromolite 1.4 - Android</a></td>
     </tr>
    </tbody>
  </table>
