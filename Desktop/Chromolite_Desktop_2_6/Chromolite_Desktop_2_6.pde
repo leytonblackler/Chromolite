@@ -577,7 +577,7 @@ void oscEvent(OscMessage incomingMessage) {
 
     sendColour(type, incomingMessage.get(1).intValue(), incomingMessage.get(2).intValue(), incomingMessage.get(3).intValue(), incomingMessage.get(4).floatValue(), incomingMessage.get(5).floatValue(), mostRecentIP);
   } else if (incomingMessage.addrPattern().equals("/connect")) {
-    println("received connect");
+    println("Received 'connect'.");
 
     OscMessage replyMessage = new OscMessage("/connected");
     if (toggleBlueLEDButton.isSelected()) {
@@ -605,10 +605,8 @@ void oscEvent(OscMessage incomingMessage) {
 
     NetAddress destinationLocation;
 
-    for (String ip : connectedIPs) {
-      destinationLocation = new NetAddress(ip, currentPort);
-      oscP5.send(replyMessage, destinationLocation);
-    }
+    destinationLocation = new NetAddress(mostRecentIP, currentPort);
+    oscP5.send(replyMessage, destinationLocation);
   } else {
     println("Incoming message address pattern not recognised.");
   }
