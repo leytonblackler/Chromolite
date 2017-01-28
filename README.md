@@ -58,9 +58,9 @@ The Chromolite desktop and Android applications are written in the Java based pr
   * <b>Strobe:</b> Turns all LEDs on and off at a very fast rate to the selected colour.
   * <b>Scan:</b> A short bar rapidly moves across the LED strips from one end to other and back.
   * <b>Off:</b> Turns all LEDs off.
-* Remote based control through the Android app to the desktop app over Wi-Fi.
+* Remote based control through the Android application to the desktop application over Wi-Fi.
 * Support for multiple Android devices connected at a single given time.
-* Keyboard shortcut control on the desktop app.
+* Keyboard shortcut control on the desktop application.
 * Spectrum based colour selection.
 * Ability to save custom default settings to both the desktop computer and Arduino's non-volatile EEPROM memory.
 * Clean, modern and simple user interface.
@@ -152,9 +152,6 @@ Before running the desktop application, the Chromolite compatible Arduino microc
     </tr>
    </tbody>
  </table>
-
-##Acknowledgements
-<i>Coming soon...</i>
 
 ##Change Log
 Changes made in each update reflect the code in both the desktop application and Arduino program.
@@ -351,10 +348,29 @@ Changes made in each update reflect the code in both the desktop application and
 
 <a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Feature%20Suggestion">Click here to suggest a new feature.</a>
 
+##Acknowledgements
+####Andreas Schlegel (sojamo) - http://www.sojamo.de/
+
+<a href="http://www.sojamo.de/libraries/oscP5/"><b>oscP5</b></a> - A library for the Processing programming environment which implements the Open Sound Control (OSC) network protocol developed at the Center for New Music and Audio Technologies, University of California, Berkeley. The library is used in this project for the purpose of network communication between Android and desktop devices.
+
+<a href="http://www.sojamo.de/libraries/controlP5/"><b>controlP5</b></a> - A library for the Processing programming environment which provides a set of controllers to build a graphical user interface. The library is used in this project for the purpose of creating an editable text field in the desktop application in which the user is able to input a desired network port.
+
+####David Bouchard (deadpixel) - http://www.deadpixel.ca/
+
+<a href="http://www.deadpixel.ca/arduino-osc/"><b>Arduino-OSC</b></a> - Libraries for the Processing and Arduino programming environments, built upon oscP5, which allows for OSC protocol communciation over the Serial port to the Arduino platform. The library is used in this project for the purpose of communication between the desktop application and the Chromolite compatible Arduino microcontroller.
+
+####Benedikt Groß - http://benedikt-gross.de/log/
+
+<a href="http://www.looksgood.de/libraries/Ani/"><b>Ani</b></a> - A library for the Processing programming environment which provides a platform for creating smooth easing animations. The library is used in this project for the purpose of animating UI transitions and interactions in the Android application.
+
+####Adafruit Industries - https://www.adafruit.com/
+
+<a href="http://www.deadpixel.ca/arduino-osc/"><b>NeoPixel</b></a> - A library for the Arduino programming environment which provides the ability to individually interface with each LED in the WS2812B RGB LED strips. The library is used in this project for the purpose of controlling the LED strips connected to the Chromolite compatible Arduino microcontroller.
+
 ##License
 MIT License
 
-Copyright &copy; 2017 Leyton Blackler
+Copyright &copy; 2016 - 2017 Leyton Blackler
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
