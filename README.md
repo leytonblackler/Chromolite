@@ -43,12 +43,12 @@
 </table>
 </details>
 
-###About
+##About
 Chromolite provides control of RGB WS2812B LED strips through a multi-platform desktop application, or remotely through an Android application. Chromolite offers many customisation options and modes through an easy to use interface.
 
 The Chromolite desktop and Android applications are written in the Java based programming language Processing 3. The desktop application controls the LED strips through serial communication with an Arduino microcontroller set up in configuration to operate the Chromolite purpose built program. The desktop application acts as a server, in which the Chromolite Android application can connect to via Wi-Fi for wireless control. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order for the Chromolite desktop application to interface with the program on the Arduino microcontroller, some initial circuitry set up is required and is detailed in the setup section below.
 
-###Features
+##Features
 * 8 unique modes:
   * <b>Static:</b> Sets the LED strips to either one, two or three non-changing colours.
   * <b>Random:</b> Changes the LED strips to a randomly generated colour at short intervals.
@@ -66,7 +66,7 @@ The Chromolite desktop and Android applications are written in the Java based pr
 * Clean, modern and simple user interface.
 * Cross desktop platform compatibility (Windows, macOS and Linux).
 
-###User Interface
+##User Interface
 <center>
 
 |<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="120" alt="Chromolite logo.">|<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo.">|
@@ -80,16 +80,16 @@ The Chromolite desktop and Android applications are written in the Java based pr
   <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_ui.png" height="500" alt="Old Chromolite desktop UI."></p>
 </details>
 
-###Initial Setup
+##Initial Setup
 <i>Coming soon...</i>
 
-###How to Operate the Software
+##How to Operate the Software
 Before running the desktop application, the Chromolite compatible Arduino microcontroller must be connected via USB. The program will automatically detect which serial port it is connected to.
 
-###Demonstration
+##Demonstration
 <i>Coming soon...</i>
 
-###Downloads
+##Downloads
 <table>
   <tbody>
     <tr>
@@ -153,10 +153,10 @@ Before running the desktop application, the Chromolite compatible Arduino microc
    </tbody>
  </table>
 
-###Acknowledgements
+##Acknowledgements
 <i>Coming soon...</i>
 
-###Change Log
+##Change Log
 Changes made in each update reflect the code in both the desktop application and Arduino program.
 
 ####Desktop Versions
@@ -341,17 +341,17 @@ Changes made in each update reflect the code in both the desktop application and
 
 </details>
 
-###Known Bugs and Issues
+##Known Bugs and Issues
 * There are currently no known issues or bugs.
 
 <a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Bug%20Report">Click here to report a bug.</a>
 
-###Planned Features and Changes
+##Planned Features and Changes
 * Ability to control speed for random, wave, spectrum, strobe modes and scan modes.
 
 <a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Feature%20Suggestion">Click here to suggest a new feature.</a>
 
-###License
+##License
 MIT License
 
 Copyright &copy; 2017 Leyton Blackler
