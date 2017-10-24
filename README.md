@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="200"alt="Chromolite logo."></p>
+<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_regular_logo.png" height="200"alt="Chromolite logo."></p>
 
 <details>
 <summary><b>ReadMe Quick Access</b><i></i></summary>
@@ -69,15 +69,15 @@ The Chromolite desktop and Android applications are written in the Java based pr
 ##User Interface
 <center>
 
-|<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_regular_logo.png" height="120" alt="Chromolite logo.">|<img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo.">|
+|<img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_regular_logo.png" height="120" alt="Chromolite logo.">|<img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo.">|
 |:-------------:|:-------------:|
-|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_desktop_ui.png" height="425" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_connect_ui.png" height="425" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_main_ui.png" height="425" alt="Chromolite Android UI."></p>|
+|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_desktop_ui.png" height="425" alt="Chromolite desktop UI."></p>|<p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_android_connect_ui.png" height="425" alt="Chromolite Android UI.">   <img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_android_main_ui.png" height="425" alt="Chromolite Android UI."></p>|
 
 </center>
 
 <details> 
   <summary><b>Old Desktop UI</b> <i>(for desktop versions 0.1 - 1.0)</i></summary>
-  <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/old_desktop_ui.png" height="500" alt="Old Chromolite desktop UI."></p>
+  <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/old_desktop_ui.png" height="500" alt="Old Chromolite desktop UI."></p>
 </details>
 
 ##Initial Setup
@@ -93,7 +93,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
 <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_windows_icon.png" height="40" alt="Chromolite desktop icon (Windows)."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_windows_icon.png" height="40" alt="Chromolite desktop icon (Windows)."></td>
       <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/v2.6-desktop/Chromolite_Desktop_2.6_Windows64.zip">Chromolite Desktop 2.6 - Windows 64-bit</a></td>
     </tr>
    </tbody>
@@ -102,7 +102,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
  <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_windows_icon.png" height="40" alt="Chromolite desktop icon (Windows)."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_windows_icon.png" height="40" alt="Chromolite desktop icon (Windows)."></td>
       <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/v2.6-desktop/Chromolite_Desktop_2.6_Windows32.zip">Chromolite Desktop 2.6 - Windows 32-bit</a></td>
     </tr>
    </tbody>
@@ -111,7 +111,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
  <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_mac_icon.png" height="40" alt="Chromolite desktop icon (macOS)."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_mac_icon.png" height="40" alt="Chromolite desktop icon (macOS)."></td>
       <td><strike>Chromolite Desktop 2.6 - macOS</strike><i> - Coming soon...</i></td>
     </tr>
    </tbody>
@@ -120,7 +120,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_linux_icon.png" height="40" alt="Chromolite desktop icon (Linux)."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_linux_icon.png" height="40" alt="Chromolite desktop icon (Linux)."></td>
       <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/v2.6-desktop/Chromolite_Desktop_2.6_Linux64.zip">Chromolite Desktop 2.6 - Linux 64-bit</a></td>
     </tr>
    </tbody>
@@ -129,7 +129,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
  <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_linux_icon.png" height="40" alt="Chromolite desktop icon (Linux)."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_linux_icon.png" height="40" alt="Chromolite desktop icon (Linux)."></td>
       <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/2.6/Chromolite_Desktop_2.6_Linux32.zip">Chromolite Desktop 2.6 - Linux 32-bit</a></td>
     </tr>
    </tbody>
@@ -138,7 +138,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/chromolite_android_icon.png" height="40" alt="Chromolite Android icon."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_android_icon.png" height="40" alt="Chromolite Android icon."></td>
       <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/v1.4-android/Chromolite_Android_1.4.apk">Chromolite Android 1.4</a></td>
     </tr>
    </tbody>
@@ -147,7 +147,7 @@ Before running the desktop application, the Chromolite compatible Arduino microc
   <table>
   <tbody>
     <tr>
-      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/README%20Images/arduino_icon.png" height="40" alt="Chromolite Arduino icon."></td>
+      <td><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/arduino_icon.png" height="40" alt="Chromolite Arduino icon."></td>
       <td><a href="https://github.com/leytonblackler/Chromolite/releases/download/v2.6-desktop/Chromolite_Arduino.zip">Chromolite Arduino Program</a></td>
     </tr>
    </tbody>
