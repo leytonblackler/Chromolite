@@ -354,6 +354,10 @@ Changes made in each update reflect the code in both the desktop application and
 
 <h2>Acknowledgements</h2>
 
+<h4>Corale Studios - <a href="https://github.com/CoraleStudios">github.com/CoralStudios</h4>
+
+<a href="https://github.com/CoraleStudios/Colore"><b>Colore</b></a> - A C# library that utilises the Razer Chroma SDK to provide control of LEDs on a range of Razer Chroma devices. The library is used in this project in the Windows background service that the desktop applciation communicates with via UDP in order to control the LEDs on Razer Chroma devices. This allows utilisation of this C# based library from within Java.
+
 <h4>Andreas Schlegel (sojamo) - http://www.sojamo.de/</h4>
 
 <a href="http://www.sojamo.de/libraries/oscP5/"><b>oscP5</b></a> - A library for the Processing programming environment which implements the Open Sound Control (OSC) network protocol developed at the Center for New Music and Audio Technologies, University of California, Berkeley. The library is used in this project for the purpose of network communication between Android and desktop devices.
