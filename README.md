@@ -43,12 +43,13 @@
 </table>
 </details>
 
-##About
+<h2>About</h2>
 Chromolite provides control of RGB WS2812B LED strips through a multi-platform desktop application, or remotely through an Android application. Chromolite offers many customisation options and modes through an easy to use interface.
 
 The Chromolite desktop and Android applications are written in the Java based programming language Processing 3. The desktop application controls the LED strips through serial communication with an Arduino microcontroller set up in configuration to operate the Chromolite purpose built program. The desktop application acts as a server, in which the Chromolite Android application can connect to via Wi-Fi for wireless control. The Arduino microcontroller program required to interface with the desktop application is written using the C/C++ based Arduino language. In order for the Chromolite desktop application to interface with the program on the Arduino microcontroller, some initial circuitry set up is required and is detailed in the setup section below.
 
-##Features
+<h2>Features</h2>
+
 * 8 unique modes:
   * <b>Static:</b> Sets the LED strips to either one, two or three non-changing colours.
   * <b>Random:</b> Changes the LED strips to a randomly generated colour at short intervals.
@@ -66,7 +67,7 @@ The Chromolite desktop and Android applications are written in the Java based pr
 * Clean, modern and simple user interface.
 * Cross desktop platform compatibility (Windows, macOS and Linux).
 
-##User Interface
+<h2>User Interface</h2>
 <center>
 
 |<img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_regular_logo.png" height="120" alt="Chromolite logo.">|<img src="https://github.com/leytonblackler/Chromolite/blob/master/images/chromolite_android_logo.png" height="120" alt="Chromolite Android logo.">|
@@ -80,16 +81,16 @@ The Chromolite desktop and Android applications are written in the Java based pr
   <p align="center"><img src="https://github.com/leytonblackler/Chromolite/blob/master/images/old_desktop_ui.png" height="500" alt="Old Chromolite desktop UI."></p>
 </details>
 
-##Initial Setup
+<h2>Initial Setup</h2>
 <i>Coming soon...</i>
 
-##How to Operate the Software
+<h2>How to Operate the Software</h2>
 Before running the desktop application, the Chromolite compatible Arduino microcontroller must be connected via USB. The program will automatically detect which serial port it is connected to.
 
-##Demonstration
+<h2>Demonstration</h2>
 <i>Coming soon...</i>
 
-##Downloads
+<h2>Downloads</h2>
 <table>
   <tbody>
     <tr>
@@ -153,10 +154,10 @@ Before running the desktop application, the Chromolite compatible Arduino microc
    </tbody>
  </table>
 
-##Change Log
+<h2>Change Log</h2>
 Changes made in each update reflect the code in both the desktop application and Arduino program.
 
-####Desktop Versions
+<h4>Desktop Versions</h4>
 <details> 
   <summary><b>Versions 2.x</b><i></i></summary>
 
@@ -257,7 +258,8 @@ Changes made in each update reflect the code in both the desktop application and
 
 </details>
 
-####Android Versions
+<h4>Android Versions</h4>
+
 <details> 
   <summary><b>Versions 1.x</b> <i></i></summary>
 
@@ -338,36 +340,39 @@ Changes made in each update reflect the code in both the desktop application and
 
 </details>
 
-##Known Bugs and Issues
+<h2>Known Bugs and Issues</h2>
+
 * There are currently no known issues or bugs.
 
 <a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Bug%20Report">Click here to report a bug.</a>
 
-##Planned Features and Changes
+<h2>Planned Features and Changes</h2>
+
 * Ability to control speed for random, wave, spectrum, strobe modes and scan modes.
 
 <a href="mailto:leytonblackler@gmail.com?subject=Chromolite%20Feature%20Suggestion">Click here to suggest a new feature.</a>
 
-##Acknowledgements
-####Andreas Schlegel (sojamo) - http://www.sojamo.de/
+<h2>Acknowledgements</h2>
+
+<h4>Andreas Schlegel (sojamo) - http://www.sojamo.de/</h4>
 
 <a href="http://www.sojamo.de/libraries/oscP5/"><b>oscP5</b></a> - A library for the Processing programming environment which implements the Open Sound Control (OSC) network protocol developed at the Center for New Music and Audio Technologies, University of California, Berkeley. The library is used in this project for the purpose of network communication between Android and desktop devices.
 
 <a href="http://www.sojamo.de/libraries/controlP5/"><b>controlP5</b></a> - A library for the Processing programming environment which provides a set of controllers to build a graphical user interface. The library is used in this project for the purpose of creating an editable text field in the desktop application in which the user is able to input a desired network port.
 
-####David Bouchard (deadpixel) - http://www.deadpixel.ca/
+<h4>David Bouchard (deadpixel) - http://www.deadpixel.ca/</h4>
 
 <a href="http://www.deadpixel.ca/arduino-osc/"><b>Arduino-OSC</b></a> - Libraries for the Processing and Arduino programming environments, built upon oscP5, which allows for OSC protocol communciation over the Serial port to the Arduino platform. The library is used in this project for the purpose of communication between the desktop application and the Chromolite compatible Arduino microcontroller.
 
-####Benedikt Groß - http://benedikt-gross.de/log/
+<h4>Benedikt Groß - http://benedikt-gross.de/log/</h4>
 
 <a href="http://www.looksgood.de/libraries/Ani/"><b>Ani</b></a> - A library for the Processing programming environment which provides a platform for creating smooth easing animations. The library is used in this project for the purpose of animating UI transitions and interactions in the Android application.
 
-####Adafruit Industries - https://www.adafruit.com/
+<h4>Adafruit Industries - https://www.adafruit.com/</h4>
 
 <a href="http://www.deadpixel.ca/arduino-osc/"><b>NeoPixel</b></a> - A library for the Arduino programming environment which provides the ability to individually interface with each LED in the WS2812B RGB LED strips. The library is used in this project for the purpose of controlling the LED strips connected to the Chromolite compatible Arduino microcontroller.
 
-##License
+<h2>License</h4>
 MIT License
 
 Copyright &copy; 2016 - 2017 Leyton Blackler
