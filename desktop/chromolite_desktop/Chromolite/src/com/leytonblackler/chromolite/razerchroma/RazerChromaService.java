@@ -19,6 +19,7 @@ public class RazerChromaService {
         //Only run the service if the current operating system is Windows.
         if (operatingSystem.contains("Windows")) {
             runService();
+            try { Thread.sleep(200); } catch (InterruptedException e) { e.printStackTrace(); }
             send("init");
         }
         else {
