@@ -20,7 +20,7 @@
 }
 
 #spectrum-circle-label {
-    -fx-font-size: 8pt;
+    -fx-font-size: 7pt;
     -fx-text-fill: #253447;
 }
 
@@ -30,7 +30,7 @@
 }
 
 #spectrum-circle-fill {
-    -fx-fill: red;
+    -fx-fill: rgb(255, 0, 0);
     -fx-stroke-width: 0;
 }
 
@@ -96,6 +96,40 @@
 
 .toggle-button:selected:pressed {
     -fx-background-color: #03a9f4;
+}
+
+.radio-button .radio {
+    -fx-background-color: #253447;
+    -fx-background-insets: 0, 1, 1;
+    -fx-background-radius: 1.0em; /* makes sure this remains circular */
+    -fx-padding: 4px;
+}
+
+.radio-button .text {
+    -fx-font-size: 7pt;
+    -fx-fill: #bcc4cc;
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-insets: 0, 1, 1;
+    -fx-background-color: #03a9f4;
+}
+
+.radio-button .radio:selected{
+    -fx-background-color : white ;
+    -fx-background-image : null  ;
+}
+.radio-button -radio:armed{
+    -fx-background-color : white ;
+    -fx-background-image : null  ;
+}
+.radio-button -radio:determinate{
+    -fx-background-color : white ;
+    -fx-background-image : null  ;
+}
+.radio-button -radio:indeterminate{
+    -fx-background-color : white ;
+    -fx-background-image : null  ;
 }
 
 .title-bar {
