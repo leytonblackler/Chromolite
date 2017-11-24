@@ -46,7 +46,7 @@
 
         <!-- SECOND ROW MODE BUTTONS -->
         <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
-                      text="SPECTRUM"
+                      text="CYCLE"
                       GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
         <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"

@@ -93,6 +93,25 @@
     -fx-text-fill: #2c3b4f;
 }
 
+.check-box .box {
+    -fx-background-color:
+            -fx-shadow-highlight-color,
+            -fx-outer-border,
+            -fx-inner-border,
+            -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
+    -fx-background-color: #253447;
+}
+
+.check-box .box:hover {
+    -fx-background-color: #2c3b4f;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #03a9f4;
+}
+
 .toggle-button {
     -fx-background-color:
             -fx-shadow-highlight-color,
@@ -116,7 +135,7 @@
     -fx-background-color: #253447;
     -fx-border-radius: 3px, 3px, 3px, 3px;
     -fx-border-color: #03a9f4;
-    -fx-border-width: 1;
+    -fx-border-width: 0;
 }
 
 .toggle-button:selected {

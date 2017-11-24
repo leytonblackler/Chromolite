@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.image.ImageView?>
+
+<Pane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controller.SpectrumController">
+
+    <!-- CONSTANTS -->
+    <fx:define>
+        <Double fx:id="WINDOW_WIDTH" fx:value="560"/>
+        <Double fx:id="WINDOW_HEIGHT" fx:value="750"/>
+        <Double fx:id="HEADER_HEIGHT" fx:value="30"/>
+        <Double fx:id="SPECTRUM_HEIGHT" fx:value="250"/>
+        <Double fx:id="PADDING" fx:value="15"/>
+        <Double fx:id="BUTTON_COLOURS_ARC_SIZE" fx:value="8"/>
+        <Double fx:id="BUTTON_COLOURS_HEIGHT" fx:value="3"/>
+        <Double fx:id="BUTTON_COLOURS_WIDTH" fx:value="35"/>
+
+        <Double fx:id="SPECTRUM_INDICATOR_RADIUS" fx:value="5"/>
+        <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
+    </fx:define>
+
+    <!-- SPECTRUM IMAGE -->
+    <StackPane fx:id="spectrumStackPane">
+        <ImageView fx:id="spectrum" fitHeight="$SPECTRUM_HEIGHT" fitWidth="$WINDOW_WIDTH"/>
+        <Pane fx:id="primarySpectrumIndicator" translateX="${WINDOW_WIDTH / 6}" translateY="${SPECTRUM_HEIGHT / 2}">
+            <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
+                       translateY="${-SPECTRUM_INDICATOR_RADIUS}">
+                <Circle id="spectrum-circle-stroke" radius="$SPECTRUM_INDICATOR_RADIUS"/>
+                <Circle id="spectrum-circle-fill" radius="${SPECTRUM_INDICATOR_RADIUS - SPECTRUM_INDICATOR_STROKE}"
+                        translateX="$SPECTRUM_INDICATOR_STROKE" translateY="$SPECTRUM_INDICATOR_STROKE"/>
+                <Label id="spectrum-circle-label" text="P" translateX="${SPECTRUM_INDICATOR_RADIUS + 3}"
+                       translateY="${SPECTRUM_INDICATOR_RADIUS + 3}"/>
+            </StackPane>
+        </Pane>
+        <Pane fx:id="secondarySpectrumIndicator" translateX="${3 * (WINDOW_WIDTH / 6)}"
+              translateY="${SPECTRUM_HEIGHT / 2}">
+            <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
+                       translateY="${-SPECTRUM_INDICATOR_RADIUS}">
+                <Circle id="spectrum-circle-stroke" radius="$SPECTRUM_INDICATOR_RADIUS"/>
+                <Circle id="spectrum-circle-fill" radius="${SPECTRUM_INDICATOR_RADIUS - SPECTRUM_INDICATOR_STROKE}"
+                        translateX="$SPECTRUM_INDICATOR_STROKE" translateY="$SPECTRUM_INDICATOR_STROKE"/>
+                <Label id="spectrum-circle-label" text="S" translateX="${SPECTRUM_INDICATOR_RADIUS + 3}"
+                       translateY="${SPECTRUM_INDICATOR_RADIUS + 3}"/>
+            </StackPane>
+        </Pane>
+        <Pane fx:id="tertiarySpectrumIndicator" translateX="${5 * (WINDOW_WIDTH / 6)}"
+              translateY="${SPECTRUM_HEIGHT / 2}">
+            <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
+                       translateY="${-SPECTRUM_INDICATOR_RADIUS}">
+                <Circle id="spectrum-circle-stroke" radius="$SPECTRUM_INDICATOR_RADIUS"/>
+                <Circle id="spectrum-circle-fill" radius="${SPECTRUM_INDICATOR_RADIUS - SPECTRUM_INDICATOR_STROKE}"
+                        translateX="$SPECTRUM_INDICATOR_STROKE" translateY="$SPECTRUM_INDICATOR_STROKE"/>
+                <Label id="spectrum-circle-label" text="T" translateX="${SPECTRUM_INDICATOR_RADIUS + 3}"
+                       translateY="${SPECTRUM_INDICATOR_RADIUS + 3}"/>
+            </StackPane>
+        </Pane>
+    </StackPane>
+</Pane>

@@ -1,71 +1,22 @@
 package com.leytonblackler.chromolite.controller;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Font;
-import javafx.scene.shape.Rectangle;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
-
-    @FXML
-    private Pane modesPane;
-
-    @FXML
-    private Pane modeSettingsPane;
-
-    @FXML
-    private Pane generalOptionsPane;
-
-    @FXML
-    private Pane appConnectPane;
-
-    @FXML
-    public ImageView logo;
+public class SpectrumController implements Initializable {
 
     @FXML
     public ImageView spectrum;
-
-    //@FXML
-    //public ImageView spectrumBase;
-
-    @FXML
-    public ImageView powerIcon;
-    private Image[] powerIconImages = new Image[2];
-
-    @FXML
-    private Rectangle r1;
-
-    @FXML
-    private Rectangle r2;
-
-    @FXML
-    private Rectangle r3;
-
-    @FXML
-    private ToggleButton razerButton;
-
-    @FXML
-    private ToggleButton offButton;
 
     @FXML
     private Pane primarySpectrumIndicator, secondarySpectrumIndicator, tertiarySpectrumIndicator;
@@ -77,41 +28,8 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        try {
-            Node modes = FXMLLoader.load(getClass().getClassLoader().getResource("view/Modes.fxml"));
-            modesPane.getChildren().clear();
-            modesPane.getChildren().add(modes);
-
-            Node staticSettings = FXMLLoader.load(getClass().getClassLoader().getResource("view/settings/WaveSettings.fxml"));
-            modeSettingsPane.getChildren().clear();
-            modeSettingsPane.getChildren().add(staticSettings);
-
-            Node generalOptions = FXMLLoader.load(getClass().getClassLoader().getResource("view/GeneralOptions.fxml"));
-            generalOptionsPane.getChildren().clear();
-            generalOptionsPane.getChildren().add(generalOptions);
-
-            Node appConnect = FXMLLoader.load(getClass().getClassLoader().getResource("view/AppConnect.fxml"));
-            appConnectPane.getChildren().clear();
-            appConnectPane.getChildren().add(appConnect);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        logo.setImage(new Image(getClass().getClassLoader().getResource("images/logo.png").toExternalForm()));
-
         Image spectrumImage = new Image(getClass().getClassLoader().getResource("images/spectrum.png").toExternalForm(), spectrum.getFitWidth(), spectrum.getFitHeight(), false, true);
         spectrum.setImage(spectrumImage);
-
-        //Image spectrumBaseImage = new Image(getClass().getClassLoader().getResource("images/spectrum_base.png").toExternalForm(), spectrum.getFitWidth(), spectrum.getFitHeight(), false, true);
-        //spectrumBase.setImage(spectrumBaseImage);
-
-        //networkIcon.setImage(new Image(getClass().getClassLoader().getResource("images/network_icon.png").toExternalForm()));
-        //bluetoothIcon.setImage(new Image(getClass().getClassLoader().getResource("images/bluetooth_icon.png").toExternalForm()));
-
-        //powerIconImages[0] = new Image(getClass().getClassLoader().getResource("images/power_icon_light.png").toExternalForm());
-        //powerIconImages[1] = new Image(getClass().getClassLoader().getResource("images/power_icon_dark.png").toExternalForm());
-        //powerIcon.setImage(powerIconImages[0]);
 
         spectrumIndicators[0] = primarySpectrumIndicator;
         spectrumIndicators[1] = secondarySpectrumIndicator;
@@ -121,10 +39,6 @@ public class Controller implements Initializable {
             spectrumIndicator.translateXProperty().unbind();
             spectrumIndicator.translateYProperty().unbind();
         }
-
-        //r1.setStyle("-fx-fill: red;");
-        //r2.setStyle("-fx-fill: #00ff00;");
-        //r3.setStyle("-fx-fill: blue;");
 
         EventHandler<MouseEvent> spectrumMouseHandler =
                 new EventHandler<MouseEvent>() {
@@ -161,10 +75,6 @@ public class Controller implements Initializable {
 
         spectrumStackPane.setOnMousePressed(spectrumMouseHandler);
         spectrumStackPane.setOnMouseDragged(spectrumMouseHandler);
-
-        String fontPath = getClass().getClassLoader().getResource("fonts/Roboto-Bold.ttf").toExternalForm();
-        fontPath = fontPath.replaceAll("%20", " ");
-        Font.loadFont(fontPath, 10);
     }
 
     private int[] colorToRGB(Color color) {
@@ -181,16 +91,5 @@ public class Controller implements Initializable {
             throw new IllegalArgumentException();
         }
         (((StackPane) spectrumIndicators[indicator.ordinal()].getChildren().get(0)).getChildren().get(1)).setStyle("-fx-fill: rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ");");
-    }
-
-    @FXML
-    public void offButtonClicked() {
-        //
-        System.out.println("off");
-        if (offButton.selectedProperty().get()) {
-            powerIcon.setImage(powerIconImages[1]);
-        } else {
-            powerIcon.setImage(powerIconImages[0]);
-        }
     }
 }

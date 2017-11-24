@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 
 <VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.leytonblackler.chromolite.controller.Controller">
+      fx:controller="com.leytonblackler.chromolite.controller.MainController">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -36,162 +36,43 @@
         <ImageView fx:id="logo" preserveRatio="true"/>
     </HBox>
 
-    <!-- SPECTRUM IMAGE -->
-    <StackPane fx:id="spectrumStackPane">
-        <ImageView fx:id="spectrum" fitHeight="$SPECTRUM_HEIGHT" fitWidth="$WINDOW_WIDTH"/>
-        <Pane fx:id="primarySpectrumIndicator" translateX="${WINDOW_WIDTH / 6}" translateY="${SPECTRUM_HEIGHT / 2}">
-            <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
-                       translateY="${-SPECTRUM_INDICATOR_RADIUS}">
-                <Circle id="spectrum-circle-stroke" radius="$SPECTRUM_INDICATOR_RADIUS"/>
-                <Circle id="spectrum-circle-fill" radius="${SPECTRUM_INDICATOR_RADIUS - SPECTRUM_INDICATOR_STROKE}"
-                        translateX="$SPECTRUM_INDICATOR_STROKE" translateY="$SPECTRUM_INDICATOR_STROKE"/>
-                <Label id="spectrum-circle-label" text="P" translateX="${SPECTRUM_INDICATOR_RADIUS + 3}"
-                       translateY="${SPECTRUM_INDICATOR_RADIUS + 3}"/>
-            </StackPane>
-        </Pane>
-        <Pane fx:id="secondarySpectrumIndicator" translateX="${3 * (WINDOW_WIDTH / 6)}"
-              translateY="${SPECTRUM_HEIGHT / 2}">
-            <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
-                       translateY="${-SPECTRUM_INDICATOR_RADIUS}">
-                <Circle id="spectrum-circle-stroke" radius="$SPECTRUM_INDICATOR_RADIUS"/>
-                <Circle id="spectrum-circle-fill" radius="${SPECTRUM_INDICATOR_RADIUS - SPECTRUM_INDICATOR_STROKE}"
-                        translateX="$SPECTRUM_INDICATOR_STROKE" translateY="$SPECTRUM_INDICATOR_STROKE"/>
-                <Label id="spectrum-circle-label" text="S" translateX="${SPECTRUM_INDICATOR_RADIUS + 3}"
-                       translateY="${SPECTRUM_INDICATOR_RADIUS + 3}"/>
-            </StackPane>
-        </Pane>
-        <Pane fx:id="tertiarySpectrumIndicator" translateX="${5 * (WINDOW_WIDTH / 6)}"
-              translateY="${SPECTRUM_HEIGHT / 2}">
-            <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
-                       translateY="${-SPECTRUM_INDICATOR_RADIUS}">
-                <Circle id="spectrum-circle-stroke" radius="$SPECTRUM_INDICATOR_RADIUS"/>
-                <Circle id="spectrum-circle-fill" radius="${SPECTRUM_INDICATOR_RADIUS - SPECTRUM_INDICATOR_STROKE}"
-                        translateX="$SPECTRUM_INDICATOR_STROKE" translateY="$SPECTRUM_INDICATOR_STROKE"/>
-                <Label id="spectrum-circle-label" text="T" translateX="${SPECTRUM_INDICATOR_RADIUS + 3}"
-                       translateY="${SPECTRUM_INDICATOR_RADIUS + 3}"/>
-            </StackPane>
-        </Pane>
-    </StackPane>
-
-    <!--<ImageView fx:id="spectrumBase" fitWidth="$WINDOW_WIDTH" fitHeight="${PADDING/2}"/>-->
+    <!-- SPECTRUM -->
+    <Pane fx:id="spectrumPane"/>
 
     <VBox spacing="$PADDING">
         <padding>
-            <Insets top="$PADDING" right="$PADDING" bottom="$PADDING" left="$PADDING"/>
+            <Insets top="0" right="$PADDING" bottom="$PADDING" left="$PADDING"/>
         </padding>
 
-        <GridPane alignment="center" hgap="$PADDING" vgap="$PADDING">
-            <ToggleButton id="primary-button" prefHeight="$PADDING"
-                          prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="PRIMARY" GridPane.columnIndex="0"
-                          GridPane.rowIndex="0"/>
-            <ToggleButton id="secondary-button" prefHeight="$PADDING"
-                          prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="SECONDARY" GridPane.columnIndex="1"
-                          GridPane.rowIndex="0"/>
-            <ToggleButton id="tertiary-button" prefHeight="$PADDING"
-                          prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="TERTIARY" GridPane.columnIndex="2"
-                          GridPane.rowIndex="0"/>
-        </GridPane>
+        <!-- COLOUR BUTTONS SECTION -->
+        <HBox alignment="CENTER_LEFT">
+            <Label text="COLOURS" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <Pane fx:id="colourButtonsPane"/>
 
+        <!-- MODE SECTION -->
         <HBox alignment="CENTER_LEFT">
             <Label text="MODES" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="modesPane"/>
 
+        <!-- MODE SETTINGS SECTION -->
         <HBox alignment="CENTER_LEFT">
             <Label text="MODE SETTINGS" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="modeSettingsPane"/>
 
+        <!-- GENERAL OPTIONS SECTION -->
         <HBox alignment="CENTER_LEFT">
             <Label text="GENERAL OPTIONS" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="generalOptionsPane"/>
 
+        <!-- ANDROID APP CONNECTION -->
         <HBox alignment="CENTER_LEFT">
             <Label text="ANDROID APP CONNECTION" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="appConnectPane"/>
-
-        <GridPane alignment="CENTER_LEFT" hgap="$PADDING" vgap="$PADDING">
-
-            <!-- FIRST ROW MODE OPTIONS -->
-
-            <!--<HBox spacing="$PADDING/2" GridPane.columnIndex="0" GridPane.rowIndex="1"
-                  maxWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" translateY="${-PADDING/2}">
-                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="$WINDOW_WIDTH"
-                              text="."/>
-                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="$WINDOW_WIDTH"
-                              text="."/>
-                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="$WINDOW_WIDTH"
-                              text="."/>
-            </HBox>
-
-            <HBox spacing="$PADDING/2" GridPane.columnIndex="1" GridPane.rowIndex="1"
-                  maxWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" translateY="${-PADDING/2}">
-                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="${(WINDOW_WIDTH - (7 * PADDING)) / 8}"
-                              text="L"/>
-                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="${(WINDOW_WIDTH - (7 * PADDING)) / 8}"
-                              text="R"/>
-            </HBox> -->
-
-
-
-            <!--<ToggleButton fx:id="offButton" onAction="#offButtonClicked" prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                <graphic>
-                    <ImageView fx:id="powerIcon"/>
-                </graphic>
-            </ToggleButton>-->
-            <!--<ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="N/A" GridPane.columnIndex="3" GridPane.rowIndex="1" disable="true"/>-->
-
-            <!--<ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 2) + PADDING}"
-                          text="TOGGLE BLUE LED" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>-->
-
-            <!-- RAZER CHROMA BUTTON -->
-            <!--<ToggleButton fx:id="razerButton" onAction="#razerButtonClicked" prefHeight="${PADDING * 2.5}"
-                          prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="2"
-                          GridPane.rowIndex="3">
-                <graphic>
-                    <ImageView fx:id="razerLogo" translateX="-1"/>
-                </graphic>
-            </ToggleButton>-->
-
-            <!--<ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 2) + PADDING}"
-                          text="OFF" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2"/>-->
-        </GridPane>
     </VBox>
 
 </VBox>
-
-
-        <!--<graphic>
-                        <GridPane alignment="CENTER">
-                            <columnConstraints>
-                                <ColumnConstraints/>
-                                <ColumnConstraints halignment="CENTER" prefWidth="100.0"/>
-                                <ColumnConstraints halignment="RIGHT"/>
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                                <RowConstraints valignment="BOTTOM" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
-                            </rowConstraints>
-
-                            <Label id="button-text" text=" " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                            <Label id="button-text" text=" " GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                            <Label id="button-text" text="1" translateX="2" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-
-                            <Label id="button-text" text=" " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                            <Label id="button-text" text="STATIC" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                            <Label id="button-text" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-
-                            <Rectangle fx:id="r1" translateY="5" translateX="-6" height="$BUTTON_COLOURS_HEIGHT"
-                                       width="$BUTTON_COLOURS_WIDTH" arcWidth="$BUTTON_COLOURS_ARC_SIZE"
-                                       arcHeight="$BUTTON_COLOURS_ARC_SIZE" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                            <Rectangle fx:id="r2" translateY="5" height="$BUTTON_COLOURS_HEIGHT" width="$BUTTON_COLOURS_WIDTH"
-                                       arcWidth="$BUTTON_COLOURS_ARC_SIZE" arcHeight="$BUTTON_COLOURS_ARC_SIZE"
-                                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                            <Rectangle fx:id="r3" translateY="5" translateX="6" height="$BUTTON_COLOURS_HEIGHT"
-                                       width="$BUTTON_COLOURS_WIDTH" arcWidth="$BUTTON_COLOURS_ARC_SIZE"
-                                       arcHeight="$BUTTON_COLOURS_ARC_SIZE" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                        </GridPane>
-                    </graphic>-->
