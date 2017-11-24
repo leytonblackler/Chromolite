@@ -73,19 +73,21 @@
         </Pane>
     </StackPane>
 
+    <!--<ImageView fx:id="spectrumBase" fitWidth="$WINDOW_WIDTH" fitHeight="${PADDING/2}"/>-->
+
     <VBox spacing="$PADDING">
         <padding>
             <Insets top="$PADDING" right="$PADDING" bottom="$PADDING" left="$PADDING"/>
         </padding>
 
         <GridPane alignment="center" hgap="$PADDING" vgap="$PADDING">
-            <ToggleButton id="primary-button" disable="false" prefHeight="$PADDING"
+            <ToggleButton id="primary-button" prefHeight="$PADDING"
                           prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="PRIMARY" GridPane.columnIndex="0"
                           GridPane.rowIndex="0"/>
-            <ToggleButton id="secondary-button" disable="true" prefHeight="$PADDING"
+            <ToggleButton id="secondary-button" prefHeight="$PADDING"
                           prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="SECONDARY" GridPane.columnIndex="1"
                           GridPane.rowIndex="0"/>
-            <ToggleButton id="tertiary-button" disable="true" prefHeight="$PADDING"
+            <ToggleButton id="tertiary-button" prefHeight="$PADDING"
                           prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="TERTIARY" GridPane.columnIndex="2"
                           GridPane.rowIndex="0"/>
         </GridPane>
@@ -99,6 +101,16 @@
             <Label text="MODE SETTINGS" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="modeSettingsPane"/>
+
+        <HBox alignment="CENTER_LEFT">
+            <Label text="GENERAL OPTIONS" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <Pane fx:id="generalOptionsPane"/>
+
+        <HBox alignment="CENTER_LEFT">
+            <Label text="ANDROID APP CONNECTION" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <Pane fx:id="appConnectPane"/>
 
         <GridPane alignment="CENTER_LEFT" hgap="$PADDING" vgap="$PADDING">
 
@@ -122,17 +134,7 @@
                               text="R"/>
             </HBox> -->
 
-            <!-- APP CONNECT RADIO BUTTONS -->
-            <!--<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
-                <VBox alignment="CENTER" spacing="5">
-                    <ImageView fx:id="networkIcon" preserveRatio="true" translateX="-5"/>
-                    <ImageView fx:id="bluetoothIcon" preserveRatio="true" translateX="-5"/>
-                </VBox>
-                <VBox alignment="CENTER_LEFT" spacing="5">
-                    <RadioButton text="LOCAL NETWORK" selected="true"/>
-                    <RadioButton text="BLUETOOTH" selected="false"/>
-                </VBox>
-            </HBox>-->
+
 
             <!--<ToggleButton fx:id="offButton" onAction="#offButtonClicked" prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="3" GridPane.rowIndex="2">
                 <graphic>

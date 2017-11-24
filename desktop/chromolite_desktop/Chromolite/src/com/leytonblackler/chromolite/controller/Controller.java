@@ -34,20 +34,19 @@ public class Controller implements Initializable {
     private Pane modeSettingsPane;
 
     @FXML
+    private Pane generalOptionsPane;
+
+    @FXML
+    private Pane appConnectPane;
+
+    @FXML
     public ImageView logo;
 
     @FXML
     public ImageView spectrum;
 
-    @FXML
-    public ImageView networkIcon;
-
-    @FXML
-    public ImageView bluetoothIcon;
-
-    @FXML
-    public ImageView razerLogo;
-    private Image[] razerLogoImages = new Image[2];
+    //@FXML
+    //public ImageView spectrumBase;
 
     @FXML
     public ImageView powerIcon;
@@ -76,8 +75,6 @@ public class Controller implements Initializable {
     @FXML
     private StackPane spectrumStackPane;
 
-    private boolean mouseOverSpectrum = false;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -89,6 +86,14 @@ public class Controller implements Initializable {
             Node staticSettings = FXMLLoader.load(getClass().getClassLoader().getResource("view/settings/WaveSettings.fxml"));
             modeSettingsPane.getChildren().clear();
             modeSettingsPane.getChildren().add(staticSettings);
+
+            Node generalOptions = FXMLLoader.load(getClass().getClassLoader().getResource("view/GeneralOptions.fxml"));
+            generalOptionsPane.getChildren().clear();
+            generalOptionsPane.getChildren().add(generalOptions);
+
+            Node appConnect = FXMLLoader.load(getClass().getClassLoader().getResource("view/AppConnect.fxml"));
+            appConnectPane.getChildren().clear();
+            appConnectPane.getChildren().add(appConnect);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -98,9 +103,8 @@ public class Controller implements Initializable {
         Image spectrumImage = new Image(getClass().getClassLoader().getResource("images/spectrum.png").toExternalForm(), spectrum.getFitWidth(), spectrum.getFitHeight(), false, true);
         spectrum.setImage(spectrumImage);
 
-        //razerLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/razer_logo_light.png").toExternalForm());
-        //razerLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/razer_logo_dark.png").toExternalForm());
-        //razerLogo.setImage(razerLogoImages[0]);
+        //Image spectrumBaseImage = new Image(getClass().getClassLoader().getResource("images/spectrum_base.png").toExternalForm(), spectrum.getFitWidth(), spectrum.getFitHeight(), false, true);
+        //spectrumBase.setImage(spectrumBaseImage);
 
         //networkIcon.setImage(new Image(getClass().getClassLoader().getResource("images/network_icon.png").toExternalForm()));
         //bluetoothIcon.setImage(new Image(getClass().getClassLoader().getResource("images/bluetooth_icon.png").toExternalForm()));
@@ -177,17 +181,6 @@ public class Controller implements Initializable {
             throw new IllegalArgumentException();
         }
         (((StackPane) spectrumIndicators[indicator.ordinal()].getChildren().get(0)).getChildren().get(1)).setStyle("-fx-fill: rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ");");
-    }
-
-    @FXML
-    public void razerButtonClicked() {
-        //
-        System.out.println("razer");
-        if (razerButton.selectedProperty().get()) {
-            razerLogo.setImage(razerLogoImages[1]);
-        } else {
-            razerLogo.setImage(razerLogoImages[0]);
-        }
     }
 
     @FXML
