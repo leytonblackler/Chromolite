@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<Pane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controller.settings.StaticSettingsController">
+
+    <!-- CONSTANTS -->
+    <fx:define>
+        <Double fx:id="WINDOW_WIDTH" fx:value="560"/>
+        <Double fx:id="WINDOW_HEIGHT" fx:value="750"/>
+        <Double fx:id="HEADER_HEIGHT" fx:value="30"/>
+        <Double fx:id="SPECTRUM_HEIGHT" fx:value="335"/>
+        <Double fx:id="PADDING" fx:value="15"/>
+        <Double fx:id="BUTTON_COLOURS_ARC_SIZE" fx:value="8"/>
+        <Double fx:id="BUTTON_COLOURS_HEIGHT" fx:value="3"/>
+        <Double fx:id="BUTTON_COLOURS_WIDTH" fx:value="35"/>
+
+        <Double fx:id="SPECTRUM_INDICATOR_RADIUS" fx:value="5"/>
+        <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
+    </fx:define>
+
+
+
+</Pane>

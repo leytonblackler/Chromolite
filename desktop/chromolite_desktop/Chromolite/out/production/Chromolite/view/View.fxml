@@ -8,16 +8,11 @@
 <?import javafx.geometry.Insets?>
 <?import java.lang.Double?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.layout.Pane?>
 
-<?import javafx.scene.control.RadioButton?>
 <VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.leytonblackler.chromolite.controller.Controller">
 
@@ -26,7 +21,7 @@
         <Double fx:id="WINDOW_WIDTH" fx:value="560"/>
         <Double fx:id="WINDOW_HEIGHT" fx:value="750"/>
         <Double fx:id="HEADER_HEIGHT" fx:value="30"/>
-        <Double fx:id="SPECTRUM_HEIGHT" fx:value="335"/>
+        <Double fx:id="SPECTRUM_HEIGHT" fx:value="250"/>
         <Double fx:id="PADDING" fx:value="15"/>
         <Double fx:id="BUTTON_COLOURS_ARC_SIZE" fx:value="8"/>
         <Double fx:id="BUTTON_COLOURS_HEIGHT" fx:value="3"/>
@@ -78,134 +73,123 @@
         </Pane>
     </StackPane>
 
-    <GridPane alignment="center" hgap="$PADDING" vgap="$PADDING">
+    <VBox spacing="$PADDING">
         <padding>
-            <Insets top="$PADDING" right="0" bottom="0" left="0"/>
+            <Insets top="$PADDING" right="$PADDING" bottom="$PADDING" left="$PADDING"/>
         </padding>
 
-        <ToggleButton id="primary-button" disable="false" prefHeight="$PADDING"
-                      prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="PRIMARY" GridPane.columnIndex="0"
-                      GridPane.rowIndex="0"/>
-        <ToggleButton id="secondary-button" disable="true" prefHeight="$PADDING"
-                      prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="SECONDARY" GridPane.columnIndex="1"
-                      GridPane.rowIndex="0"/>
-        <ToggleButton id="tertiary-button" disable="true" prefHeight="$PADDING"
-                      prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="TERTIARY" GridPane.columnIndex="2"
-                      GridPane.rowIndex="0"/>
-    </GridPane>
+        <GridPane alignment="center" hgap="$PADDING" vgap="$PADDING">
+            <ToggleButton id="primary-button" disable="false" prefHeight="$PADDING"
+                          prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="PRIMARY" GridPane.columnIndex="0"
+                          GridPane.rowIndex="0"/>
+            <ToggleButton id="secondary-button" disable="true" prefHeight="$PADDING"
+                          prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="SECONDARY" GridPane.columnIndex="1"
+                          GridPane.rowIndex="0"/>
+            <ToggleButton id="tertiary-button" disable="true" prefHeight="$PADDING"
+                          prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="TERTIARY" GridPane.columnIndex="2"
+                          GridPane.rowIndex="0"/>
+        </GridPane>
 
-    <GridPane alignment="center" hgap="$PADDING" vgap="$PADDING">
-        <padding>
-            <Insets top="$PADDING" right="0" bottom="0" left="0"/>
-        </padding>
+        <HBox alignment="CENTER_LEFT">
+            <Label text="MODES" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <Pane fx:id="modesPane"/>
 
-        <ToggleButton fx:id="staticButton" onAction="#staticButtonClicked" prefHeight="${PADDING * 3}"
-                      prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <graphic>
-                <GridPane alignment="CENTER">
-                    <columnConstraints>
-                        <ColumnConstraints/>
-                        <ColumnConstraints halignment="CENTER" prefWidth="100.0"/>
-                        <ColumnConstraints halignment="RIGHT"/>
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                        <RowConstraints valignment="BOTTOM" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
-                    </rowConstraints>
+        <HBox alignment="CENTER_LEFT">
+            <Label text="MODE SETTINGS" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <Pane fx:id="modeSettingsPane"/>
 
-                    <Label id="button-text" text=" " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                    <Label id="button-text" text=" " GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-                    <Label id="button-text" text="1" translateX="2" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <GridPane alignment="CENTER_LEFT" hgap="$PADDING" vgap="$PADDING">
 
-                    <Label id="button-text" text=" " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                    <Label id="button-text" text="STATIC" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                    <Label id="button-text" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <!-- FIRST ROW MODE OPTIONS -->
 
-                    <Rectangle fx:id="r1" translateY="5" translateX="-6" height="$BUTTON_COLOURS_HEIGHT"
-                               width="$BUTTON_COLOURS_WIDTH" arcWidth="$BUTTON_COLOURS_ARC_SIZE"
-                               arcHeight="$BUTTON_COLOURS_ARC_SIZE" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                    <Rectangle fx:id="r2" translateY="5" height="$BUTTON_COLOURS_HEIGHT" width="$BUTTON_COLOURS_WIDTH"
-                               arcWidth="$BUTTON_COLOURS_ARC_SIZE" arcHeight="$BUTTON_COLOURS_ARC_SIZE"
-                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                    <Rectangle fx:id="r3" translateY="5" translateX="6" height="$BUTTON_COLOURS_HEIGHT"
-                               width="$BUTTON_COLOURS_WIDTH" arcWidth="$BUTTON_COLOURS_ARC_SIZE"
-                               arcHeight="$BUTTON_COLOURS_ARC_SIZE" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                </GridPane>
-            </graphic>
-        </ToggleButton>
-        <!--
-        <ToggleButton prefHeight="${PADDING * 2}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" GridPane.columnIndex="0" GridPane.rowIndex="0">
-            <GridPane>
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="1"/>
-                <Label GridPane.columnIndex="1" GridPane.rowIndex="0" text="2"/>
-                <Label GridPane.columnIndex="2" GridPane.rowIndex="0" text="3"/>
-
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="4"/>
-                <Label GridPane.columnIndex="1" GridPane.rowIndex="1" text="5"/>
-                <Label GridPane.columnIndex="2" GridPane.rowIndex="1" text="6"/>
-
-                <Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="7"/>
-                <Label GridPane.columnIndex="1" GridPane.rowIndex="2" text="8"/>
-                <Label GridPane.columnIndex="2" GridPane.rowIndex="2" text="9"/>
-            </GridPane>
-        </ToggleButton>
-        -->
-        <ToggleButton fx:id="randomButton" onAction="#randomButtonClicked" prefHeight="${PADDING * 3}"
-                      prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="RANDOM" GridPane.columnIndex="1"
-                      GridPane.rowIndex="0"/>
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="WAVE"
-                      GridPane.columnIndex="2" GridPane.rowIndex="0"/>
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="MUSIC"
-                      GridPane.columnIndex="3" GridPane.rowIndex="0"/>
-
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="SPECTRUM"
-                      GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="STROBE"
-                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="SCAN"
-                      GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-
-        <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked" prefHeight="${PADDING * 3}"
-                      prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="0"
-                      GridPane.rowIndex="2">
-            <graphic>
-                <ImageView fx:id="razerLogo" translateX="-1"/>
-            </graphic>
-        </ToggleButton>
-
-        <VBox prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" GridPane.columnIndex="0"
-              GridPane.rowIndex="4" alignment="CENTER" spacing="5">
-            <HBox alignment="CENTER" spacing="5">
-                <Label text="SPEED"/>
-                <Label fx:id="speedPercent" text="50%"/>
+            <!--<HBox spacing="$PADDING/2" GridPane.columnIndex="0" GridPane.rowIndex="1"
+                  maxWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" translateY="${-PADDING/2}">
+                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="$WINDOW_WIDTH"
+                              text="."/>
+                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="$WINDOW_WIDTH"
+                              text="."/>
+                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="$WINDOW_WIDTH"
+                              text="."/>
             </HBox>
-            <Slider fx:id="speedSlider"/>
-        </VBox>
 
-        <!-- APP CONNECT RADIO BUTTONS -->
-        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
-            <VBox alignment="CENTER" spacing="5">
-                <ImageView fx:id="networkIcon" preserveRatio="true" translateX="-5"/>
-                <ImageView fx:id="bluetoothIcon" preserveRatio="true" translateX="-5"/>
-            </VBox>
-            <VBox alignment="CENTER_LEFT" spacing="5">
+            <HBox spacing="$PADDING/2" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                  maxWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" translateY="${-PADDING/2}">
+                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="${(WINDOW_WIDTH - (7 * PADDING)) / 8}"
+                              text="L"/>
+                <ToggleButton prefHeight="${PADDING * 2}" prefWidth="${(WINDOW_WIDTH - (7 * PADDING)) / 8}"
+                              text="R"/>
+            </HBox> -->
+
+            <!-- APP CONNECT RADIO BUTTONS -->
+            <!--<HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <VBox alignment="CENTER" spacing="5">
+                    <ImageView fx:id="networkIcon" preserveRatio="true" translateX="-5"/>
+                    <ImageView fx:id="bluetoothIcon" preserveRatio="true" translateX="-5"/>
+                </VBox>
+                <VBox alignment="CENTER_LEFT" spacing="5">
                     <RadioButton text="LOCAL NETWORK" selected="true"/>
                     <RadioButton text="BLUETOOTH" selected="false"/>
-            </VBox>
-        </HBox>
+                </VBox>
+            </HBox>-->
 
-        <!--<ToggleButton fx:id="offButton" onAction="#offButtonClicked" prefHeight="${PADDING * 3}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="3" GridPane.rowIndex="2">
-            <graphic>
-                <ImageView fx:id="powerIcon"/>
-            </graphic>
-        </ToggleButton>-->
-        <!--<ToggleButton prefHeight="${PADDING * 3}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="N/A" GridPane.columnIndex="3" GridPane.rowIndex="1" disable="true"/>-->
+            <!--<ToggleButton fx:id="offButton" onAction="#offButtonClicked" prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                <graphic>
+                    <ImageView fx:id="powerIcon"/>
+                </graphic>
+            </ToggleButton>-->
+            <!--<ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}" text="N/A" GridPane.columnIndex="3" GridPane.rowIndex="1" disable="true"/>-->
 
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 2) + PADDING}"
-                      text="TOGGLE BLUE LED" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
-        <ToggleButton prefHeight="${PADDING * 3}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 2) + PADDING}"
-                      text="OFF" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
-    </GridPane>
+            <!--<ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 2) + PADDING}"
+                          text="TOGGLE BLUE LED" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2"/>-->
+
+            <!-- RAZER CHROMA BUTTON -->
+            <!--<ToggleButton fx:id="razerButton" onAction="#razerButtonClicked" prefHeight="${PADDING * 2.5}"
+                          prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 4) / 2}" GridPane.columnIndex="2"
+                          GridPane.rowIndex="3">
+                <graphic>
+                    <ImageView fx:id="razerLogo" translateX="-1"/>
+                </graphic>
+            </ToggleButton>-->
+
+            <!--<ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${((WINDOW_WIDTH - (5 * PADDING)) / 2) + PADDING}"
+                          text="OFF" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2"/>-->
+        </GridPane>
+    </VBox>
 
 </VBox>
+
+
+        <!--<graphic>
+                        <GridPane alignment="CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints/>
+                                <ColumnConstraints halignment="CENTER" prefWidth="100.0"/>
+                                <ColumnConstraints halignment="RIGHT"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints valignment="BOTTOM" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES"/>
+                            </rowConstraints>
+
+                            <Label id="button-text" text=" " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                            <Label id="button-text" text=" " GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                            <Label id="button-text" text="1" translateX="2" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+                            <Label id="button-text" text=" " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                            <Label id="button-text" text="STATIC" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                            <Label id="button-text" text=" " GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+                            <Rectangle fx:id="r1" translateY="5" translateX="-6" height="$BUTTON_COLOURS_HEIGHT"
+                                       width="$BUTTON_COLOURS_WIDTH" arcWidth="$BUTTON_COLOURS_ARC_SIZE"
+                                       arcHeight="$BUTTON_COLOURS_ARC_SIZE" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                            <Rectangle fx:id="r2" translateY="5" height="$BUTTON_COLOURS_HEIGHT" width="$BUTTON_COLOURS_WIDTH"
+                                       arcWidth="$BUTTON_COLOURS_ARC_SIZE" arcHeight="$BUTTON_COLOURS_ARC_SIZE"
+                                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                            <Rectangle fx:id="r3" translateY="5" translateX="6" height="$BUTTON_COLOURS_HEIGHT"
+                                       width="$BUTTON_COLOURS_WIDTH" arcWidth="$BUTTON_COLOURS_ARC_SIZE"
+                                       arcHeight="$BUTTON_COLOURS_ARC_SIZE" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                        </GridPane>
+                    </graphic>-->

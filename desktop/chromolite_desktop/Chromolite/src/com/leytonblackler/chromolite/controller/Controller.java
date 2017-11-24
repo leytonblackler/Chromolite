@@ -4,7 +4,9 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.ToggleButton;
@@ -19,10 +21,17 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.shape.Rectangle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    @FXML
+    private Pane modesPane;
+
+    @FXML
+    private Pane modeSettingsPane;
 
     @FXML
     public ImageView logo;
@@ -60,18 +69,6 @@ public class Controller implements Initializable {
     private ToggleButton offButton;
 
     @FXML
-    private ToggleButton staticButton;
-
-    @FXML
-    private ToggleButton randomButton;
-
-    @FXML
-    private Slider speedSlider;
-
-    @FXML
-    private Label speedPercent;
-
-    @FXML
     private Pane primarySpectrumIndicator, secondarySpectrumIndicator, tertiarySpectrumIndicator;
     private Pane[] spectrumIndicators = new Pane[3];
     private enum SpectrumIndicator { PRIMARY, SECONDARY, TERTIARY }
@@ -83,17 +80,30 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        try {
+            Node modes = FXMLLoader.load(getClass().getClassLoader().getResource("view/Modes.fxml"));
+            modesPane.getChildren().clear();
+            modesPane.getChildren().add(modes);
+
+            Node staticSettings = FXMLLoader.load(getClass().getClassLoader().getResource("view/settings/WaveSettings.fxml"));
+            modeSettingsPane.getChildren().clear();
+            modeSettingsPane.getChildren().add(staticSettings);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         logo.setImage(new Image(getClass().getClassLoader().getResource("images/logo.png").toExternalForm()));
 
         Image spectrumImage = new Image(getClass().getClassLoader().getResource("images/spectrum.png").toExternalForm(), spectrum.getFitWidth(), spectrum.getFitHeight(), false, true);
         spectrum.setImage(spectrumImage);
 
-        razerLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/razer_logo_light.png").toExternalForm());
-        razerLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/razer_logo_dark.png").toExternalForm());
-        razerLogo.setImage(razerLogoImages[0]);
+        //razerLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/razer_logo_light.png").toExternalForm());
+        //razerLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/razer_logo_dark.png").toExternalForm());
+        //razerLogo.setImage(razerLogoImages[0]);
 
-        networkIcon.setImage(new Image(getClass().getClassLoader().getResource("images/network_icon.png").toExternalForm()));
-        bluetoothIcon.setImage(new Image(getClass().getClassLoader().getResource("images/bluetooth_icon.png").toExternalForm()));
+        //networkIcon.setImage(new Image(getClass().getClassLoader().getResource("images/network_icon.png").toExternalForm()));
+        //bluetoothIcon.setImage(new Image(getClass().getClassLoader().getResource("images/bluetooth_icon.png").toExternalForm()));
 
         //powerIconImages[0] = new Image(getClass().getClassLoader().getResource("images/power_icon_light.png").toExternalForm());
         //powerIconImages[1] = new Image(getClass().getClassLoader().getResource("images/power_icon_dark.png").toExternalForm());
@@ -108,19 +118,9 @@ public class Controller implements Initializable {
             spectrumIndicator.translateYProperty().unbind();
         }
 
-        r1.setStyle("-fx-fill: red;");
-        r2.setStyle("-fx-fill: #00ff00;");
-        r3.setStyle("-fx-fill: blue;");
-
-        speedSlider.setValue(50);
-        speedSlider.valueProperty().addListener(new ChangeListener<Number>() {
-            public void changed(ObservableValue<? extends Number> ov,
-                                Number old_val, Number new_val) {
-                Long percentValue = Math.round(new_val.doubleValue());
-                String percentString = Long.toString(percentValue) + "%";
-                speedPercent.setText(percentString);
-            }
-        });
+        //r1.setStyle("-fx-fill: red;");
+        //r2.setStyle("-fx-fill: #00ff00;");
+        //r3.setStyle("-fx-fill: blue;");
 
         EventHandler<MouseEvent> spectrumMouseHandler =
                 new EventHandler<MouseEvent>() {
@@ -177,21 +177,6 @@ public class Controller implements Initializable {
             throw new IllegalArgumentException();
         }
         (((StackPane) spectrumIndicators[indicator.ordinal()].getChildren().get(0)).getChildren().get(1)).setStyle("-fx-fill: rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ");");
-    }
-
-    @FXML
-    public void staticButtonClicked() {
-        System.out.println("static");
-        staticButton.setSelected(true);
-        randomButton.setSelected(false);
-    }
-
-    @FXML
-    public void randomButtonClicked() {
-        //
-        System.out.println("random");
-        randomButton.setSelected(true);
-        staticButton.setSelected(false);
     }
 
     @FXML

@@ -19,6 +19,10 @@
     -fx-text-fill: #bcc4cc;
 }
 
+#section-title-label {
+    -fx-font-size: 8pt;
+}
+
 #spectrum-circle-label {
     -fx-font-size: 7pt;
     -fx-text-fill: #253447;
@@ -49,6 +53,46 @@
     -fx-background-radius: 0.25em, 0.25em, 0.166667em; /* 3 3 2 */
 }
 
+.choice-box {
+    -fx-background-color:
+            -fx-shadow-highlight-color,
+            -fx-outer-border,
+            -fx-inner-border,
+            -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
+
+    -fx-text-fill: #bcc4cc;
+    -fx-background-color: #253447;
+    -fx-mark-color: #bcc4cc;
+    -fx-font-family: Roboto;
+    -fx-font-size: 7pt;
+}
+
+.choice-box:hover {
+    -fx-background-color: #2c3b4f;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #2c3b4f;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: #03a9f4;
+    -fx-focused-mark-color: #2c3b4f;
+    -fx-background-radius: 2px, 2px, 2px, 2px;
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: #bcc4cc;
+}
+
+.choice-box .menu-item:focused > .label {
+    -fx-text-fill: #2c3b4f;
+}
+
 .toggle-button {
     -fx-background-color:
             -fx-shadow-highlight-color,
@@ -56,7 +100,7 @@
             -fx-inner-border,
             -fx-body-color;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
 
     -fx-text-fill: #bcc4cc;
     -fx-background-color: #253447;
@@ -70,6 +114,9 @@
 
 .toggle-button:pressed {
     -fx-background-color: #253447;
+    -fx-border-radius: 3px, 3px, 3px, 3px;
+    -fx-border-color: #03a9f4;
+    -fx-border-width: 1;
 }
 
 .toggle-button:selected {
