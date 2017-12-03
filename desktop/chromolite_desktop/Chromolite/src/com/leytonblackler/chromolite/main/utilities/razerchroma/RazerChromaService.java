@@ -1,4 +1,4 @@
-package com.leytonblackler.chromolite.razerchroma;
+package com.leytonblackler.chromolite.main.utilities.razerchroma;
 
 import org.apache.commons.io.FileUtils;
 

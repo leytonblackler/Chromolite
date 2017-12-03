@@ -64,7 +64,7 @@
 
             <Label text="SYNC WITH RAZER"/>
             <HBox alignment="CENTER">
-                <CheckBox fx:id="syncWithRazerCheckbox"/>
+                <CheckBox fx:id="syncWithRazerCheckBox" selected="true"/>
             </HBox>
         </VBox>
 

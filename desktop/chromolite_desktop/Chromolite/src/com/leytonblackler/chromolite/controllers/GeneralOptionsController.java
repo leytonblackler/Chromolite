@@ -1,5 +1,6 @@
-package com.leytonblackler.chromolite.controller;
+package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
@@ -9,7 +10,7 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GeneralOptionsController implements Initializable {
+public class GeneralOptionsController implements Controller, Initializable {
 
     @FXML
     private ToggleButton saveButton;
@@ -32,6 +33,11 @@ public class GeneralOptionsController implements Initializable {
         razerLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/razer_logo_light.png").toExternalForm());
         razerLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/razer_logo_dark.png").toExternalForm());
         razerLogo.setImage(razerLogoImages[0]);
+    }
+
+    @Override
+    public void update(Settings settings) {
+        //
     }
 
     @FXML

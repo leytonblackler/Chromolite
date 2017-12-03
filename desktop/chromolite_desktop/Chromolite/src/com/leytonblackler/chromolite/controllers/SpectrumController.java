@@ -1,5 +1,6 @@
-package com.leytonblackler.chromolite.controller;
+package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +14,7 @@ import javafx.scene.paint.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SpectrumController implements Initializable {
+public class SpectrumController implements Controller, Initializable {
 
     @FXML
     public ImageView spectrum;
@@ -21,6 +22,7 @@ public class SpectrumController implements Initializable {
     @FXML
     private Pane primarySpectrumIndicator, secondarySpectrumIndicator, tertiarySpectrumIndicator;
     private Pane[] spectrumIndicators = new Pane[3];
+
     private enum SpectrumIndicator { PRIMARY, SECONDARY, TERTIARY }
 
     @FXML
@@ -75,6 +77,11 @@ public class SpectrumController implements Initializable {
 
         spectrumStackPane.setOnMousePressed(spectrumMouseHandler);
         spectrumStackPane.setOnMouseDragged(spectrumMouseHandler);
+    }
+
+    @Override
+    public void update(Settings settings) {
+        //
     }
 
     private int[] colorToRGB(Color color) {

@@ -73,6 +73,10 @@
     -fx-background-color: #2c3b4f;
 }
 
+.choice-box:pressed {
+    -fx-background-color: #253447;
+}
+
 .choice-box .context-menu {
     -fx-background-color: #2c3b4f;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
@@ -106,6 +110,10 @@
 
 .check-box .box:hover {
     -fx-background-color: #2c3b4f;
+}
+
+.check-box .box:pressed {
+    -fx-background-color: #253447;
 }
 
 .check-box:selected .mark {

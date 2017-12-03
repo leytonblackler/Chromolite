@@ -8,7 +8,7 @@
 
 <Pane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.leytonblackler.chromolite.controller.settings.CycleSettingsController">
+            fx:controller="com.leytonblackler.chromolite.controllers.settings.CycleSettingsController">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -64,7 +64,7 @@
 
             <Label text="SYNC WITH RAZER"/>
             <HBox alignment="CENTER">
-                <CheckBox fx:id="syncWithRazerCheckbox"/>
+                <CheckBox fx:id="syncWithRazerCheckBox" selected="true"/>
             </HBox>
         </VBox>
 

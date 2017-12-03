@@ -1,33 +1,26 @@
-package com.leytonblackler.chromolite.controller.settings;
+package com.leytonblackler.chromolite.controllers.settings;
 
+import com.leytonblackler.chromolite.controllers.Controller;
+import com.leytonblackler.chromolite.main.Chromolite;
+import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
 import java.util.ResourceBundle;
 
-public class WaveSettingsController implements Initializable {
+public class CycleSettingsController implements Controller, Initializable {
 
     private static final int DEFAULT_BRIGHTNESS = 100;
     private static final int DEFAULT_SPEED = 50;
-
-    private enum Directions {
-        LEFT,
-        RIGHT,
-        CENTRE
-    }
 
     private enum NumberOfColours {
         TWO,
@@ -51,21 +44,21 @@ public class WaveSettingsController implements Initializable {
     private ChoiceBox<String> numberOfColoursChoiceBox;
 
     @FXML
-    private ChoiceBox<String> directionChoiceBox;
+    private CheckBox syncWithRazerCheckBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         initialiseChoiceBox(numberOfColoursChoiceBox, NumberOfColours.values(), NumberOfColours.RAINBOW);
 
-        initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
+        //initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
 
         brightnessSlider.setValue(DEFAULT_BRIGHTNESS);
         brightnessPercentLabel.setText(Integer.toString(DEFAULT_BRIGHTNESS) + "%");
         brightnessSlider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov,
                                 Number old_val, Number new_val) {
-                Long percentValue = Math.round(new_val.doubleValue());
+                int percentValue = (int) Math.round(new_val.doubleValue());
                 String percentString = Long.toString(percentValue) + "%";
                 brightnessPercentLabel.setText(percentString);
             }
@@ -76,11 +69,21 @@ public class WaveSettingsController implements Initializable {
         speedSlider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov,
                                 Number old_val, Number new_val) {
-                Long percentValue = Math.round(new_val.doubleValue());
+                int percentValue = (int) Math.round(new_val.doubleValue());
+                //Ensure that the percent value is not 0.
+                if (percentValue == 0) {
+                    percentValue = 1;
+                }
                 String percentString = Long.toString(percentValue) + "%";
                 speedPercentLabel.setText(percentString);
+                Chromolite.getInstance().getSettings().setSpeed(percentValue);
             }
         });
+    }
+
+    @Override
+    public void update(Settings settings) {
+        //
     }
 
     private void initialiseChoiceBox(ChoiceBox choiceBox, Enum[] choices, Enum defaultChoice) {

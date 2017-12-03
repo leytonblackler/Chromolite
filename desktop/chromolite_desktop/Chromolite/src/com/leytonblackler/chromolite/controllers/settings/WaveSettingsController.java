@@ -1,12 +1,13 @@
-package com.leytonblackler.chromolite.controller.settings;
+package com.leytonblackler.chromolite.controllers.settings;
 
+import com.leytonblackler.chromolite.controllers.Controller;
+import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -14,7 +15,7 @@ import javafx.scene.control.Slider;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CycleSettingsController implements Initializable {
+public class WaveSettingsController implements Controller, Initializable {
 
     private static final int DEFAULT_BRIGHTNESS = 100;
     private static final int DEFAULT_SPEED = 50;
@@ -47,14 +48,14 @@ public class CycleSettingsController implements Initializable {
     private ChoiceBox<String> numberOfColoursChoiceBox;
 
     @FXML
-    private CheckBox syncWithRazerCheckbox;
+    private ChoiceBox<String> directionChoiceBox;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         initialiseChoiceBox(numberOfColoursChoiceBox, NumberOfColours.values(), NumberOfColours.RAINBOW);
 
-        //initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
+        initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
 
         brightnessSlider.setValue(DEFAULT_BRIGHTNESS);
         brightnessPercentLabel.setText(Integer.toString(DEFAULT_BRIGHTNESS) + "%");
@@ -77,6 +78,11 @@ public class CycleSettingsController implements Initializable {
                 speedPercentLabel.setText(percentString);
             }
         });
+    }
+
+    @Override
+    public void update(Settings settings) {
+        //
     }
 
     private void initialiseChoiceBox(ChoiceBox choiceBox, Enum[] choices, Enum defaultChoice) {
