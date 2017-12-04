@@ -8,7 +8,7 @@
 
 <Pane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.leytonblackler.chromolite.controller.settings.CycleSettingsController">
+            fx:controller="com.leytonblackler.chromolite.controllers.settings.CycleSettingsController">
 
     <!-- CONSTANTS -->
     <fx:define>

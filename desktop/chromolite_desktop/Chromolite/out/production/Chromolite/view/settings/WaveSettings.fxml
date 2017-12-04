@@ -10,7 +10,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
 <Pane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controller.settings.WaveSettingsController">
+      fx:controller="com.leytonblackler.chromolite.controllers.settings.WaveSettingsController">
 
     <!-- CONSTANTS -->
     <fx:define>

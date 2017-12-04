@@ -11,7 +11,7 @@
 <?import javafx.geometry.Insets?>
 <Pane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controller.AppConnectController">
+      fx:controller="com.leytonblackler.chromolite.controllers.AppConnectController">
 
     <!-- CONSTANTS -->
     <fx:define>
