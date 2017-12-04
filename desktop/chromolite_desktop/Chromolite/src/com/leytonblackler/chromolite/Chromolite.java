@@ -1,11 +1,7 @@
-package com.leytonblackler.chromolite.main;
+package com.leytonblackler.chromolite;
 
-import com.leytonblackler.chromolite.main.effects.EffectHandler;
-import com.leytonblackler.chromolite.main.effects.RandomEffect;
-import com.leytonblackler.chromolite.main.modes.Mode;
+import com.leytonblackler.chromolite.main.model.Model;
 import com.leytonblackler.chromolite.main.settings.Settings;
-import com.leytonblackler.chromolite.main.utilities.LEDController;
-import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -16,7 +12,7 @@ public class Chromolite extends Application {
     /**
      * Singleton instance of the model.
      */
-    private static Chromolite model;
+    private static Chromolite instance;
 
     /**
      * Current user settings configuration.
@@ -24,24 +20,16 @@ public class Chromolite extends Application {
     private Settings settings;
 
     /**
-     * Handles the current effect.
+     * Core functionality.
      */
-    private EffectHandler effectHandler;
 
-    private LEDController ledController;
-
-    private RazerChromaService razerChromaService;
+    private Model model;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        model = this;
+        instance = this;
         settings = new Settings();
-        razerChromaService = new RazerChromaService();
-        ledController = new LEDController();
-
-        effectHandler = new EffectHandler();
-        effectHandler.setEffect(new RandomEffect());
-        effectHandler.run();
+        model = new Model();
 
         //Create the scene (window contents) from the main FXML file.
         Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("view/View.fxml")));
@@ -52,35 +40,28 @@ public class Chromolite extends Application {
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.sizeToScene();
+
+        //Ensure the scene and model reflect the current settings.
+        settings.notifyObservers();
+
         //Display the stage (window).
         primaryStage.show();
     }
 
     @Override
     public void stop() {
-        //Stop running the effect handler.
-        effectHandler.stop();
-        //Stop running the Razer Chroma SDK Service.
-        razerChromaService.stop();
+        model.stop();
     }
 
     public Settings getSettings() {
         return settings;
     }
 
-    public RazerChromaService getRazerChromaService() {
-        return razerChromaService;
-    }
-
-    public LEDController getLEDController() {
-        return ledController;
-    }
-
     public static Chromolite getInstance() {
-        if (model == null) {
+        if (instance == null) {
             throw new IllegalStateException();
         }
-        return model;
+        return instance;
     }
 
     public static void main(String[] args) {

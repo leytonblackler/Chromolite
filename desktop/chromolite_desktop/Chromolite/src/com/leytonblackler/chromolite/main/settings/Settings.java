@@ -1,6 +1,6 @@
 package com.leytonblackler.chromolite.main.settings;
 
-import com.leytonblackler.chromolite.main.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -14,7 +14,9 @@ public class Settings implements Serializable {
         WAVE,
         MUSIC,
         CYCLE,
-        STROBE
+        STROBE,
+        SCAN,
+        OFF
     }
 
     private int[] primaryColour = DefaultSettings.PRIMARY_COLOUR;
@@ -130,6 +132,7 @@ public class Settings implements Serializable {
     public void setMode(Mode mode) {
         this.mode = mode;
         observers.forEach((observer) -> observer.updateModes(this));
+        System.out.println(mode.toString());
     }
 
     public void setBrightness(int brightness) {

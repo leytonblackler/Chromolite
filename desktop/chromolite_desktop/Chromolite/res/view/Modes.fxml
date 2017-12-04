@@ -36,28 +36,34 @@
                       text="RANDOM"
                       GridPane.columnIndex="1" GridPane.rowIndex="0"/>
 
-        <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+        <ToggleButton fx:id="waveButton" onAction="#waveButtonClicked"
+                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="WAVE"
                       GridPane.columnIndex="2" GridPane.rowIndex="0"/>
 
-        <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+        <ToggleButton fx:id="musicButton" onAction="#musicButtonClicked"
+                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="MUSIC"
                       GridPane.columnIndex="3" GridPane.rowIndex="0"/>
 
         <!-- SECOND ROW MODE BUTTONS -->
-        <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+        <ToggleButton fx:id="cycleButton" onAction="#cycleButtonClicked"
+                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="CYCLE"
                       GridPane.columnIndex="0" GridPane.rowIndex="1"/>
 
-        <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+        <ToggleButton fx:id="strobeButton" onAction="#strobeButtonClicked"
+                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="STROBE"
                       GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-        <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+        <ToggleButton fx:id="scanButton" onAction="#scanButtonClicked"
+                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="SCAN"
                       GridPane.columnIndex="2" GridPane.rowIndex="1"/>
 
-        <ToggleButton prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+        <ToggleButton fx:id="offButton" onAction="#offButtonClicked"
+                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="OFF"
                       GridPane.columnIndex="3" GridPane.rowIndex="1"/>
     </GridPane>

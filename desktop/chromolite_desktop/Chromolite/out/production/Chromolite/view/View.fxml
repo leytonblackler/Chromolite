@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 
 <VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.leytonblackler.chromolite.controller.MainController">
+      fx:controller="com.leytonblackler.chromolite.controllers.MainController">
 
     <!-- CONSTANTS -->
     <fx:define>

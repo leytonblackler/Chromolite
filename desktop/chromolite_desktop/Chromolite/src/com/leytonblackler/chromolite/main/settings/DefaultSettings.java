@@ -1,6 +1,6 @@
 package com.leytonblackler.chromolite.main.settings;
 
-import com.leytonblackler.chromolite.main.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 
 public final class DefaultSettings {
 

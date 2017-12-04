@@ -1,7 +1,7 @@
 package com.leytonblackler.chromolite.controllers.settings;
 
 import com.leytonblackler.chromolite.controllers.Controller;
-import com.leytonblackler.chromolite.main.Chromolite;
+import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
