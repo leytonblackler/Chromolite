@@ -132,7 +132,6 @@ public class Settings implements Serializable {
     public void setMode(Mode mode) {
         this.mode = mode;
         observers.forEach((observer) -> observer.updateModes(this));
-        System.out.println(mode.toString());
     }
 
     public void setBrightness(int brightness) {

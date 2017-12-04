@@ -53,14 +53,30 @@ public class EffectHandler {
 
     public void setEffect(Settings.Mode mode) {
         switch (mode) {
-            case STATIC: effect = new StaticEffect();
-            case RANDOM: effect = new RandomEffect();
-            case WAVE: effect = new WaveEffect();
-            case MUSIC: effect = new MusicEffect();
-            case CYCLE: effect = new CycleEffect();
-            case STROBE: effect = new StrobeEffect();
-            case SCAN: effect = new ScanEffect();
-            case OFF: effect = new OffEffect();
+            case STATIC:
+                effect = new StaticEffect();
+                break;
+            case RANDOM:
+                effect = new RandomEffect();
+                break;
+            case WAVE:
+                effect = new WaveEffect();
+                break;
+            case MUSIC:
+                effect = new MusicEffect();
+                break;
+            case CYCLE:
+                effect = new CycleEffect();
+                break;
+            case STROBE:
+                effect = new StrobeEffect();
+                break;
+            case SCAN:
+                effect = new ScanEffect();
+                break;
+            case OFF:
+                effect = new OffEffect();
+                break;
         }
     }
 }
