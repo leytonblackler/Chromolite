@@ -6,13 +6,14 @@ import java.lang.reflect.Method;
 public abstract class SettingsObserver {
 
     public void update(Settings settings) {
-        for (Method method : this.getClass().getDeclaredMethods()) {
-            if (method.getName().contains("update") && !method.getName().equals("update")) {
-                try {
-                    method.invoke(this, settings);
-                } catch (IllegalAccessException | InvocationTargetException e) {
-                    e.printStackTrace();
-                }
+        for (Method method : getClass().getDeclaredMethods()) {
+            if (method.getName().equals("update")) {
+                continue;
+            }
+            try {
+                method.invoke(settings);
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
             }
         }
     }

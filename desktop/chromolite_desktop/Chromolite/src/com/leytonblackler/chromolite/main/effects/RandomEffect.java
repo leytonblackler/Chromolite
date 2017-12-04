@@ -1,9 +1,4 @@
-package com.leytonblackler.chromolite.main.effecthandler.effects;
-
-import com.leytonblackler.chromolite.main.effecthandler.Effect;
-import com.leytonblackler.chromolite.main.settings.Settings;
-import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
-import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
+package com.leytonblackler.chromolite.main.effects;
 
 public class RandomEffect extends Effect {
 
@@ -13,7 +8,8 @@ public class RandomEffect extends Effect {
     private int colour[] = new int[3];
 
     @Override
-    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService) {
+    public void tick() {
+        super.tick();
         colour[0] = randomInt();
         colour[1] = randomInt();
         colour[2] = randomInt();

@@ -6,7 +6,7 @@
 
 <?import javafx.geometry.Insets?>
 <Pane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.settings.StaticSettingsController">
+      fx:controller="com.leytonblackler.chromolite.controller.settings.StaticSettingsController">
 
     <!-- CONSTANTS -->
     <fx:define>

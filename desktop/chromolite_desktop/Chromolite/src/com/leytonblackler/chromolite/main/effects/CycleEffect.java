@@ -1,11 +1,8 @@
-package com.leytonblackler.chromolite.main.effecthandler.effects;
+package com.leytonblackler.chromolite.main.effects;
 
-import com.leytonblackler.chromolite.main.effecthandler.Effect;
-import com.leytonblackler.chromolite.main.settings.Settings;
-import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
-import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
+import javafx.scene.paint.Color;
 
-import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.NumberOfColours.RAINBOW;
+import static com.leytonblackler.chromolite.main.effects.CycleEffect.NumberOfColours.RAINBOW;
 
 public class CycleEffect extends Effect {
 
@@ -38,7 +35,9 @@ public class CycleEffect extends Effect {
     private int[] nextColour = { 255, 0, 0 };
 
     @Override
-    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService) {
+    public void tick() {
+        super.tick();
+
         if (settings.getCycleNumberOfColours() == RAINBOW) {
             colours = RAINBOW_COLOURS;
         }

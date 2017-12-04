@@ -1,6 +1,5 @@
 package com.leytonblackler.chromolite.controllers;
 
-import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.fxml.FXML;
@@ -53,8 +52,6 @@ public class MainController extends SettingsObserver implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Chromolite.getInstance().getSettings().addObserver(this);
-        
         spectrumController = loadFXMLPane(spectrumPane, "view/Spectrum.fxml");
         coloursButtonsController = loadFXMLPane(colourButtonsPane, "view/ColourButtons.fxml");
         modeController = loadFXMLPane(modesPane, "view/Modes.fxml");
