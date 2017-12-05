@@ -199,6 +199,11 @@
     -fx-background-image : null  ;
 }
 
+.radio-button .radio:hover {
+    -fx-background-color : #2c3b4f;
+    -fx-background-image : null  ;
+}
+
 .radio-button -radio:armed {
     -fx-background-color : white ;
     -fx-background-image : null  ;
