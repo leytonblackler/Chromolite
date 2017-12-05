@@ -41,11 +41,12 @@ public class Chromolite extends Application {
         primaryStage.setScene(scene);
         primaryStage.sizeToScene();
 
-        //Ensure the scene and model reflect the current settings.
-        settings.notifyObservers();
-
         //Display the stage (window).
         primaryStage.show();
+        System.out.println("show");
+
+        //Ensure the scene and model reflect the current settings.
+        settings.notifyObservers();
     }
 
     @Override

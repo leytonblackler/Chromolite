@@ -49,6 +49,11 @@ public class MainController extends SettingsObserver implements Initializable {
     Controller appConnectController;
 
     @FXML
+    private Pane ledStripSimulationPane;
+
+    Controller ledStripSimulationController;
+
+    @FXML
     public ImageView logo;
 
     @Override
@@ -83,6 +88,15 @@ public class MainController extends SettingsObserver implements Initializable {
             e.printStackTrace();
         }
         return fxmlLoader.getController();
+    }
+
+    @Override
+    public void update(Settings settings) {
+        super.update(settings);
+        /*if (ledStripSimulationController == null) {
+            ledStripSimulationController = loadFXMLPane(ledStripSimulationPane, "view/LEDStripSimulation.fxml");
+            ((LEDStripSimulationController) ledStripSimulationController).setLEDStripWidth(ledStripSimulationPane.getWidth());
+        }*/
     }
 
     @Override

@@ -73,6 +73,12 @@
             <Label text="ANDROID APP CONNECTION" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="appConnectPane"/>
+
+        <!-- LED STRIP SIMULATION -->
+        <!--<HBox alignment="CENTER_LEFT">
+            <Label text="LED STRIP SIMULATION" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <Pane fx:id="ledStripSimulationPane"/>-->
     </VBox>
 
 </VBox>

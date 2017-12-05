@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<Pane xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controllers.LEDStripSimulationController">
+
+    <!-- CONSTANTS -->
+    <fx:define>
+        <Double fx:id="WINDOW_WIDTH" fx:value="560"/>
+        <Double fx:id="WINDOW_HEIGHT" fx:value="750"/>
+        <Double fx:id="HEADER_HEIGHT" fx:value="30"/>
+        <Double fx:id="SPECTRUM_HEIGHT" fx:value="250"/>
+        <Double fx:id="PADDING" fx:value="15"/>
+        <Double fx:id="BUTTON_COLOURS_ARC_SIZE" fx:value="8"/>
+        <Double fx:id="BUTTON_COLOURS_HEIGHT" fx:value="3"/>
+        <Double fx:id="BUTTON_COLOURS_WIDTH" fx:value="35"/>
+
+        <Double fx:id="SPECTRUM_INDICATOR_RADIUS" fx:value="5"/>
+        <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
+    </fx:define>
+
+    <HBox fx:id="ledStrip" spacing="${PADDING/4}" alignment="CENTER" prefHeight="${HEADER_HEIGHT/2}"/>
+
+</Pane>

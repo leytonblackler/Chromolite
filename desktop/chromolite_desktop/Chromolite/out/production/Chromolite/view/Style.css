@@ -42,6 +42,11 @@
     -fx-text-fill: #121b25;
 }
 
+#led_region {
+    -fx-background-color: red;
+    -fx-background-radius: 3 3 3 3;
+}
+
 .slider .thumb {
     -fx-background-color: #03a9f4;
     -fx-background-insets: 0, 1, 2;
@@ -189,19 +194,25 @@
     -fx-background-color: #03a9f4;
 }
 
-.radio-button .radio:selected{
+.radio-button .radio:selected {
     -fx-background-color : white ;
     -fx-background-image : null  ;
 }
-.radio-button -radio:armed{
+
+.radio-button .radio:hover {
+    -fx-background-color : #2c3b4f;
+    -fx-background-image : null  ;
+}
+
+.radio-button -radio:armed {
     -fx-background-color : white ;
     -fx-background-image : null  ;
 }
-.radio-button -radio:determinate{
+.radio-button -radio:determinate {
     -fx-background-color : white ;
     -fx-background-image : null  ;
 }
-.radio-button -radio:indeterminate{
+.radio-button -radio:indeterminate {
     -fx-background-color : white ;
     -fx-background-image : null  ;
 }
