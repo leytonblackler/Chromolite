@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.main.effecthandler.effects;
 
+import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
@@ -8,7 +9,7 @@ import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaServi
 public class StaticEffect extends Effect {
 
     @Override
-    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService) {
+    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
         //
     }
 

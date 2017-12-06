@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.model;
 
 import com.leytonblackler.chromolite.Chromolite;
+import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.EffectHandler;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
@@ -14,10 +15,10 @@ public class Model extends SettingsObserver {
      */
     private EffectHandler effectHandler;
 
-    public Model() {
+    public Model(LEDStripSimulationController ledStripSimulation) {
         Chromolite.getInstance().getSettings().addObserver(this);
 
-        effectHandler = new EffectHandler(new ArduinoController(), new RazerChromaService());
+        effectHandler = new EffectHandler(new ArduinoController(), new RazerChromaService(), ledStripSimulation);
         effectHandler.setEffect(Chromolite.getInstance().getSettings().getMode());
         effectHandler.run();
     }

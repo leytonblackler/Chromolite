@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.main.effecthandler.effects;
 
+import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
@@ -38,7 +39,7 @@ public class CycleEffect extends Effect {
     private int[] nextColour = { 255, 0, 0 };
 
     @Override
-    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService) {
+    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
         if (settings.getCycleNumberOfColours() == RAINBOW) {
             colours = RAINBOW_COLOURS;
         }
@@ -57,6 +58,7 @@ public class CycleEffect extends Effect {
 
         //System.out.println("current: " + currentColour[0] + " " + currentColour[1] + " " + currentColour[2]);
         razerChromaService.setAll(currentColour[0], currentColour[1], currentColour[2]);
+        ledStripSimulation.setAll(currentColour[0], currentColour[1], currentColour[2]);
 
         delay(50);
     }

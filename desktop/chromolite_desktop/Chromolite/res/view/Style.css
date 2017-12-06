@@ -53,6 +53,10 @@
     -fx-background-radius: 1.0em; /* makes sure this remains circular */
 }
 
+.slider .thumb:hover {
+    -fx-background-color: #29b6f6;
+}
+
 .slider .track {
     -fx-background-color: #253447;
     -fx-background-radius: 0.25em, 0.25em, 0.166667em; /* 3 3 2 */
@@ -170,7 +174,7 @@
 }
 
 .toggle-button:selected:hover {
-    -fx-background-color: #1cb1f4;
+    -fx-background-color: #29b6f6;
 }
 
 .toggle-button:selected:pressed {

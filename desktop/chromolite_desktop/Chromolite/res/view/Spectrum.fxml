@@ -9,7 +9,7 @@
 
 <Pane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.SpectrumController">
+      fx:controller="com.leytonblackler.chromolite.controllers.SpectrumController" translateX="${-PADDING}">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -28,7 +28,9 @@
 
     <!-- SPECTRUM IMAGE -->
     <StackPane fx:id="spectrumStackPane">
-        <ImageView fx:id="spectrum" fitHeight="$SPECTRUM_HEIGHT" fitWidth="$WINDOW_WIDTH"/>
+        <HBox>
+            <ImageView fx:id="spectrum" HBox.hgrow="ALWAYS" fitHeight="$SPECTRUM_HEIGHT" fitWidth="$WINDOW_WIDTH"/>
+        </HBox>
         <Pane fx:id="primarySpectrumIndicator" translateX="${WINDOW_WIDTH / 6}" translateY="${SPECTRUM_HEIGHT / 2}">
             <StackPane alignment="TOP_LEFT" translateX="${-SPECTRUM_INDICATOR_RADIUS}"
                        translateY="${-SPECTRUM_INDICATOR_RADIUS}">

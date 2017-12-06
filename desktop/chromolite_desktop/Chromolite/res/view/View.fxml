@@ -13,6 +13,8 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.layout.Pane?>
 
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.leytonblackler.chromolite.controllers.MainController">
 
@@ -36,46 +38,45 @@
         <ImageView fx:id="logo" preserveRatio="true"/>
     </HBox>
 
-    <!-- SPECTRUM -->
-    <Pane fx:id="spectrumPane"/>
+    <!--<Pane fx:id="spectrumPane"/>-->
 
-    <VBox spacing="$PADDING">
+    <VBox spacing="$PADDING" fx:id="mainPane">
+
         <padding>
             <Insets top="0" right="$PADDING" bottom="$PADDING" left="$PADDING"/>
         </padding>
 
-        <!-- COLOUR BUTTONS SECTION -->
-        <HBox alignment="CENTER_LEFT">
+        <!--<HBox alignment="CENTER_LEFT">
             <Label text="COLOURS" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="colourButtonsPane"/>
 
-        <!-- MODE SECTION -->
-        <HBox alignment="CENTER_LEFT">
-            <Label text="MODES" id="section-title-label" translateY="${PADDING/2}"/>
-        </HBox>
-        <Pane fx:id="modesPane"/>
-
-        <!-- MODE SETTINGS SECTION -->
         <HBox alignment="CENTER_LEFT">
             <Label text="MODE SETTINGS" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="modeSettingsPane"/>
 
-        <!-- GENERAL OPTIONS SECTION -->
+        <HBox alignment="CENTER_LEFT">
+            <Label text="TEST" id="section-title-label" translateY="${PADDING/2}"/>
+        </HBox>
+        <HBox spacing="$PADDING">
+            <ToggleButton text="TEST 1" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            <ToggleButton text="TEST 2" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            <ToggleButton text="TEST 3" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            <ToggleButton text="TEST 4" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+        </HBox>
+
         <HBox alignment="CENTER_LEFT">
             <Label text="GENERAL OPTIONS" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="generalOptionsPane"/>
 
-        <!-- ANDROID APP CONNECTION -->
         <HBox alignment="CENTER_LEFT">
             <Label text="ANDROID APP CONNECTION" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="appConnectPane"/>
 
-        <!-- LED STRIP SIMULATION -->
-        <!--<HBox alignment="CENTER_LEFT">
+        <HBox alignment="CENTER_LEFT">
             <Label text="LED STRIP SIMULATION" id="section-title-label" translateY="${PADDING/2}"/>
         </HBox>
         <Pane fx:id="ledStripSimulationPane"/>-->

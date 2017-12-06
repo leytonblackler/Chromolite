@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane xmlns="http://javafx.com/javafx"
+<VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.leytonblackler.chromolite.controllers.ColourButtonsController">
+            fx:controller="com.leytonblackler.chromolite.controllers.ColourButtonsController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -25,16 +23,26 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
-    <GridPane alignment="center" hgap="$PADDING" vgap="$PADDING">
-        <ToggleButton id="primary-button" prefHeight="$PADDING"
-                      prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="PRIMARY" GridPane.columnIndex="0"
-                      GridPane.rowIndex="0"/>
-        <ToggleButton id="secondary-button" prefHeight="$PADDING"
-                      prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="SECONDARY" GridPane.columnIndex="1"
-                      GridPane.rowIndex="0"/>
-        <ToggleButton id="tertiary-button" prefHeight="$PADDING"
-                      prefWidth="${(WINDOW_WIDTH - (4 * PADDING)) / 3}" text="TERTIARY" GridPane.columnIndex="2"
-                      GridPane.rowIndex="0"/>
+    <GridPane hgap="$PADDING" vgap="$PADDING">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="33.3333"/>
+            <ColumnConstraints percentWidth="33.3333"/>
+            <ColumnConstraints percentWidth="33.3333"/>
+        </columnConstraints>
+
+        <ToggleButton id="primary-button"
+                      prefHeight="$PADDING"
+                      text="PRIMARY"
+                      GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
+        <ToggleButton id="secondary-button"
+                      prefHeight="$PADDING"
+                      text="SECONDARY"
+                      GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
+        <ToggleButton id="tertiary-button"
+                      prefHeight="$PADDING"
+                      text="TERTIARY"
+                      GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>
     </GridPane>
 
-</Pane>
+</VBox>

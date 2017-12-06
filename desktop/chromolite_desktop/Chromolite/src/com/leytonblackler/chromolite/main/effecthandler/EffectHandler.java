@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.effecthandler;
 
 import com.leytonblackler.chromolite.Chromolite;
+import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.effects.*;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
@@ -21,9 +22,12 @@ public class EffectHandler {
 
     private RazerChromaService razerChromaService;
 
-    public EffectHandler(ArduinoController arduinoController, RazerChromaService razerChromaService) {
+    LEDStripSimulationController ledStripSimulation;
+
+    public EffectHandler(ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
         this.arduinoController = arduinoController;
         this.razerChromaService = razerChromaService;
+        this.ledStripSimulation = ledStripSimulation;
     }
 
     public void run() {
@@ -35,7 +39,7 @@ public class EffectHandler {
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                effect.tick(Chromolite.getInstance().getSettings(), arduinoController, razerChromaService);
+                effect.tick(Chromolite.getInstance().getSettings(), arduinoController, razerChromaService, ledStripSimulation);
             }
         }, DELAY, DELAY);
 

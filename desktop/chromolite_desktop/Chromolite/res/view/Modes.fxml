@@ -4,9 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<Pane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.ModeController">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controllers.ModeController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -23,49 +22,54 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
-    <GridPane alignment="CENTER_LEFT" hgap="$PADDING" vgap="$PADDING" prefWidth="${WINDOW_WIDTH - 2 * PADDING}">
+    <GridPane vgap="$PADDING" hgap="$PADDING">
 
-        <!-- FIRST ROW MODE BUTTONS -->
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
+
         <ToggleButton fx:id="staticButton" onAction="#staticButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="STATIC"
-                      GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="randomButton" onAction="#randomButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="RANDOM"
-                      GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="waveButton" onAction="#waveButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="WAVE"
-                      GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="musicButton" onAction="#musicButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="MUSIC"
-                      GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="Infinity"/>
 
-        <!-- SECOND ROW MODE BUTTONS -->
         <ToggleButton fx:id="cycleButton" onAction="#cycleButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="CYCLE"
-                      GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                      GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="strobeButton" onAction="#strobeButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="STROBE"
-                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                      GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="scanButton" onAction="#scanButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="SCAN"
-                      GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                      GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="offButton" onAction="#offButtonClicked"
-                      prefHeight="${PADDING * 2.5}" prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
+                      prefHeight="${PADDING * 2.5}"
                       text="OFF"
-                      GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                      GridPane.rowIndex="1" GridPane.columnIndex="3" maxWidth="Infinity"/>
     </GridPane>
 
-</Pane>
+</VBox>

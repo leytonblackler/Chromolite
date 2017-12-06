@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
-<Pane xmlns="http://javafx.com/javafx"
+<VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.leytonblackler.chromolite.controllers.GeneralOptionsController">
 
@@ -26,36 +26,39 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
-    <GridPane alignment="CENTER_LEFT" hgap="$PADDING" vgap="$PADDING" prefWidth="${WINDOW_WIDTH - 2 * PADDING}">
+    <GridPane hgap="$PADDING">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
 
         <!-- FIRST ROW MODE BUTTONS -->
         <ToggleButton fx:id="saveButton" onAction="#saveButtonClicked"
                       prefHeight="${PADDING * 2.5}"
-                      prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="SAVE SETTINGS"
-                      GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="loadButton" onAction="#loadButtonClicked"
                       prefHeight="${PADDING * 2.5}"
-                      prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="LOAD SETTINGS"
-                      GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="resetButton" onAction="#resetButtonClicked"
                       prefHeight="${PADDING * 2.5}"
-                      prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
                       text="RESET TO DEFAULT"
-                      GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>
 
         <!-- RAZER CHROMA BUTTON -->
         <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked"
                       prefHeight="${PADDING * 2.5}"
-                      prefWidth="${(WINDOW_WIDTH - (5 * PADDING)) / 4}"
-                      GridPane.columnIndex="3" GridPane.rowIndex="0">
+                      GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="Infinity">
             <graphic>
                 <ImageView fx:id="razerLogo" translateX="-1"/>
             </graphic>
         </ToggleButton>
     </GridPane>
 
-</Pane>
+</VBox>

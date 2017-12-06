@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.shape.Rectangle?>
-<Pane xmlns="http://javafx.com/javafx"
+<GridPane xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.LEDStripSimulationController">
+      fx:controller="com.leytonblackler.chromolite.controllers.LEDStripSimulationController" fx:id="ledStrip" hgap="${PADDING/5}">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -27,6 +22,4 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
-    <HBox fx:id="ledStrip" spacing="${PADDING/4}" alignment="CENTER" prefHeight="${HEADER_HEIGHT/2}"/>
-
-</Pane>
+</GridPane>
