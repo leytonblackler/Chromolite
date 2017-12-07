@@ -1,6 +1,8 @@
 package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.view.Constants;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
@@ -31,6 +33,8 @@ public class ColourButtonsController implements Controller, Initializable {
 
     private boolean[] hover = { false, false, false };
 
+    private boolean[] pressed = { false, false, false };
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         buttons = new HashSet<>();
@@ -47,11 +51,19 @@ public class ColourButtonsController implements Controller, Initializable {
     private void setMouseListeners(ToggleButton button, int index) {
         button.setOnMouseEntered(e -> {
             hover[index] = true;
-            setButtonColour(button, colours[index], hover[index]);
+            setButtonStyle(button, colours[index], hover[index], pressed[index]);
         });
         button.setOnMouseExited(e -> {
             hover[index] = false;
-            setButtonColour(button, colours[index], hover[index]);
+            setButtonStyle(button, colours[index], hover[index], pressed[index]);
+        });
+        button.setOnMousePressed(e -> {
+            pressed[index] = true;
+            setButtonStyle(button, colours[index], hover[index], pressed[index]);
+        });
+        button.setOnMouseReleased(e -> {
+            pressed[index] = false;
+            setButtonStyle(button, colours[index], hover[index], pressed[index]);
         });
     }
 
@@ -63,22 +75,29 @@ public class ColourButtonsController implements Controller, Initializable {
         colours[1] = settings.getSecondaryColour();
         colours[2] = settings.getTertiaryColour();
 
-        setButtonColour(primaryButton, colours[0], hover[0]);
-        setButtonColour(secondaryButton, colours[1], hover[1]);
-        setButtonColour(tertiaryButton, colours[2], hover[2]);
+        setButtonStyle(primaryButton, colours[0], hover[0], pressed[0]);
+        setButtonStyle(secondaryButton, colours[1], hover[1], pressed[1]);
+        setButtonStyle(tertiaryButton, colours[2], hover[2], pressed[2]);
     }
 
-    private void setButtonColour(ToggleButton button, int[] colour, boolean hover) {
+    private void setButtonStyle(ToggleButton button, int[] colour, boolean hover, boolean pressed) {
         int[] main, accent;
-        if (hover) {
+        if (hover && !pressed) {
             main = calculateAccentColour(colour);
             accent = colour;
         } else {
             main = colour;
             accent = calculateAccentColour(colour);
         }
+
+        double inset = 0;
+        if (button.isSelected()) {
+            inset = -Constants.BUTTON_HEIGHT.getValue() / 10;
+        }
+
         button.setStyle("-fx-background-color: rgb(" + main[0] + "," + main[1] + "," + main[2] + ");"
-                + "-fx-text-fill: rgb(" + accent[0] + "," + accent[1] + "," + accent[2] + ");");
+                + "-fx-text-fill: rgb(" + accent[0] + "," + accent[1] + "," + accent[2] + ");"
+                + "-fx-background-insets: " + inset + "," + inset + "," + inset + "," + inset + ";");
     }
 
     private int[] calculateAccentColour(int[] colour) {
@@ -113,5 +132,20 @@ public class ColourButtonsController implements Controller, Initializable {
      */
     private void setButtonState(ToggleButton button, Settings.ColourSelector colourSelector) {
         button.setSelected(button.getText().equals(colourSelector.toString()));
+    }
+
+    @FXML
+    private void primaryButtonClicked() {
+        Chromolite.getInstance().getSettings().setColourSelector(Settings.ColourSelector.PRIMARY);
+    }
+
+    @FXML
+    private void secondaryButtonClicked() {
+        Chromolite.getInstance().getSettings().setColourSelector(Settings.ColourSelector.SECONDARY);
+    }
+
+    @FXML
+    private void tertiaryButtonClicked() {
+        Chromolite.getInstance().getSettings().setColourSelector(Settings.ColourSelector.TERTIARY);
     }
 }
