@@ -81,40 +81,41 @@ public class ColourButtonsController implements Controller, Initializable {
     }
 
     private void setButtonStyle(ToggleButton button, int[] colour, boolean hover, boolean pressed) {
-        int[] main, accent;
+        int[] main, text;
         if (hover && !pressed) {
-            main = calculateAccentColour(colour);
-            accent = colour;
+            main = calculateAccentColour(colour, 1.2f);
+            text = colour;
         } else {
             main = colour;
-            accent = calculateAccentColour(colour);
+            text = calculateAccentColour(colour, 2f);
         }
 
-        double inset = 0;
+        double inset = 2;
         if (button.isSelected()) {
-            inset = -Constants.BUTTON_HEIGHT.getValue() / 10;
+            inset = 0;
         }
 
         button.setStyle("-fx-background-color: rgb(" + main[0] + "," + main[1] + "," + main[2] + ");"
-                + "-fx-text-fill: rgb(" + accent[0] + "," + accent[1] + "," + accent[2] + ");"
-                + "-fx-background-insets: " + inset + "," + inset + "," + inset + "," + inset + ";");
+                + "-fx-text-fill: rgb(" + text[0] + "," + text[1] + "," + text[2] + ");"
+                + "-fx-background-insets: " + inset + "," + inset + "," + inset + "," + inset + ";"
+                + "-fx-background-radius: 2em;");
     }
 
-    private int[] calculateAccentColour(int[] colour) {
+    private int[] calculateAccentColour(int[] colour, float brightnessChange) {
         //Convert the given colour from RGB to HSB.
         float[] accentHSB = Color.RGBtoHSB(colour[0], colour[1], colour[2], null);
         //Create the array for the RGB accent color values.
         int[] accentRGB = new int[3];
         //If the brightness is in the upper 50% range, accent is darker.
         if (accentHSB[2] > 0.5) {
-            accentHSB[2] = accentHSB[2] / 2;
+            accentHSB[2] = accentHSB[2] / brightnessChange;
         } else if (accentHSB[2] < 0.1) {
             accentRGB[0] = 188;
             accentRGB[1] = 196;
             accentRGB[2] = 204;
             return accentRGB;
         } else {
-            accentHSB[2] = accentHSB[2] * 2;
+            accentHSB[2] = accentHSB[2] * brightnessChange;
         }
         //Convert the accent colour from HSB to RGB.
         int rgb = Color.HSBtoRGB(accentHSB[0], accentHSB[1], accentHSB[2]);

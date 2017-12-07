@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c472a6c4-74ee-4b6d-bc6c-2793a2a71498" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/view/ColourButtons.fxml" afterPath="$PROJECT_DIR$/res/view/ColourButtons.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ColourButtonsController.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ColourButtonsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ColourButtonsController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ColourButtonsController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ColourButtonsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+            <state relative-caret-position="391">
+              <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +81,8 @@
       <file leaf-file-name="ColourButtons.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/view/ColourButtons.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="28" column="13" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="478">
+              <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -93,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/view/Style.css">
+      <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="133">
+              <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -195,12 +193,12 @@
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/DefaultSettings.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/Settings.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/SpectrumController.java" />
-        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StaticEffect.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java" />
         <option value="$PROJECT_DIR$/res/view/ColourButtons.fxml" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ColourButtonsController.java" />
+        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java" />
       </list>
     </option>
   </component>
@@ -829,12 +827,12 @@
       <workItem from="1512460549877" duration="31109000" />
       <workItem from="1512591476575" duration="69000" />
       <workItem from="1512591572912" duration="34758000" />
-      <workItem from="1512676807401" duration="2004000" />
+      <workItem from="1512676807401" duration="3241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="193981000" />
+    <option name="totallyTimeSpent" value="195218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -1162,18 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2020">
-          <caret line="124" column="44" lean-forward="false" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#6127#6128#0" expanded="false" />
-            <element signature="e#6184#6185#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Developer/Java/jdk-9.0.1/lib/src.zip!/java.desktop/java/awt/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2397">
@@ -1244,26 +1230,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/view/Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="51" column="4" lean-forward="true" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/view/Modes.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/view/Style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="186" column="4" lean-forward="true" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/view/ColourButtons.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="34" column="42" lean-forward="true" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1279,24 +1268,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/view/ColourButtons.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="28" column="13" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="28" selection-end-column="13" />
+        <state relative-caret-position="-180">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ColourButtonsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+        <state relative-caret-position="391">
+          <caret line="94" column="22" lean-forward="false" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
