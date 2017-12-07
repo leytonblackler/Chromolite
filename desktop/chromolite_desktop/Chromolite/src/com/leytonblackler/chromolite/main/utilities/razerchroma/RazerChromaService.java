@@ -64,6 +64,7 @@ public class RazerChromaService {
             InetAddress address = InetAddress.getByName("localhost");
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, address, PORT);
             socket.send(packet);
+            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

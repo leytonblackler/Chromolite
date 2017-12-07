@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c472a6c4-74ee-4b6d-bc6c-2793a2a71498" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/.vs/RazerChromaService/v15/.suo" afterPath="$PROJECT_DIR$/../RazerChromaService/.vs/RazerChromaService/v15/.suo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/.vs/RazerChromaService/v15/Server/sqlite3/storage.ide-shm" afterPath="$PROJECT_DIR$/../RazerChromaService/.vs/RazerChromaService/v15/Server/sqlite3/storage.ide-shm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/bin/Release/RazerChromaService.exe" afterPath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/bin/Release/RazerChromaService.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/bin/Release/RazerChromaService.pdb" afterPath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/bin/Release/RazerChromaService.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/obj/Release/RazerChromaService.exe" afterPath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/obj/Release/RazerChromaService.exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/obj/Release/RazerChromaService.pdb" afterPath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/obj/Release/RazerChromaService.pdb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/RandomEffect.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/RandomEffect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StrobeEffect.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StrobeEffect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/Program.cs" afterPath="$PROJECT_DIR$/../RazerChromaService/RazerChromaService/Program.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,8 +103,8 @@
       <file leaf-file-name="RazerChromaService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1240">
-              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+            <state relative-caret-position="691">
+              <caret line="66" column="27" lean-forward="true" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -229,7 +219,6 @@
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/LEDStripSimulationController.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/DefaultSettings.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/Settings.java" />
-        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ColourButtonsController.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java" />
         <option value="$PROJECT_DIR$/res/view/ColourButtons.fxml" />
@@ -238,6 +227,7 @@
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/RandomEffect.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StaticEffect.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java" />
       </list>
     </option>
   </component>
@@ -867,12 +857,12 @@
       <workItem from="1512591476575" duration="69000" />
       <workItem from="1512591572912" duration="34758000" />
       <workItem from="1512676807401" duration="4503000" />
-      <workItem from="1512685686244" duration="3481000" />
+      <workItem from="1512685686244" duration="3690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199961000" />
+    <option name="totallyTimeSpent" value="200170000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -1329,8 +1319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1240">
-          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+        <state relative-caret-position="691">
+          <caret line="66" column="27" lean-forward="true" selection-start-line="66" selection-start-column="27" selection-end-line="66" selection-end-column="27" />
           <folding />
         </state>
       </provider>
