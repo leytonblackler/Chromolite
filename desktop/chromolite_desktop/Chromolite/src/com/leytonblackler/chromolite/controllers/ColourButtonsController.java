@@ -29,6 +29,8 @@ public class ColourButtonsController implements Controller, Initializable {
 
     private int[][] colours = new int[3][3];
 
+    private boolean[] hover = { false, false, false };
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         buttons = new HashSet<>();
@@ -43,8 +45,14 @@ public class ColourButtonsController implements Controller, Initializable {
     }
 
     private void setMouseListeners(ToggleButton button, int index) {
-        button.setOnMouseEntered(e -> setButtonColour(button, calculateAccentColour(colours[index]), colours[index]));
-        button.setOnMouseExited(e -> setButtonColour(button, colours[index], calculateAccentColour(colours[index])));
+        button.setOnMouseEntered(e -> {
+            hover[index] = true;
+            setButtonColour(button, colours[index], hover[index]);
+        });
+        button.setOnMouseExited(e -> {
+            hover[index] = false;
+            setButtonColour(button, colours[index], hover[index]);
+        });
     }
 
     @Override
@@ -54,11 +62,23 @@ public class ColourButtonsController implements Controller, Initializable {
         colours[0] = settings.getPrimaryColour();
         colours[1] = settings.getSecondaryColour();
         colours[2] = settings.getTertiaryColour();
+
+        setButtonColour(primaryButton, colours[0], hover[0]);
+        setButtonColour(secondaryButton, colours[1], hover[1]);
+        setButtonColour(tertiaryButton, colours[2], hover[2]);
     }
 
-    private void setButtonColour(ToggleButton button, int[] mainColour, int[] accentColour) {
-        button.setStyle("-fx-background-color: rgb(" + mainColour[0] + "," + mainColour[1] + "," + mainColour[2] + ");"
-                + "-fx-text-fill: rgb(" + accentColour[0] + "," + accentColour[1] + "," + accentColour[2] + ");");
+    private void setButtonColour(ToggleButton button, int[] colour, boolean hover) {
+        int[] main, accent;
+        if (hover) {
+            main = calculateAccentColour(colour);
+            accent = colour;
+        } else {
+            main = colour;
+            accent = calculateAccentColour(colour);
+        }
+        button.setStyle("-fx-background-color: rgb(" + main[0] + "," + main[1] + "," + main[2] + ");"
+                + "-fx-text-fill: rgb(" + accent[0] + "," + accent[1] + "," + accent[2] + ");");
     }
 
     private int[] calculateAccentColour(int[] colour) {
