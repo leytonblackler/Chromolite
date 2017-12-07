@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -20,6 +21,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -65,11 +67,14 @@ public class GUI extends SettingsObserver {
     Controller ledStripSimulationController;
 
     public GUI(Stage stage) {
+        //stage.initStyle(StageStyle.UNDECORATED);
         //Create the scene (window contents) from the main FXML file.
         //Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("view/View.fxml")));
         Scene scene = createScene();
         //Apply the CSS styling to the scene (window contents).
         scene.getStylesheets().add(getClass().getClassLoader().getResource("view/Style.css").toExternalForm());
+
+        scene.getRoot().setEffect(new DropShadow());
 
         String fontPath = getClass().getClassLoader().getResource("fonts/Roboto-Bold.ttf").toExternalForm();
         fontPath = fontPath.replaceAll("%20", " ");
@@ -79,27 +84,23 @@ public class GUI extends SettingsObserver {
 
         //Initialise the stage (window).
         stage.setTitle("Chromolite");
-        //stage.setWidth(1200);
-        //stage.setHeight(800);
-        //stage.setResizable(false);
+        stage.setResizable(false);
         stage.setScene(scene);
         //Display the stage (window).
         stage.show();
         stage.sizeToScene();
-
-        System.out.println(stage.getWidth() + " " + stage.getHeight());
     }
 
     private Scene createScene() {
         mainPane = new VBox();
-        mainPane.spacingProperty().bind(Constants.PADDING);
+        //mainPane.spacingProperty().bind(Constants.PADDING);
 
         Scene scene = new Scene(mainPane);
 
         VBox controlPane = new VBox();
         controlPane.spacingProperty().bind(Constants.PADDING);
         //controlPane.paddingProperty().bind(Constants.PADDING);
-        controlPane.setPadding(new Insets(0, Constants.PADDING.doubleValue(), Constants.PADDING.doubleValue(), Constants.PADDING.doubleValue())); // <-- BIND THIS
+        controlPane.setPadding(new Insets(0, Constants.PADDING.getValue(), Constants.PADDING.getValue(), Constants.PADDING.getValue())); // <-- BIND THIS
 
         mainPane.getChildren().add(createHeader());
 
@@ -116,18 +117,13 @@ public class GUI extends SettingsObserver {
     }
 
     private HBox createHeader() {
-        HBox horizontal = new HBox();
-        horizontal.setAlignment(Pos.CENTER);
-
         ImageView logo = new ImageView();
         logo.setImage(new Image(getClass().getClassLoader().getResource("images/logo.png").toExternalForm()));
         logo.setPreserveRatio(true);
 
-        /*VBox vertical = new VBox();
-        vertical.setAlignment(Pos.CENTER);
-        vertical.setPrefHeight(2 * Constants.PADDING);
-        vertical.getChildren().add(logo);*/
-
+        HBox horizontal = new HBox();
+        horizontal.setAlignment(Pos.CENTER);
+        horizontal.setPrefHeight(2 * Constants.PADDING.getValue());
         horizontal.getChildren().add(logo);
         return horizontal;
     }

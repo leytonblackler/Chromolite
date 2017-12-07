@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.view.Constants;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -55,7 +56,7 @@ public class LEDStripSimulationController implements Controller, Initializable {
             Region led = new Region();
             GridPane.setColumnIndex(led, i);
             GridPane.setHgrow(led, Priority.ALWAYS);
-            led.setPrefHeight(8);
+            led.setPrefHeight(Constants.PADDING.getValue() / 3);
             led.setStyle("-fx-background-color: red;" +
                     "-fx-background-radius: 3 3 3 3;");
             ledStrip.getChildren().add(led);

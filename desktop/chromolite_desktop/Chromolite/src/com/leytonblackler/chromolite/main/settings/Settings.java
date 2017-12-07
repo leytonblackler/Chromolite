@@ -19,6 +19,14 @@ public class Settings implements Serializable {
         OFF
     }
 
+    public enum ColourSelector {
+        PRIMARY,
+        SECONDARY,
+        TERTIARY
+    }
+
+    private ColourSelector colourSelector = DefaultSettings.COLOUR_SELECTOR;
+
     private int[] primaryColour = DefaultSettings.PRIMARY_COLOUR;
 
     private int[] secondaryColour = DefaultSettings.SECONDARY_COLOUR;
@@ -62,6 +70,10 @@ public class Settings implements Serializable {
     /*
     Accessor Methods
      */
+
+    public ColourSelector getColourSelector() {
+        return colourSelector;
+    }
 
     public int[] getPrimaryColour() {
         return primaryColour;
@@ -110,6 +122,12 @@ public class Settings implements Serializable {
     /*
     Mutator Methods
      */
+
+    public void setColourSelector(ColourSelector colourSelector) {
+        this.colourSelector = colourSelector;
+        observers.forEach((observer) -> observer.updateSpectrum(this));
+        observers.forEach((observer) -> observer.updateColours(this));
+    }
 
     public void setPrimaryColour(int[] primaryColour) {
         this.primaryColour = primaryColour;

@@ -31,15 +31,15 @@
             <ColumnConstraints percentWidth="33.3333"/>
         </columnConstraints>
 
-        <ToggleButton id="primary-button"
+        <ToggleButton fx:id="primaryButton" id="primary-button"
                       prefHeight="$PADDING"
                       text="PRIMARY"
                       GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
-        <ToggleButton id="secondary-button"
+        <ToggleButton fx:id="secondaryButton" id="secondary-button"
                       prefHeight="$PADDING"
                       text="SECONDARY"
                       GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
-        <ToggleButton id="tertiary-button"
+        <ToggleButton fx:id="tertiaryButton" id="tertiary-button"
                       prefHeight="$PADDING"
                       text="TERTIARY"
                       GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>

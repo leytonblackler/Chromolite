@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -70,8 +71,19 @@ public class SpectrumController implements Controller, Initializable {
                         spectrumIndicators[SpectrumIndicator.PRIMARY.ordinal()].translateXProperty().setValue(x);
                         spectrumIndicators[SpectrumIndicator.PRIMARY.ordinal()].translateYProperty().setValue(y);
 
-                        int[] rgb = colorToRGB(spectrum.getImage().getPixelReader().getColor(x, y));
-                        setSpectrumIndicatorColor(SpectrumIndicator.PRIMARY, rgb);
+                        int[] colour = colorToRGB(spectrum.getImage().getPixelReader().getColor(x, y));
+                        Settings settings = Chromolite.getInstance().getSettings();
+                        switch (settings.getColourSelector()) {
+                            case PRIMARY:
+                                settings.setPrimaryColour(colour);
+                                break;
+                            case SECONDARY:
+                                settings.setSecondaryColour(colour);
+                                break;
+                            case TERTIARY:
+                                settings.setTertiaryColour(colour);
+                                break;
+                        }
                     }
                 };
 
@@ -81,7 +93,9 @@ public class SpectrumController implements Controller, Initializable {
 
     @Override
     public void update(Settings settings) {
-        //
+        setSpectrumIndicatorColor(primarySpectrumIndicator, settings.getPrimaryColour());
+        setSpectrumIndicatorColor(secondarySpectrumIndicator, settings.getSecondaryColour());
+        setSpectrumIndicatorColor(tertiarySpectrumIndicator, settings.getTertiaryColour());
     }
 
     private int[] colorToRGB(Color color) {
@@ -92,11 +106,11 @@ public class SpectrumController implements Controller, Initializable {
         return rgb;
     }
 
-    // @requires rgb[0] >= 0 && rgb[0] <= 255 && rgb[1] >= 0 && rgb[1] <= 255 && rgb[2] >= 0 && rgb[2] <= 255
-    private void setSpectrumIndicatorColor(SpectrumIndicator indicator, int[] rgb) {
-        if (rgb[0] < 0 || rgb[0] > 255 || rgb[1] < 0 || rgb[1] > 255 || rgb[2] < 0 || rgb[2] > 255) {
+    // @requires colour[0] >= 0 && colour[0] <= 255 && colour[1] >= 0 && colour[1] <= 255 && colour[2] >= 0 && colour[2] <= 255
+    private void setSpectrumIndicatorColor(Pane indicator, int[] colour) {
+        if (colour[0] < 0 || colour[0] > 255 || colour[1] < 0 || colour[1] > 255 || colour[2] < 0 || colour[2] > 255) {
             throw new IllegalArgumentException();
         }
-        (((StackPane) spectrumIndicators[indicator.ordinal()].getChildren().get(0)).getChildren().get(1)).setStyle("-fx-fill: rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ");");
+        (((StackPane) indicator.getChildren().get(0)).getChildren().get(1)).setStyle("-fx-fill: rgb(" + colour[0] + "," + colour[1] + "," + colour[2] + ");");
     }
 }
