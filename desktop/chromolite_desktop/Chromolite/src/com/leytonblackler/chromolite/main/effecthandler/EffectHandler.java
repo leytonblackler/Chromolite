@@ -12,7 +12,7 @@ import java.util.TimerTask;
 
 public class EffectHandler {
 
-    private static final int DELAY = 10;
+    private static final int DELAY = 50;
 
     private Effect effect;
 
