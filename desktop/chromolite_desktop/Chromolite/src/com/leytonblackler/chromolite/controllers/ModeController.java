@@ -2,9 +2,13 @@ package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.view.Constants;
+import com.leytonblackler.chromolite.view.MutableDouble;
+import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.HashSet;
@@ -50,6 +54,9 @@ public class ModeController implements Controller, Initializable {
         buttons.add(strobeButton);
         buttons.add(scanButton);
         buttons.add(offButton);
+        buttons.forEach((button) -> button.prefHeightProperty().bind(Constants.BUTTON_HEIGHT));
+        //buttonGrid.hgapProperty().bind(Constants.PADDING);
+        //buttonGrid.vgapProperty().bind(Constants.PADDING);
     }
 
     @Override

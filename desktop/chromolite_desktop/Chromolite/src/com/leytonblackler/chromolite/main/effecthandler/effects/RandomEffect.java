@@ -5,6 +5,7 @@ import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
+import com.leytonblackler.chromolite.view.Constants;
 
 public class RandomEffect extends Effect {
 

@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
 
-<?import javafx.geometry.Insets?>
-<Pane xmlns="http://javafx.com/javafx"
+<VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.AppConnectController">
+      fx:controller="com.leytonblackler.chromolite.controllers.AppConnectController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -28,10 +25,17 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
-    <GridPane alignment="CENTER_LEFT" hgap="$PADDING" vgap="$PADDING" prefWidth="${WINDOW_WIDTH - 2 * PADDING}">
+    <GridPane alignment="CENTER_LEFT" hgap="$PADDING">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
 
         <!-- APP CONNECT RADIO BUTTONS -->
-        <HBox alignment="CENTER_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="0" spacing="${PADDING/2}">
+        <HBox alignment="CENTER_LEFT" GridPane.columnIndex="0" GridPane.rowIndex="0" spacing="${PADDING/2}" maxWidth="Infinity">
             <VBox alignment="CENTER" spacing="5">
                 <ImageView fx:id="networkIcon" preserveRatio="true"/>
                 <ImageView fx:id="bluetoothIcon" preserveRatio="true"/>
@@ -44,4 +48,4 @@
 
     </GridPane>
 
-</Pane>
+</VBox>

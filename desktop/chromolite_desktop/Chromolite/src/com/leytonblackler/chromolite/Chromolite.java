@@ -3,6 +3,7 @@ package com.leytonblackler.chromolite;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.model.Model;
 import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.view.GUI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,24 +30,12 @@ public class Chromolite extends Application {
     LEDStripSimulationController ledStripSimulation;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
         instance = this;
         settings = new Settings();
 
-        //Create the scene (window contents) from the main FXML file.
-        Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("view/View.fxml")));
-        //Apply the CSS styling to the scene (window contents).
-        scene.getStylesheets().add(getClass().getClassLoader().getResource("view/Style.css").toExternalForm());
-        //Initialise the stage (window).
-        primaryStage.setTitle("Chromolite");
-        primaryStage.setWidth(1200);
-        //primaryStage.setResizable(false);
-        primaryStage.setScene(scene);
-        primaryStage.sizeToScene();
-
-        //Display the stage (window).
-        primaryStage.show();
-        System.out.println("show");
+        GUI gui = new GUI(stage);
+        settings.addObserver(gui);
 
         model = new Model(ledStripSimulation);
 
