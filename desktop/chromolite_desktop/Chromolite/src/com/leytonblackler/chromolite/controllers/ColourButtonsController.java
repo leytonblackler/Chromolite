@@ -4,7 +4,11 @@ import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.MouseEvent;
 
+import javafx.event.EventHandler;
+
+import java.awt.*;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.ResourceBundle;
@@ -23,26 +27,63 @@ public class ColourButtonsController implements Controller, Initializable {
 
     private Set<ToggleButton> buttons;
 
+    private int[][] colours = new int[3][3];
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         buttons = new HashSet<>();
         buttons.add(primaryButton);
         buttons.add(secondaryButton);
         buttons.add(tertiaryButton);
+
+        setMouseListeners(primaryButton, 0);
+        setMouseListeners(secondaryButton, 1);
+        setMouseListeners(tertiaryButton, 2);
+
+    }
+
+    private void setMouseListeners(ToggleButton button, int index) {
+        button.setOnMouseEntered(e -> setButtonColour(button, calculateAccentColour(colours[index]), colours[index]));
+        button.setOnMouseExited(e -> setButtonColour(button, colours[index], calculateAccentColour(colours[index])));
     }
 
     @Override
     public void update(Settings settings) {
         buttons.forEach((button) -> setButtonState(button, settings.getColourSelector()));
 
-        setButtonColour(primaryButton, settings.getPrimaryColour());
-        setButtonColour(secondaryButton, settings.getSecondaryColour());
-        setButtonColour(tertiaryButton, settings.getTertiaryColour());
+        colours[0] = settings.getPrimaryColour();
+        colours[1] = settings.getSecondaryColour();
+        colours[2] = settings.getTertiaryColour();
     }
 
-    private void setButtonColour(ToggleButton button, int[] colour) {
-        button.setStyle("-fx-background-color: rgb(" + colour[0] + "," + colour[1] + "," + colour[2] + ");"
-                + "-fx-text-fill: #1c2939;");
+    private void setButtonColour(ToggleButton button, int[] mainColour, int[] accentColour) {
+        button.setStyle("-fx-background-color: rgb(" + mainColour[0] + "," + mainColour[1] + "," + mainColour[2] + ");"
+                + "-fx-text-fill: rgb(" + accentColour[0] + "," + accentColour[1] + "," + accentColour[2] + ");");
+    }
+
+    private int[] calculateAccentColour(int[] colour) {
+        //Convert the given colour from RGB to HSB.
+        float[] accentHSB = Color.RGBtoHSB(colour[0], colour[1], colour[2], null);
+        //Create the array for the RGB accent color values.
+        int[] accentRGB = new int[3];
+        //If the brightness is in the upper 50% range, accent is darker.
+        if (accentHSB[2] > 0.5) {
+            accentHSB[2] = accentHSB[2] / 2;
+        } else if (accentHSB[2] < 0.1) {
+            accentRGB[0] = 188;
+            accentRGB[1] = 196;
+            accentRGB[2] = 204;
+            return accentRGB;
+        } else {
+            accentHSB[2] = accentHSB[2] * 2;
+        }
+        //Convert the accent colour from HSB to RGB.
+        int rgb = Color.HSBtoRGB(accentHSB[0], accentHSB[1], accentHSB[2]);
+        accentRGB[0] = (rgb >> 16) & 0xFF;
+        accentRGB[1] = (rgb >> 8) & 0xFF;
+        accentRGB[2] = rgb & 0xFF;
+
+        return accentRGB;
     }
 
     /**
