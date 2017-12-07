@@ -68,11 +68,12 @@ public class SpectrumController implements Controller, Initializable {
                             y = (int) t.getY();
                         }
 
-                        spectrumIndicators[SpectrumIndicator.PRIMARY.ordinal()].translateXProperty().setValue(x);
-                        spectrumIndicators[SpectrumIndicator.PRIMARY.ordinal()].translateYProperty().setValue(y);
+                        Settings settings = Chromolite.getInstance().getSettings();
+
+                        spectrumIndicators[settings.getColourSelector().ordinal()].translateXProperty().setValue(x);
+                        spectrumIndicators[settings.getColourSelector().ordinal()].translateYProperty().setValue(y);
 
                         int[] colour = colorToRGB(spectrum.getImage().getPixelReader().getColor(x, y));
-                        Settings settings = Chromolite.getInstance().getSettings();
                         switch (settings.getColourSelector()) {
                             case PRIMARY:
                                 settings.setPrimaryColour(colour);
