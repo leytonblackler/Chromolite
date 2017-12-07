@@ -9,7 +9,7 @@ import com.leytonblackler.chromolite.view.Constants;
 
 public class RandomEffect extends Effect {
 
-    private static final int MAX_DELAY = 2000;
+    private static final int MAX_DELAY = 1800;
     private static final int MIN_DELAY = 200;
 
     private int colour[] = new int[3];

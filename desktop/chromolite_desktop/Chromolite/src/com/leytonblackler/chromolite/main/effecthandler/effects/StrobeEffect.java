@@ -7,8 +7,27 @@ import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
 
 public class StrobeEffect extends Effect {
+
+    private static final int MAX_DELAY = 600;
+    private static final int MIN_DELAY = 100;
+
+    private boolean on = false;
+
     @Override
     public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        int[] colour = {0, 0, 0};
+        if (on) {
+            on = false;
+        } else {
+            colour = settings.getPrimaryColour();
+            on = true;
+        }
+        razerChromaService.setAll(colour[0], colour[1], colour[2]);
+        ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
+        //Calculate how long to wait before the next tick.
+        int time = calculateDelay(MIN_DELAY, MAX_DELAY, settings.getSpeed());
+
+        delay(time);
     }
 }

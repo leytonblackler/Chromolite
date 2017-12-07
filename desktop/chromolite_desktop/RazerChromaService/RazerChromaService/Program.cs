@@ -89,7 +89,7 @@ namespace RazerChromaService
 
         static void ParseCommand(string command)
         {
-            Console.WriteLine("Received command: [" + command + "]");
+            //Console.WriteLine("Received command: [" + command + "]");
 
             string token = GetNextToken(command);
             command = RemoveToken(command);

@@ -12,7 +12,7 @@ import java.util.TimerTask;
 
 public class EffectHandler {
 
-    private static final int DELAY = 200;
+    private static final int DELAY = 1;
 
     private Effect effect;
 
@@ -23,6 +23,8 @@ public class EffectHandler {
     private RazerChromaService razerChromaService;
 
     LEDStripSimulationController ledStripSimulation;
+
+    private boolean running = false;
 
     public EffectHandler(ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
         this.arduinoController = arduinoController;
@@ -35,22 +37,18 @@ public class EffectHandler {
             throw new IllegalStateException();
         }
 
-        timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
+        Thread ticker = new Thread(() -> {
+            running = true;
+            while (running) {
                 effect.tick(Chromolite.getInstance().getSettings(), arduinoController, razerChromaService, ledStripSimulation);
             }
-        }, DELAY, DELAY);
+        });
 
+        ticker.start();
     }
 
     public void stop() {
-        if (timer == null) {
-            throw new IllegalStateException();
-        }
-        timer.cancel();
-
+        running = false;
         //Stop running the Razer Chroma SDK Service.
         razerChromaService.stop();
     }
