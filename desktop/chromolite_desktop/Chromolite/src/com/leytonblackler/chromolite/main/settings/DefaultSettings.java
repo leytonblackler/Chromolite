@@ -4,6 +4,8 @@ import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 
 public final class DefaultSettings {
 
+    public static final int LED_STRIP_LENGTH = 60;
+
     public static final Settings.ColourSelector COLOUR_SELECTOR = Settings.ColourSelector.PRIMARY;
 
     public static final int[] PRIMARY_COLOUR = { 255, 0, 0 };

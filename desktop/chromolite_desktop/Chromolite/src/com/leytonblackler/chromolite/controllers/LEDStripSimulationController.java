@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.view.Constants;
 import javafx.application.Platform;
@@ -15,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class LEDStripSimulationController implements Controller, Initializable {
 
-    private static final int LEDS = 30;
+    private static final int LEDS = Chromolite.getInstance().getSettings().getLEDStripLength();
 
     @FXML
     private GridPane ledStrip;

@@ -25,6 +25,8 @@ public class Settings implements Serializable {
         TERTIARY
     }
 
+    private int ledStripLength = DefaultSettings.LED_STRIP_LENGTH;
+
     private ColourSelector colourSelector = DefaultSettings.COLOUR_SELECTOR;
 
     private int[] primaryColour = DefaultSettings.PRIMARY_COLOUR;
@@ -70,6 +72,10 @@ public class Settings implements Serializable {
     /*
     Accessor Methods
      */
+
+    public int getLEDStripLength() {
+        return ledStripLength;
+    }
 
     public ColourSelector getColourSelector() {
         return colourSelector;
@@ -122,6 +128,10 @@ public class Settings implements Serializable {
     /*
     Mutator Methods
      */
+
+    public void setLEDStripLength(int ledStripLength) {
+        this.ledStripLength = ledStripLength;
+    }
 
     public void setColourSelector(ColourSelector colourSelector) {
         this.colourSelector = colourSelector;
