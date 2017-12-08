@@ -107,7 +107,7 @@ public class GUI extends SettingsObserver {
         spectrumController = loadFXMLPane(mainPane, "view/Spectrum.fxml", null);
         coloursButtonsController = loadFXMLPane(controlPane, "view/ColourButtons.fxml", "COLOURS");
         modeController = loadFXMLPane(controlPane, "view/Modes.fxml", "MODES");
-        modeSettingsController = loadFXMLPane(controlPane, "view/settings/CycleSettings.fxml", "MODE SETTINGS");
+        modeSettingsController = loadFXMLPane(controlPane, "view/settings/StaticSettings.fxml", "MODE SETTINGS");
         generalOptionsController = loadFXMLPane(controlPane, "view/GeneralOptions.fxml", "GENERAL OPTIONS");
         appConnectController = loadFXMLPane(controlPane, "view/AppConnect.fxml", "ANDROID APP CONNECTION");
         ledStripSimulationController = loadFXMLPane(controlPane, "view/LEDStripSimulation.fxml", "LED STRIP SIMULATION");

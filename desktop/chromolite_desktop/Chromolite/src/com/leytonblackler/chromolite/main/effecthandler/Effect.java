@@ -9,14 +9,6 @@ public abstract class Effect {
 
     public abstract void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation);
 
-    protected int calculateDelay(int min, int max, int percent) {
-        //Requires that the minimum delay is less than the maximum delay and the percentage is valid.
-        if (min > max || percent < 0 || percent > 100) {
-            throw new IllegalArgumentException();
-        }
-        return (int) (((((100.0 - percent) / 100.0) * (max - min))) + min);
-    }
-
     protected void delay(long millis) {
         try {
             Thread.sleep(millis);

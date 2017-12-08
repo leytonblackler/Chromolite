@@ -4,9 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<Pane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.settings.StaticSettingsController">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controllers.settings.StaticSettingsController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -23,6 +22,49 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
+    <GridPane hgap="$PADDING">
 
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+        </columnConstraints>
 
-</Pane>
+        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0" translateY="${PADDING/3}">
+            <Label text="BRIGHTNESS"/>
+            <Label fx:id="brightnessPercentLabel" text="0%"/>
+        </HBox>
+        <Label text="STYLE" GridPane.columnIndex="1" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
+        <Label text="NUMBER OF COLOURS" GridPane.columnIndex="2" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
+        <Label text="N/A" GridPane.columnIndex="3" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="0" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5">
+            <Slider fx:id="brightnessSlider" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="1" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5" GridPane.hgrow="ALWAYS" >
+            <ChoiceBox fx:id="styleChoiceBox" value="SOLID" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="2" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5" GridPane.hgrow="ALWAYS" >
+            <ChoiceBox fx:id="numberOfColoursChoiceBox" value="RAINBOW" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="3" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5">
+            <HBox alignment="CENTER">
+                <!--<CheckBox fx:id="syncWithRazerCheckBox" selected="true"/>-->
+            </HBox>
+        </VBox>
+
+    </GridPane>
+
+</VBox>

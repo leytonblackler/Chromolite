@@ -2,6 +2,7 @@ package com.leytonblackler.chromolite.main.effecthandler.effects;
 
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.Effect;
+import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
@@ -26,7 +27,7 @@ public class StrobeEffect extends Effect {
         ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
         //Calculate how long to wait before the next tick.
-        int time = calculateDelay(MIN_DELAY, MAX_DELAY, settings.getSpeed());
+        int time = EffectUtilities.calculateDelay(MIN_DELAY, MAX_DELAY, settings.getSpeed());
 
         delay(time);
     }

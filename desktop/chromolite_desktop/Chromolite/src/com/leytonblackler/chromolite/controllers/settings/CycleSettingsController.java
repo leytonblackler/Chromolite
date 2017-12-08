@@ -2,6 +2,7 @@ package com.leytonblackler.chromolite.controllers.settings;
 
 import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.Chromolite;
+import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -21,12 +22,6 @@ public class CycleSettingsController implements Controller, Initializable {
 
     private static final int DEFAULT_BRIGHTNESS = 100;
     private static final int DEFAULT_SPEED = 50;
-
-    private enum NumberOfColours {
-        TWO,
-        THREE,
-        RAINBOW
-    }
 
     @FXML
     private Slider brightnessSlider;
@@ -49,7 +44,7 @@ public class CycleSettingsController implements Controller, Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        initialiseChoiceBox(numberOfColoursChoiceBox, NumberOfColours.values(), NumberOfColours.RAINBOW);
+        initialiseChoiceBox(numberOfColoursChoiceBox, CycleEffect.NumberOfColours.values(), CycleEffect.NumberOfColours.RAINBOW);
 
         //initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
 
