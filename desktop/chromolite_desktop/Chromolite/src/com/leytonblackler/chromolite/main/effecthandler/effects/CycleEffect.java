@@ -2,31 +2,21 @@ package com.leytonblackler.chromolite.main.effecthandler.effects;
 
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.Effect;
+import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
 
-import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.NumberOfColours.RAINBOW;
+import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.NumberOfColours.SPECTRUM;
 
 public class CycleEffect extends Effect {
 
     private static final int STEPS = 20;
 
-    private static final int[][] RAINBOW_COLOURS = {
-            { 255, 0, 255 },
-            { 255, 0, 0 },
-            { 255, 165, 0 },
-            { 255, 255, 0 },
-            { 0, 255, 0 },
-            { 0, 255, 255 },
-            { 0, 0, 255 },
-            { 128, 0, 128 }
-    };
-
     public enum NumberOfColours {
         TWO,
         THREE,
-        RAINBOW
+        SPECTRUM
     }
 
     private int[][] colours;
@@ -40,8 +30,8 @@ public class CycleEffect extends Effect {
 
     @Override
     public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        if (settings.getCycleNumberOfColours() == RAINBOW) {
-            colours = RAINBOW_COLOURS;
+        if (settings.getCycleNumberOfColours() == SPECTRUM) {
+            colours = EffectUtilities.SPECTRUM_COLOURS;
         }
 
         if (currentStep < STEPS) {

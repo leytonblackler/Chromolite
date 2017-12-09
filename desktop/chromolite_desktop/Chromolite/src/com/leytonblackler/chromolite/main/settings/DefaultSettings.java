@@ -17,7 +17,7 @@ public final class DefaultSettings {
     public static final int BRIGHTNESS = 100;
     public static final int SPEED = 50;
 
-    public static final CycleEffect.NumberOfColours CYCLE_NUMBER_OF_COLOURS = CycleEffect.NumberOfColours.RAINBOW;
+    public static final CycleEffect.NumberOfColours CYCLE_NUMBER_OF_COLOURS = CycleEffect.NumberOfColours.SPECTRUM;
 
     public static final boolean SYNC_WITH_RAZER = true;
 

@@ -1,10 +1,14 @@
-.root
-{
-    -fx-background-color: #121b25;
+.root {
+    /*-fx-background-color: #121b25;
     -fx-font-family: Roboto;
 
     -fx-focus-color: transparent;
-    -fx-faint-focus-color: transparent;
+    -fx-faint-focus-color: transparent;*/
+}
+
+#root-pane {
+    -fx-font-family: Roboto;
+    -fx-background-color: #121b25;
 }
 
 .label {
@@ -63,11 +67,10 @@
 }
 
 .choice-box {
-    -fx-background-color:
-            -fx-shadow-highlight-color,
-            -fx-outer-border,
-            -fx-inner-border,
-            -fx-body-color;
+    -fx-background-color: -fx-shadow-highlight-color,
+    -fx-outer-border,
+    -fx-inner-border,
+    -fx-body-color;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-radius: 3px, 3px, 3px, 3px;
 
@@ -107,11 +110,10 @@
 }
 
 .check-box .box {
-    -fx-background-color:
-            -fx-shadow-highlight-color,
-            -fx-outer-border,
-            -fx-inner-border,
-            -fx-body-color;
+    -fx-background-color: -fx-shadow-highlight-color,
+    -fx-outer-border,
+    -fx-inner-border,
+    -fx-body-color;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-radius: 3px, 3px, 3px, 3px;
     -fx-background-color: #253447;
@@ -130,11 +132,10 @@
 }
 
 .toggle-button {
-    -fx-background-color:
-            -fx-shadow-highlight-color,
-            -fx-outer-border,
-            -fx-inner-border,
-            -fx-body-color;
+    -fx-background-color: -fx-shadow-highlight-color,
+    -fx-outer-border,
+    -fx-inner-border,
+    -fx-body-color;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-radius: 3px, 3px, 3px, 3px;
 
@@ -199,26 +200,28 @@
 }
 
 .radio-button .radio:selected {
-    -fx-background-color : white ;
-    -fx-background-image : null  ;
+    -fx-background-color: white;
+    -fx-background-image: null;
 }
 
 .radio-button .radio:hover {
-    -fx-background-color : #2c3b4f;
-    -fx-background-image : null  ;
+    -fx-background-color: #2c3b4f;
+    -fx-background-image: null;
 }
 
 .radio-button -radio:armed {
-    -fx-background-color : white ;
-    -fx-background-image : null  ;
+    -fx-background-color: white;
+    -fx-background-image: null;
 }
+
 .radio-button -radio:determinate {
-    -fx-background-color : white ;
-    -fx-background-image : null  ;
+    -fx-background-color: white;
+    -fx-background-image: null;
 }
+
 .radio-button -radio:indeterminate {
-    -fx-background-color : white ;
-    -fx-background-image : null  ;
+    -fx-background-color: white;
+    -fx-background-image: null;
 }
 
 .title-bar {

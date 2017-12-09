@@ -44,7 +44,7 @@ public class CycleSettingsController implements Controller, Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        initialiseChoiceBox(numberOfColoursChoiceBox, CycleEffect.NumberOfColours.values(), CycleEffect.NumberOfColours.RAINBOW);
+        initialiseChoiceBox(numberOfColoursChoiceBox, CycleEffect.NumberOfColours.values(), CycleEffect.NumberOfColours.SPECTRUM);
 
         //initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
 

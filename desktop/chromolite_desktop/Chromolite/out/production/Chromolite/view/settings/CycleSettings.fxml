@@ -63,7 +63,7 @@
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="2" GridPane.rowIndex="1"
               alignment="CENTER" spacing="5" GridPane.hgrow="ALWAYS" >
-            <ChoiceBox fx:id="numberOfColoursChoiceBox" value="RAINBOW" maxWidth="Infinity"/>
+            <ChoiceBox fx:id="numberOfColoursChoiceBox" value="SPECTRUM" maxWidth="Infinity"/>
         </VBox>
 
         <VBox prefHeight="${PADDING * 2.5}"
