@@ -5,6 +5,7 @@ import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -18,6 +19,7 @@ import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -31,6 +33,10 @@ public class GUI extends SettingsObserver {
     public static double SCALE = 1;
 
     private static int WINDOW_BORDER = 3;
+
+    private Pane titleBar;
+    private double xOffset;
+    private double yOffset;
 
     //@FXML
     //private Pane spectrumPane;
@@ -89,6 +95,8 @@ public class GUI extends SettingsObserver {
             stage.initStyle(StageStyle.UNDECORATED);
         }
 
+        enableWindowDragging(stage, titleBar);
+
         //Apply the CSS styling to the scene (window contents).
         scene.getStylesheets().add(getClass().getClassLoader().getResource("view/Style.css").toExternalForm());
 
@@ -115,7 +123,8 @@ public class GUI extends SettingsObserver {
         //controlPane.paddingProperty().bind(Constants.PADDING);
         controlPane.setPadding(new Insets(0, Constants.PADDING.getValue(), Constants.PADDING.getValue(), Constants.PADDING.getValue())); // <-- BIND THIS
 
-        contents.getChildren().add(createHeader());
+        titleBar = createTitleBar();
+        contents.getChildren().add(titleBar);
 
         spectrumController = loadFXMLPane(contents, "view/Spectrum.fxml", null);
         coloursButtonsController = loadFXMLPane(controlPane, "view/ColourButtons.fxml", "COLOURS");
@@ -141,16 +150,33 @@ public class GUI extends SettingsObserver {
         return scene;
     }
 
-    private HBox createHeader() {
+    private HBox createTitleBar() {
         ImageView logo = new ImageView();
         logo.setImage(new Image(getClass().getClassLoader().getResource("images/logo.png").toExternalForm()));
         logo.setPreserveRatio(true);
-
         HBox horizontal = new HBox();
         horizontal.setAlignment(Pos.CENTER);
         horizontal.setPrefHeight(2 * Constants.PADDING.getValue());
         horizontal.getChildren().add(logo);
         return horizontal;
+    }
+
+    private void enableWindowDragging(Stage window, Pane pane) {
+        pane.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                xOffset = window.getX() - event.getScreenX();
+                yOffset = window.getY() - event.getScreenY();
+            }
+        });
+
+        pane.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                window.setX(event.getScreenX() + xOffset);
+                window.setY(event.getScreenY() + yOffset);
+            }
+        });
     }
 
     /**

@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c472a6c4-74ee-4b6d-bc6c-2793a2a71498" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chromolite/com/leytonblackler/chromolite/main/settings/DefaultSettings.class" afterPath="$PROJECT_DIR$/out/production/Chromolite/com/leytonblackler/chromolite/main/settings/DefaultSettings.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Chromolite/view/settings/CycleSettings.fxml" afterPath="$PROJECT_DIR$/out/production/Chromolite/view/settings/CycleSettings.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/view/Style.css" afterPath="$PROJECT_DIR$/res/view/Style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/view/settings/CycleSettings.fxml" afterPath="$PROJECT_DIR$/res/view/settings/CycleSettings.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/settings/CycleSettingsController.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/settings/CycleSettingsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/CycleEffect.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/CycleEffect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/DefaultSettings.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/DefaultSettings.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -56,8 +48,8 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="400">
+              <caret line="97" column="36" lean-forward="false" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -122,6 +114,7 @@
       <find>mainPane</find>
       <find>adow</find>
       <find>rootPane</find>
+      <find>createHeader</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -816,12 +809,12 @@
       <workItem from="1512591572912" duration="34758000" />
       <workItem from="1512676807401" duration="4503000" />
       <workItem from="1512685686244" duration="20359000" />
-      <workItem from="1512771725329" duration="12180000" />
+      <workItem from="1512771725329" duration="13011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229019000" />
+    <option name="totallyTimeSpent" value="229850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -846,7 +839,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.11785714" sideWeight="0.49659863" order="10" side_tool="false" content_ui="tabs" x="2389" y="-22" width="1200" height="1023" />
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.11785714" sideWeight="0.49659863" order="10" side_tool="false" content_ui="tabs" x="2389" y="-22" width="1200" height="1023" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16428572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1287,8 +1280,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="97" column="36" lean-forward="false" selection-start-line="97" selection-start-column="36" selection-end-line="97" selection-end-column="36" />
           <folding />
         </state>
       </provider>
