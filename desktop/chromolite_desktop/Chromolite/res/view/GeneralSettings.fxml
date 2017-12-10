@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.GeneralOptionsController" spacing="$PADDING">
+      fx:controller="com.leytonblackler.chromolite.controllers.GeneralSettingsController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>

@@ -49,7 +49,7 @@ public class Model extends SettingsObserver {
     }
 
     @Override
-    public void updateGeneralOptions(Settings settings) {
+    public void updateGeneralSettings(Settings settings) {
 
     }
 

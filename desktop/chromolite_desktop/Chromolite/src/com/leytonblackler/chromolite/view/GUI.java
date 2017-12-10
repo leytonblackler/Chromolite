@@ -5,25 +5,18 @@ import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.settings.Settings;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.effect.InnerShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -64,9 +57,9 @@ public class GUI extends SettingsObserver {
     Controller modeSettingsController;
 
     //@FXML
-    //private Pane generalOptionsPane;
+    //private Pane generalSettingsPane;
 
-    Controller generalOptionsController;
+    Controller generalSettingsController;
 
     //@FXML
     //private Pane appConnectPane;
@@ -135,7 +128,7 @@ public class GUI extends SettingsObserver {
         coloursButtonsController = loadFXMLPane(controlPane, "view/ColourButtons.fxml", "COLOURS");
         modeController = loadFXMLPane(controlPane, "view/Modes.fxml", "MODES");
         modeSettingsController = loadFXMLPane(controlPane, "view/settings/CycleSettings.fxml", "MODE SETTINGS");
-        generalOptionsController = loadFXMLPane(controlPane, "view/GeneralOptions.fxml", "GENERAL OPTIONS");
+        generalSettingsController = loadFXMLPane(controlPane, "view/GeneralSettings.fxml", "GENERAL SETTINGS");
         appConnectController = loadFXMLPane(controlPane, "view/AppConnect.fxml", "ANDROID APP CONNECTION");
         ledStripSimulationController = loadFXMLPane(controlPane, "view/LEDStripSimulation.fxml", "LED STRIP SIMULATION");
         contents.getChildren().add(controlPane);
@@ -312,8 +305,8 @@ public class GUI extends SettingsObserver {
     }
 
     @Override
-    public void updateGeneralOptions(Settings settings) {
-        generalOptionsController.update(settings);
+    public void updateGeneralSettings(Settings settings) {
+        generalSettingsController.update(settings);
     }
 
     @Override

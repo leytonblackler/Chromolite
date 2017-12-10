@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class GeneralOptionsController implements Controller, Initializable {
+public class GeneralSettingsController implements Controller, Initializable {
 
     @FXML
     private ToggleButton saveButton;

@@ -184,7 +184,7 @@ public class Settings implements Serializable {
 
     public void setRazerChromaEnabled(boolean razerChromaEnabled) {
         this.razerChromaEnabled = razerChromaEnabled;
-        observers.forEach((observer) -> observer.updateGeneralOptions(this));
+        observers.forEach((observer) -> observer.updateGeneralSettings(this));
     }
 
     public void setIp(String ip) {
