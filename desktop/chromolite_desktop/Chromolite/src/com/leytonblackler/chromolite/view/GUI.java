@@ -10,10 +10,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.InnerShadow;
@@ -22,6 +26,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -86,7 +91,7 @@ public class GUI extends SettingsObserver {
         //Create a scene with a shadow if the operating system is Windows, since unlike macOS
         //and Linux, Windows does not apply a shadow to undecorated windows.
         String osName = System.getProperty("os.name");
-        if(osName != null && osName.startsWith("Windows") ) {
+        if (osName != null && osName.startsWith("Windows")) {
             scene = createShadowedScene(createSceneContents());
             stage.initStyle(StageStyle.TRANSPARENT);
 
@@ -94,8 +99,6 @@ public class GUI extends SettingsObserver {
             scene = new Scene(createSceneContents());
             stage.initStyle(StageStyle.UNDECORATED);
         }
-
-        enableWindowDragging(stage, titleBar);
 
         //Apply the CSS styling to the scene (window contents).
         scene.getStylesheets().add(getClass().getClassLoader().getResource("view/Style.css").toExternalForm());
@@ -124,6 +127,7 @@ public class GUI extends SettingsObserver {
         controlPane.setPadding(new Insets(0, Constants.PADDING.getValue(), Constants.PADDING.getValue(), Constants.PADDING.getValue())); // <-- BIND THIS
 
         titleBar = createTitleBar();
+        enableWindowDragging(titleBar);
         contents.getChildren().add(titleBar);
 
         spectrumController = loadFXMLPane(contents, "view/Spectrum.fxml", null);
@@ -142,40 +146,117 @@ public class GUI extends SettingsObserver {
         VBox outer = new VBox();
         outer.getChildren().add(contents);
         outer.setPadding(new Insets(10.0d));
-        outer.setBackground( new Background(new BackgroundFill(Color.rgb(0, 0, 0, 0), new CornerRadii(0), new Insets(0))));
+        outer.setBackground(new Background(new BackgroundFill(Color.rgb(0, 0, 0, 0), new CornerRadii(0), new Insets(0))));
         contents.setEffect(new DropShadow(BlurType.GAUSSIAN, Color.rgb(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0));
-        ((VBox) contents).setBackground( new Background(new BackgroundFill( Color.WHITE, new CornerRadii(0), new Insets(0))));
+        ((VBox) contents).setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), new Insets(0))));
         Scene scene = new Scene(outer);
         scene.setFill(Color.rgb(0, 255, 0, 0));
         return scene;
     }
 
-    private HBox createTitleBar() {
+    /**
+     * Creates a title bar for the window which allows the window to be dragged, closed and minimised.
+     * @return The title bar in the form of a Pane.
+     */
+    private Pane createTitleBar() {
+        //Load the Chromolite logo.
         ImageView logo = new ImageView();
         logo.setImage(new Image(getClass().getClassLoader().getResource("images/logo.png").toExternalForm()));
         logo.setPreserveRatio(true);
-        HBox horizontal = new HBox();
-        horizontal.setAlignment(Pos.CENTER);
-        horizontal.setPrefHeight(2 * Constants.PADDING.getValue());
-        horizontal.getChildren().add(logo);
-        return horizontal;
+        //Create a pane for the title bar, where the logo and buttons will be stacked.
+        StackPane bar = new StackPane();
+        bar.setPrefHeight(2 * Constants.PADDING.getValue());
+        //Create a box to use as a container for the logo.
+        HBox logoBox = new HBox();
+        logoBox.setAlignment(Pos.CENTER);
+        logoBox.getChildren().add(logo);
+        //Add the logo box containing the logo to the title bar.
+        bar.getChildren().add(logoBox);
+        //Create a box to use as a container for the close and minimise buttons.
+        HBox buttonBox = new HBox();
+        buttonBox.setAlignment(Pos.CENTER_RIGHT);
+        //Create a close button.
+        Button close = createCloseButton(bar.getPrefHeight());
+        //Create a minimise button.
+        Button minimise = createMinimiseButton(bar.getPrefHeight());
+        buttonBox.getChildren().add(close);
+        buttonBox.getChildren().add(minimise);
+        //Add the button box containing the buttons to the title bar.
+        bar.getChildren().add(buttonBox);
+
+        return bar;
     }
 
-    private void enableWindowDragging(Stage window, Pane pane) {
-        pane.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = window.getX() - event.getScreenX();
-                yOffset = window.getY() - event.getScreenY();
-            }
-        });
+    /**
+     * Creates a button that allows the window it is contained within to be closed.
+     * @param size The width and height of the button.
+     * @return A button that allows the window it is contained within to be closed.
+     */
+    private Button createCloseButton(double size) {
+        Button button = new Button();
+        //Close the window when the button is clicked.
+        button.setOnAction(e -> ((Stage) button.getScene().getWindow()).close());
+        //Set the button as a square based on the size.
+        button.setPrefWidth(size);
+        button.setPrefHeight(size);
+        //Apply the CSS styling to the button.
+        button.setId("title-bar-button");
+        //Create a cross to use as the icon for the button.
+        StackPane closeIcon = new StackPane();
+        //Create the lines that make up the cross.
+        Line closeLine1 = new Line(0, 0, 8, 8);
+        Line closeLine2 = new Line(0, 8, 8, 0);
+        //Apply the CSS styling to the lines.
+        closeLine1.setId("title-bar-button-shape");
+        closeLine2.setId("title-bar-button-shape");
+        //Add the lines to the close icon stack pane.
+        closeIcon.getChildren().add(closeLine1);
+        closeIcon.getChildren().add(closeLine2);
+        //Set the cross as the close button graphic.
+        button.setGraphic(closeIcon);
 
-        pane.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                window.setX(event.getScreenX() + xOffset);
-                window.setY(event.getScreenY() + yOffset);
-            }
+        return button;
+    }
+
+    /**
+     * Creates a button that allows the window it is contained within to be minimised.
+     * @param size The width and height of the button.
+     * @return A button that allows the window it is contained within to be minimised.
+     */
+    private Button createMinimiseButton(double size) {
+        Button button = new Button();
+        //Minimise the window when the button is clicked.
+        button.setOnAction(e -> ((Stage) button.getScene().getWindow()).setIconified(true));
+        //Set the button as a square based on the size.
+        button.setPrefWidth(size);
+        button.setPrefHeight(size);
+        //Apply the CSS styling to the button.
+        button.setId("title-bar-button");
+        //Create a horizontal line to use as the icon for the button.
+        StackPane minimiseIcon = new StackPane();
+        //Create the line that makes up the icon.
+        Line minimiseLine = new Line(0, 4, 8, 4);
+        //Apply the CSS styling to the line.
+        minimiseLine.setId("title-bar-button-shape");
+        minimiseIcon.getChildren().add(minimiseLine);
+        //Set the line as the minimise button graphic.
+        button.setGraphic(minimiseIcon);
+
+        return button;
+    }
+
+    /**
+     * Enables the window that the pane is contained within to be moved by dragging the pane.
+     * @param pane The draggable pane.
+     */
+    private void enableWindowDragging(Pane pane) {
+        pane.setOnMousePressed(e -> {
+            xOffset = pane.getScene().getWindow().getX() - e.getScreenX();
+            yOffset = pane.getScene().getWindow().getY() - e.getScreenY();
+        });
+        pane.setOnMouseDragged(e -> {
+            pane.getScene().getWindow().setX(e.getScreenX() + xOffset);
+            pane.getScene().getWindow().setY(e.getScreenY() + yOffset);
         });
     }
 

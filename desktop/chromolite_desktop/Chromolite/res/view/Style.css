@@ -131,6 +131,25 @@
     -fx-background-color: #03a9f4;
 }
 
+#title-bar-button {
+    -fx-background-radius: 0px, 0px, 0px, 0px;
+    -fx-background-color: #121b25;
+}
+
+#title-bar-button:hover {
+    -fx-background-color: #2c3b4f;
+}
+
+#title-bar-button:pressed {
+    -fx-background-color: #253447;
+}
+
+#title-bar-button-shape {
+    /*-fx-stroke: #03a9f4;*/
+    -fx-stroke: #bcc4cc;
+    -fx-stroke-width: 2;
+}
+
 .toggle-button {
     -fx-background-color: -fx-shadow-highlight-color,
     -fx-outer-border,
