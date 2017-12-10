@@ -26,10 +26,17 @@ public class GeneralSettingsController implements Controller, Initializable {
     private ToggleButton resetButton;
 
     @FXML
+    private ToggleButton arduinoButton;
+
+    @FXML
     private ToggleButton razerButton;
 
     @FXML
     private ToggleButton hueButton;
+
+    @FXML
+    public ImageView arduinoLogo;
+    private Image[] arduinoLogoImages = new Image[2];
 
     @FXML
     public ImageView razerLogo;
@@ -41,6 +48,10 @@ public class GeneralSettingsController implements Controller, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        arduinoLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/arduino_logo_light.png").toExternalForm());
+        arduinoLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/arduino_logo_dark.png").toExternalForm());
+        arduinoLogo.setImage(arduinoLogoImages[0]);
+
         razerLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/razer_logo_light.png").toExternalForm());
         razerLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/razer_logo_dark.png").toExternalForm());
         razerLogo.setImage(razerLogoImages[0]);
@@ -68,6 +79,16 @@ public class GeneralSettingsController implements Controller, Initializable {
     @FXML
     private void resetButtonClicked() {
         //
+    }
+
+    @FXML
+    private void arduinoButtonClicked() {
+        System.out.println("razer");
+        if (arduinoButton.selectedProperty().get()) {
+            arduinoLogo.setImage(arduinoLogoImages[1]);
+        } else {
+            arduinoLogo.setImage(arduinoLogoImages[0]);
+        }
     }
 
     @FXML

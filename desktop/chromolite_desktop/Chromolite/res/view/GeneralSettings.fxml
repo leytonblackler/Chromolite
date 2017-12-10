@@ -58,19 +58,27 @@
         </VBox>
 
 
-        <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked"
+        <ToggleButton fx:id="arduinoButton" onAction="#arduinoButtonClicked" text="ARDUINO"
                       prefHeight="${PADDING * 2.5}"
                       GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity">
             <graphic>
-                <ImageView fx:id="razerLogo" translateX="-1"/>
+                <ImageView fx:id="arduinoLogo"/>
             </graphic>
         </ToggleButton>
 
-        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" disable="true"
+        <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked" text="RAZER CHROMA"
                       prefHeight="${PADDING * 2.5}"
                       GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity">
             <graphic>
-                <ImageView fx:id="hueLogo" translateX="0"/>
+                <ImageView fx:id="razerLogo" translateX="${-PADDING/3}"/>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" text="PHILLIPS HUE"
+                      prefHeight="${PADDING * 2.5}"
+                      GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity">
+            <graphic>
+                <ImageView fx:id="hueLogo" translateX="${-PADDING/4}"/>
             </graphic>
         </ToggleButton>
     </GridPane>
