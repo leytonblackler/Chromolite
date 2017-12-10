@@ -104,7 +104,8 @@ public class GUI extends SettingsObserver {
         scene.getStylesheets().add(getClass().getClassLoader().getResource("view/Style.css").toExternalForm());
 
         Chromolite.getInstance().setLEDStripSimulation((LEDStripSimulationController) ledStripSimulationController);
-
+        //Set the window icon.
+        stage.getIcons().add(new Image(getClass().getClassLoader().getResource("images/icon.png").toExternalForm()));
         //Add the window contents to the window.
         stage.setScene(scene);
         //Set the window as transparent to remove window borders and title.
@@ -147,7 +148,7 @@ public class GUI extends SettingsObserver {
         outer.getChildren().add(contents);
         outer.setPadding(new Insets(10.0d));
         outer.setBackground(new Background(new BackgroundFill(Color.rgb(0, 0, 0, 0), new CornerRadii(0), new Insets(0))));
-        contents.setEffect(new DropShadow(BlurType.GAUSSIAN, Color.rgb(0, 0, 0, 0.4), 10, 0.5, 0.0, 0.0));
+        contents.setEffect(new DropShadow(BlurType.GAUSSIAN, Color.rgb(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0));
         ((VBox) contents).setBackground(new Background(new BackgroundFill(Color.WHITE, new CornerRadii(0), new Insets(0))));
         Scene scene = new Scene(outer);
         scene.setFill(Color.rgb(0, 255, 0, 0));
@@ -175,12 +176,10 @@ public class GUI extends SettingsObserver {
         //Create a box to use as a container for the close and minimise buttons.
         HBox buttonBox = new HBox();
         buttonBox.setAlignment(Pos.CENTER_RIGHT);
-        //Create a close button.
-        Button close = createCloseButton(bar.getPrefHeight());
         //Create a minimise button.
-        Button minimise = createMinimiseButton(bar.getPrefHeight());
-        buttonBox.getChildren().add(close);
-        buttonBox.getChildren().add(minimise);
+        buttonBox.getChildren().add(createMinimiseButton(bar.getPrefHeight()));
+        //Create a close button.
+        buttonBox.getChildren().add(createCloseButton(bar.getPrefHeight()));
         //Add the button box containing the buttons to the title bar.
         bar.getChildren().add(buttonBox);
 
