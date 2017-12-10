@@ -46,6 +46,11 @@
             </VBox>
         </HBox>
 
+        <Label text="NOT CURRENTLY SUPPORTED" GridPane.columnIndex="2" GridPane.rowIndex="0" maxWidth="Infinity"/>
+
+        <ToggleButton text="CONNECT" disable="true"
+                      prefHeight="${PADDING * 2.5}" GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="Infinity"/>
+
     </GridPane>
 
 </VBox>

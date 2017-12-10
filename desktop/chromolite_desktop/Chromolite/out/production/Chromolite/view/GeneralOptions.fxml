@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.GeneralOptionsController">
+      fx:controller="com.leytonblackler.chromolite.controllers.GeneralOptionsController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -26,7 +24,7 @@
         <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
     </fx:define>
 
-    <GridPane hgap="$PADDING">
+    <GridPane hgap="$PADDING" vgap="$PADDING">
 
         <columnConstraints>
             <ColumnConstraints percentWidth="25"/>
@@ -35,7 +33,6 @@
             <ColumnConstraints percentWidth="25"/>
         </columnConstraints>
 
-        <!-- FIRST ROW MODE BUTTONS -->
         <ToggleButton fx:id="saveButton" onAction="#saveButtonClicked"
                       prefHeight="${PADDING * 2.5}"
                       text="SAVE SETTINGS"
@@ -51,12 +48,29 @@
                       text="RESET TO DEFAULT"
                       GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>
 
-        <!-- RAZER CHROMA BUTTON -->
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="3" GridPane.rowIndex="0"
+              alignment="CENTER" spacing="5">
+            <Label text="START MINIMISED"/>
+            <HBox alignment="CENTER">
+                <CheckBox fx:id="startMinimisedCheckBox" selected="false"/>
+            </HBox>
+        </VBox>
+
+
         <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked"
                       prefHeight="${PADDING * 2.5}"
-                      GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="Infinity">
+                      GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity">
             <graphic>
                 <ImageView fx:id="razerLogo" translateX="-1"/>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" disable="true"
+                      prefHeight="${PADDING * 2.5}"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity">
+            <graphic>
+                <ImageView fx:id="hueLogo" translateX="0"/>
             </graphic>
         </ToggleButton>
     </GridPane>
