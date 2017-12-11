@@ -50,7 +50,10 @@ public class CycleEffect extends Effect {
         razerChromaService.setAll(currentColour[0], currentColour[1], currentColour[2]);
         ledStripSimulation.setAll(currentColour[0], currentColour[1], currentColour[2]);
 
-        delay(50);
+        //Calculate how long to wait before the next tick.
+        int time = EffectUtilities.calculateDelay(10, 50, settings.getSpeed());
+
+        delay(time);
     }
 
     private void next(int[] currentColour) {

@@ -81,6 +81,16 @@
                 <ImageView fx:id="hueLogo" translateX="${-PADDING/4}"/>
             </graphic>
         </ToggleButton>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="3" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5">
+            <Label text="SYNC ALL"/>
+            <HBox alignment="CENTER">
+                <CheckBox selected="false"/>
+            </HBox>
+        </VBox>
+
     </GridPane>
 
 </VBox>
