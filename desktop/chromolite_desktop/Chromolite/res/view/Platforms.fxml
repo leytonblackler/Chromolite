@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.GeneralSettingsController" spacing="$PADDING">
+      fx:controller="com.leytonblackler.chromolite.controllers.PlatformsController" spacing="$PADDING">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -33,27 +33,36 @@
             <ColumnConstraints percentWidth="25"/>
         </columnConstraints>
 
-        <ToggleButton fx:id="saveButton" onAction="#saveButtonClicked"
+        <ToggleButton fx:id="arduinoButton" onAction="#arduinoButtonClicked" text="ARDUINO"
                       prefHeight="${PADDING * 2.5}"
-                      text="SAVE SETTINGS"
-                      GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity">
+            <graphic>
+                <ImageView fx:id="arduinoLogo"/>
+            </graphic>
+        </ToggleButton>
 
-        <ToggleButton fx:id="loadButton" onAction="#loadButtonClicked"
+        <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked" text="RAZER CHROMA"
                       prefHeight="${PADDING * 2.5}"
-                      text="LOAD SETTINGS"
-                      GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity">
+            <graphic>
+                <ImageView fx:id="razerLogo" translateX="${-PADDING/3}"/>
+            </graphic>
+        </ToggleButton>
 
-        <ToggleButton fx:id="resetButton" onAction="#resetButtonClicked"
+        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" text="PHILLIPS HUE"
                       prefHeight="${PADDING * 2.5}"
-                      text="RESET TO DEFAULT"
-                      GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>
+                      GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity">
+            <graphic>
+                <ImageView fx:id="hueLogo" translateX="${-PADDING/4}"/>
+            </graphic>
+        </ToggleButton>
 
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="3" GridPane.rowIndex="0"
               alignment="CENTER" spacing="5">
-            <Label text="START MINIMISED"/>
+            <Label text="SYNC ALL"/>
             <HBox alignment="CENTER">
-                <CheckBox fx:id="startMinimisedCheckBox" selected="false"/>
+                <CheckBox selected="false"/>
             </HBox>
         </VBox>
 
