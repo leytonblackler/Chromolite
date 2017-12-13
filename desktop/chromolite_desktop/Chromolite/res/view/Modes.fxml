@@ -35,8 +35,8 @@
                       text="STATIC"
                       GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="randomButton" onAction="#randomButtonClicked"
-                      text="RANDOM"
+        <ToggleButton fx:id="cycleButton" onAction="#cycleButtonClicked"
+                      text="CYCLE"
                       GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="waveButton" onAction="#waveButtonClicked"
@@ -47,20 +47,20 @@
                       text="MUSIC"
                       GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="cycleButton" onAction="#cycleButtonClicked"
-                      text="CYCLE"
+        <ToggleButton fx:id="scanButton" onAction="#scanButtonClicked"
+                      text="SCAN"
                       GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
         <ToggleButton fx:id="strobeButton" onAction="#strobeButtonClicked"
                       text="STROBE"
                       GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="scanButton" onAction="#scanButtonClicked"
-                      text="SCAN"
-                      GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity"/>
-
         <ToggleButton fx:id="offButton" onAction="#offButtonClicked"
                       text="OFF"
+                      GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity"/>
+
+        <ToggleButton fx:id="disableButton" onAction="#disableButtonClicked"
+                      text="DISABLE"
                       GridPane.rowIndex="1" GridPane.columnIndex="3" maxWidth="Infinity"/>
     </GridPane>
 

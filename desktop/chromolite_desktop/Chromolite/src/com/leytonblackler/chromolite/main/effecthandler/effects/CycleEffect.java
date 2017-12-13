@@ -16,7 +16,14 @@ public class CycleEffect extends Effect {
     public enum NumberOfColours {
         TWO,
         THREE,
-        SPECTRUM
+        SPECTRUM,
+        RANDOM
+    }
+
+    public enum Transition {
+        BLEND,
+        FADE,
+        INSTANT
     }
 
     private int[][] colours;

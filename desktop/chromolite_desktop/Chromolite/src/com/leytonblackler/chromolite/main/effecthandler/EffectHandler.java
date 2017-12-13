@@ -58,8 +58,8 @@ public class EffectHandler {
             case STATIC:
                 effect = new StaticEffect();
                 break;
-            case RANDOM:
-                effect = new RandomEffect();
+            case CYCLE:
+                effect = new CycleEffect();
                 break;
             case WAVE:
                 effect = new WaveEffect();
@@ -67,17 +67,17 @@ public class EffectHandler {
             case MUSIC:
                 effect = new MusicEffect();
                 break;
-            case CYCLE:
-                effect = new CycleEffect();
+            case SCAN:
+                effect = new ScanEffect();
                 break;
             case STROBE:
                 effect = new StrobeEffect();
                 break;
-            case SCAN:
-                effect = new ScanEffect();
-                break;
             case OFF:
                 effect = new OffEffect();
+                break;
+            case DISABLE:
+                //effect = new DisableEffect();???
                 break;
         }
     }

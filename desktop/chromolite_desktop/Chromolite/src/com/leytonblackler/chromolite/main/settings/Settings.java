@@ -10,13 +10,13 @@ public class Settings implements Serializable {
 
     public enum Mode {
         STATIC,
-        RANDOM,
+        CYCLE,
         WAVE,
         MUSIC,
-        CYCLE,
-        STROBE,
         SCAN,
-        OFF
+        STROBE,
+        OFF,
+        DISABLE
     }
 
     public enum ColourSelector {
@@ -42,6 +42,8 @@ public class Settings implements Serializable {
     private int speed = DefaultSettings.SPEED;
 
     private CycleEffect.NumberOfColours cycleNumberOfColours = DefaultSettings.CYCLE_NUMBER_OF_COLOURS;
+
+    private CycleEffect.Transition cycleTransition = DefaultSettings.CYCLE_TRANSITION;
 
     private boolean syncWithRazer = DefaultSettings.SYNC_WITH_RAZER;
 
@@ -109,6 +111,10 @@ public class Settings implements Serializable {
         return cycleNumberOfColours;
     }
 
+    public CycleEffect.Transition getCycleTransition() {
+        return cycleTransition;
+    }
+
     public boolean syncWithRazer() {
         return syncWithRazer;
     }
@@ -174,6 +180,11 @@ public class Settings implements Serializable {
 
     public void setCycleNumberOfColours(CycleEffect.NumberOfColours cycleNumberOfColours) {
         this.cycleNumberOfColours = cycleNumberOfColours;
+        observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setCycleTransition(CycleEffect.Transition cycleTransition) {
+        this.cycleTransition = cycleTransition;
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 

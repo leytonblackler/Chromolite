@@ -43,10 +43,7 @@
             <Label fx:id="speedPercentLabel" text="0%"/>
         </HBox>
         <Label text="NUMBER OF COLOURS" GridPane.columnIndex="2" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
-        <Label text="SYNC WITH RAZER" GridPane.columnIndex="3" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
-
-
-
+        <Label text="TRANSITION" GridPane.columnIndex="3" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
 
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="0" GridPane.rowIndex="1"
@@ -68,11 +65,17 @@
 
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="3" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5" GridPane.hgrow="ALWAYS" >
+            <ChoiceBox fx:id="transitionChoiceBox" value="GRADUAL FADE" maxWidth="Infinity"/>
+        </VBox>
+
+        <!--<VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="3" GridPane.rowIndex="1"
               alignment="CENTER" spacing="5">
             <HBox alignment="CENTER">
                 <CheckBox fx:id="syncWithRazerCheckBox" selected="true"/>
             </HBox>
-        </VBox>
+        </VBox>-->
 
     </GridPane>
 

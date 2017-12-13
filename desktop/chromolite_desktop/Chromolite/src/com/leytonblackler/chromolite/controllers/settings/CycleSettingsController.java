@@ -39,12 +39,17 @@ public class CycleSettingsController implements Controller, Initializable {
     private ChoiceBox<String> numberOfColoursChoiceBox;
 
     @FXML
-    private CheckBox syncWithRazerCheckBox;
+    private ChoiceBox<String> transitionChoiceBox;
+
+    /*@FXML
+    private CheckBox syncWithRazerCheckBox;*/
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         initialiseChoiceBox(numberOfColoursChoiceBox, CycleEffect.NumberOfColours.values(), CycleEffect.NumberOfColours.SPECTRUM);
+
+        initialiseChoiceBox(transitionChoiceBox, CycleEffect.Transition.values(), CycleEffect.Transition.BLEND);
 
         //initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
 

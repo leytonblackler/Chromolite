@@ -19,6 +19,8 @@ public final class DefaultSettings {
 
     public static final CycleEffect.NumberOfColours CYCLE_NUMBER_OF_COLOURS = CycleEffect.NumberOfColours.SPECTRUM;
 
+    public static final CycleEffect.Transition CYCLE_TRANSITION = CycleEffect.Transition.BLEND;
+
     public static final boolean SYNC_WITH_RAZER = true;
 
     public static final boolean RAZER_CHROMA_ENABLED = true;

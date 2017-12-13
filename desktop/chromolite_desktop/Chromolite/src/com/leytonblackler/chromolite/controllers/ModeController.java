@@ -21,7 +21,7 @@ public class ModeController implements Controller, Initializable {
     private ToggleButton staticButton;
 
     @FXML
-    private ToggleButton randomButton;
+    private ToggleButton cycleButton;
 
     @FXML
     private ToggleButton waveButton;
@@ -30,16 +30,16 @@ public class ModeController implements Controller, Initializable {
     private ToggleButton musicButton;
 
     @FXML
-    private ToggleButton cycleButton;
+    private ToggleButton scanButton;
 
     @FXML
     private ToggleButton strobeButton;
 
     @FXML
-    private ToggleButton scanButton;
+    private ToggleButton offButton;
 
     @FXML
-    private ToggleButton offButton;
+    private ToggleButton disableButton;
 
     private Set<ToggleButton> buttons;
 
@@ -47,13 +47,13 @@ public class ModeController implements Controller, Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         buttons = new HashSet<>();
         buttons.add(staticButton);
-        buttons.add(randomButton);
+        buttons.add(cycleButton);
         buttons.add(waveButton);
         buttons.add(musicButton);
-        buttons.add(cycleButton);
-        buttons.add(strobeButton);
         buttons.add(scanButton);
+        buttons.add(strobeButton);
         buttons.add(offButton);
+        buttons.add(disableButton);
         buttons.forEach((button) -> button.prefHeightProperty().bind(Constants.BUTTON_HEIGHT));
         //buttonGrid.hgapProperty().bind(Constants.PADDING);
         //buttonGrid.vgapProperty().bind(Constants.PADDING);
@@ -79,8 +79,8 @@ public class ModeController implements Controller, Initializable {
     }
 
     @FXML
-    public void randomButtonClicked() {
-        setMode(Settings.Mode.RANDOM);
+    public void cycleButtonClicked() {
+        setMode(Settings.Mode.CYCLE);
     }
 
     @FXML
@@ -94,8 +94,8 @@ public class ModeController implements Controller, Initializable {
     }
 
     @FXML
-    public void cycleButtonClicked() {
-        setMode(Settings.Mode.CYCLE);
+    public void scanButtonClicked() {
+        setMode(Settings.Mode.SCAN);
     }
 
     @FXML
@@ -104,13 +104,13 @@ public class ModeController implements Controller, Initializable {
     }
 
     @FXML
-    public void scanButtonClicked() {
-        setMode(Settings.Mode.SCAN);
+    public void offButtonClicked() {
+        setMode(Settings.Mode.OFF);
     }
 
     @FXML
-    public void offButtonClicked() {
-        setMode(Settings.Mode.OFF);
+    public void disableButtonClicked() {
+        setMode(Settings.Mode.DISABLE);
     }
 
     private void setMode(Settings.Mode mode) {
