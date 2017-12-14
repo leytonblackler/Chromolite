@@ -1,8 +1,8 @@
 package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.Chromolite;
-import com.leytonblackler.chromolite.main.settings.Settings;
-import com.leytonblackler.chromolite.view.Constants;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
@@ -68,7 +68,7 @@ public class ColourButtonsController implements Controller, Initializable {
     }
 
     @Override
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         buttons.forEach((button) -> setButtonState(button, settings.getColourSelector()));
 
         colours[0] = settings.getPrimaryColour();
@@ -131,22 +131,22 @@ public class ColourButtonsController implements Controller, Initializable {
      * @param button The button to modify the state of.
      * @param colourSelector The mode to determine the state from.
      */
-    private void setButtonState(ToggleButton button, Settings.ColourSelector colourSelector) {
+    private void setButtonState(ToggleButton button, LightSettings.ColourSelector colourSelector) {
         button.setSelected(button.getText().equals(colourSelector.toString()));
     }
 
     @FXML
     private void primaryButtonClicked() {
-        Chromolite.getInstance().getSettings().setColourSelector(Settings.ColourSelector.PRIMARY);
+        Chromolite.getInstance().getSettings().setColourSelector(LightSettings.ColourSelector.PRIMARY);
     }
 
     @FXML
     private void secondaryButtonClicked() {
-        Chromolite.getInstance().getSettings().setColourSelector(Settings.ColourSelector.SECONDARY);
+        Chromolite.getInstance().getSettings().setColourSelector(LightSettings.ColourSelector.SECONDARY);
     }
 
     @FXML
     private void tertiaryButtonClicked() {
-        Chromolite.getInstance().getSettings().setColourSelector(Settings.ColourSelector.TERTIARY);
+        Chromolite.getInstance().getSettings().setColourSelector(LightSettings.ColourSelector.TERTIARY);
     }
 }

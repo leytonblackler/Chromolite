@@ -3,14 +3,13 @@ package com.leytonblackler.chromolite.controllers.settings;
 import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
@@ -82,7 +81,7 @@ public class CycleSettingsController implements Controller, Initializable {
     }
 
     @Override
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         //
     }
 

@@ -3,7 +3,7 @@ package com.leytonblackler.chromolite.main.model;
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.EffectHandler;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
@@ -29,32 +29,32 @@ public class Model extends SettingsObserver {
     }
 
     @Override
-    public void updateSpectrum(Settings settings) {
+    public void updateSpectrum(SettingsManager settings) {
 
     }
 
     @Override
-    public void updateColours(Settings settings) {
+    public void updateColours(SettingsManager settings) {
 
     }
 
     @Override
-    public void updateModes(Settings settings) {
+    public void updateModes(SettingsManager settings) {
         effectHandler.setEffect(settings.getMode());
     }
 
     @Override
-    public void updateModeSettings(Settings settings) {
+    public void updateModeSettings(SettingsManager settings) {
 
     }
 
     @Override
-    public void updateGeneralSettings(Settings settings) {
+    public void updateGeneralSettings(SettingsManager settings) {
 
     }
 
     @Override
-    public void updateAndroidAppConnection(Settings settings) {
+    public void updateAndroidAppConnection(SettingsManager settings) {
 
     }
 }

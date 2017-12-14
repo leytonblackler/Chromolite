@@ -3,7 +3,7 @@ package com.leytonblackler.chromolite.view;
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -288,32 +288,32 @@ public class GUI extends SettingsObserver {
     }
 
     @Override
-    public void updateSpectrum(Settings settings) {
+    public void updateSpectrum(SettingsManager settings) {
         spectrumController.update(settings);
     }
 
     @Override
-    public void updateColours(Settings settings) {
+    public void updateColours(SettingsManager settings) {
         coloursButtonsController.update(settings);
     }
 
     @Override
-    public void updateModes(Settings settings) {
+    public void updateModes(SettingsManager settings) {
         modeController.update(settings);
     }
 
     @Override
-    public void updateModeSettings(Settings settings) {
+    public void updateModeSettings(SettingsManager settings) {
         modeSettingsController.update(settings);
     }
 
     @Override
-    public void updateGeneralSettings(Settings settings) {
+    public void updateGeneralSettings(SettingsManager settings) {
         generalSettingsController.update(settings);
     }
 
     @Override
-    public void updateAndroidAppConnection(Settings settings) {
+    public void updateAndroidAppConnection(SettingsManager settings) {
         appConnectController.update(settings);
     }
 }

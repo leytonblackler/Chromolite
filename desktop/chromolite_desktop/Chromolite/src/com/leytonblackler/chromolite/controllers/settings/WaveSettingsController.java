@@ -1,7 +1,7 @@
 package com.leytonblackler.chromolite.controllers.settings;
 
 import com.leytonblackler.chromolite.controllers.Controller;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -81,7 +81,7 @@ public class WaveSettingsController implements Controller, Initializable {
     }
 
     @Override
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         //
     }
 

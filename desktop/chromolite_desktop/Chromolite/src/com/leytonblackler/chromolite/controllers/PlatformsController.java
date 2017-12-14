@@ -1,6 +1,6 @@
 package com.leytonblackler.chromolite.controllers;
 
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;
@@ -79,7 +79,7 @@ public class PlatformsController implements Controller, Initializable {
     }
 
     @Override
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         //
     }
 }

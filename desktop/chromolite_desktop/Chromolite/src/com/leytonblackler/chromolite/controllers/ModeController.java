@@ -1,7 +1,8 @@
 package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.Chromolite;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import com.leytonblackler.chromolite.view.Constants;
 import com.leytonblackler.chromolite.view.MutableDouble;
 import javafx.beans.property.DoubleProperty;
@@ -60,7 +61,7 @@ public class ModeController implements Controller, Initializable {
     }
 
     @Override
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         buttons.forEach((button) -> setButtonState(button, settings.getMode()));
     }
 
@@ -69,51 +70,51 @@ public class ModeController implements Controller, Initializable {
      * @param button The button to modify the state of.
      * @param mode The mode to determine the state from.
      */
-    private void setButtonState(ToggleButton button, Settings.Mode mode) {
+    private void setButtonState(ToggleButton button, LightSettings.Mode mode) {
         button.setSelected(button.getText().equals(mode.toString()));
     }
 
     @FXML
     public void staticButtonClicked() {
-        setMode(Settings.Mode.STATIC);
+        setMode(LightSettings.Mode.STATIC);
     }
 
     @FXML
     public void cycleButtonClicked() {
-        setMode(Settings.Mode.CYCLE);
+        setMode(LightSettings.Mode.CYCLE);
     }
 
     @FXML
     public void waveButtonClicked() {
-        setMode(Settings.Mode.WAVE);
+        setMode(LightSettings.Mode.WAVE);
     }
 
     @FXML
     public void musicButtonClicked() {
-            setMode(Settings.Mode.MUSIC);
+            setMode(LightSettings.Mode.MUSIC);
     }
 
     @FXML
     public void scanButtonClicked() {
-        setMode(Settings.Mode.SCAN);
+        setMode(LightSettings.Mode.SCAN);
     }
 
     @FXML
     public void strobeButtonClicked() {
-        setMode(Settings.Mode.STROBE);
+        setMode(LightSettings.Mode.STROBE);
     }
 
     @FXML
     public void offButtonClicked() {
-        setMode(Settings.Mode.OFF);
+        setMode(LightSettings.Mode.OFF);
     }
 
     @FXML
     public void disableButtonClicked() {
-        setMode(Settings.Mode.DISABLE);
+        setMode(LightSettings.Mode.DISABLE);
     }
 
-    private void setMode(Settings.Mode mode) {
+    private void setMode(LightSettings.Mode mode) {
         Chromolite.getInstance().getSettings().setMode(mode);
     }
 }

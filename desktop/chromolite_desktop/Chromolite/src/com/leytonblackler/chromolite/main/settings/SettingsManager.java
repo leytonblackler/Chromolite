@@ -1,57 +1,48 @@
 package com.leytonblackler.chromolite.main.settings;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.settings.categories.AppConnectSettings;
+import com.leytonblackler.chromolite.main.settings.categories.GeneralSettings;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
+import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Settings implements Serializable {
+public class SettingsManager {
 
-    public enum Mode {
-        STATIC,
-        CYCLE,
-        WAVE,
-        MUSIC,
-        SCAN,
-        STROBE,
-        OFF,
-        DISABLE
+    private LightSettings arduinoSettings;
+
+    private LightSettings razerChromaSettings;
+
+    private LightSettings phillipsHueSettings;
+
+    private PlatformSettings platformSettings;
+
+    private GeneralSettings generalSettings;
+
+    private AppConnectSettings appConnectSettings;
+
+    public SettingsManager() {
+        arduinoSettings = new LightSettings();
+        razerChromaSettings = new LightSettings();
+        phillipsHueSettings = new LightSettings();
+        platformSettings = new PlatformSettings();
+        generalSettings = new GeneralSettings();
+        appConnectSettings = new AppConnectSettings();
     }
 
-    public enum ColourSelector {
-        PRIMARY,
-        SECONDARY,
-        TERTIARY
+    private LightSettings currentLightSettings() {
+        switch (platformSettings.getPlatform()) {
+            case ARDUINO:
+                return arduinoSettings;
+            case RAZER_CHROMA:
+                return razerChromaSettings;
+            case PHILLIPS_HUE:
+                return phillipsHueSettings;
+        }
+        throw new IllegalStateException();
     }
-
-    private int ledStripLength = DefaultSettings.LED_STRIP_LENGTH;
-
-    private ColourSelector colourSelector = DefaultSettings.COLOUR_SELECTOR;
-
-    private int[] primaryColour = DefaultSettings.PRIMARY_COLOUR;
-
-    private int[] secondaryColour = DefaultSettings.SECONDARY_COLOUR;
-
-    private int[] tertiaryColour = DefaultSettings.TERTIARY_COLOUR;
-
-    private Mode mode = DefaultSettings.MODE;
-
-    private int brightness = DefaultSettings.BRIGHTNESS;
-
-    private int speed = DefaultSettings.SPEED;
-
-    private CycleEffect.NumberOfColours cycleNumberOfColours = DefaultSettings.CYCLE_NUMBER_OF_COLOURS;
-
-    private CycleEffect.Transition cycleTransition = DefaultSettings.CYCLE_TRANSITION;
-
-    private boolean syncWithRazer = DefaultSettings.SYNC_WITH_RAZER;
-
-    private boolean razerChromaEnabled = DefaultSettings.RAZER_CHROMA_ENABLED;
-
-    private String ip = DefaultSettings.IP;
-
-    private int port = DefaultSettings.PORT;
 
     /*
     Observers
@@ -76,129 +67,111 @@ public class Settings implements Serializable {
      */
 
     public int getLEDStripLength() {
-        return ledStripLength;
+        return generalSettings.getLEDStripLength();
     }
 
-    public ColourSelector getColourSelector() {
-        return colourSelector;
+    public LightSettings.ColourSelector getColourSelector() {
+        return currentLightSettings().getColourSelector();
     }
 
     public int[] getPrimaryColour() {
-        return primaryColour;
+        return currentLightSettings().getPrimaryColour();
     }
 
     public int[] getSecondaryColour() {
-        return secondaryColour;
+        return currentLightSettings().getSecondaryColour();
     }
 
     public int[] getTertiaryColour() {
-        return tertiaryColour;
+        return currentLightSettings().getTertiaryColour();
     }
 
-    public Mode getMode() {
-        return mode;
+    public LightSettings.Mode getMode() {
+        return currentLightSettings().getMode();
     }
 
     public int getBrightness() {
-        return brightness;
+        return currentLightSettings().getBrightness();
     }
 
     public int getSpeed() {
-        return speed;
+        return currentLightSettings().getSpeed();
     }
 
     public CycleEffect.NumberOfColours getCycleNumberOfColours() {
-        return cycleNumberOfColours;
+        return currentLightSettings().getCycleNumberOfColours();
     }
 
     public CycleEffect.Transition getCycleTransition() {
-        return cycleTransition;
+        return currentLightSettings().getCycleTransition();
     }
 
-    public boolean syncWithRazer() {
-        return syncWithRazer;
-    }
-
-    public boolean razerChromaEnabled() {
-        return razerChromaEnabled;
-    }
-
-    public String getIP() {
+    /*public String getIP() {
         return ip;
     }
 
     public int getPort() {
         return port;
-    }
+    }*/
 
     /*
     Mutator Methods
      */
 
     public void setLEDStripLength(int ledStripLength) {
-        this.ledStripLength = ledStripLength;
+        generalSettings.setLEDStripLength(ledStripLength);
     }
 
-    public void setColourSelector(ColourSelector colourSelector) {
-        this.colourSelector = colourSelector;
+    public void setColourSelector(LightSettings.ColourSelector colourSelector) {
+        currentLightSettings().setColourSelector(colourSelector);
         observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
     }
 
     public void setPrimaryColour(int[] primaryColour) {
-        this.primaryColour = primaryColour;
+        currentLightSettings().setPrimaryColour(primaryColour);
         observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
     }
 
     public void setSecondaryColour(int[] secondaryColour) {
-        this.secondaryColour = secondaryColour;
+        currentLightSettings().setSecondaryColour(secondaryColour);
         observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
     }
 
     public void setTertiaryColour(int[] tertiaryColour) {
-        this.tertiaryColour = tertiaryColour;
+        currentLightSettings().setTertiaryColour(tertiaryColour);
         observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
     }
 
-    public void setMode(Mode mode) {
-        this.mode = mode;
+    public void setMode(LightSettings.Mode mode) {
+        currentLightSettings().setMode(mode);
         observers.forEach((observer) -> observer.updateModes(this));
     }
 
     public void setBrightness(int brightness) {
-        this.brightness = brightness;
+        currentLightSettings().setBrightness(brightness);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setSpeed(int speed) {
-        this.speed = speed;
+        currentLightSettings().setSpeed(speed);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setCycleNumberOfColours(CycleEffect.NumberOfColours cycleNumberOfColours) {
-        this.cycleNumberOfColours = cycleNumberOfColours;
+        currentLightSettings().setCycleNumberOfColours(cycleNumberOfColours);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setCycleTransition(CycleEffect.Transition cycleTransition) {
-        this.cycleTransition = cycleTransition;
+        currentLightSettings().setCycleTransition(cycleTransition);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
-    public void setSyncWithRazer(boolean syncWithRazer) {
-        this.syncWithRazer = syncWithRazer;
-        observers.forEach((observer) -> observer.updateModeSettings(this));
-    }
-
-    public void setRazerChromaEnabled(boolean razerChromaEnabled) {
-        this.razerChromaEnabled = razerChromaEnabled;
-        observers.forEach((observer) -> observer.updateGeneralSettings(this));
-    }
-
-    public void setIp(String ip) {
+    /*public void setIp(String ip) {
         this.ip = ip;
         observers.forEach((observer) -> observer.updateAndroidAppConnection(this));
     }
@@ -206,7 +179,6 @@ public class Settings implements Serializable {
     public void setPort(int port) {
         this.port = port;
         observers.forEach((observer) -> observer.updateAndroidAppConnection(this));
-    }
-
+    }*/
 
 }

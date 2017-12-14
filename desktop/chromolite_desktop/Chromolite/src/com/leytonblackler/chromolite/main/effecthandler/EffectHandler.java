@@ -3,7 +3,7 @@ package com.leytonblackler.chromolite.main.effecthandler;
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.effects.*;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
 
@@ -53,7 +53,7 @@ public class EffectHandler {
         razerChromaService.stop();
     }
 
-    public void setEffect(Settings.Mode mode) {
+    public void setEffect(LightSettings.Mode mode) {
         switch (mode) {
             case STATIC:
                 effect = new StaticEffect();

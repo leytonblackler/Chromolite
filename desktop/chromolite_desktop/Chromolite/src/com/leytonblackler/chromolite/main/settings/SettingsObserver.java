@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 public abstract class SettingsObserver {
 
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         for (Method method : this.getClass().getDeclaredMethods()) {
             if (method.getName().contains("update") && !method.getName().equals("update")) {
                 try {
@@ -17,16 +17,16 @@ public abstract class SettingsObserver {
         }
     }
 
-    public abstract void updateSpectrum(Settings settings);
+    public abstract void updateSpectrum(SettingsManager settings);
 
-    public abstract void updateColours(Settings settings);
+    public abstract void updateColours(SettingsManager settings);
 
-    public abstract void updateModes(Settings settings);
+    public abstract void updateModes(SettingsManager settings);
 
-    public abstract void updateModeSettings(Settings settings);
+    public abstract void updateModeSettings(SettingsManager settings);
 
-    public abstract void updateGeneralSettings(Settings settings);
+    public abstract void updateGeneralSettings(SettingsManager settings);
 
-    public abstract void updateAndroidAppConnection(Settings settings);
+    public abstract void updateAndroidAppConnection(SettingsManager settings);
 
 }

@@ -2,7 +2,7 @@ package com.leytonblackler.chromolite;
 
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.model.Model;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.view.GUI;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,7 @@ public class Chromolite extends Application {
     /**
      * Current user settings configuration.
      */
-    private Settings settings;
+    private SettingsManager settings;
 
     /**
      * Core functionality.
@@ -32,7 +32,7 @@ public class Chromolite extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         instance = this;
-        settings = new Settings();
+        settings = new SettingsManager();
 
         GUI gui = new GUI(stage);
         settings.addObserver(gui);
@@ -48,7 +48,7 @@ public class Chromolite extends Application {
         model.stop();
     }
 
-    public Settings getSettings() {
+    public SettingsManager getSettings() {
         return settings;
     }
 

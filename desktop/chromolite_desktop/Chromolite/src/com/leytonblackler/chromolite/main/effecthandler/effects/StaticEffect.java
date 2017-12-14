@@ -3,10 +3,9 @@ package com.leytonblackler.chromolite.main.effecthandler.effects;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
-import javafx.scene.layout.Pane;
 
 public class StaticEffect extends Effect {
 
@@ -24,7 +23,7 @@ public class StaticEffect extends Effect {
     }
 
     @Override
-    public void tick(Settings settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
         int[] primary = settings.getPrimaryColour();
         int[] secondary = settings.getSecondaryColour();
         int[] tertiary = settings.getTertiaryColour();
@@ -36,7 +35,7 @@ public class StaticEffect extends Effect {
         delay(100);
     }
 
-    private void setThree(Settings settings, LEDStripSimulationController ledStripSimulation, int[] primary, int[] secondary, int[] tertiary) {
+    private void setThree(SettingsManager settings, LEDStripSimulationController ledStripSimulation, int[] primary, int[] secondary, int[] tertiary) {
         for (int i = 0; i < settings.getLEDStripLength(); i++) {
             int[] colour;
             int length = settings.getLEDStripLength();
@@ -51,7 +50,7 @@ public class StaticEffect extends Effect {
         }
     }
 
-    private void setSpectrum(Settings settings, LEDStripSimulationController ledStripSimulation) {
+    private void setSpectrum(SettingsManager settings, LEDStripSimulationController ledStripSimulation) {
         int[][] gradient = EffectUtilities.generateGradient(settings.getLEDStripLength(), EffectUtilities.SPECTRUM_COLOURS);
         for (int led = 0; led < settings.getLEDStripLength(); led++) {
             ledStripSimulation.setLED(led, gradient[led][0], gradient[led][1], gradient[led][2]);

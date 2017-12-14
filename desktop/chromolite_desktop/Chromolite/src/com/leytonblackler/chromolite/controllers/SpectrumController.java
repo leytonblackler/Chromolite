@@ -1,7 +1,7 @@
 package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.Chromolite;
-import com.leytonblackler.chromolite.main.settings.Settings;
+import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,7 +68,7 @@ public class SpectrumController implements Controller, Initializable {
                             y = (int) t.getY();
                         }
 
-                        Settings settings = Chromolite.getInstance().getSettings();
+                        SettingsManager settings = Chromolite.getInstance().getSettings();
 
                         spectrumIndicators[settings.getColourSelector().ordinal()].translateXProperty().setValue(x);
                         spectrumIndicators[settings.getColourSelector().ordinal()].translateYProperty().setValue(y);
@@ -93,7 +93,7 @@ public class SpectrumController implements Controller, Initializable {
     }
 
     @Override
-    public void update(Settings settings) {
+    public void update(SettingsManager settings) {
         setSpectrumIndicatorColor(primarySpectrumIndicator, settings.getPrimaryColour());
         setSpectrumIndicatorColor(secondarySpectrumIndicator, settings.getSecondaryColour());
         setSpectrumIndicatorColor(tertiarySpectrumIndicator, settings.getTertiaryColour());
