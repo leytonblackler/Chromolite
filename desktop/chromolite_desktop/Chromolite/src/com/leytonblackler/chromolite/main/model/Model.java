@@ -49,6 +49,11 @@ public class Model extends SettingsObserver {
     }
 
     @Override
+    public void updatePlatformSettings(SettingsManager settings) {
+
+    }
+
+    @Override
     public void updateGeneralSettings(SettingsManager settings) {
 
     }

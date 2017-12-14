@@ -25,6 +25,8 @@ public abstract class SettingsObserver {
 
     public abstract void updateModeSettings(SettingsManager settings);
 
+    public abstract void updatePlatformSettings(SettingsManager settings);
+
     public abstract void updateGeneralSettings(SettingsManager settings);
 
     public abstract void updateAndroidAppConnection(SettingsManager settings);

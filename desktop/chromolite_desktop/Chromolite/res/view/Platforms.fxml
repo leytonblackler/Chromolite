@@ -60,9 +60,9 @@
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="3" GridPane.rowIndex="0"
               alignment="CENTER" spacing="5">
-            <Label text="SYNC ALL"/>
+            <Label text="SYNC PLATFORMS"/>
             <HBox alignment="CENTER">
-                <CheckBox selected="false"/>
+                <CheckBox fx:id="syncPlatformsCheckBox" onAction="#syncPlatformsCheckBoxClicked" selected="false"/>
             </HBox>
         </VBox>
 

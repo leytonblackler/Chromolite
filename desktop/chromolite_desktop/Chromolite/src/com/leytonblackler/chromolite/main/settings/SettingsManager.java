@@ -66,6 +66,18 @@ public class SettingsManager {
     Accessor Methods
      */
 
+    public LightSettings getArduinoSettings() {
+        return arduinoSettings;
+    }
+
+    public LightSettings getRazerChromaSettings() {
+        return razerChromaSettings;
+    }
+
+    public LightSettings getPhillipsHueSettings() {
+        return phillipsHueSettings;
+    }
+
     public int getLEDStripLength() {
         return generalSettings.getLEDStripLength();
     }
@@ -104,6 +116,14 @@ public class SettingsManager {
 
     public CycleEffect.Transition getCycleTransition() {
         return currentLightSettings().getCycleTransition();
+    }
+
+    public PlatformSettings.Platform getPlatform() {
+        return platformSettings.getPlatform();
+    }
+
+    public boolean getSyncPlatforms() {
+        return platformSettings.getSyncPlatforms();
     }
 
     /*public String getIP() {
@@ -169,6 +189,16 @@ public class SettingsManager {
     public void setCycleTransition(CycleEffect.Transition cycleTransition) {
         currentLightSettings().setCycleTransition(cycleTransition);
         observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setPlatform(PlatformSettings.Platform platform) {
+        platformSettings.setPlatform(platform);
+        observers.forEach((observer) -> observer.update(this));
+    }
+
+    public void setSyncPlatforms(boolean syncPlatforms) {
+        platformSettings.setSyncPlatforms(syncPlatforms);
+        observers.forEach((observer) -> observer.update(this));
     }
 
     /*public void setIp(String ip) {

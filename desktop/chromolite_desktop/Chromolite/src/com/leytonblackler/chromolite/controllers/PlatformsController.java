@@ -1,8 +1,12 @@
 package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
+import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +24,9 @@ public class PlatformsController implements Controller, Initializable {
 
     @FXML
     private ToggleButton hueButton;
+
+    @FXML
+    private CheckBox syncPlatformsCheckBox;
 
     @FXML
     public ImageView arduinoLogo;
@@ -50,36 +57,48 @@ public class PlatformsController implements Controller, Initializable {
 
     @FXML
     private void arduinoButtonClicked() {
-        System.out.println("razer");
-        if (arduinoButton.selectedProperty().get()) {
-            arduinoLogo.setImage(arduinoLogoImages[1]);
-        } else {
-            arduinoLogo.setImage(arduinoLogoImages[0]);
-        }
+        Chromolite.getInstance().getSettings().setPlatform(PlatformSettings.Platform.ARDUINO);
     }
 
     @FXML
     private void razerButtonClicked() {
-        System.out.println("razer");
-        if (razerButton.selectedProperty().get()) {
-            razerLogo.setImage(razerLogoImages[1]);
-        } else {
-            razerLogo.setImage(razerLogoImages[0]);
-        }
+        Chromolite.getInstance().getSettings().setPlatform(PlatformSettings.Platform.RAZER_CHROMA);
     }
 
     @FXML
     private void hueButtonClicked() {
-        System.out.println("hue");
-        if (hueButton.selectedProperty().get()) {
-            hueLogo.setImage(hueLogoImages[1]);
-        } else {
-            hueLogo.setImage(hueLogoImages[0]);
-        }
+        Chromolite.getInstance().getSettings().setPlatform(PlatformSettings.Platform.PHILLIPS_HUE);
+    }
+
+    @FXML
+    private void syncPlatformsCheckBoxClicked() {
+        Chromolite.getInstance().getSettings().setSyncPlatforms(syncPlatformsCheckBox.isSelected());
+    }
+
+    private void setButtonSelected(boolean selected, ToggleButton button, Image[] images, ImageView buttonImage) {
+        button.setSelected(selected);
+        buttonImage.setImage(images[selected ? 1 : 0]);
     }
 
     @Override
     public void update(SettingsManager settings) {
-        //
+        syncPlatformsCheckBox.setSelected(settings.getSyncPlatforms());
+        switch (settings.getPlatform()) {
+            case ARDUINO:
+                setButtonSelected(true, arduinoButton, arduinoLogoImages, arduinoLogo);
+                setButtonSelected(false, razerButton, razerLogoImages, razerLogo);
+                setButtonSelected(false, hueButton, hueLogoImages, hueLogo);
+                break;
+            case RAZER_CHROMA:
+                setButtonSelected(false, arduinoButton, arduinoLogoImages, arduinoLogo);
+                setButtonSelected(true, razerButton, razerLogoImages, razerLogo);
+                setButtonSelected(false, hueButton, hueLogoImages, hueLogo);
+                break;
+            case PHILLIPS_HUE:
+                setButtonSelected(false, arduinoButton, arduinoLogoImages, arduinoLogo);
+                setButtonSelected(false, razerButton, razerLogoImages, razerLogo);
+                setButtonSelected(true, hueButton, hueLogoImages, hueLogo);
+                break;
+        }
     }
 }

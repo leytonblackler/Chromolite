@@ -12,21 +12,21 @@ public class PlatformSettings {
 
     private Platform platform = DefaultSettings.PLATFORM;
 
-    private boolean sync = false;
+    private boolean syncPlatforms = DefaultSettings.SYNC_PLATFORMS;
 
     public Platform getPlatform() {
         return platform;
     }
 
-    public boolean sync() {
-        return sync;
+    public boolean getSyncPlatforms() {
+        return syncPlatforms;
     }
 
     public void setPlatform(Platform platform) {
         this.platform = platform;
     }
 
-    public void setSync(boolean sync) {
-        this.sync = sync;
+    public void setSyncPlatforms(boolean syncPlatforms) {
+        this.syncPlatforms = syncPlatforms;
     }
 }

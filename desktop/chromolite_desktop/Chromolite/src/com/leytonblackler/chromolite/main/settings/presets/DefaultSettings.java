@@ -6,9 +6,7 @@ import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 
 public final class DefaultSettings {
 
-    public static final PlatformSettings.Platform PLATFORM = PlatformSettings.Platform.ARDUINO;
-
-    public static final int LED_STRIP_LENGTH = 59;
+    public static final int LED_STRIP_LENGTH = 60;
 
     public static final LightSettings.ColourSelector COLOUR_SELECTOR = LightSettings.ColourSelector.PRIMARY;
 
@@ -25,9 +23,8 @@ public final class DefaultSettings {
 
     public static final CycleEffect.Transition CYCLE_TRANSITION = CycleEffect.Transition.BLEND;
 
-    public static final boolean SYNC_WITH_RAZER = true;
-
-    public static final boolean RAZER_CHROMA_ENABLED = true;
+    public static final PlatformSettings.Platform PLATFORM = PlatformSettings.Platform.ARDUINO;
+    public static final boolean SYNC_PLATFORMS = true;
 
     public static final String IP = "192.168.0.0";
     public static final int PORT = 5000;

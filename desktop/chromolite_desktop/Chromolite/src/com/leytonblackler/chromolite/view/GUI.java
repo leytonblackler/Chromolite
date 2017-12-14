@@ -308,6 +308,11 @@ public class GUI extends SettingsObserver {
     }
 
     @Override
+    public void updatePlatformSettings(SettingsManager settings) {
+        platformsController.update(settings);
+    }
+
+    @Override
     public void updateGeneralSettings(SettingsManager settings) {
         generalSettingsController.update(settings);
     }
