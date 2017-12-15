@@ -98,6 +98,18 @@ public class SettingsManager {
         return currentLightSettings().getTertiaryColour();
     }
 
+    public int[] getPrimaryIndicatorPosition() {
+        return currentLightSettings().getPrimaryIndicatorPosition();
+    }
+
+    public int[] getSecondaryIndicatorPosition() {
+        return currentLightSettings().getSecondaryIndicatorPosition();
+    }
+
+    public int[] getTertiaryIndicatorPosition() {
+        return currentLightSettings().getTertiaryIndicatorPosition();
+    }
+
     public LightSettings.Mode getMode() {
         return currentLightSettings().getMode();
     }
@@ -144,26 +156,40 @@ public class SettingsManager {
 
     public void setColourSelector(LightSettings.ColourSelector colourSelector) {
         currentLightSettings().setColourSelector(colourSelector);
-        observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
     }
 
     public void setPrimaryColour(int[] primaryColour) {
         currentLightSettings().setPrimaryColour(primaryColour);
-        observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
+        observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setSecondaryColour(int[] secondaryColour) {
         currentLightSettings().setSecondaryColour(secondaryColour);
-        observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
+        observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setTertiaryColour(int[] tertiaryColour) {
         currentLightSettings().setTertiaryColour(tertiaryColour);
-        observers.forEach((observer) -> observer.updateSpectrum(this));
         observers.forEach((observer) -> observer.updateColours(this));
+        observers.forEach((observer) -> observer.updateSpectrum(this));
+    }
+
+    public void setPrimaryIndicatorPosition(int x, int y) {
+        currentLightSettings().setPrimaryIndicatorPosition(x, y);
+        observers.forEach((observer) -> observer.updateSpectrum(this));
+    }
+
+    public void setSecondaryIndicatorPosition(int x, int y) {
+        currentLightSettings().setSecondaryIndicatorPosition(x, y);
+        observers.forEach((observer) -> observer.updateSpectrum(this));
+    }
+
+    public void setTertiaryIndicatorPosition(int x, int y) {
+        currentLightSettings().setTertiaryIndicatorPosition(x, y);
+        observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setMode(LightSettings.Mode mode) {

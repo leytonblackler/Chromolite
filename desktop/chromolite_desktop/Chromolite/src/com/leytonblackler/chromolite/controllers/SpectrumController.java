@@ -70,19 +70,19 @@ public class SpectrumController implements Controller, Initializable {
 
                         SettingsManager settings = Chromolite.getInstance().getSettings();
 
-                        spectrumIndicators[settings.getColourSelector().ordinal()].translateXProperty().setValue(x);
-                        spectrumIndicators[settings.getColourSelector().ordinal()].translateYProperty().setValue(y);
-
                         int[] colour = colorToRGB(spectrum.getImage().getPixelReader().getColor(x, y));
                         switch (settings.getColourSelector()) {
                             case PRIMARY:
                                 settings.setPrimaryColour(colour);
+                                settings.setPrimaryIndicatorPosition(x, y);
                                 break;
                             case SECONDARY:
                                 settings.setSecondaryColour(colour);
+                                settings.setSecondaryIndicatorPosition(x, y);
                                 break;
                             case TERTIARY:
                                 settings.setTertiaryColour(colour);
+                                settings.setTertiaryIndicatorPosition(x, y);
                                 break;
                         }
                     }
@@ -94,6 +94,13 @@ public class SpectrumController implements Controller, Initializable {
 
     @Override
     public void update(SettingsManager settings) {
+        spectrumIndicators[0].translateXProperty().setValue(settings.getPrimaryIndicatorPosition()[0]);
+        spectrumIndicators[0].translateYProperty().setValue(settings.getPrimaryIndicatorPosition()[1]);
+        spectrumIndicators[1].translateXProperty().setValue(settings.getSecondaryIndicatorPosition()[0]);
+        spectrumIndicators[1].translateYProperty().setValue(settings.getSecondaryIndicatorPosition()[1]);
+        spectrumIndicators[2].translateXProperty().setValue(settings.getTertiaryIndicatorPosition()[0]);
+        spectrumIndicators[2].translateYProperty().setValue(settings.getTertiaryIndicatorPosition()[1]);
+
         setSpectrumIndicatorColor(primarySpectrumIndicator, settings.getPrimaryColour());
         setSpectrumIndicatorColor(secondarySpectrumIndicator, settings.getSecondaryColour());
         setSpectrumIndicatorColor(tertiarySpectrumIndicator, settings.getTertiaryColour());

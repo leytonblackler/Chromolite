@@ -4,6 +4,8 @@ import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 
+import java.util.Vector;
+
 public final class DefaultSettings {
 
     public static final int LED_STRIP_LENGTH = 60;
@@ -13,6 +15,10 @@ public final class DefaultSettings {
     public static final int[] PRIMARY_COLOUR = { 255, 0, 0 };
     public static final int[] SECONDARY_COLOUR = { 0, 255, 0 };
     public static final int[] TERTIARY_COLOUR = { 0, 0, 255 };
+
+    public static final int[] PRIMARY_INDICATOR_POSITION = { 100, 125 };
+    public static final int[] SECONDARY_INDICATOR_POSITION = { 300, 125 };
+    public static final int[] TERTIARY_INDICATOR_POSITION = { 500, 125 };
 
     public static final LightSettings.Mode MODE = LightSettings.Mode.STATIC;
 

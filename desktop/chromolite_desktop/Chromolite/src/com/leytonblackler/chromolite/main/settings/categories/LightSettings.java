@@ -30,6 +30,10 @@ public class LightSettings {
 
     private int[] tertiaryColour = DefaultSettings.TERTIARY_COLOUR;
 
+    private int[] primaryIndicatorPosition = DefaultSettings.PRIMARY_INDICATOR_POSITION;
+    private int[] secondaryIndicatorPosition = DefaultSettings.SECONDARY_INDICATOR_POSITION;
+    private int[] tertiaryIndicatorPosition = DefaultSettings.TERTIARY_INDICATOR_POSITION;
+
     private Mode mode = DefaultSettings.MODE;
 
     private int brightness = DefaultSettings.BRIGHTNESS;
@@ -58,6 +62,18 @@ public class LightSettings {
 
     public int[] getTertiaryColour() {
         return tertiaryColour;
+    }
+
+    public int[] getPrimaryIndicatorPosition() {
+        return primaryIndicatorPosition;
+    }
+
+    public int[] getSecondaryIndicatorPosition() {
+        return secondaryIndicatorPosition;
+    }
+
+    public int[] getTertiaryIndicatorPosition() {
+        return tertiaryIndicatorPosition;
     }
 
     public Mode getMode() {
@@ -98,6 +114,24 @@ public class LightSettings {
 
     public void setTertiaryColour(int[] tertiaryColour) {
         this.tertiaryColour = tertiaryColour;
+    }
+
+    public void setPrimaryIndicatorPosition(int x, int y) {
+        this.primaryIndicatorPosition = new int[2];
+        this.primaryIndicatorPosition[0] = x;
+        this.primaryIndicatorPosition[1] = y;
+    }
+
+    public void setSecondaryIndicatorPosition(int x, int y) {
+        this.secondaryIndicatorPosition = new int[2];
+        this.secondaryIndicatorPosition[0] = x;
+        this.secondaryIndicatorPosition[1] = y;
+    }
+
+    public void setTertiaryIndicatorPosition(int x, int y) {
+        this.tertiaryIndicatorPosition = new int[2];
+        this.tertiaryIndicatorPosition[0] = x;
+        this.tertiaryIndicatorPosition[1] = y;
     }
 
     public void setMode(Mode mode) {
