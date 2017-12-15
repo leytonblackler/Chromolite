@@ -23,6 +23,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Pair;
 
 import java.io.IOException;
 
@@ -30,48 +31,35 @@ public class GUI extends SettingsObserver {
 
     public static double SCALE = 1;
 
-    private static int WINDOW_BORDER = 3;
-
     private Pane titleBar;
     private double xOffset;
     private double yOffset;
 
-    //@FXML
-    //private Pane spectrumPane;
+    private Controller spectrumController;
 
-    Controller spectrumController;
+    private Controller coloursButtonsController;
 
-    //@FXML
-    //private Pane colourButtonsPane;
+    private Controller modeController;
 
-    Controller coloursButtonsController;
+    private Controller platformsController;
 
-    //@FXML
-    //private HBox modesPane;
+    private Controller generalSettingsController;
 
-    Controller modeController;
+    private Controller appConnectController;
 
-    //@FXML
-    //private Pane modeSettingsPane;
+    private Controller ledStripSimulationController;
 
-    Controller modeSettingsController;
+    /*
+    Mode Settings
+     */
 
-    Controller platformsController;
+    private Pane modeSettingsPaneContainer;
 
-    //@FXML
-    //private Pane generalSettingsPane;
+    private Controller staticSettingsController;
+    private Pane staticSettingsPane;
 
-    Controller generalSettingsController;
-
-    //@FXML
-    //private Pane appConnectPane;
-
-    Controller appConnectController;
-
-    //@FXML
-    //private Pane ledStripSimulationPane;
-
-    Controller ledStripSimulationController;
+    private Controller cycleSettingsController;
+    private Pane cycleSettingsPane;
 
     public GUI(Stage stage) {
         //Create the scene (window contents).
@@ -126,17 +114,40 @@ public class GUI extends SettingsObserver {
         enableWindowDragging(titleBar);
         contents.getChildren().add(titleBar);
 
-        spectrumController = loadFXMLPane(contents, "view/Spectrum.fxml", null);
-        coloursButtonsController = loadFXMLPane(controlPane, "view/ColourButtons.fxml", "COLOURS");
-        modeController = loadFXMLPane(controlPane, "view/Modes.fxml", "MODES");
-        modeSettingsController = loadFXMLPane(controlPane, "view/settings/CycleSettings.fxml", "MODE SETTINGS");
-        platformsController = loadFXMLPane(controlPane, "view/Platforms.fxml", "PLATFORMS");
-        generalSettingsController = loadFXMLPane(controlPane, "view/GeneralSettings.fxml", "GENERAL SETTINGS");
-        appConnectController = loadFXMLPane(controlPane, "view/AppConnect.fxml", "ANDROID APP CONNECTION");
-        ledStripSimulationController = loadFXMLPane(controlPane, "view/LEDStripSimulation.fxml", "LED STRIP SIMULATION");
+        spectrumController = loadFXMLPane(contents, "view/Spectrum.fxml").getValue();
+        addTitle(controlPane, "COLOURS");
+        coloursButtonsController = loadFXMLPane(controlPane, "view/ColourButtons.fxml").getValue();
+        addTitle(controlPane, "MODES");
+        modeController = loadFXMLPane(controlPane, "view/Modes.fxml").getValue();
+
+        loadModeSettingsPanes();
+
+        modeSettingsPaneContainer = new Pane();
+        modeSettingsPaneContainer.getChildren().add(staticSettingsPane);
+        addTitle(controlPane, "MODE SETTINGS");
+        controlPane.getChildren().add(modeSettingsPaneContainer);
+
+        addTitle(controlPane, "PLATFORMS");
+        platformsController = loadFXMLPane(controlPane, "view/Platforms.fxml").getValue();
+        addTitle(controlPane, "GENERAL SETTINGS");
+        generalSettingsController = loadFXMLPane(controlPane, "view/GeneralSettings.fxml").getValue();
+        addTitle(controlPane, "ANDROID APP CONNECTION");
+        appConnectController = loadFXMLPane(controlPane, "view/AppConnect.fxml").getValue();
+        addTitle(controlPane, "LED STRIP SIMULATION");
+        ledStripSimulationController = loadFXMLPane(controlPane, "view/LEDStripSimulation.fxml").getValue();
         contents.getChildren().add(controlPane);
 
         return contents;
+    }
+
+    private void loadModeSettingsPanes() {
+        Pair<Pane, Controller> staticSettings = loadFXMLPane(null, "view/settings/StaticSettings.fxml");
+        staticSettingsController = staticSettings.getValue();
+        staticSettingsPane = staticSettings.getKey();
+
+        Pair<Pane, Controller> cycleSettings = loadFXMLPane(null, "view/settings/CycleSettings.fxml");
+        cycleSettingsController = cycleSettings.getValue();
+        cycleSettingsPane = cycleSettings.getKey();
     }
 
     private Scene createShadowedScene(Parent contents) {
@@ -258,33 +269,32 @@ public class GUI extends SettingsObserver {
     /**
      * Loads a node from an FXML file and adds it as a child to an existing pane.
      *
-     * @param pane       The parent pane to add the loaded node to.
+     * @param pane       The parent pane to add the loaded node to (optional).
      * @param pathToFXML The file path to the FXML file to load.
-     * @param title      An optional title to give to add above the loaded node (null if no title required).
      * @return The controller for the
      */
-    private Controller loadFXMLPane(Pane pane, String pathToFXML, String title) {
+    private Pair<Pane, Controller> loadFXMLPane(Pane pane, String pathToFXML) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(pathToFXML));
         try {
-            //Adds a title above the panel, if a title was supplied.
-            if (title != null) {
-                HBox titleBox = new HBox();
-                titleBox.setAlignment(Pos.CENTER_LEFT);
-                Label label = new Label(title);
-                label.setId("section-title-label");
-                label.translateYProperty().setValue(15 / 2); //FXML PAD VALUE USED HERE, NEEDS DYNAMIC SOLUTION
-                titleBox.getChildren().add(label);
-                pane.getChildren().add(titleBox);
-            }
-
             Node node = fxmlLoader.load();
-            //pane.getChildren().clear();
-            //pane.getChildren().add(node);
-            pane.getChildren().add(node);
+            if (pane != null) {
+                pane.getChildren().add(node);
+            }
+            return new Pair<>((Pane) node, fxmlLoader.getController());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return fxmlLoader.getController();
+        throw new IllegalStateException();
+    }
+
+    private void addTitle(Pane pane, String title) {
+        HBox titleBox = new HBox();
+        titleBox.setAlignment(Pos.CENTER_LEFT);
+        Label label = new Label(title);
+        label.setId("section-title-label");
+        label.translateYProperty().setValue(15 / 2); //FXML PAD VALUE USED HERE, NEEDS DYNAMIC SOLUTION
+        titleBox.getChildren().add(label);
+        pane.getChildren().add(titleBox);
     }
 
     @Override
@@ -304,7 +314,20 @@ public class GUI extends SettingsObserver {
 
     @Override
     public void updateModeSettings(SettingsManager settings) {
-        modeSettingsController.update(settings);
+        switch (settings.getMode()) {
+            case STATIC:
+                setModeSettingsPane(staticSettingsPane, staticSettingsController, settings);
+                break;
+            case CYCLE:
+                setModeSettingsPane(cycleSettingsPane, cycleSettingsController, settings);
+                break;
+        }
+    }
+
+    private void setModeSettingsPane(Pane pane, Controller controller, SettingsManager settings) {
+        modeSettingsPaneContainer.getChildren().clear();
+        modeSettingsPaneContainer.getChildren().add(pane);
+        controller.update(settings);
     }
 
     @Override

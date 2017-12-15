@@ -195,6 +195,7 @@ public class SettingsManager {
     public void setMode(LightSettings.Mode mode) {
         currentLightSettings().setMode(mode);
         observers.forEach((observer) -> observer.updateModes(this));
+        observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setBrightness(int brightness) {
