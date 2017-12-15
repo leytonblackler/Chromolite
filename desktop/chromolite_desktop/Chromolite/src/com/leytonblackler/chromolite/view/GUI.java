@@ -122,7 +122,7 @@ public class GUI extends SettingsObserver {
 
         loadModeSettingsPanes();
 
-        modeSettingsPaneContainer = new Pane();
+        modeSettingsPaneContainer = new StackPane();
         modeSettingsPaneContainer.getChildren().add(staticSettingsPane);
         addTitle(controlPane, "MODE SETTINGS");
         controlPane.getChildren().add(modeSettingsPaneContainer);
