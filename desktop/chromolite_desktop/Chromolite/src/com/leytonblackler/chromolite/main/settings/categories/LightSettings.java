@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.settings.categories;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
 
 public class LightSettings {
@@ -40,8 +41,10 @@ public class LightSettings {
 
     private int speed = DefaultSettings.SPEED;
 
-    private CycleEffect.NumberOfColours cycleNumberOfColours = DefaultSettings.CYCLE_NUMBER_OF_COLOURS;
+    private StaticEffect.NumberOfColours staticNumberOfColours = DefaultSettings.STATIC_NUMBER_OF_COLOURS;
+    private StaticEffect.Style staticStyle = DefaultSettings.STATIC_STYLE;
 
+    private CycleEffect.NumberOfColours cycleNumberOfColours = DefaultSettings.CYCLE_NUMBER_OF_COLOURS;
     private CycleEffect.Transition cycleTransition = DefaultSettings.CYCLE_TRANSITION;
 
     /*
@@ -88,10 +91,16 @@ public class LightSettings {
         return speed;
     }
 
+    public StaticEffect.Style getStaticStyle() {
+        return staticStyle;
+    }
+    public StaticEffect.NumberOfColours getStaticNumberOfColours() {
+        return staticNumberOfColours;
+    }
+
     public CycleEffect.NumberOfColours getCycleNumberOfColours() {
         return cycleNumberOfColours;
     }
-
     public CycleEffect.Transition getCycleTransition() {
         return cycleTransition;
     }
@@ -146,10 +155,16 @@ public class LightSettings {
         this.speed = speed;
     }
 
+    public void setStaticStyle(StaticEffect.Style staticStyle) {
+        this.staticStyle = staticStyle;
+    }
+    public void setStaticNumberOfColours(StaticEffect.NumberOfColours staticNumberOfColours) {
+        this.staticNumberOfColours = staticNumberOfColours;
+    }
+
     public void setCycleNumberOfColours(CycleEffect.NumberOfColours cycleNumberOfColours) {
         this.cycleNumberOfColours = cycleNumberOfColours;
     }
-
     public void setCycleTransition(CycleEffect.Transition cycleTransition) {
         this.cycleTransition = cycleTransition;
     }

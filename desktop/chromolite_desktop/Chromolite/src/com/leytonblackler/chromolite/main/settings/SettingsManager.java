@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.settings;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.settings.categories.AppConnectSettings;
 import com.leytonblackler.chromolite.main.settings.categories.GeneralSettings;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
@@ -122,10 +123,16 @@ public class SettingsManager {
         return currentLightSettings().getSpeed();
     }
 
+    public StaticEffect.Style getStaticStyle() {
+        return currentLightSettings().getStaticStyle();
+    }
+    public StaticEffect.NumberOfColours getStaticNumberOfColours() {
+        return currentLightSettings().getStaticNumberOfColours();
+    }
+
     public CycleEffect.NumberOfColours getCycleNumberOfColours() {
         return currentLightSettings().getCycleNumberOfColours();
     }
-
     public CycleEffect.Transition getCycleTransition() {
         return currentLightSettings().getCycleTransition();
     }
@@ -205,6 +212,16 @@ public class SettingsManager {
 
     public void setSpeed(int speed) {
         currentLightSettings().setSpeed(speed);
+        observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setStaticStyle(StaticEffect.Style staticStyle) {
+        currentLightSettings().setStaticStyle(staticStyle);
+        observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setStaticNumberOfColours(StaticEffect.NumberOfColours staticNumberOfColours) {
+        currentLightSettings().setStaticNumberOfColours(staticNumberOfColours);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 

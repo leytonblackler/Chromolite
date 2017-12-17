@@ -30,30 +30,53 @@ public class StaticEffect extends Effect {
         razerChromaService.setAll(primary[0], primary[1], primary[2]);
 
         //setThree(settings, ledStripSimulation, primary, secondary, tertiary);
-        setSpectrum(settings, ledStripSimulation);
+        //setSolid(settings, ledStripSimulation);
+        int[][] layout = new int[settings.getLEDStripLength()][3];
+        int[][] colours = generateColours(settings);
+        switch (settings.getStaticStyle()) {
+            case SOLID:
+                layout = EffectUtilities.generateSolid(settings.getLEDStripLength(), colours);
+                break;
+            case GRADIENT:
+                layout = EffectUtilities.generateGradient(settings.getLEDStripLength(), colours);
+                break;
+            case ALTERNATING:
+                layout = EffectUtilities.generateAlternating(settings.getLEDStripLength(), colours);
+                break;
+        }
+        setLayout(ledStripSimulation, layout);
 
         delay(100);
     }
 
-    private void setThree(SettingsManager settings, LEDStripSimulationController ledStripSimulation, int[] primary, int[] secondary, int[] tertiary) {
-        for (int i = 0; i < settings.getLEDStripLength(); i++) {
-            int[] colour;
-            int length = settings.getLEDStripLength();
-            if (i < length / 3) {
-                colour = primary;
-            } else if (i < 2 * (length / 3)) {
-                colour = secondary;
-            } else {
-                colour = tertiary;
-            }
-            ledStripSimulation.setLED(i, colour[0], colour[1], colour[2]);
+    private int[][] generateColours(SettingsManager settings) {
+        int[][] colours = new int[0][0];
+        switch (settings.getStaticNumberOfColours()) {
+            case ONE:
+                colours = new int[1][3];
+                colours[0] = settings.getPrimaryColour();
+                break;
+            case TWO:
+                colours = new int[2][3];
+                colours[0] = settings.getPrimaryColour();
+                colours[1] = settings.getSecondaryColour();
+                break;
+            case THREE:
+                colours = new int[3][3];
+                colours[0] = settings.getPrimaryColour();
+                colours[1] = settings.getSecondaryColour();
+                colours[2] = settings.getTertiaryColour();
+                break;
+            case SPECTRUM:
+                colours = EffectUtilities.SPECTRUM_COLOURS;
+                break;
         }
+        return colours;
     }
 
-    private void setSpectrum(SettingsManager settings, LEDStripSimulationController ledStripSimulation) {
-        int[][] gradient = EffectUtilities.generateGradient(settings.getLEDStripLength(), EffectUtilities.SPECTRUM_COLOURS);
-        for (int led = 0; led < settings.getLEDStripLength(); led++) {
-            ledStripSimulation.setLED(led, gradient[led][0], gradient[led][1], gradient[led][2]);
+    private void setLayout(LEDStripSimulationController ledStripSimulation, int[][] layout) {
+        for (int led = 0; led < layout.length; led++) {
+            ledStripSimulation.setLED(led, layout[led][0], layout[led][1], layout[led][2]);
         }
     }
 

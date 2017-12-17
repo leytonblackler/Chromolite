@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.settings.presets;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 
@@ -25,8 +26,10 @@ public final class DefaultSettings {
     public static final int BRIGHTNESS = 100;
     public static final int SPEED = 50;
 
-    public static final CycleEffect.NumberOfColours CYCLE_NUMBER_OF_COLOURS = CycleEffect.NumberOfColours.SPECTRUM;
+    public static final StaticEffect.Style STATIC_STYLE = StaticEffect.Style.SOLID;
+    public static final StaticEffect.NumberOfColours STATIC_NUMBER_OF_COLOURS = StaticEffect.NumberOfColours.ONE;
 
+    public static final CycleEffect.NumberOfColours CYCLE_NUMBER_OF_COLOURS = CycleEffect.NumberOfColours.SPECTRUM;
     public static final CycleEffect.Transition CYCLE_TRANSITION = CycleEffect.Transition.BLEND;
 
     public static final PlatformSettings.Platform PLATFORM = PlatformSettings.Platform.ARDUINO;

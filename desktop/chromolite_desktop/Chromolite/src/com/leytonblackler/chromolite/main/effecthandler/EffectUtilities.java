@@ -1,8 +1,5 @@
 package com.leytonblackler.chromolite.main.effecthandler;
 
-import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
-import com.leytonblackler.chromolite.main.settings.Settings;
-
 public class EffectUtilities {
 
     public static final int[][] SPECTRUM_COLOURS = {
@@ -48,6 +45,40 @@ public class EffectUtilities {
         }
 
         return gradient;
+    }
+
+    public static int[][] generateSolid(int length, int[][] colours) {
+        //The RGB values for the colours that make up the gradient.
+        int[][] solid = new int[length][3];
+        //The number of increments for the transition between each defined colour.
+        int steps = (int) Math.floor((float) length / (float) colours.length);
+        //Iterate across each of the defined colours, excluding the last colour.
+        for (int i = 0; i < colours.length - 1; i++) {
+            //Iterate across each of the steps between colours.
+            for (int step = 0; step < steps; step++) {
+                solid[i * steps + step] = colours[i];
+            }
+        }
+        //----
+        //Iterate across each of the steps between colours.
+        int remainingSteps = length - (colours.length - 1) * steps;
+        for (int step = 0; step < remainingSteps; step++) {
+            solid[(colours.length - 1) * steps + step] = colours[colours.length - 1];
+        }
+
+        return solid;
+    }
+
+    public static int[][] generateAlternating(int length, int[][] colours) {
+        int[][] alternating = new int[length][3];
+        for (int led = 0; led < length; led += colours.length) {
+            for (int colour = 0; colour < colours.length; colour++) {
+                //If the layout has already been filled, stop and return the layout.
+                if ((led + colour) >= length) return alternating;
+                alternating[led + colour] = colours[colour];
+            }
+        }
+        return alternating;
     }
 
     /*private void setSpectrum(Settings settings, LEDStripSimulationController ledStripSimulation) {

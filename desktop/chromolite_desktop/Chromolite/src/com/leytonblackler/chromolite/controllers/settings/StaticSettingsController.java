@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.controllers.settings;
 
+import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
@@ -34,9 +35,8 @@ public class StaticSettingsController implements Controller, Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         initialiseChoiceBox(styleChoiceBox, StaticEffect.Style.values(), StaticEffect.Style.SOLID);
-        initialiseChoiceBox(numberOfColoursChoiceBox, StaticEffect.NumberOfColours.values(), StaticEffect.NumberOfColours.SPECTRUM);
+        initialiseChoiceBox(numberOfColoursChoiceBox, StaticEffect.NumberOfColours.values(), StaticEffect.NumberOfColours.ONE);
 
         brightnessSlider.setValue(DEFAULT_BRIGHTNESS);
         brightnessPercentLabel.setText(Integer.toString(DEFAULT_BRIGHTNESS) + "%");
@@ -52,7 +52,8 @@ public class StaticSettingsController implements Controller, Initializable {
 
     @Override
     public void update(SettingsManager settings) {
-        //
+        numberOfColoursChoiceBox.setValue(settings.getStaticNumberOfColours().toString());
+        System.out.println(settings.getStaticNumberOfColours() + " " + settings.getStaticStyle());
     }
 
     private void initialiseChoiceBox(ChoiceBox choiceBox, Enum[] choices, Enum defaultChoice) {
@@ -62,5 +63,15 @@ public class StaticSettingsController implements Controller, Initializable {
         }
         choiceBox.setItems(choiceStrings);
         choiceBox.setValue(defaultChoice.toString());
+    }
+
+    @FXML
+    private void styleChoiceBoxChanged() {
+        Chromolite.getInstance().getSettings().setStaticStyle(StaticEffect.Style.valueOf(styleChoiceBox.getValue()));
+    }
+
+    @FXML
+    private void numberOfColoursChoiceBoxChanged() {
+        Chromolite.getInstance().getSettings().setStaticNumberOfColours(StaticEffect.NumberOfColours.valueOf(numberOfColoursChoiceBox.getValue()));
     }
 }
