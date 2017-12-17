@@ -1,25 +1,25 @@
 .root {
     /*-fx-background-color: #121b25;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
 
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;*/
 }
 
 #root-pane {
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -fx-background-color: #121b25;
 }
 
 .label {
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -fx-font-size: 7pt;
     -fx-text-fill: #bcc4cc;
 }
 
 .toggle-button .label {
     -fx-font-size: 7pt;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -fx-text-fill: #bcc4cc;
 }
 
@@ -77,7 +77,7 @@
     -fx-text-fill: #bcc4cc;
     -fx-background-color: #253447;
     -fx-mark-color: #bcc4cc;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -fx-font-size: 7pt;
 }
 
@@ -160,7 +160,7 @@
 
     -fx-text-fill: #bcc4cc;
     -fx-background-color: #253447;
-    -fx-font-family: Roboto;
+    -fx-font-family: "Roboto";
     -fx-font-size: 7pt;
 }
 

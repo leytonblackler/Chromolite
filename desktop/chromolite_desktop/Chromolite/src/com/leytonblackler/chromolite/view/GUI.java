@@ -62,9 +62,11 @@ public class GUI extends SettingsObserver {
     private Pane cycleSettingsPane;
 
     public GUI(Stage stage) {
-        //Create the scene (window contents).
-        //Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("view/View.fxml")));
+        //Enhances the smoothness of text rendering.
+        System.setProperty("prism.lcdtext", "false");
+        System.setProperty("prism.text", "t2k");
 
+        //Load the Roboto Bold font.
         String fontPath = getClass().getClassLoader().getResource("fonts/Roboto-Bold.ttf").toExternalForm();
         fontPath = fontPath.replaceAll("%20", " ");
         Font.loadFont(fontPath, 10);
