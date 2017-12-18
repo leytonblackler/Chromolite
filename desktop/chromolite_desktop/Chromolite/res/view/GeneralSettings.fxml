@@ -33,17 +33,17 @@
             <ColumnConstraints percentWidth="25"/>
         </columnConstraints>
 
-        <ToggleButton fx:id="saveButton" onAction="#saveButtonClicked"
+        <ToggleButton fx:id="saveButton" onAction="#saveButtonClicked" disable="true"
                       prefHeight="${PADDING * 2.5}"
                       text="SAVE SETTINGS"
                       GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="loadButton" onAction="#loadButtonClicked"
+        <ToggleButton fx:id="loadButton" onAction="#loadButtonClicked" disable="true"
                       prefHeight="${PADDING * 2.5}"
                       text="LOAD SETTINGS"
                       GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="resetButton" onAction="#resetButtonClicked"
+        <ToggleButton fx:id="resetButton" onAction="#resetButtonClicked" disable="true"
                       prefHeight="${PADDING * 2.5}"
                       text="RESET TO DEFAULT"
                       GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>

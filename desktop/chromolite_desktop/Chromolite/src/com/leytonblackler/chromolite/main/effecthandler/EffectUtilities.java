@@ -81,6 +81,18 @@ public class EffectUtilities {
         return alternating;
     }
 
+    public static int[][] shift(int[][] layout, int offset) {
+        int[][] shifted = new int[layout.length][3];
+        for (int i = 0; i < layout.length; i++) {
+            if (i < offset) {
+                shifted[i] = layout[layout.length - 1 - offset + i];
+            } else {
+                shifted[i] = layout[i - offset];
+            }
+        }
+        return shifted;
+    }
+
     /*private void setSpectrum(Settings settings, LEDStripSimulationController ledStripSimulation) {
         int length = settings.getLEDStripLength();
         int totalSteps = Math.round((float) length / (float) SPECTRUM_COLOURS.length);

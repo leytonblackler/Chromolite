@@ -52,8 +52,8 @@ public class StaticSettingsController implements Controller, Initializable {
 
     @Override
     public void update(SettingsManager settings) {
+        styleChoiceBox.setValue(settings.getStaticStyle().toString());
         numberOfColoursChoiceBox.setValue(settings.getStaticNumberOfColours().toString());
-        System.out.println(settings.getStaticNumberOfColours() + " " + settings.getStaticStyle());
     }
 
     private void initialiseChoiceBox(ChoiceBox choiceBox, Enum[] choices, Enum defaultChoice) {
