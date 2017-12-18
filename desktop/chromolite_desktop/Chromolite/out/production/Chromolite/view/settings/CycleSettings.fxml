@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.leytonblackler.chromolite.controllers.settings.CycleSettingsController" spacing="$PADDING">
+            fx:controller="com.leytonblackler.chromolite.controllers.settings.CycleSettingsController"
+            spacing="$PADDING" prefHeight="${PADDING * 3}">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -34,16 +33,21 @@
             <ColumnConstraints percentWidth="25" halignment="CENTER"/>
         </columnConstraints>
 
-        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0" translateY="${PADDING/3}">
+        <rowConstraints>
+            <RowConstraints percentHeight="50" valignment="CENTER"/>
+            <RowConstraints percentHeight="50" valignment="CENTER"/>
+        </rowConstraints>
+
+        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <Label text="BRIGHTNESS"/>
             <Label fx:id="brightnessPercentLabel" text="0%"/>
         </HBox>
-        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0" translateY="${PADDING/3}">
+        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
             <Label text="SPEED"/>
             <Label fx:id="speedPercentLabel" text="0%"/>
         </HBox>
-        <Label text="NUMBER OF COLOURS" GridPane.columnIndex="2" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
-        <Label text="TRANSITION" GridPane.columnIndex="3" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
+        <Label text="NUMBER OF COLOURS" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Label text="TRANSITION" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
 
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="0" GridPane.rowIndex="1"

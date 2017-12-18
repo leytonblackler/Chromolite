@@ -9,8 +9,9 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.collections.FXCollections?>
-<Pane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.settings.WaveSettingsController">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controllers.settings.WaveSettingsController"
+      spacing="$PADDING" prefHeight="${PADDING * 3}">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -71,4 +72,4 @@
 
     </GridPane>
 
-</Pane>
+</VBox>

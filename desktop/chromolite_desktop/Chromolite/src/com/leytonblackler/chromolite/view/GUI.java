@@ -61,6 +61,8 @@ public class GUI extends SettingsObserver {
     private Controller cycleSettingsController;
     private Pane cycleSettingsPane;
 
+    private Pane disableSettingsPane;
+
     public GUI(Stage stage) {
         //Enhances the smoothness of text rendering.
         System.setProperty("prism.lcdtext", "false");
@@ -150,6 +152,9 @@ public class GUI extends SettingsObserver {
         Pair<Pane, Controller> cycleSettings = loadFXMLPane(null, "view/settings/CycleSettings.fxml");
         cycleSettingsController = cycleSettings.getValue();
         cycleSettingsPane = cycleSettings.getKey();
+
+        Pair<Pane, Controller> disableSettings = loadFXMLPane(null, "view/settings/DisableSettings.fxml");
+        disableSettingsPane = disableSettings.getKey();
     }
 
     private Scene createShadowedScene(Parent contents) {
@@ -323,13 +328,17 @@ public class GUI extends SettingsObserver {
             case CYCLE:
                 setModeSettingsPane(cycleSettingsPane, cycleSettingsController, settings);
                 break;
+            case DISABLE:
+                setModeSettingsPane(disableSettingsPane, null, settings);
         }
     }
 
     private void setModeSettingsPane(Pane pane, Controller controller, SettingsManager settings) {
         modeSettingsPaneContainer.getChildren().clear();
         modeSettingsPaneContainer.getChildren().add(pane);
-        controller.update(settings);
+        if (controller != null) {
+            controller.update(settings);
+        }
     }
 
     @Override

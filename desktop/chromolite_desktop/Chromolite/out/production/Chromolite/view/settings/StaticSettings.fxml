@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.leytonblackler.chromolite.controllers.settings.StaticSettingsController" spacing="$PADDING">
+      fx:controller="com.leytonblackler.chromolite.controllers.settings.StaticSettingsController"
+      spacing="$PADDING" prefHeight="${PADDING * 3}">
 
     <!-- CONSTANTS -->
     <fx:define>
@@ -31,13 +32,20 @@
             <ColumnConstraints percentWidth="25" halignment="CENTER"/>
         </columnConstraints>
 
-        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0" translateY="${PADDING/3}">
+        <rowConstraints>
+            <RowConstraints percentHeight="50" valignment="CENTER"/>
+            <RowConstraints percentHeight="50" valignment="CENTER"/>
+        </rowConstraints>
+
+        <!-- LABELS -->
+        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
             <Label text="BRIGHTNESS"/>
             <Label fx:id="brightnessPercentLabel" text="0%"/>
         </HBox>
-        <Label text="STYLE" GridPane.columnIndex="1" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
-        <Label text="NUMBER OF COLOURS" GridPane.columnIndex="2" GridPane.rowIndex="0" translateY="${PADDING/3}"/>
+        <Label text="STYLE" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="NUMBER OF COLOURS" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
 
+        <!-- SETTING COMPONENTS -->
         <VBox prefHeight="${PADDING * 2.5}"
               GridPane.columnIndex="0" GridPane.rowIndex="1"
               alignment="CENTER" spacing="5">
