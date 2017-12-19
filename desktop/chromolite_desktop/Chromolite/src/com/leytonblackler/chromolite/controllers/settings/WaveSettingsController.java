@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.controllers.settings;
 
 import com.leytonblackler.chromolite.controllers.Controller;
+import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -29,7 +30,7 @@ public class WaveSettingsController implements Controller, Initializable {
     private enum NumberOfColours {
         TWO,
         THREE,
-        RAINBOW
+        SPECTRUM
     }
 
     @FXML
@@ -53,9 +54,9 @@ public class WaveSettingsController implements Controller, Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        initialiseChoiceBox(numberOfColoursChoiceBox, NumberOfColours.values(), NumberOfColours.RAINBOW);
+        initialiseChoiceBox(numberOfColoursChoiceBox, WaveEffect.NumberOfColours.values(), WaveEffect.NumberOfColours.SPECTRUM);
 
-        initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
+        initialiseChoiceBox(directionChoiceBox, WaveEffect.Direction.values(), WaveEffect.Direction.LEFT);
 
         brightnessSlider.setValue(DEFAULT_BRIGHTNESS);
         brightnessPercentLabel.setText(Integer.toString(DEFAULT_BRIGHTNESS) + "%");

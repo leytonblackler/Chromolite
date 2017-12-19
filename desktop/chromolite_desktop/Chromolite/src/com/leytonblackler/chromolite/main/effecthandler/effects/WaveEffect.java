@@ -8,8 +8,21 @@ import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaServi
 
 public class WaveEffect extends Effect {
 
+    public enum NumberOfColours {
+        TWO,
+        THREE,
+        SPECTRUM
+    }
+
+    public enum Direction {
+        LEFT,
+        RIGHT,
+        INWARDS,
+        OUTWARDS
+    }
+
     @Override
     public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        //
+        //System.out.println("waving");
     }
 }

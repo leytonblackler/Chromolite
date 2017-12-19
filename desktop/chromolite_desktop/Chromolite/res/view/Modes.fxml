@@ -43,19 +43,19 @@
                       text="WAVE"
                       GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="musicButton" onAction="#musicButtonClicked"
+        <ToggleButton fx:id="musicButton" onAction="#musicButtonClicked" disable="true"
                       text="MUSIC"
                       GridPane.rowIndex="0" GridPane.columnIndex="3" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="scanButton" onAction="#scanButtonClicked"
+        <ToggleButton fx:id="scanButton" onAction="#scanButtonClicked" disable="true"
                       text="SCAN"
                       GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="strobeButton" onAction="#strobeButtonClicked"
+        <ToggleButton fx:id="strobeButton" onAction="#strobeButtonClicked" disable="true"
                       text="STROBE"
                       GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="offButton" onAction="#offButtonClicked"
+        <ToggleButton fx:id="offButton" onAction="#offButtonClicked" disable="true"
                       text="OFF"
                       GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity"/>
 

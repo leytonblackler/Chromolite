@@ -24,7 +24,7 @@ public class EffectHandler {
 
     LEDStripSimulationController ledStripSimulation;
 
-    private boolean running = false;
+    private volatile boolean running = false;
 
     public EffectHandler(ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
         this.arduinoController = arduinoController;

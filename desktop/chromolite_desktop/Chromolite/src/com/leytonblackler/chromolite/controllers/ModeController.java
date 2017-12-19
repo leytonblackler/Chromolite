@@ -4,8 +4,6 @@ import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import com.leytonblackler.chromolite.view.Constants;
-import com.leytonblackler.chromolite.view.MutableDouble;
-import javafx.beans.property.DoubleProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleButton;

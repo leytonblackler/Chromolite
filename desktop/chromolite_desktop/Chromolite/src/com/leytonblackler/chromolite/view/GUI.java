@@ -61,6 +61,9 @@ public class GUI extends SettingsObserver {
     private Controller cycleSettingsController;
     private Pane cycleSettingsPane;
 
+    private Controller waveSettingsController;
+    private Pane waveSettingsPane;
+
     private Pane disableSettingsPane;
 
     public GUI(Stage stage) {
@@ -152,6 +155,10 @@ public class GUI extends SettingsObserver {
         Pair<Pane, Controller> cycleSettings = loadFXMLPane(null, "view/settings/CycleSettings.fxml");
         cycleSettingsController = cycleSettings.getValue();
         cycleSettingsPane = cycleSettings.getKey();
+
+        Pair<Pane, Controller> waveSettings = loadFXMLPane(null, "view/settings/WaveSettings.fxml");
+        waveSettingsController = waveSettings.getValue();
+        waveSettingsPane = waveSettings.getKey();
 
         Pair<Pane, Controller> disableSettings = loadFXMLPane(null, "view/settings/DisableSettings.fxml");
         disableSettingsPane = disableSettings.getKey();
@@ -328,8 +335,12 @@ public class GUI extends SettingsObserver {
             case CYCLE:
                 setModeSettingsPane(cycleSettingsPane, cycleSettingsController, settings);
                 break;
+            case WAVE:
+                setModeSettingsPane(waveSettingsPane, waveSettingsController, settings);
+                break;
             case DISABLE:
                 setModeSettingsPane(disableSettingsPane, null, settings);
+                break;
         }
     }
 
