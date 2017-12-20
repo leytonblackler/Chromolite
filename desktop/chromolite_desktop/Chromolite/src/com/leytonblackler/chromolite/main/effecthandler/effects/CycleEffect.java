@@ -54,7 +54,7 @@ public class CycleEffect extends Effect {
         }
 
         //System.out.println("current: " + currentColour[0] + " " + currentColour[1] + " " + currentColour[2]);
-        razerChromaService.setAll(currentColour[0], currentColour[1], currentColour[2]);
+        razerChromaService.setSingleDevices(currentColour[0], currentColour[1], currentColour[2]);
         ledStripSimulation.setAll(currentColour[0], currentColour[1], currentColour[2]);
 
         //Calculate how long to wait before the next tick.

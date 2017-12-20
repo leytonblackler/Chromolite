@@ -21,7 +21,7 @@ public class EffectUtilities {
         return (int) (((((100.0 - percent) / 100.0) * (max - min))) + min);
     }
 
-    public static int[][] generateGradient(int length, int[][] colours) {
+    public static int[][] generateGradientLayout(int length, int[][] colours) {
         //The RGB values for the colours that make up the gradient.
         int[][] gradient = new int[length][3];
         //The number of increments for the transition between each defined colour.
@@ -47,7 +47,7 @@ public class EffectUtilities {
         return gradient;
     }
 
-    public static int[][] generateSolid(int length, int[][] colours) {
+    public static int[][] generateSolidLayout(int length, int[][] colours) {
         //The RGB values for the colours that make up the gradient.
         int[][] solid = new int[length][3];
         //The number of increments for the transition between each defined colour.
@@ -69,7 +69,7 @@ public class EffectUtilities {
         return solid;
     }
 
-    public static int[][] generateAlternating(int length, int[][] colours) {
+    public static int[][] generateAlternatingLayout(int length, int[][] colours) {
         int[][] alternating = new int[length][3];
         for (int led = 0; led < length; led += colours.length) {
             for (int colour = 0; colour < colours.length; colour++) {
@@ -81,7 +81,7 @@ public class EffectUtilities {
         return alternating;
     }
 
-    public static int[][] shift(int[][] layout, int offset) {
+    public static int[][] shiftLayout(int[][] layout, int offset) {
         int[][] shifted = new int[layout.length][3];
         for (int i = 0; i < layout.length; i++) {
             if (i < offset) {

@@ -21,7 +21,7 @@ public class RandomEffect extends Effect {
         colour[1] = randomInt();
         colour[2] = randomInt();
 
-        razerChromaService.setAll(colour[0], colour[1], colour[2]);
+        razerChromaService.setSingleDevices(colour[0], colour[1], colour[2]);
         ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
         //Calculate how long to wait before the next tick.

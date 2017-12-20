@@ -10,7 +10,7 @@ public class OffEffect extends Effect {
 
     @Override
     public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        razerChromaService.setAll(0, 0, 0);
+        razerChromaService.setSingleDevices(0, 0, 0);
         ledStripSimulation.setAll(0, 0, 0);
     }
 }

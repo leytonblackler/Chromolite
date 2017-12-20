@@ -23,7 +23,7 @@ public class StrobeEffect extends Effect {
             colour = settings.getPrimaryColour();
             on = true;
         }
-        razerChromaService.setAll(colour[0], colour[1], colour[2]);
+        razerChromaService.setSingleDevices(colour[0], colour[1], colour[2]);
         ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
         //Calculate how long to wait before the next tick.

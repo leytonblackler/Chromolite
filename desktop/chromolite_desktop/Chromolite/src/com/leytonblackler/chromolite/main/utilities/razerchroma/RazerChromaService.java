@@ -13,6 +13,16 @@ public class RazerChromaService {
      */
     private static final int PORT = 8888;
 
+    public static final int KEYBOARD_MAX_COLUMNS = 22;
+    public static final int KEYBOARD_MAX_ROWS = 6;
+
+    public static final int MOUSE_MAX_COLUMNS = 7;
+    public static final int MOUSE_MAX_ROWS = 9;
+
+    public static final int MOUSEPAD_MAX_LEDS = 15;
+
+    //public static final int MOUSE_LENGTH = 8; //???
+
     public RazerChromaService() {
         //Get the current operating system as a string.
         String operatingSystem = System.getProperty("os.name");
@@ -51,12 +61,55 @@ public class RazerChromaService {
         send("stop");
     }
 
-    public void setAll(int r, int g, int b) {
-        String message = "setall " + r + " " + g + " " + b;
+    public void setSingleDevices(int r, int g, int b) {
+        String message = "setsingledevices " + r + " " + g + " " + b;
+        send(message);
+    }
+
+    public void setKeyboardLayout(int[][] layout) {
+        //The colour layout must be the correct format for the keyboard.
+        if (layout.length != KEYBOARD_MAX_COLUMNS || layout[0].length != 3) {
+            throw new IllegalArgumentException("The layout format is invalid.");
+        }
+        String message = "setkeyboard";
+        for (int column = 0; column < KEYBOARD_MAX_COLUMNS; column++) {
+            for (int i = 0; i < 3; i++) {
+                message += (" " + layout[column][i]);
+            }
+        }
+        send(message);
+    }
+
+    public void setMouseLayout(int[][] layout) {
+        //The colour layout must be the correct format for the mouse.
+        if (layout.length != MOUSE_MAX_ROWS || layout[0].length != 3) {
+            throw new IllegalArgumentException("The layout format is invalid.");
+        }
+        String message = "setmouse";
+        for (int column = 0; column < MOUSE_MAX_ROWS; column++) {
+            for (int i = 0; i < 3; i++) {
+                message += (" " + layout[column][i]);
+            }
+        }
+        send(message);
+    }
+
+    public void setMousepadLayout(int[][] layout) {
+        //The colour layout must be the correct format for the mousepad.
+        if (layout.length != MOUSEPAD_MAX_LEDS || layout[0].length != 3) {
+            throw new IllegalArgumentException("The layout format is invalid.");
+        }
+        String message = "setmousepad";
+        for (int led = 0; led < MOUSEPAD_MAX_LEDS; led++) {
+            for (int i = 0; i < 3; i++) {
+                message += (" " + layout[led][i]);
+            }
+        }
         send(message);
     }
 
     private void send(String message) {
+        //System.out.println(message);
         if (message == null) return;
         try {
             byte[] buffer = message.getBytes();
