@@ -14,7 +14,7 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-public class ModeController implements Controller, Initializable {
+public class ModeController extends Controller implements Initializable {
 
     @FXML
     private ToggleButton staticButton;
@@ -113,6 +113,6 @@ public class ModeController implements Controller, Initializable {
     }
 
     private void setMode(LightSettings.Mode mode) {
-        Chromolite.getInstance().getSettings().setMode(mode);
+        getSettings().setMode(mode);
     }
 }

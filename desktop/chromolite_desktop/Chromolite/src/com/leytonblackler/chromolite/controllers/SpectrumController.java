@@ -15,7 +15,7 @@ import javafx.scene.paint.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SpectrumController implements Controller, Initializable {
+public class SpectrumController extends Controller implements Initializable {
 
     @FXML
     public ImageView spectrum;
@@ -68,7 +68,7 @@ public class SpectrumController implements Controller, Initializable {
                             y = (int) t.getY();
                         }
 
-                        SettingsManager settings = Chromolite.getInstance().getSettings();
+                        SettingsManager settings = getSettings();
 
                         int[] colour = colorToRGB(spectrum.getImage().getPixelReader().getColor(x, y));
                         switch (settings.getColourSelector()) {

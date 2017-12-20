@@ -4,10 +4,17 @@ import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
+import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
 
+import java.lang.reflect.Method;
+
 public class StaticEffect extends Effect {
+
+    public StaticEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
 
     public enum Style {
         SOLID,
@@ -23,7 +30,7 @@ public class StaticEffect extends Effect {
     }
 
     @Override
-    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+    public void tick() {
         int[][] colours = determineColours(settings);
         int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
         switch (settings.getStaticStyle()) {
@@ -48,11 +55,8 @@ public class StaticEffect extends Effect {
                 break;
         }
 
-        ledStripSimulation.setLayout(arduinoLayout);
-        razerChromaService.setSingleDevices(colours[0][0], colours[0][1], colours[0][2]);
-        razerChromaService.setKeyboardLayout(razerKeyboardLayout);
-        razerChromaService.setMouseLayout(razerMouseLayout);
-        razerChromaService.setMousepadLayout(razerMousepadLayout);
+        setLEDSimulation(arduinoLayout);
+        setRazerChroma(colours[0], razerKeyboardLayout, razerMouseLayout, razerMousepadLayout);
 
         delay(100);
     }

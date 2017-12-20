@@ -16,7 +16,7 @@ import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Set;
 
-public class ColourButtonsController implements Controller, Initializable {
+public class ColourButtonsController extends Controller implements Initializable {
 
     @FXML
     private ToggleButton primaryButton;
@@ -137,16 +137,16 @@ public class ColourButtonsController implements Controller, Initializable {
 
     @FXML
     private void primaryButtonClicked() {
-        Chromolite.getInstance().getSettings().setColourSelector(LightSettings.ColourSelector.PRIMARY);
+        getSettings().setColourSelector(LightSettings.ColourSelector.PRIMARY);
     }
 
     @FXML
     private void secondaryButtonClicked() {
-        Chromolite.getInstance().getSettings().setColourSelector(LightSettings.ColourSelector.SECONDARY);
+        getSettings().setColourSelector(LightSettings.ColourSelector.SECONDARY);
     }
 
     @FXML
     private void tertiaryButtonClicked() {
-        Chromolite.getInstance().getSettings().setColourSelector(LightSettings.ColourSelector.TERTIARY);
+        getSettings().setColourSelector(LightSettings.ColourSelector.TERTIARY);
     }
 }

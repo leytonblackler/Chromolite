@@ -14,8 +14,12 @@ public class StrobeEffect extends Effect {
 
     private boolean on = false;
 
+    public StrobeEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
+
     @Override
-    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+    public void tick() {
         int[] colour = {0, 0, 0};
         if (on) {
             on = false;
@@ -23,8 +27,8 @@ public class StrobeEffect extends Effect {
             colour = settings.getPrimaryColour();
             on = true;
         }
-        razerChromaService.setSingleDevices(colour[0], colour[1], colour[2]);
-        ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
+        //razerChromaService.setSingleDevices(colour[0], colour[1], colour[2]);
+        //ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(MIN_DELAY, MAX_DELAY, settings.getSpeed());

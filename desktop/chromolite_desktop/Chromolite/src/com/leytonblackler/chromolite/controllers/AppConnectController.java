@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AppConnectController implements Controller, Initializable {
+public class AppConnectController extends Controller implements Initializable {
 
     @FXML
     public ImageView networkIcon;

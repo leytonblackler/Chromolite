@@ -17,7 +17,7 @@ import javafx.scene.control.Slider;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class StaticSettingsController implements Controller, Initializable {
+public class StaticSettingsController extends Controller implements Initializable {
 
     private static final int DEFAULT_BRIGHTNESS = 100;
 
@@ -67,11 +67,11 @@ public class StaticSettingsController implements Controller, Initializable {
 
     @FXML
     private void styleChoiceBoxChanged() {
-        Chromolite.getInstance().getSettings().setStaticStyle(StaticEffect.Style.valueOf(styleChoiceBox.getValue()));
+        getSettings().setStaticStyle(StaticEffect.Style.valueOf(styleChoiceBox.getValue()));
     }
 
     @FXML
     private void numberOfColoursChoiceBoxChanged() {
-        Chromolite.getInstance().getSettings().setStaticNumberOfColours(StaticEffect.NumberOfColours.valueOf(numberOfColoursChoiceBox.getValue()));
+        getSettings().setStaticNumberOfColours(StaticEffect.NumberOfColours.valueOf(numberOfColoursChoiceBox.getValue()));
     }
 }

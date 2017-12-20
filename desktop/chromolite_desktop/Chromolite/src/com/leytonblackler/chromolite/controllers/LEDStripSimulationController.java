@@ -2,7 +2,9 @@ package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
+import com.leytonblackler.chromolite.main.settings.categories.GeneralSettings;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
+import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
 import com.leytonblackler.chromolite.view.Constants;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -15,9 +17,9 @@ import javafx.scene.shape.Circle;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LEDStripSimulationController implements Controller, Initializable {
+public class LEDStripSimulationController extends Controller implements Initializable {
 
-    private static final int LEDS = Chromolite.getInstance().getSettings().getLEDStripLength();
+    private static final int LEDS = DefaultSettings.LED_STRIP_LENGTH;
 
     @FXML
     private GridPane ledStrip;
@@ -53,7 +55,7 @@ public class LEDStripSimulationController implements Controller, Initializable {
 
     public void setLayout(int[][] layout) {
         //The colour layout must be the correct format for the led strip.
-        if (layout.length != Chromolite.getInstance().getSettings().getLEDStripLength() || layout[0].length != 3) {
+        if (layout.length != LEDS || layout[0].length != 3) {
             throw new IllegalArgumentException("The layout format is invalid.");
         }
         for (int i = 0; i < layout.length; i++) {

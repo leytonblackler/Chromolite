@@ -16,7 +16,7 @@ import javafx.scene.control.Slider;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WaveSettingsController implements Controller, Initializable {
+public class WaveSettingsController extends Controller implements Initializable {
 
     private static final int DEFAULT_BRIGHTNESS = 100;
     private static final int DEFAULT_SPEED = 50;

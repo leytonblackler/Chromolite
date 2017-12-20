@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PlatformsController implements Controller, Initializable {
+public class PlatformsController  extends Controller implements Initializable {
 
     @FXML
     private ToggleButton arduinoButton;
@@ -57,22 +57,22 @@ public class PlatformsController implements Controller, Initializable {
 
     @FXML
     private void arduinoButtonClicked() {
-        Chromolite.getInstance().getSettings().setPlatform(PlatformSettings.Platform.ARDUINO);
+        getSettings().setPlatform(PlatformSettings.Platform.ARDUINO);
     }
 
     @FXML
     private void razerButtonClicked() {
-        Chromolite.getInstance().getSettings().setPlatform(PlatformSettings.Platform.RAZER_CHROMA);
+        getSettings().setPlatform(PlatformSettings.Platform.RAZER_CHROMA);
     }
 
     @FXML
     private void hueButtonClicked() {
-        Chromolite.getInstance().getSettings().setPlatform(PlatformSettings.Platform.PHILLIPS_HUE);
+        getSettings().setPlatform(PlatformSettings.Platform.PHILLIPS_HUE);
     }
 
     @FXML
     private void syncPlatformsCheckBoxClicked() {
-        Chromolite.getInstance().getSettings().setSyncPlatforms(syncPlatformsCheckBox.isSelected());
+        getSettings().setSyncPlatforms(syncPlatformsCheckBox.isSelected());
     }
 
     private void setButtonSelected(boolean selected, ToggleButton button, Image[] images, ImageView buttonImage) {

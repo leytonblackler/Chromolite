@@ -13,6 +13,10 @@ public class CycleEffect extends Effect {
 
     private static final int STEPS = 20;
 
+    public CycleEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
+
     public enum NumberOfColours {
         TWO,
         THREE,
@@ -36,7 +40,7 @@ public class CycleEffect extends Effect {
     private int[] nextColour = { 255, 0, 0 };
 
     @Override
-    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+    public void tick() {
         if (settings.getCycleNumberOfColours() == SPECTRUM) {
             colours = EffectUtilities.SPECTRUM_COLOURS;
         }
@@ -54,8 +58,8 @@ public class CycleEffect extends Effect {
         }
 
         //System.out.println("current: " + currentColour[0] + " " + currentColour[1] + " " + currentColour[2]);
-        razerChromaService.setSingleDevices(currentColour[0], currentColour[1], currentColour[2]);
-        ledStripSimulation.setAll(currentColour[0], currentColour[1], currentColour[2]);
+        //razerChromaService.setSingleDevices(currentColour[0], currentColour[1], currentColour[2]);
+        //ledStripSimulation.setAll(currentColour[0], currentColour[1], currentColour[2]);
 
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(10, 50, settings.getSpeed());

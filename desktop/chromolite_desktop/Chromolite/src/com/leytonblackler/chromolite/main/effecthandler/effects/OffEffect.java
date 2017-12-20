@@ -8,9 +8,13 @@ import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaServi
 
 public class OffEffect extends Effect {
 
+    public OffEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
+
     @Override
-    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        razerChromaService.setSingleDevices(0, 0, 0);
-        ledStripSimulation.setAll(0, 0, 0);
+    public void tick() {
+        //razerChromaService.setSingleDevices(0, 0, 0);
+        //ledStripSimulation.setAll(0, 0, 0);
     }
 }

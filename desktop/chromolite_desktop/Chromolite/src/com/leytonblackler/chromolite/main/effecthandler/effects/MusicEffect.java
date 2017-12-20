@@ -8,8 +8,12 @@ import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaServi
 
 public class MusicEffect extends Effect {
 
+    public MusicEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
+
     @Override
-    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+    public void tick() {
         //
     }
 }

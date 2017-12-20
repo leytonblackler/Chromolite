@@ -15,14 +15,18 @@ public class RandomEffect extends Effect {
 
     private int colour[] = new int[3];
 
+    public RandomEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
+
     @Override
-    public void tick(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+    public void tick() {
         colour[0] = randomInt();
         colour[1] = randomInt();
         colour[2] = randomInt();
 
-        razerChromaService.setSingleDevices(colour[0], colour[1], colour[2]);
-        ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
+        //razerChromaService.setSingleDevices(colour[0], colour[1], colour[2]);
+        //ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(MIN_DELAY, MAX_DELAY, settings.getSpeed());

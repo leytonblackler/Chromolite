@@ -66,18 +66,18 @@ public class GUI extends SettingsObserver {
 
     private Pane disableSettingsPane;
 
-    public GUI(Stage stage) {
+    public GUI(Stage stage, SettingsManager settings) {
+        //Set the settings instance the controllers modify.
+        Controller.setSettings(settings);
         //Enhances the smoothness of text rendering.
         System.setProperty("prism.lcdtext", "false");
         System.setProperty("prism.text", "t2k");
-
         //Load the Roboto Bold font.
         String fontPath = getClass().getClassLoader().getResource("fonts/Roboto-Bold.ttf").toExternalForm();
         fontPath = fontPath.replaceAll("%20", " ");
         Font.loadFont(fontPath, 10);
 
         Scene scene;
-
         //Create a scene with a shadow if the operating system is Windows, since unlike macOS
         //and Linux, Windows does not apply a shadow to undecorated windows.
         String osName = System.getProperty("os.name");
@@ -109,17 +109,17 @@ public class GUI extends SettingsObserver {
     }
 
     private Parent createSceneContents() {
+        //Create the scene root pane.
         VBox contents = new VBox();
         contents.setId("root-pane");
-
-        VBox controlPane = new VBox();
-        controlPane.spacingProperty().bind(Constants.PADDING);
-        //controlPane.paddingProperty().bind(Constants.PADDING);
-        controlPane.setPadding(new Insets(0, Constants.PADDING.getValue(), Constants.PADDING.getValue(), Constants.PADDING.getValue())); // <-- BIND THIS
-
+        //Create the window title bar.
         titleBar = createTitleBar();
         enableWindowDragging(titleBar);
         contents.getChildren().add(titleBar);
+        //Create the pane used for the control section of the interface.
+        VBox controlPane = new VBox();
+        controlPane.spacingProperty().bind(Constants.PADDING);
+        controlPane.setPadding(new Insets(0, Constants.PADDING.getValue(), Constants.PADDING.getValue(), Constants.PADDING.getValue())); // <-- BIND THIS
 
         spectrumController = loadFXMLPane(contents, "view/Spectrum.fxml").getValue();
         addTitle(controlPane, "COLOURS");
@@ -283,9 +283,9 @@ public class GUI extends SettingsObserver {
     /**
      * Loads a node from an FXML file and adds it as a child to an existing pane.
      *
-     * @param pane       The parent pane to add the loaded node to (optional).
-     * @param pathToFXML The file path to the FXML file to load.
-     * @return The controller for the
+     * @param pane          The parent pane to add the loaded node to (optional).
+     * @param pathToFXML    The file path to the FXML file to load.
+     * @return
      */
     private Pair<Pane, Controller> loadFXMLPane(Pane pane, String pathToFXML) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource(pathToFXML));
@@ -294,10 +294,12 @@ public class GUI extends SettingsObserver {
             if (pane != null) {
                 pane.getChildren().add(node);
             }
-            return new Pair<>((Pane) node, fxmlLoader.getController());
+            Controller controller = fxmlLoader.getController();
+            return new Pair<>((Pane) node, controller);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        System.out.println(pathToFXML);
         throw new IllegalStateException();
     }
 

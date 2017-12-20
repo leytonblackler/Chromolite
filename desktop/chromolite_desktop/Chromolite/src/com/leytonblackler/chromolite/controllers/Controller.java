@@ -2,8 +2,18 @@ package com.leytonblackler.chromolite.controllers;
 
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 
-public interface Controller {
+public abstract class Controller {
 
-    void update(SettingsManager settings);
+    private static SettingsManager settings;
+
+    public abstract void update(SettingsManager settings);
+
+    public static void setSettings(SettingsManager settings) {
+        Controller.settings = settings;
+    }
+
+    protected SettingsManager getSettings() {
+        return settings;
+    }
 
 }

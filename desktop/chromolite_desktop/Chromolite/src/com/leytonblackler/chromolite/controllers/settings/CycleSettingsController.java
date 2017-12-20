@@ -17,7 +17,7 @@ import javafx.scene.control.Slider;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CycleSettingsController implements Controller, Initializable {
+public class CycleSettingsController extends Controller implements Initializable {
 
     private static final int DEFAULT_BRIGHTNESS = 100;
     private static final int DEFAULT_SPEED = 50;
@@ -75,7 +75,7 @@ public class CycleSettingsController implements Controller, Initializable {
                 }
                 String percentString = Long.toString(percentValue) + "%";
                 speedPercentLabel.setText(percentString);
-                Chromolite.getInstance().getSettings().setSpeed(percentValue);
+                getSettings().setSpeed(percentValue);
             }
         });
     }
