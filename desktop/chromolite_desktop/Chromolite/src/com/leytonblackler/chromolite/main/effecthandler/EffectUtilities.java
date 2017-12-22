@@ -52,20 +52,21 @@ public class EffectUtilities {
         int[][] solid = new int[length][3];
         //The number of increments for the transition between each defined colour.
         int steps = (int) Math.floor((float) length / (float) colours.length);
-        //Iterate across each of the defined colours, excluding the last colour.
-        for (int i = 0; i < colours.length - 1; i++) {
-            //Iterate across each of the steps between colours.
+        //Calculate the remaining number of steps.
+        int remainingSteps = length - (colours.length) * steps;
+        //Fill in the layout.
+        int position = 0;
+        for (int colour = 0; colour < colours.length; colour++) {
+            //Fill in the minimum number of positions for the section.
             for (int step = 0; step < steps; step++) {
-                solid[i * steps + step] = colours[i];
+                solid[position++] = colours[colour];
+            }
+            //If there are remaining unused steps, add to the current section.
+            if (remainingSteps > 0) {
+                solid[position++] = colours[colour];
+                remainingSteps--;
             }
         }
-        //----
-        //Iterate across each of the steps between colours.
-        int remainingSteps = length - (colours.length - 1) * steps;
-        for (int step = 0; step < remainingSteps; step++) {
-            solid[(colours.length - 1) * steps + step] = colours[colours.length - 1];
-        }
-
         return solid;
     }
 
