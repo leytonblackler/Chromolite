@@ -2,6 +2,7 @@ package com.leytonblackler.chromolite.main.settings.categories;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
 
 public class LightSettings {
@@ -41,11 +42,14 @@ public class LightSettings {
 
     private int speed = DefaultSettings.SPEED;
 
-    private StaticEffect.NumberOfColours staticNumberOfColours = DefaultSettings.STATIC_NUMBER_OF_COLOURS;
     private StaticEffect.Style staticStyle = DefaultSettings.STATIC_STYLE;
+    private StaticEffect.NumberOfColours staticNumberOfColours = DefaultSettings.STATIC_NUMBER_OF_COLOURS;
 
     private CycleEffect.NumberOfColours cycleNumberOfColours = DefaultSettings.CYCLE_NUMBER_OF_COLOURS;
     private CycleEffect.Transition cycleTransition = DefaultSettings.CYCLE_TRANSITION;
+
+    private WaveEffect.NumberOfColours waveNumberOfColours = DefaultSettings.WAVE_NUMBER_OF_COLOURS;
+    private WaveEffect.Direction waveDirection = DefaultSettings.WAVE_DIRECTION;
 
     /*
     Accessor Methods
@@ -103,6 +107,13 @@ public class LightSettings {
     }
     public CycleEffect.Transition getCycleTransition() {
         return cycleTransition;
+    }
+
+    public WaveEffect.NumberOfColours getWaveNumberOfColours() {
+        return waveNumberOfColours;
+    }
+    public WaveEffect.Direction getWaveDirection() {
+        return waveDirection;
     }
 
     /*
@@ -167,6 +178,13 @@ public class LightSettings {
     }
     public void setCycleTransition(CycleEffect.Transition cycleTransition) {
         this.cycleTransition = cycleTransition;
+    }
+
+    public void setWaveNumberOfColours(WaveEffect.NumberOfColours waveNumberOfColours) {
+        this.waveNumberOfColours = waveNumberOfColours;
+    }
+    public void setWaveDirection(WaveEffect.Direction waveDirection) {
+        this.waveDirection = waveDirection;
     }
 
 }

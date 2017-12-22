@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.controllers.settings;
 
 import com.leytonblackler.chromolite.controllers.Controller;
+import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.beans.value.ChangeListener;
@@ -74,9 +75,10 @@ public class WaveSettingsController extends Controller implements Initializable 
         speedSlider.valueProperty().addListener(new ChangeListener<Number>() {
             public void changed(ObservableValue<? extends Number> ov,
                                 Number old_val, Number new_val) {
-                Long percentValue = Math.round(new_val.doubleValue());
+                int percentValue = (int) Math.round(new_val.doubleValue());
                 String percentString = Long.toString(percentValue) + "%";
                 speedPercentLabel.setText(percentString);
+                getSettings().setSpeed(percentValue);
             }
         });
     }
@@ -93,5 +95,15 @@ public class WaveSettingsController extends Controller implements Initializable 
         }
         choiceBox.setItems(choiceStrings);
         choiceBox.setValue(defaultChoice.toString());
+    }
+
+    @FXML
+    private void numberOfColoursChoiceBoxChanged() {
+        getSettings().setWaveNumberOfColours(WaveEffect.NumberOfColours.valueOf(numberOfColoursChoiceBox.getValue()));
+    }
+
+    @FXML
+    private void directionChoiceBoxChanged() {
+        getSettings().setWaveDirection(WaveEffect.Direction.valueOf(directionChoiceBox.getValue()));
     }
 }

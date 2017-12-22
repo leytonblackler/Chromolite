@@ -2,6 +2,7 @@ package com.leytonblackler.chromolite.main.settings.presets;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
 
@@ -31,6 +32,9 @@ public final class DefaultSettings {
 
     public static final CycleEffect.NumberOfColours CYCLE_NUMBER_OF_COLOURS = CycleEffect.NumberOfColours.SPECTRUM;
     public static final CycleEffect.Transition CYCLE_TRANSITION = CycleEffect.Transition.BLEND;
+
+    public static final WaveEffect.NumberOfColours WAVE_NUMBER_OF_COLOURS = WaveEffect.NumberOfColours.SPECTRUM;
+    public static final WaveEffect.Direction WAVE_DIRECTION = WaveEffect.Direction.RIGHT;
 
     public static final PlatformSettings.Platform PLATFORM = PlatformSettings.Platform.ARDUINO;
     public static final boolean SYNC_PLATFORMS = true;

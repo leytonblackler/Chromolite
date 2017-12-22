@@ -46,4 +46,6 @@ public abstract class Effect {
         }
     }
 
+    //protected abstract int[][] determineColours();
+
 }

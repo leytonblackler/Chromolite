@@ -2,6 +2,7 @@ package com.leytonblackler.chromolite.main.settings;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.categories.AppConnectSettings;
 import com.leytonblackler.chromolite.main.settings.categories.GeneralSettings;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
@@ -137,6 +138,13 @@ public class SettingsManager {
         return currentLightSettings().getCycleTransition();
     }
 
+    public WaveEffect.NumberOfColours getWaveNumberOfColours() {
+        return currentLightSettings().getWaveNumberOfColours();
+    }
+    public WaveEffect.Direction getWaveDirection() {
+        return currentLightSettings().getWaveDirection();
+    }
+
     public PlatformSettings.Platform getPlatform() {
         return platformSettings.getPlatform();
     }
@@ -232,6 +240,16 @@ public class SettingsManager {
 
     public void setCycleTransition(CycleEffect.Transition cycleTransition) {
         currentLightSettings().setCycleTransition(cycleTransition);
+        observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setWaveNumberOfColours(WaveEffect.NumberOfColours waveNumberOfColours) {
+        currentLightSettings().setWaveNumberOfColours(waveNumberOfColours);
+        observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setWaveDirection(WaveEffect.Direction waveDirection) {
+        currentLightSettings().setWaveDirection(waveDirection);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 

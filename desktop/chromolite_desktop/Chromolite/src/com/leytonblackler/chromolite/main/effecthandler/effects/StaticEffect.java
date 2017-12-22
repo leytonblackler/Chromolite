@@ -31,7 +31,7 @@ public class StaticEffect extends Effect {
 
     @Override
     public void tick() {
-        int[][] colours = determineColours(settings);
+        int[][] colours = determineColours();
         int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
         switch (settings.getStaticStyle()) {
             default:
@@ -61,7 +61,7 @@ public class StaticEffect extends Effect {
         delay(100);
     }
 
-    private int[][] determineColours(SettingsManager settings) {
+    protected int[][] determineColours() {
         int[][] colours = new int[0][0];
         switch (settings.getStaticNumberOfColours()) {
             case ONE:
@@ -85,11 +85,5 @@ public class StaticEffect extends Effect {
         }
         return colours;
     }
-
-    /*private void setLayout(LEDStripSimulationController ledStripSimulation, int[][] layout) {
-        for (int led = 0; led < layout.length; led++) {
-            ledStripSimulation.setLED(led, layout[led][0], layout[led][1], layout[led][2]);
-        }
-    }*/
 
 }
