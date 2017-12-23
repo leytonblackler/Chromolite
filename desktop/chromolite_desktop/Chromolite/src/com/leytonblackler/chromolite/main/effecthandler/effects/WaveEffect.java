@@ -42,26 +42,15 @@ public class WaveEffect extends Effect {
         int[][] colours = determineColours();
         int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
 
-        //Create the single direction wave style layouts.
-        if (settings.getWaveDirection() == Direction.LEFT || settings.getWaveDirection() == Direction.RIGHT) {
-            arduinoLayout = processSingleDirectionLayout(settings.getLEDStripLength(), colours, arduinoShift++);
-            razerKeyboardLayout = processSingleDirectionLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours, razerKeyboardShift++);
-            razerMouseLayout = processSingleDirectionLayout(RazerChromaService.MOUSE_MAX_ROWS, colours, razerMouseShift++);
-            razerMousepadLayout = processSingleDirectionLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours, razerMousepadShift++);
+            arduinoLayout = processLayout(settings.getLEDStripLength(), colours, arduinoShift++);
+            razerKeyboardLayout = processLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours, razerKeyboardShift++);
+            razerMouseLayout = processLayout(RazerChromaService.MOUSE_MAX_ROWS, colours, razerMouseShift++);
+            razerMousepadLayout = processLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours, razerMousepadShift++);
 
-            System.out.println(arduinoShift);
-
-            arduinoShift = ensureShiftWithinRange(arduinoShift, settings.getLEDStripLength());
-            razerKeyboardShift = ensureShiftWithinRange(razerKeyboardShift, RazerChromaService.KEYBOARD_MAX_COLUMNS);
-            razerMouseShift = ensureShiftWithinRange(razerMouseShift, RazerChromaService.MOUSE_MAX_ROWS);
-            razerMousepadShift = ensureShiftWithinRange(razerMousepadShift, RazerChromaService.MOUSEPAD_MAX_LEDS);
-        }
-
-        //Create the split wave style layouts.
-        else {
-            //
-            throw new IllegalStateException("Temporary illegal state.");
-        }
+            arduinoShift = EffectUtilities.ensureShiftWithinRange(arduinoShift, settings.getLEDStripLength());
+            razerKeyboardShift = EffectUtilities.ensureShiftWithinRange(razerKeyboardShift, RazerChromaService.KEYBOARD_MAX_COLUMNS);
+            razerMouseShift = EffectUtilities.ensureShiftWithinRange(razerMouseShift, RazerChromaService.MOUSE_MAX_ROWS);
+            razerMousepadShift = EffectUtilities.ensureShiftWithinRange(razerMousepadShift, RazerChromaService.MOUSEPAD_MAX_LEDS);
 
         setLEDSimulation(arduinoLayout);
         setRazerChroma(colours[0], razerKeyboardLayout, razerMouseLayout, razerMousepadLayout);
@@ -71,15 +60,14 @@ public class WaveEffect extends Effect {
         delay(time);
     }
 
-    private int ensureShiftWithinRange(int shift, int max) {
-        return (shift >= max) ? 0 : shift;
-    }
-
-    private int[][] processSingleDirectionLayout(int length, int[][] colours, int shift) {
+    private int[][] processLayout(int length, int[][] colours, int shift) {
         int[][] layout = EffectUtilities.generateGradientLayout(length, colours);
         layout = EffectUtilities.shiftLayout(layout, shift);
-        if (settings.getWaveDirection() == Direction.LEFT) {
+        if (settings.getWaveDirection() == Direction.LEFT || settings.getWaveDirection() == Direction.OUTWARDS) {
             layout = EffectUtilities.flipLayout(layout);
+        }
+        if (settings.getWaveDirection() == Direction.INWARDS || settings.getWaveDirection() == Direction.OUTWARDS) {
+            layout = EffectUtilities.mirrorLayout(layout);
         }
         return layout;
     }

@@ -113,6 +113,28 @@ public class EffectUtilities {
         return flipped;
     }
 
+    public static int[][] mirrorLayout(int[][] layout) {
+        int[][] mirrored = new int[layout.length][3];
+        for (int i = 0; i < layout.length; i++) {
+            if (i < layout.length / 2) {
+                mirrored[i] = layout[i];
+            } else {
+                mirrored[i] = layout[layout.length - 1 - i];
+            }
+        }
+        return mirrored;
+    }
+
+    /**
+     * Ensures that the given shift value is within the given range.
+     * @param shift The current shift value.
+     * @param max The maximum that the shift value can be.
+     * @return The same shift value if already within range, or 0 if it has exceeded the range.
+     */
+    public static int ensureShiftWithinRange(int shift, int max) {
+        return (shift >= max) ? 0 : shift;
+    }
+
     public static int[] nextGradientColour(int[] currentColour, int[] nextColour, int steps, int currentStep) {
         int[] colour = new int[3];
         int differenceR = nextColour[0] - currentColour[0];
