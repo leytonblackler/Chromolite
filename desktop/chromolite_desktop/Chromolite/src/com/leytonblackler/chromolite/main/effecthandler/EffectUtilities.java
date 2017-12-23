@@ -113,34 +113,6 @@ public class EffectUtilities {
         return flipped;
     }
 
-    /*private void setSpectrum(Settings settings, LEDStripSimulationController ledStripSimulation) {
-        int length = settings.getLEDStripLength();
-        int totalSteps = Math.round((float) length / (float) SPECTRUM_COLOURS.length);
-        System.out.println(totalSteps);
-        for (int i = 0; i < SPECTRUM_COLOURS.length; i++) {
-            int[] currentColour = SPECTRUM_COLOURS[i];
-            for (int j = 0; j < totalSteps; j++) {
-                int index = (i * totalSteps) + j;
-                if (index >= length) {
-                    return;
-                }
-                ledStripSimulation.setLED(index, currentColour[0], currentColour[1], currentColour[2]);
-                int[] nextColor;
-                if (i == SPECTRUM_COLOURS.length - 1) {
-                    int lastSteps = length - ((SPECTRUM_COLOURS.length - 1) * totalSteps);
-                    for (int k = 0; k < lastSteps; k++) {
-                        nextColor = SPECTRUM_COLOURS[0];
-                        currentColour = nextColour(currentColour, nextColor, lastSteps, j);
-                    }
-                    return;
-                } else {
-                    nextColor = SPECTRUM_COLOURS[i + 1];
-                    currentColour = nextColour(currentColour, nextColor, totalSteps, j);
-                }
-            }
-        }
-    }*/
-
     public static int[] nextGradientColour(int[] currentColour, int[] nextColour, int steps, int currentStep) {
         int[] colour = new int[3];
         int differenceR = nextColour[0] - currentColour[0];
