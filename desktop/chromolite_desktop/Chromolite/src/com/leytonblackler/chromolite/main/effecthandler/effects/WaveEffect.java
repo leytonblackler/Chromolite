@@ -6,12 +6,14 @@ import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
+import javafx.fxml.Initializable;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
 
 public class WaveEffect extends Effect {
-
-    public WaveEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        super(settings, arduinoController, razerChromaService, ledStripSimulation);
-    }
 
     public enum NumberOfColours {
         TWO,
@@ -31,60 +33,35 @@ public class WaveEffect extends Effect {
     private int razerMouseShift = 0;
     private int razerMousepadShift = 0;
 
+    public WaveEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
+        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    }
+
     @Override
     public void tick() {
         int[][] colours = determineColours();
         int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
 
-        arduinoLayout = EffectUtilities.shiftLayout(EffectUtilities.generateGradientLayout(settings.getLEDStripLength(), colours), arduinoShift++);
-        razerKeyboardLayout = EffectUtilities.shiftLayout(EffectUtilities.generateGradientLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours), razerKeyboardShift++);
-        razerMouseLayout = EffectUtilities.shiftLayout(EffectUtilities.generateGradientLayout(RazerChromaService.MOUSE_MAX_ROWS, colours), razerMouseShift++);
-        razerMousepadLayout = EffectUtilities.shiftLayout(EffectUtilities.generateGradientLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours), razerMousepadShift++);
+        //Create the single direction wave style layouts.
+        if (settings.getWaveDirection() == Direction.LEFT || settings.getWaveDirection() == Direction.RIGHT) {
+            arduinoLayout = processSingleDirectionLayout(settings.getLEDStripLength(), colours, arduinoShift++);
+            razerKeyboardLayout = processSingleDirectionLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours, razerKeyboardShift++);
+            razerMouseLayout = processSingleDirectionLayout(RazerChromaService.MOUSE_MAX_ROWS, colours, razerMouseShift++);
+            razerMousepadLayout = processSingleDirectionLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours, razerMousepadShift++);
 
-        if (settings.getWaveDirection() == Direction.LEFT) {
-            arduinoLayout = EffectUtilities.flipLayout(arduinoLayout);
-            razerKeyboardLayout = EffectUtilities.flipLayout(razerKeyboardLayout);
-            razerMouseLayout = EffectUtilities.flipLayout(razerMouseLayout);
-            razerMousepadLayout = EffectUtilities.flipLayout(razerMousepadLayout);
+            System.out.println(arduinoShift);
+
+            arduinoShift = ensureShiftWithinRange(arduinoShift, settings.getLEDStripLength());
+            razerKeyboardShift = ensureShiftWithinRange(razerKeyboardShift, RazerChromaService.KEYBOARD_MAX_COLUMNS);
+            razerMouseShift = ensureShiftWithinRange(razerMouseShift, RazerChromaService.MOUSE_MAX_ROWS);
+            razerMousepadShift = ensureShiftWithinRange(razerMousepadShift, RazerChromaService.MOUSEPAD_MAX_LEDS);
         }
 
-        if (arduinoShift >= settings.getLEDStripLength()) {
-            arduinoShift = 0;
+        //Create the split wave style layouts.
+        else {
+            //
+            throw new IllegalStateException("Temporary illegal state.");
         }
-
-        if (razerKeyboardShift >= RazerChromaService.KEYBOARD_MAX_COLUMNS) {
-            razerKeyboardShift = 0;
-        }
-
-        if (razerMouseShift >= RazerChromaService.MOUSE_MAX_ROWS) {
-            razerMouseShift = 0;
-        }
-
-        if (razerMousepadShift >= RazerChromaService.MOUSEPAD_MAX_LEDS) {
-            razerMousepadShift = 0;
-        }
-
-        /*switch (settings.getStaticStyle()) {
-            default:
-            case SOLID:
-                arduinoLayout = EffectUtilities.generateSolidLayout(settings.getLEDStripLength(), colours);
-                razerKeyboardLayout = EffectUtilities.generateSolidLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours);
-                razerMouseLayout = EffectUtilities.generateSolidLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
-                razerMousepadLayout = EffectUtilities.generateSolidLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
-                break;
-            case GRADIENT:
-                arduinoLayout = EffectUtilities.generateGradientLayout(settings.getLEDStripLength(), colours);
-                razerKeyboardLayout = EffectUtilities.generateGradientLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours);
-                razerMouseLayout = EffectUtilities.generateGradientLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
-                razerMousepadLayout = EffectUtilities.generateGradientLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
-                break;
-            case ALTERNATING:
-                arduinoLayout = EffectUtilities.generateAlternatingLayout(settings.getLEDStripLength(), colours);
-                razerKeyboardLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours);
-                razerMouseLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
-                razerMousepadLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
-                break;
-        }*/
 
         setLEDSimulation(arduinoLayout);
         setRazerChroma(colours[0], razerKeyboardLayout, razerMouseLayout, razerMousepadLayout);
@@ -92,6 +69,19 @@ public class WaveEffect extends Effect {
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(30, 100, settings.getSpeed());
         delay(time);
+    }
+
+    private int ensureShiftWithinRange(int shift, int max) {
+        return (shift >= max) ? 0 : shift;
+    }
+
+    private int[][] processSingleDirectionLayout(int length, int[][] colours, int shift) {
+        int[][] layout = EffectUtilities.generateGradientLayout(length, colours);
+        layout = EffectUtilities.shiftLayout(layout, shift);
+        if (settings.getWaveDirection() == Direction.LEFT) {
+            layout = EffectUtilities.flipLayout(layout);
+        }
+        return layout;
     }
 
     protected int[][] determineColours() {
