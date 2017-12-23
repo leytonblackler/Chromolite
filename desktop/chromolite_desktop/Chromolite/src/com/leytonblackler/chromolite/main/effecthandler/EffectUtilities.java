@@ -26,29 +26,40 @@ public class EffectUtilities {
         int[][] gradient = new int[length][3];
         //The number of increments for the transition between each defined colour.
         int steps = (int) Math.floor((float) length / (float) colours.length);
-        //Iterate across each of the defined colours, excluding the last colour.
-        for (int i = 0; i < colours.length - 1; i++) {
-            int[] current = colours[i];
-            //Iterate across each of the steps between colours.
-            for (int step = 0; step < steps; step++) {
-                gradient[i * steps + step] = current;
-                current = nextGradientColour(current, colours[i + 1], steps, step);
+        //Calculate the remaining number of steps.
+        int remainingSteps = length - (colours.length) * steps;
+        //Fill in the layout.
+        int position = 0;
+        for (int colour = 0; colour < colours.length; colour++) {
+            //Calculate how many steps there are for the current transition.
+            int sectionSteps = steps;
+            if (remainingSteps > 0) {
+                sectionSteps++;
+                remainingSteps--;
+            }
+            //Fill in the transition for colours, excluding the last colour.
+            if (colour < colours.length - 1) {
+                int[] current = colours[colour];
+                //Iterate across each of the steps between colours.
+                for (int step = 0; step < sectionSteps; step++) {
+                    gradient[position++] = current;
+                    current = nextGradientColour(current, colours[colour + 1], sectionSteps, step);
+                }
+            }
+            //Fill in the transition for the last colour, looping back to the first colour.
+            else {
+                int[] current = colours[colours.length - 1];
+                for (int step = 0; step < sectionSteps; step++) {
+                    gradient[position++] = current;
+                    current = nextGradientColour(current, colours[0], sectionSteps, step);
+                }
             }
         }
-        //----
-        //Iterate across each of the steps between colours.
-        int[] current = colours[colours.length - 1];
-        int remainingSteps = length - (colours.length - 1) * steps;
-        for (int step = 0; step < remainingSteps; step++) {
-            gradient[(colours.length - 1) * steps + step] = current;
-            current = nextGradientColour(current, colours[0], remainingSteps, step);
-        }
-
         return gradient;
     }
 
     public static int[][] generateSolidLayout(int length, int[][] colours) {
-        //The RGB values for the colours that make up the gradient.
+        //The RGB values for the colours that make up the solid layout.
         int[][] solid = new int[length][3];
         //The number of increments for the transition between each defined colour.
         int steps = (int) Math.floor((float) length / (float) colours.length);
