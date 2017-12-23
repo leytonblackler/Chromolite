@@ -41,6 +41,13 @@ public class WaveEffect extends Effect {
         razerMouseLayout = EffectUtilities.shiftLayout(EffectUtilities.generateGradientLayout(RazerChromaService.MOUSE_MAX_ROWS, colours), razerMouseShift++);
         razerMousepadLayout = EffectUtilities.shiftLayout(EffectUtilities.generateGradientLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours), razerMousepadShift++);
 
+        if (settings.getWaveDirection() == Direction.LEFT) {
+            arduinoLayout = EffectUtilities.flipLayout(arduinoLayout);
+            razerKeyboardLayout = EffectUtilities.flipLayout(razerKeyboardLayout);
+            razerMouseLayout = EffectUtilities.flipLayout(razerMouseLayout);
+            razerMousepadLayout = EffectUtilities.flipLayout(razerMousepadLayout);
+        }
+
         if (arduinoShift >= settings.getLEDStripLength()) {
             arduinoShift = 0;
         }
@@ -81,7 +88,6 @@ public class WaveEffect extends Effect {
 
         setLEDSimulation(arduinoLayout);
         setRazerChroma(colours[0], razerKeyboardLayout, razerMouseLayout, razerMousepadLayout);
-
 
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(30, 100, settings.getSpeed());

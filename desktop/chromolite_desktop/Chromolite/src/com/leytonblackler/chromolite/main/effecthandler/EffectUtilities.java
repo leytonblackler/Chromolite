@@ -94,6 +94,14 @@ public class EffectUtilities {
         return shifted;
     }
 
+    public static int[][] flipLayout(int[][] layout) {
+        int[][] flipped = new int[layout.length][3];
+        for (int i = 0; i < layout.length; i++) {
+            flipped[layout.length - 1 - i] = layout[i];
+        }
+        return flipped;
+    }
+
     /*private void setSpectrum(Settings settings, LEDStripSimulationController ledStripSimulation) {
         int length = settings.getLEDStripLength();
         int totalSteps = Math.round((float) length / (float) SPECTRUM_COLOURS.length);
