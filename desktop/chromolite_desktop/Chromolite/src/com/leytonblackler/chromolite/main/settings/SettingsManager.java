@@ -34,7 +34,7 @@ public class SettingsManager {
         appConnectSettings = new AppConnectSettings();
     }
 
-    private LightSettings currentLightSettings() {
+    public LightSettings getCurrentLightSettings() {
         switch (platformSettings.getPlatform()) {
             case ARDUINO:
                 return arduinoSettings;
@@ -85,64 +85,64 @@ public class SettingsManager {
     }
 
     public LightSettings.ColourSelector getColourSelector() {
-        return currentLightSettings().getColourSelector();
+        return getCurrentLightSettings().getColourSelector();
     }
 
     public int[] getPrimaryColour() {
-        return currentLightSettings().getPrimaryColour();
+        return getCurrentLightSettings().getPrimaryColour();
     }
 
     public int[] getSecondaryColour() {
-        return currentLightSettings().getSecondaryColour();
+        return getCurrentLightSettings().getSecondaryColour();
     }
 
     public int[] getTertiaryColour() {
-        return currentLightSettings().getTertiaryColour();
+        return getCurrentLightSettings().getTertiaryColour();
     }
 
     public int[] getPrimaryIndicatorPosition() {
-        return currentLightSettings().getPrimaryIndicatorPosition();
+        return getCurrentLightSettings().getPrimaryIndicatorPosition();
     }
 
     public int[] getSecondaryIndicatorPosition() {
-        return currentLightSettings().getSecondaryIndicatorPosition();
+        return getCurrentLightSettings().getSecondaryIndicatorPosition();
     }
 
     public int[] getTertiaryIndicatorPosition() {
-        return currentLightSettings().getTertiaryIndicatorPosition();
+        return getCurrentLightSettings().getTertiaryIndicatorPosition();
     }
 
     public LightSettings.Mode getMode() {
-        return currentLightSettings().getMode();
+        return getCurrentLightSettings().getMode();
     }
 
     public int getBrightness() {
-        return currentLightSettings().getBrightness();
+        return getCurrentLightSettings().getBrightness();
     }
 
     public int getSpeed() {
-        return currentLightSettings().getSpeed();
+        return getCurrentLightSettings().getSpeed();
     }
 
     public StaticEffect.Style getStaticStyle() {
-        return currentLightSettings().getStaticStyle();
+        return getCurrentLightSettings().getStaticStyle();
     }
     public StaticEffect.NumberOfColours getStaticNumberOfColours() {
-        return currentLightSettings().getStaticNumberOfColours();
+        return getCurrentLightSettings().getStaticNumberOfColours();
     }
 
     public CycleEffect.NumberOfColours getCycleNumberOfColours() {
-        return currentLightSettings().getCycleNumberOfColours();
+        return getCurrentLightSettings().getCycleNumberOfColours();
     }
     public CycleEffect.Transition getCycleTransition() {
-        return currentLightSettings().getCycleTransition();
+        return getCurrentLightSettings().getCycleTransition();
     }
 
     public WaveEffect.NumberOfColours getWaveNumberOfColours() {
-        return currentLightSettings().getWaveNumberOfColours();
+        return getCurrentLightSettings().getWaveNumberOfColours();
     }
     public WaveEffect.Direction getWaveDirection() {
-        return currentLightSettings().getWaveDirection();
+        return getCurrentLightSettings().getWaveDirection();
     }
 
     public PlatformSettings.Platform getPlatform() {
@@ -170,86 +170,86 @@ public class SettingsManager {
     }
 
     public void setColourSelector(LightSettings.ColourSelector colourSelector) {
-        currentLightSettings().setColourSelector(colourSelector);
+        getCurrentLightSettings().setColourSelector(colourSelector);
         observers.forEach((observer) -> observer.updateColours(this));
     }
 
     public void setPrimaryColour(int[] primaryColour) {
-        currentLightSettings().setPrimaryColour(primaryColour);
+        getCurrentLightSettings().setPrimaryColour(primaryColour);
         observers.forEach((observer) -> observer.updateColours(this));
         observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setSecondaryColour(int[] secondaryColour) {
-        currentLightSettings().setSecondaryColour(secondaryColour);
+        getCurrentLightSettings().setSecondaryColour(secondaryColour);
         observers.forEach((observer) -> observer.updateColours(this));
         observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setTertiaryColour(int[] tertiaryColour) {
-        currentLightSettings().setTertiaryColour(tertiaryColour);
+        getCurrentLightSettings().setTertiaryColour(tertiaryColour);
         observers.forEach((observer) -> observer.updateColours(this));
         observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setPrimaryIndicatorPosition(int x, int y) {
-        currentLightSettings().setPrimaryIndicatorPosition(x, y);
+        getCurrentLightSettings().setPrimaryIndicatorPosition(x, y);
         observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setSecondaryIndicatorPosition(int x, int y) {
-        currentLightSettings().setSecondaryIndicatorPosition(x, y);
+        getCurrentLightSettings().setSecondaryIndicatorPosition(x, y);
         observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setTertiaryIndicatorPosition(int x, int y) {
-        currentLightSettings().setTertiaryIndicatorPosition(x, y);
+        getCurrentLightSettings().setTertiaryIndicatorPosition(x, y);
         observers.forEach((observer) -> observer.updateSpectrum(this));
     }
 
     public void setMode(LightSettings.Mode mode) {
-        currentLightSettings().setMode(mode);
+        getCurrentLightSettings().setMode(mode);
         observers.forEach((observer) -> observer.updateModes(this));
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setBrightness(int brightness) {
-        currentLightSettings().setBrightness(brightness);
+        getCurrentLightSettings().setBrightness(brightness);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setSpeed(int speed) {
-        currentLightSettings().setSpeed(speed);
+        getCurrentLightSettings().setSpeed(speed);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setStaticStyle(StaticEffect.Style staticStyle) {
-        currentLightSettings().setStaticStyle(staticStyle);
+        getCurrentLightSettings().setStaticStyle(staticStyle);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setStaticNumberOfColours(StaticEffect.NumberOfColours staticNumberOfColours) {
-        currentLightSettings().setStaticNumberOfColours(staticNumberOfColours);
+        getCurrentLightSettings().setStaticNumberOfColours(staticNumberOfColours);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setCycleNumberOfColours(CycleEffect.NumberOfColours cycleNumberOfColours) {
-        currentLightSettings().setCycleNumberOfColours(cycleNumberOfColours);
+        getCurrentLightSettings().setCycleNumberOfColours(cycleNumberOfColours);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setCycleTransition(CycleEffect.Transition cycleTransition) {
-        currentLightSettings().setCycleTransition(cycleTransition);
+        getCurrentLightSettings().setCycleTransition(cycleTransition);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setWaveNumberOfColours(WaveEffect.NumberOfColours waveNumberOfColours) {
-        currentLightSettings().setWaveNumberOfColours(waveNumberOfColours);
+        getCurrentLightSettings().setWaveNumberOfColours(waveNumberOfColours);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     public void setWaveDirection(WaveEffect.Direction waveDirection) {
-        currentLightSettings().setWaveDirection(waveDirection);
+        getCurrentLightSettings().setWaveDirection(waveDirection);
         observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
@@ -260,7 +260,9 @@ public class SettingsManager {
 
     public void setSyncPlatforms(boolean syncPlatforms) {
         platformSettings.setSyncPlatforms(syncPlatforms);
-        observers.forEach((observer) -> observer.update(this));
+        //observers.forEach((observer) -> observer.update(this));
+        observers.forEach((observer) -> observer.updateModes(this));
+        observers.forEach((observer) -> observer.updatePlatformSettings(this));
     }
 
     /*public void setIp(String ip) {

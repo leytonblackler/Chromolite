@@ -1,11 +1,10 @@
 package com.leytonblackler.chromolite.main.effecthandler.effects;
 
-import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
-import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
-import com.leytonblackler.chromolite.main.settings.SettingsManager;
-import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
-import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
+import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
+
+import java.util.List;
 
 import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.NumberOfColours.SPECTRUM;
 
@@ -13,8 +12,8 @@ public class CycleEffect extends Effect {
 
     private static final int STEPS = 20;
 
-    public CycleEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    public CycleEffect(LightSettings lightSettings) {
+        super(lightSettings);
     }
 
     public enum NumberOfColours {
@@ -40,8 +39,8 @@ public class CycleEffect extends Effect {
     private int[] nextColour = { 255, 0, 0 };
 
     @Override
-    public void tick() {
-        if (settings.getCycleNumberOfColours() == SPECTRUM) {
+    public void tick(EffectPlatform ... effectPlatforms) {
+        if (lightSettings.getCycleNumberOfColours() == SPECTRUM) {
             colours = EffectUtilities.SPECTRUM_COLOURS;
         }
 
@@ -62,7 +61,7 @@ public class CycleEffect extends Effect {
         //ledStripSimulation.setAll(currentColour[0], currentColour[1], currentColour[2]);
 
         //Calculate how long to wait before the next tick.
-        int time = EffectUtilities.calculateDelay(10, 50, settings.getSpeed());
+        int time = EffectUtilities.calculateDelay(10, 50, lightSettings.getSpeed());
 
         delay(time);
     }

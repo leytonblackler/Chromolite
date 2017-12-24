@@ -1,12 +1,10 @@
 package com.leytonblackler.chromolite.main.effecthandler.effects;
 
-import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
-import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
-import com.leytonblackler.chromolite.main.settings.SettingsManager;
-import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
-import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
-import com.leytonblackler.chromolite.view.Constants;
+import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
+
+import java.util.List;
 
 public class RandomEffect extends Effect {
 
@@ -15,12 +13,12 @@ public class RandomEffect extends Effect {
 
     private int colour[] = new int[3];
 
-    public RandomEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    public RandomEffect(LightSettings lightSettings) {
+        super(lightSettings);
     }
 
     @Override
-    public void tick() {
+    public void tick(EffectPlatform ... effectPlatforms) {
         colour[0] = randomInt();
         colour[1] = randomInt();
         colour[2] = randomInt();
@@ -29,7 +27,7 @@ public class RandomEffect extends Effect {
         //ledStripSimulation.setAll(colour[0], colour[1], colour[2]);
 
         //Calculate how long to wait before the next tick.
-        int time = EffectUtilities.calculateDelay(MIN_DELAY, MAX_DELAY, settings.getSpeed());
+        int time = EffectUtilities.calculateDelay(MIN_DELAY, MAX_DELAY, lightSettings.getSpeed());
 
         delay(time);
     }

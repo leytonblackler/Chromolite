@@ -1,19 +1,16 @@
 package com.leytonblackler.chromolite.main.effecthandler.effects;
 
-import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
-import com.leytonblackler.chromolite.main.effecthandler.Effect;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
-import com.leytonblackler.chromolite.main.settings.SettingsManager;
-import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
-import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
-import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
+import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
+import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 
-import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StaticEffect extends Effect {
 
-    public StaticEffect(SettingsManager settings, ArduinoController arduinoController, RazerChromaService razerChromaService, LEDStripSimulationController ledStripSimulation) {
-        super(settings, arduinoController, razerChromaService, ledStripSimulation);
+    public StaticEffect(LightSettings lightSettings) {
+        super(lightSettings);
     }
 
     public enum Style {
@@ -30,8 +27,31 @@ public class StaticEffect extends Effect {
     }
 
     @Override
-    public void tick() {
+    public void tick(EffectPlatform ... effectPlatforms) {
         int[][] colours = determineColours();
+        for (int platform = 0; platform < effectPlatforms.length; platform++) {
+            List<int[][]> layouts = new ArrayList();
+            for (int i = 0; i < effectPlatforms[platform].getLengths().length; i++) {
+                int[][] layout;
+                switch (lightSettings.getStaticStyle()) {
+                    default:
+                    case SOLID:
+                        layout = EffectUtilities.generateSolidLayout(effectPlatforms[platform].getLengths()[i], colours);
+                        break;
+                    case GRADIENT:
+                        layout = EffectUtilities.generateGradientLayout(effectPlatforms[platform].getLengths()[i], colours);
+                        break;
+                    case ALTERNATING:
+                        layout = EffectUtilities.generateAlternatingLayout(effectPlatforms[platform].getLengths()[i], colours);
+                        break;
+                }
+                layouts.add(layout);
+            }
+            effectPlatforms[platform].setLayouts(layouts);
+        }
+
+
+        /*int[][] colours = determineColours();
         int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
         switch (settings.getStaticStyle()) {
             default:
@@ -53,31 +73,28 @@ public class StaticEffect extends Effect {
                 razerMouseLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
                 razerMousepadLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
                 break;
-        }
-
-        setLEDSimulation(arduinoLayout);
-        setRazerChroma(colours[0], razerKeyboardLayout, razerMouseLayout, razerMousepadLayout);
+        }*/
 
         delay(100);
     }
 
     protected int[][] determineColours() {
         int[][] colours = new int[0][0];
-        switch (settings.getStaticNumberOfColours()) {
+        switch (lightSettings.getStaticNumberOfColours()) {
             case ONE:
                 colours = new int[1][3];
-                colours[0] = settings.getPrimaryColour();
+                colours[0] = lightSettings.getPrimaryColour();
                 break;
             case TWO:
                 colours = new int[2][3];
-                colours[0] = settings.getPrimaryColour();
-                colours[1] = settings.getSecondaryColour();
+                colours[0] = lightSettings.getPrimaryColour();
+                colours[1] = lightSettings.getSecondaryColour();
                 break;
             case THREE:
                 colours = new int[3][3];
-                colours[0] = settings.getPrimaryColour();
-                colours[1] = settings.getSecondaryColour();
-                colours[2] = settings.getTertiaryColour();
+                colours[0] = lightSettings.getPrimaryColour();
+                colours[1] = lightSettings.getSecondaryColour();
+                colours[2] = lightSettings.getTertiaryColour();
                 break;
             case SPECTRUM:
                 colours = EffectUtilities.SPECTRUM_COLOURS;

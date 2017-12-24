@@ -21,9 +21,13 @@ public class RazerChromaService {
 
     public static final int MOUSEPAD_MAX_LEDS = 15;
 
-    //public static final int MOUSE_LENGTH = 8; //???
+    private volatile boolean running = false;
 
-    public RazerChromaService() {
+    public void start() {
+        if (running) {
+            throw new IllegalStateException("Can't start Razer Chroma service, it is already running.");
+        }
+        running = true;
         //Get the current operating system as a string.
         String operatingSystem = System.getProperty("os.name");
         //Only run the service if the current operating system is Windows.
@@ -58,7 +62,15 @@ public class RazerChromaService {
     }
 
     public void stop() {
+        if (!running) {
+            throw new IllegalStateException("Can't stop Razer Chroma service, it is not running.");
+        }
         send("stop");
+        running = false;
+    }
+
+    public boolean isRunning() {
+        return running;
     }
 
     public void setSingleDevices(int r, int g, int b) {
