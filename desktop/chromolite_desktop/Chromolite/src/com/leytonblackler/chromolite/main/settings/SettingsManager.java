@@ -260,7 +260,6 @@ public class SettingsManager {
 
     public void setSyncPlatforms(boolean syncPlatforms) {
         platformSettings.setSyncPlatforms(syncPlatforms);
-        //observers.forEach((observer) -> observer.update(this));
         observers.forEach((observer) -> observer.updateModes(this));
         observers.forEach((observer) -> observer.updatePlatformSettings(this));
     }

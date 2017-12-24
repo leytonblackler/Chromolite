@@ -4,8 +4,6 @@ import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPl
 import com.leytonblackler.chromolite.main.effecthandler.effects.*;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 
-import java.util.*;
-
 public class EffectThread {
 
     private volatile boolean running = false;
@@ -21,16 +19,6 @@ public class EffectThread {
     }
 
     public void start() {
-        /*if (effect == null) {
-            throw new IllegalStateException();
-        }*/
-
-        System.out.println("==========");
-        for (int i = 0; i < effectPlatforms.length; i++) {
-            System.out.println(effectPlatforms[i].toString());
-        }
-        System.out.println("==========");
-
         Thread ticker = new Thread(() -> {
             running = true;
             while (running) {
