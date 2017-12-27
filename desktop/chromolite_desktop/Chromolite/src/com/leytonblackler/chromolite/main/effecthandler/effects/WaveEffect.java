@@ -58,7 +58,7 @@ public class WaveEffect extends Effect {
         }
 
         if (platform == PlatformSettings.Platform.RAZER_CHROMA || lightSettings.getSyncPlatforms()) {
-            //setPhillipsHue(phillipsHueLayout);
+            //setPhilipsHue(philipsHueLayout);
         }*/
 
         //Calculate how long to wait before the next tick.

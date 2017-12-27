@@ -67,7 +67,7 @@ public class PlatformsController  extends Controller implements Initializable {
 
     @FXML
     private void hueButtonClicked() {
-        getSettings().setPlatform(PlatformSettings.Platform.PHILLIPS_HUE);
+        getSettings().setPlatform(PlatformSettings.Platform.PHILIPS_HUE);
     }
 
     @FXML
@@ -94,7 +94,7 @@ public class PlatformsController  extends Controller implements Initializable {
                 setButtonSelected(true, razerButton, razerLogoImages, razerLogo);
                 setButtonSelected(false, hueButton, hueLogoImages, hueLogo);
                 break;
-            case PHILLIPS_HUE:
+            case PHILIPS_HUE:
                 setButtonSelected(false, arduinoButton, arduinoLogoImages, arduinoLogo);
                 setButtonSelected(false, razerButton, razerLogoImages, razerLogo);
                 setButtonSelected(true, hueButton, hueLogoImages, hueLogo);

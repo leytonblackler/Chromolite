@@ -17,7 +17,7 @@ public class SettingsManager {
 
     private LightSettings razerChromaSettings;
 
-    private LightSettings phillipsHueSettings;
+    private LightSettings philipsHueSettings;
 
     private PlatformSettings platformSettings;
 
@@ -28,7 +28,7 @@ public class SettingsManager {
     public SettingsManager() {
         arduinoSettings = new LightSettings();
         razerChromaSettings = new LightSettings();
-        phillipsHueSettings = new LightSettings();
+        philipsHueSettings = new LightSettings();
         platformSettings = new PlatformSettings();
         generalSettings = new GeneralSettings();
         appConnectSettings = new AppConnectSettings();
@@ -40,8 +40,8 @@ public class SettingsManager {
                 return arduinoSettings;
             case RAZER_CHROMA:
                 return razerChromaSettings;
-            case PHILLIPS_HUE:
-                return phillipsHueSettings;
+            case PHILIPS_HUE:
+                return philipsHueSettings;
         }
         throw new IllegalStateException();
     }
@@ -76,8 +76,8 @@ public class SettingsManager {
         return razerChromaSettings;
     }
 
-    public LightSettings getPhillipsHueSettings() {
-        return phillipsHueSettings;
+    public LightSettings getPhilipsHueSettings() {
+        return philipsHueSettings;
     }
 
     public int getLEDStripLength() {

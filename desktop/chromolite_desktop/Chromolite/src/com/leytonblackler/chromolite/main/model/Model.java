@@ -1,21 +1,15 @@
 package com.leytonblackler.chromolite.main.model;
 
-import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.controllers.LEDStripSimulationController;
 import com.leytonblackler.chromolite.main.effecthandler.EffectThread;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.ArduinoEffectPlatform;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
-import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.PhillipsHueEffectPlatform;
+import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.PhilipsHueEffectPlatform;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.RazerChromaEffectPlatform;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.settings.SettingsObserver;
-import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
-import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
-import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
 import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
-
-import java.util.*;
 
 public class Model extends SettingsObserver {
 
@@ -29,7 +23,7 @@ public class Model extends SettingsObserver {
 
     private EffectThread razerChromaPlatformThread;
 
-    private EffectThread phillipsHuePlatformThread;
+    private EffectThread philipsHuePlatformThread;
 
     //TEMPORARY
     public static LEDStripSimulationController ledStripSim;
@@ -44,23 +38,23 @@ public class Model extends SettingsObserver {
 
         EffectPlatform arduinoEffectPlatform = new ArduinoEffectPlatform(arduinoController);
         EffectPlatform razerChromaEffectPlatform = new RazerChromaEffectPlatform(razerChromaService);
-        EffectPlatform phillipsHueEffectPlatform = new PhillipsHueEffectPlatform();
+        EffectPlatform philipsHueEffectPlatform = new PhilipsHueEffectPlatform();
 
-        allPlatformsThread = new EffectThread(arduinoEffectPlatform, razerChromaEffectPlatform, phillipsHueEffectPlatform);
+        allPlatformsThread = new EffectThread(arduinoEffectPlatform, razerChromaEffectPlatform, philipsHueEffectPlatform);
         arduinoPlatformThread = new EffectThread(arduinoEffectPlatform);
         razerChromaPlatformThread = new EffectThread(razerChromaEffectPlatform);
-        phillipsHuePlatformThread = new EffectThread(phillipsHueEffectPlatform);
+        philipsHuePlatformThread = new EffectThread(philipsHueEffectPlatform);
     }
 
     public void stop() {
         allPlatformsThread.stop();
         arduinoPlatformThread.stop();
         razerChromaPlatformThread.stop();
-        phillipsHuePlatformThread.stop();
+        philipsHuePlatformThread.stop();
 
         razerChromaService.stop();
         //arduinoController.stop();
-        //phillipsHueController.stop();
+        //philipsHueController.stop();
     }
 
     @Override
@@ -84,8 +78,8 @@ public class Model extends SettingsObserver {
         if (razerChromaPlatformThread.getCurrentMode() != settings.getRazerChromaSettings().getMode()) {
             razerChromaPlatformThread.setEffect(settings.getRazerChromaSettings());
         }
-        if (phillipsHuePlatformThread.getCurrentMode() != settings.getPhillipsHueSettings().getMode()) {
-            phillipsHuePlatformThread.setEffect(settings.getPhillipsHueSettings());
+        if (philipsHuePlatformThread.getCurrentMode() != settings.getPhilipsHueSettings().getMode()) {
+            philipsHuePlatformThread.setEffect(settings.getPhilipsHueSettings());
         }
     }
 
@@ -101,16 +95,16 @@ public class Model extends SettingsObserver {
             if (!allPlatformsThread.isRunning()) {
                 arduinoPlatformThread.stop();
                 razerChromaPlatformThread.stop();
-                phillipsHuePlatformThread.stop();
+                philipsHuePlatformThread.stop();
                 allPlatformsThread.start();
             }
         }
 
-        if (!settings.getSyncPlatforms() && !arduinoPlatformThread.isRunning() && !razerChromaPlatformThread.isRunning() && !phillipsHuePlatformThread.isRunning()) {
+        if (!settings.getSyncPlatforms() && !arduinoPlatformThread.isRunning() && !razerChromaPlatformThread.isRunning() && !philipsHuePlatformThread.isRunning()) {
             allPlatformsThread.stop();
             arduinoPlatformThread.start();
             razerChromaPlatformThread.start();
-            phillipsHuePlatformThread.start();
+            philipsHuePlatformThread.start();
         }
     }
 

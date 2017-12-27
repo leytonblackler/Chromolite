@@ -49,7 +49,7 @@
             </graphic>
         </ToggleButton>
 
-        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" text="PHILLIPS HUE" disable="true"
+        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" text="PHILIPS HUE" disable="true"
                       prefHeight="${PADDING * 2.5}"
                       GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity">
             <graphic>

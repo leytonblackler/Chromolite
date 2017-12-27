@@ -7,7 +7,7 @@ public class PlatformSettings {
     public enum Platform {
         ARDUINO,
         RAZER_CHROMA,
-        PHILLIPS_HUE
+        PHILIPS_HUE
     }
 
     private Platform platform = DefaultSettings.PLATFORM;
