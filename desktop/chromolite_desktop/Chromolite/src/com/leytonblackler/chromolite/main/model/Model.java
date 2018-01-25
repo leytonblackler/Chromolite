@@ -36,6 +36,8 @@ public class Model extends SettingsObserver {
         razerChromaService = new RazerChromaService();
         razerChromaService.start();
 
+        arduinoController.connect();
+
         EffectPlatform arduinoEffectPlatform = new ArduinoEffectPlatform(arduinoController);
         EffectPlatform razerChromaEffectPlatform = new RazerChromaEffectPlatform(razerChromaService);
         EffectPlatform philipsHueEffectPlatform = new PhilipsHueEffectPlatform();

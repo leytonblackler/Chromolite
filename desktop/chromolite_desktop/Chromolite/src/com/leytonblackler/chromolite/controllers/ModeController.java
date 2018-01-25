@@ -3,6 +3,7 @@ package com.leytonblackler.chromolite.controllers;
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
+import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.view.Constants;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -75,11 +76,13 @@ public class ModeController extends Controller implements Initializable {
     @FXML
     public void staticButtonClicked() {
         setMode(LightSettings.Mode.STATIC);
+        ArduinoController.getInstance().sendTest("22");
     }
 
     @FXML
     public void cycleButtonClicked() {
         setMode(LightSettings.Mode.CYCLE);
+        ArduinoController.getInstance().sendTest("21");
     }
 
     @FXML
