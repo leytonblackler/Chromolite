@@ -32,13 +32,14 @@ void setup() {
 
   //Initialise the serial commuication.
   Serial.begin(9600);
+  Serial.setTimeout(20);
   //oscSerial.begin(Serial);
   
 }
 
 void loop() {
   if (Serial.available() > 0) {
-    String value = Serial.readString();
+    String value = Serial.readStringUntil('$');
     if (value == "22") {
       analogWrite(BUILT_IN_LED, 255);
       setSingle(255, 0, 0);

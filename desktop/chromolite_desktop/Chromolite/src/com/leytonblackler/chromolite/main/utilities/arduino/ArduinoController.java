@@ -48,7 +48,7 @@ public class ArduinoController {
             e.printStackTrace();
         }
         PrintWriter pout = new PrintWriter(serialPort.getOutputStream());
-        pout.print(string);
+        pout.print(string + '$');
         pout.flush();
     }
 
