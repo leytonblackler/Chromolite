@@ -143,6 +143,12 @@
             for interacting with a Razer Chroma keypad.
             </summary>
         </member>
+        <member name="P:Corale.Colore.Core.Chroma.ChromaLink">
+            <summary>
+            Gets an instance of the <see cref="T:Corale.Colore.Core.IChromaLink" /> interface
+            for interacting with ChromaLink devices.
+            </summary>
+        </member>
         <member name="P:Corale.Colore.Core.Chroma.Initialized">
             <summary>
             Gets a value indicating whether the Chroma
@@ -261,6 +267,92 @@
             Invokes the SDK support event handlers with the specified parameter.
             </summary>
             <param name="enabled">Whether or not the SDK is supported.</param>
+        </member>
+        <member name="T:Corale.Colore.Core.ChromaLink">
+            <summary>
+            Class for interacting with a Chroma Link.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Core.ChromaLink.Log">
+            <summary>
+            Logger instance for this class.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Core.ChromaLink.InitLock">
+            <summary>
+            Lock object for thread-safe init.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Core.ChromaLink._instance">
+            <summary>
+            Singleton instance of this class.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Core.ChromaLink._custom">
+            <summary>
+            Internal instance of a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct used for
+            the indexer.
+            </summary>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Corale.Colore.Core.ChromaLink" /> class from being created.
+            </summary>
+        </member>
+        <member name="P:Corale.Colore.Core.ChromaLink.Instance">
+            <summary>
+            Gets the application-wide instance of the <see cref="T:Corale.Colore.Core.IChromaLink" /> interface.
+            </summary>
+        </member>
+        <member name="P:Corale.Colore.Core.ChromaLink.Item(System.Int32)">
+            <summary>
+            Gets or sets a color at the specified position in the Chroma Link
+            </summary>
+            <param name="index">The index to access (between <c>0</c> and <see cref="F:Corale.Colore.Razer.ChromaLink.Constants.MaxLeds" />, exclusive upper-bound).</param>
+            <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.IsSet(System.Int32)">
+            <summary>
+            Returns whether an element has had a custom color set.
+            </summary>
+            <param name="index">The index to query.</param>
+            <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.SetAll(Corale.Colore.Core.Color)">
+            <summary>
+            Sets the color of all lights in Chroma Link
+            </summary>
+            <param name="color">Color to set.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.SetEffect(Corale.Colore.Razer.ChromaLink.Effects.Effect)">
+            <summary>
+            Sets an effect without any parameters.
+            Currently, this only works for the <see cref="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.None" /> and <see cref="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Static" /> effects.
+            </summary>
+            <param name="effect">Effect options.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.SetCustom(Corale.Colore.Razer.ChromaLink.Effects.Custom)">
+            <summary>
+            Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> effect on the Chroma Link.
+            </summary>
+            <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.SetStatic(Corale.Colore.Razer.ChromaLink.Effects.Static)">
+            <summary>
+            Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
+            </summary>
+            <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> struct.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.SetStatic(Corale.Colore.Core.Color)">
+            <summary>
+            Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
+            </summary>
+            <param name="color">Color of the effect.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.ChromaLink.Clear">
+            <summary>
+            Clears the current effect on the Chroma Link.
+            </summary>
         </member>
         <member name="T:Corale.Colore.Core.Color">
             <summary>
@@ -528,6 +620,50 @@
             Gets the path to the Razer Chroma SDK registry key.
             </summary>
             <returns>Path to the Razer Chroma SDK registry key.</returns>
+        </member>
+        <member name="T:Corale.Colore.Core.IChromaLink">
+            <summary>
+            Interface for Chroma Link functionality.
+            </summary>
+        </member>
+        <member name="P:Corale.Colore.Core.IChromaLink.Item(System.Int32)">
+            <summary>
+            Gets or sets the <see cref="T:Corale.Colore.Core.Color" /> for a specific zone on the Chroma Link device.
+            The SDK will translate this appropriately depending on user configuration.
+            </summary>
+            <param name="index">The zone to access.</param>
+            <returns>The color currently set for the specified key.</returns>
+        </member>
+        <member name="M:Corale.Colore.Core.IChromaLink.SetEffect(Corale.Colore.Razer.ChromaLink.Effects.Effect)">
+            <summary>
+            Sets an effect without any parameters.
+            </summary>
+            <param name="effect">Effect options.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.IChromaLink.IsSet(System.Int32)">
+            <summary>
+            Returns whether an element has had a custom color set.
+            </summary>
+            <param name="index">The index to query.</param>
+            <returns><c>true</c> if the position has a color set that is not black, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Corale.Colore.Core.IChromaLink.SetCustom(Corale.Colore.Razer.ChromaLink.Effects.Custom)">
+            <summary>
+            Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> effect on the Chroma Link.
+            </summary>
+            <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.IChromaLink.SetStatic(Corale.Colore.Razer.ChromaLink.Effects.Static)">
+            <summary>
+            Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
+            </summary>
+            <param name="effect">An instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> struct.</param>
+        </member>
+        <member name="M:Corale.Colore.Core.IChromaLink.SetStatic(Corale.Colore.Core.Color)">
+            <summary>
+            Sets a <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> effect on the Chroma Link.
+            </summary>
+            <param name="color">Color of the effect.</param>
         </member>
         <member name="T:Corale.Colore.Core.GenericDevice">
             <summary>
@@ -827,6 +963,12 @@
             <summary>
             Gets an instance of the <see cref="T:Corale.Colore.Core.IKeypad" /> interface
             for interacting with a Razer Chroma keypad.
+            </summary>
+        </member>
+        <member name="P:Corale.Colore.Core.IChroma.ChromaLink">
+            <summary>
+            Gets an instance of the <see cref="T:Corale.Colore.Core.IChromaLink" /> interface
+            for interacting with ChromaLink devices.
             </summary>
         </member>
         <member name="P:Corale.Colore.Core.IChroma.Initialized">
@@ -2269,6 +2411,14 @@
             <param name="param">Effect-specific parameters.</param>
             <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
         </member>
+        <member name="M:Corale.Colore.Core.NativeWrapper.CreateChromaLinkEffect(Corale.Colore.Razer.ChromaLink.Effects.Effect,System.IntPtr)">
+            <summary>
+            Creates a Chroma Link effect with the specified parameters.
+            </summary>
+            <param name="effect">The type of Chroma Link effect to create.</param>
+            <param name="param">Effect-specific parameters.</param>
+            <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        </member>
         <member name="M:Corale.Colore.Core.NativeWrapper.DeleteEffect(System.Guid)">
             <summary>
             Deletes an effect with the specified <see cref="T:System.Guid" />.
@@ -2358,6 +2508,15 @@
         <member name="M:Corale.Colore.Core.NativeWrapper.CreateKeypadEffect``1(Corale.Colore.Razer.Keypad.Effects.Effect,``0)">
             <summary>
             Helper method for creating keypad effects with parameter struct.
+            </summary>
+            <typeparam name="T">The effect struct type.</typeparam>
+            <param name="effect">The type of effect to create.</param>
+            <param name="struct">Effect options struct.</param>
+            <returns>A <see cref="T:System.Guid" /> for the created effect.</returns>
+        </member>
+        <member name="M:Corale.Colore.Core.NativeWrapper.CreateChromaLinkEffect``1(Corale.Colore.Razer.ChromaLink.Effects.Effect,``0)">
+            <summary>
+            Helper method for creating Chroma Link effects with parameter struct.
             </summary>
             <typeparam name="T">The effect struct type.</typeparam>
             <param name="effect">The type of effect to create.</param>
@@ -3593,6 +3752,199 @@
             The attribute must be mentioned in your member reordering patterns.
             </remarks>
         </member>
+        <member name="T:Corale.Colore.Razer.ChromaLink.Constants">
+            <summary>
+            Chroma Link constants.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Constants.MaxLeds">
+            <summary>
+            Maximum number of LEDs.
+            </summary>
+        </member>
+        <member name="T:Corale.Colore.Razer.ChromaLink.Effects.Custom">
+            <summary>
+            Custom effect.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Custom._colors">
+            <summary>
+            Color definitions for each element in Chroma Link.
+            </summary>
+            <remarks>
+            The array is 1-dimensional
+            according to: Constants.MaxLeds
+            </remarks>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.#ctor(Corale.Colore.Core.Color[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.
+            </summary>
+            <param name="colors">The colors to use.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the colors array supplied is of an incorrect size.</exception>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.#ctor(System.Collections.Generic.IList{Corale.Colore.Core.Color})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.
+            </summary>
+            <param name="colors">The colors to use.</param>
+            <exception cref="T:System.ArgumentException">Thrown if the colors array supplied is of an invalid size.</exception>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.#ctor(Corale.Colore.Core.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct
+            with every position set to a specific color.
+            </summary>
+            <param name="color">The <see cref="T:Corale.Colore.Core.Color" /> to set each position to.</param>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.#ctor(Corale.Colore.Razer.ChromaLink.Effects.Custom)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct
+            with color values copied from another struct of the same type.
+            </summary>
+            <param name="other">The struct to copy data from.</param>
+        </member>
+        <member name="P:Corale.Colore.Razer.ChromaLink.Effects.Custom.Item(System.Int32)">
+            <summary>
+            Gets or sets a position in the custom array.
+            </summary>
+            <param name="index">The index to access, zero indexed.</param>
+            <returns>The <see cref="T:Corale.Colore.Core.Color" /> at the specified position.</returns>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.op_Equality(Corale.Colore.Razer.ChromaLink.Effects.Custom,System.Object)">
+            <summary>
+            Compares an instance of <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> with
+            another object for equality.
+            </summary>
+            <param name="left">The left operand, an instance of <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" />.</param>
+            <param name="right">The right operand, any type of object.</param>
+            <returns><c>true</c> if the two objects are equal, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.op_Inequality(Corale.Colore.Razer.ChromaLink.Effects.Custom,System.Object)">
+            <summary>
+            Compares an instance of <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> with
+            another object for inequality.
+            </summary>
+            <param name="left">The left operand, an instance of <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" />.</param>
+            <param name="right">The right operand, any type of object.</param>
+            <returns><c>true</c> if the two objects are not equal, otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Create">
+            <summary>
+            Creates a new empty <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> struct.
+            </summary>
+            <returns>An instance of <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" />
+            filled with the color black.</returns>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Clone">
+            <summary>
+            Returns a copy of this struct.
+            </summary>
+            <returns>A copy of this struct.</returns>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>
+            A 32-bit signed integer that is the hash code for this instance.
+            </returns>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Set(Corale.Colore.Core.Color)">
+            <summary>
+            Sets all LED indices to the specified <see cref="T:Corale.Colore.Core.Color" />.
+            </summary>
+            <param name="color">The <see cref="T:Corale.Colore.Core.Color" /> to set.</param>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Clear">
+            <summary>
+            Clears the colors from the array, setting them to <see cref="F:Corale.Colore.Core.Color.Black" />.
+            </summary>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Equals(System.Object)">
+            <summary>
+            Indicates whether this instance and a specified object are equal.
+            </summary>
+            <returns>
+            <c>true</c> if <paramref name="obj"/> and this instance are of compatible types
+            and represent the same value; otherwise, <c>false</c>.
+            </returns>
+            <param name="obj">Another object to compare to. </param>
+            <filterpriority>2</filterpriority>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Equals(Corale.Colore.Razer.ChromaLink.Effects.Custom)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <returns>
+            <c>true</c> if the current object is equal to the <paramref name="other"/> parameter;
+            otherwise, <c>false</c>.
+            </returns>
+            <param name="other">A <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Custom" /> to compare with this object.</param>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Custom.Equals(Corale.Colore.Core.Color[])">
+            <summary>
+            Indicates whether the current object is equal to an instance of
+            an array of <see cref="T:Corale.Colore.Core.Color" />.
+            </summary>
+            <param name="other">An array of <see cref="T:Corale.Colore.Core.Color" /> to compare with this object.</param>
+            <returns>
+            <c>true</c> if the <paramref name="other" /> object has the same
+            number of elements, and contain matching colors; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Corale.Colore.Razer.ChromaLink.Effects.Effect">
+            <summary>
+            Supported built-in Chroma Link effects.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.None">
+            <summary>
+            No effect.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Custom">
+            <summary>
+            No effect.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Static">
+            <summary>
+            No effect.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Breathing">
+            <summary>
+            Slow fade between two colors.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.SpectrumCycling">
+            <summary>
+            Cycles the entire spectrum.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Effect.Invalid">
+            <summary>
+            No effect.
+            </summary>
+        </member>
+        <member name="T:Corale.Colore.Razer.ChromaLink.Effects.Static">
+            <summary>
+            Static color effect.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.ChromaLink.Effects.Static.Color">
+            <summary>
+            Color to use.
+            </summary>
+        </member>
+        <member name="M:Corale.Colore.Razer.ChromaLink.Effects.Static.#ctor(Corale.Colore.Core.Color)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Corale.Colore.Razer.ChromaLink.Effects.Static" /> struct.
+            </summary>
+            <param name="color">Color to set.</param>
+        </member>
         <member name="T:Corale.Colore.Razer.Constants">
             <summary>
             The definitions of generic constant values used in the project
@@ -4343,6 +4695,11 @@
         <member name="F:Corale.Colore.Razer.Headset.Effects.Effect.SpectrumCycling">
             <summary>
             Cycles the entire spectrum.
+            </summary>
+        </member>
+        <member name="F:Corale.Colore.Razer.Headset.Effects.Effect.Custom">
+            <summary>
+            Custom headset effect.
             </summary>
         </member>
         <member name="F:Corale.Colore.Razer.Headset.Effects.Effect.Invalid">
@@ -7004,6 +7361,11 @@
             Stores a reference to the loaded <see cref="T:Corale.Colore.Razer.NativeMethods.CreateKeypadEffectDelegate" />.
             </summary>
         </member>
+        <member name="F:Corale.Colore.Razer.NativeMethods.CreateChromaLinkEffect">
+            <summary>
+            Stores a reference to the loaded <see cref="T:Corale.Colore.Razer.NativeMethods.CreateChromaLinkEffectDelegate" />.
+            </summary>
+        </member>
         <member name="F:Corale.Colore.Razer.NativeMethods.DeleteEffect">
             <summary>
             Stores a reference to the loaded <see cref="T:Corale.Colore.Razer.NativeMethods.DeleteEffectDelegate" />.
@@ -7157,6 +7519,15 @@
             Create keypad effect.
             </summary>
             <param name="effect">Keypad effect type.</param>
+            <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
+            <param name="effectId">Valid effect ID if successful. Pass <see cref="F:System.IntPtr.Zero" /> if not required.</param>
+            <returns><see cref="T:Corale.Colore.Razer.Result" /> value indicating success.</returns>
+        </member>
+        <member name="T:Corale.Colore.Razer.NativeMethods.CreateChromaLinkEffectDelegate">
+            <summary>
+            Create Chroma Link effect.
+            </summary>
+            <param name="effect">Chroma Link effect type.</param>
             <param name="param">Pointer to a parameter type specified by <paramref name="effect" />.</param>
             <param name="effectId">Valid effect ID if successful. Pass <see cref="F:System.IntPtr.Zero" /> if not required.</param>
             <returns><see cref="T:Corale.Colore.Razer.Result" /> value indicating success.</returns>

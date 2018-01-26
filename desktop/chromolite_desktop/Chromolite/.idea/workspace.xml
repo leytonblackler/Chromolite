@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c472a6c4-74ee-4b6d-bc6c-2793a2a71498" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../arduino/chromolite_arduino/chromolite_arduino.ino" afterPath="$PROJECT_DIR$/../../../arduino/chromolite_arduino/chromolite_arduino.ino" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/res/RazerChromaService/Corale.Colore.dll" afterPath="$PROJECT_DIR$/res/RazerChromaService/Corale.Colore.dll" />
+      <change beforePath="$PROJECT_DIR$/res/RazerChromaService/Corale.Colore.xml" afterPath="$PROJECT_DIR$/res/RazerChromaService/Corale.Colore.xml" />
+      <change beforePath="$PROJECT_DIR$/res/RazerChromaService/RazerChromaService.exe" afterPath="$PROJECT_DIR$/res/RazerChromaService/RazerChromaService.exe" />
+      <change beforePath="$PROJECT_DIR$/res/RazerChromaService/RazerChromaService.pdb" afterPath="$PROJECT_DIR$/res/RazerChromaService/RazerChromaService.pdb" />
+      <change beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ModeController.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ModeController.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/RazerChromaEffectPlatform.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/RazerChromaEffectPlatform.java" />
       <change beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/arduino/ArduinoController.java" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/arduino/ArduinoController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,91 +33,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/model/Model.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ArduinoController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/arduino/ArduinoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+            <state relative-caret-position="700">
+              <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#328#329#0" expanded="true" />
                 <element signature="e#359#360#0" expanded="true" />
-                <element signature="e#830#831#0" expanded="true" />
-                <element signature="e#856#857#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#896#897#0" expanded="true" />
+                <element signature="e#1237#1238#0" expanded="true" />
+                <element signature="e#1281#1282#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModeController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ModeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="84" column="52" lean-forward="false" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SerialPort.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jSerialComm-1.3.11.jar!/com/fazecast/jSerialComm/SerialPort.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Arduino.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/arduino.jar!/arduino/Arduino.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1059">
-              <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OSCPort.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/javaosc-core-0.4.jar!/com/illposed/osc/OSCPort.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-              <folding>
-                <marker date="1516853975601" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1516853975601" expanded="true" signature="433:496" ph="{...}" />
-                <marker date="1516853975601" expanded="false" signature="538:549" ph=" { " />
-                <marker date="1516853975601" expanded="false" signature="562:568" ph=" }" />
-                <marker date="1516853975601" expanded="false" signature="614:625" ph=" { " />
-                <marker date="1516853975601" expanded="false" signature="638:644" ph=" }" />
-                <marker date="1516853975601" expanded="false" signature="686:697" ph=" { " />
-                <marker date="1516853975601" expanded="false" signature="716:722" ph=" }" />
-                <marker date="1516853975601" expanded="false" signature="751:762" ph=" { " />
-                <marker date="1516853975601" expanded="false" signature="779:785" ph=" }" />
-                <marker date="1516853975601" expanded="false" signature="810:821" ph=" { " />
-                <marker date="1516853975601" expanded="false" signature="841:847" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OSCBundle.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/javaosc-core-0.4.jar!/com/illposed/osc/OSCBundle.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -216,7 +152,6 @@
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/OffEffect.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/RandomEffect.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/ScanEffect.java" />
-        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/RazerChromaEffectPlatform.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/ArduinoEffectPlatform.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectThread.java" />
         <option value="$PROJECT_DIR$/res/view/Platforms.fxml" />
@@ -224,8 +159,9 @@
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/settings/categories/PlatformSettings.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/WaveEffect.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/PlatformsController.java" />
-        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ModeController.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/model/Model.java" />
+        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/RazerChromaEffectPlatform.java" />
+        <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ModeController.java" />
         <option value="$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/arduino/ArduinoController.java" />
       </list>
     </option>
@@ -258,7 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -433,7 +369,7 @@
       </pane>
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -945,12 +881,13 @@
       <workItem from="1516687352121" duration="396000" />
       <workItem from="1516755558830" duration="701000" />
       <workItem from="1516760145321" duration="11319000" />
-      <workItem from="1516853691777" duration="5220000" />
+      <workItem from="1516853691777" duration="11532000" />
+      <workItem from="1516929974034" duration="4280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="404787000" />
+    <option name="totallyTimeSpent" value="415379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1080" extended-state="0" />
@@ -975,8 +912,8 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.209375" sideWeight="0.49659863" order="10" side_tool="false" content_ui="tabs" x="918" y="311" width="632" height="372" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31601563" sideWeight="0.49659863" order="10" side_tool="false" content_ui="tabs" x="918" y="311" width="632" height="372" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.171875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Graphical Navigator" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1038,14 +975,6 @@
           <caret line="139" column="8" lean-forward="false" selection-start-line="139" selection-start-column="8" selection-end-line="139" selection-end-column="8" />
           <caret line="144" column="8" lean-forward="false" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
           <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-          <folding>
-            <element signature="e#4918#4919#0" expanded="false" />
-            <element signature="e#5003#5004#0" expanded="false" />
-            <element signature="e#5058#5059#0" expanded="false" />
-            <element signature="e#5145#5146#0" expanded="false" />
-            <element signature="e#5199#5200#0" expanded="false" />
-            <element signature="e#5285#5286#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,23 +993,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/view/settings/StaticSettings.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/view/settings/WaveSettings.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/view/settings/WaveSettings.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="72" column="119" lean-forward="false" selection-start-line="72" selection-start-column="119" selection-end-line="72" selection-end-column="119" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/settings/StaticSettingsController.java">
@@ -1091,13 +1020,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/view/settings/CycleSettings.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="59" column="42" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/settings/CycleSettingsController.java">
@@ -1150,25 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StaticEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#455#456#0" expanded="false" />
-            <element signature="e#491#492#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/CycleEffect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StrobeEffect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1211,22 +1121,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/RazerChromaEffectPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="23" column="61" lean-forward="false" selection-start-line="23" selection-start-column="61" selection-end-line="23" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/ArduinoEffectPlatform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/EffectThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -1246,14 +1140,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/view/Platforms.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
           <caret line="51" column="78" lean-forward="false" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/view/GUI.java">
@@ -1287,10 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#430#431#0" expanded="false" />
-            <element signature="e#461#462#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1306,18 +1196,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
           <caret line="90" column="22" lean-forward="false" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
-          <folding>
-            <element signature="e#2432#2433#0" expanded="false" />
-            <element signature="e#2512#2513#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="27" column="104" lean-forward="false" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1325,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1333,7 +1210,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1349,7 +1225,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1365,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="800">
           <caret line="68" column="6" lean-forward="false" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,21 +1268,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/javaosc-core-0.4.jar!/com/illposed/osc/OSCBundle.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
+        <state relative-caret-position="120">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1516853975601" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1516853975601" expanded="false" signature="140:382" ph="..." />
+            <marker date="1516853975601" expanded="false" signature="658:669" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="695:701" ph=" }" />
+            <marker date="1516853975601" expanded="false" signature="739:750" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="784:790" ph=" }" />
+            <marker date="1516853975601" expanded="false" signature="843:854" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="889:895" ph=" }" />
+            <marker date="1516853975601" expanded="true" signature="965:1170" ph="{...}" />
+            <marker date="1516853975601" expanded="false" signature="1218:1229" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="1295:1301" ph=" }" />
+            <marker date="1516853975601" expanded="false" signature="1333:1344" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="1373:1379" ph=" }" />
+            <marker date="1516853975601" expanded="false" signature="1425:1436" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="1470:1476" ph=" }" />
+            <marker date="1516853975601" expanded="true" signature="1522:1594" ph="{...}" />
+            <marker date="1516853975601" expanded="false" signature="1635:1646" ph=" { " />
+            <marker date="1516853975601" expanded="false" signature="1696:1702" ph=" }" />
+            <marker date="1516853975601" expanded="true" signature="1781:2265" ph="{...}" />
+            <marker date="1516853975601" expanded="true" signature="2341:2695" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
+        <state relative-caret-position="0">
           <caret line="38" column="36" lean-forward="false" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
           <folding />
         </state>
@@ -1416,38 +1310,145 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jSerialComm-1.3.11.jar!/com/fazecast/jSerialComm/SerialPort.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="600">
           <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
+          <folding>
+            <marker date="1516764104454" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1516764104454" expanded="false" signature="148:427" ph="..." />
+            <marker date="1516764104454" expanded="true" signature="2884:3111" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="3232:4466" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="4504:7668" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="7707:8049" ph="{...}" />
+            <marker date="1516764104454" expanded="false" signature="8084:8095" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="8116:8122" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="8890:8901" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="8945:8951" ph=" }" />
+            <marker date="1516764104454" expanded="true" signature="9017:9093" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="9161:9239" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="9266:9273" ph="{}" />
+            <marker date="1516764104454" expanded="true" signature="9349:10273" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="10318:10642" ph="{...}" />
+            <marker date="1516764104454" expanded="false" signature="10689:10700" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="10724:10730" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="10779:10790" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="10815:10821" ph=" }" />
+            <marker date="1516764104454" expanded="true" signature="10932:11295" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="11399:11895" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="11948:12204" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="12260:12516" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="12572:12828" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="12895:13172" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="13221:13473" ph="{...}" />
+            <marker date="1516764104454" expanded="false" signature="13523:13534" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="13564:13570" ph=" }" />
+            <marker date="1516764104454" expanded="true" signature="13616:13767" ph="{...}" />
+            <marker date="1516764104454" expanded="false" signature="13803:13814" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="13835:13841" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="13880:13891" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="13912:13918" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="13957:13968" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="13989:13995" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="14029:14040" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="14059:14065" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="14104:14115" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="14139:14145" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="14185:14196" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="14221:14227" ph=" }" />
+            <marker date="1516764104454" expanded="false" signature="14274:14285" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="14309:14315" ph=" }" />
+            <marker date="1516764104454" expanded="true" signature="14328:19581" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="19651:20948" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="19693:19704" ph="{}" />
+            <marker date="1516764104454" expanded="true" signature="19764:20230" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="20293:20344" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="20425:20942" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="21016:23155" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="21057:21068" ph="{}" />
+            <marker date="1516764104454" expanded="true" signature="21126:21399" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="21452:22003" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="22064:22121" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="22200:22754" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="22814:23149" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="23205:27101" ph="{...}" />
+            <marker date="1516764104454" expanded="false" signature="23465:23480" ph=" { " />
+            <marker date="1516764104454" expanded="false" signature="23528:23538" ph=" }" />
+            <marker date="1516764104454" expanded="true" signature="23583:24425" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="23772:24351" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="23812:24333" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="24469:25038" ph="{...}" />
+            <marker date="1516764104454" expanded="true" signature="25115:27095" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/arduino.jar!/arduino/Arduino.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/CycleEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="41" column="39" lean-forward="false" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effects/StaticEffect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="49" column="37" lean-forward="false" selection-start-line="49" selection-start-column="37" selection-end-line="49" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/ArduinoEffectPlatform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/ModeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="84" column="52" lean-forward="false" selection-start-line="84" selection-start-column="52" selection-end-line="84" selection-end-column="52" />
+        <state relative-caret-position="321">
+          <caret line="77" column="43" lean-forward="false" selection-start-line="77" selection-start-column="43" selection-end-line="77" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/arduino.jar!/arduino/Arduino.java">
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/effecthandler/effectplatforms/RazerChromaEffectPlatform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1059">
-          <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="44" />
+        <state relative-caret-position="380">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/razerchroma/RazerChromaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="27" column="104" lean-forward="false" selection-start-line="27" selection-start-column="104" selection-end-line="27" selection-end-column="104" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/leytonblackler/chromolite/main/utilities/arduino/ArduinoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+        <state relative-caret-position="700">
+          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#328#329#0" expanded="true" />
             <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+            <element signature="e#1281#1282#0" expanded="true" />
           </folding>
         </state>
       </provider>

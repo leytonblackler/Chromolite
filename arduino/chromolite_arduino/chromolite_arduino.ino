@@ -13,6 +13,12 @@
 //Define the default LED strip length.
 #define DEFAULT_LEDS 60
 
+//Define the character which indicates setting a single colour.
+#define SINGLE 's'
+
+//Define the character which indicates setting a layout.
+#define LAYOUT 'l'
+
 Adafruit_NeoPixel ledStrips = Adafruit_NeoPixel(DEFAULT_LEDS, LED_STRIPS, NEO_GRB + NEO_KHZ800);
 
 int ledStripLength = DEFAULT_LEDS;
@@ -20,11 +26,12 @@ int ledStripLength = DEFAULT_LEDS;
 OscSerial oscSerial;
 
 void setup() {
+  
   //Set the pin connected to the built in LED as an output.
   pinMode(BUILT_IN_LED, OUTPUT);
   
   //Turn on the built in LED at a low brightness.
-  //analogWrite(BUILT_IN_LED, BUILT_IN_LED_BRIGHTNESS);
+  analogWrite(BUILT_IN_LED, BUILT_IN_LED_BRIGHTNESS);
 
   //Iniitialise the LED strips.
   ledStrips.begin();
@@ -33,39 +40,51 @@ void setup() {
   //Initialise the serial commuication.
   Serial.begin(9600);
   Serial.setTimeout(20);
-  //oscSerial.begin(Serial);
   
 }
 
 void loop() {
   if (Serial.available() > 0) {
-    String value = Serial.readStringUntil('$');
-    if (value == "22") {
-      analogWrite(BUILT_IN_LED, 255);
-      setSingle(255, 0, 0);
-    } else {
-      analogWrite(BUILT_IN_LED, 0);
-      setSingle(0, 0, 0);
-    }
+    String received = Serial.readStringUntil('$');
+    char settings[received.length()];
+    received.toCharArray(settings, received.length());
+    parseSettings(settings);
+    Serial.flush();
   }
 }
 
-/*void oscEvent(OscMessage &message) {
-  message.plug("/set_single", setSingle);
-  message.plug("/set_layout", setLayout);
-}*/
+void parseSettings(char settings[]) {
+  
+  //Create a 2D array to store the RGB colour values in.
+  int colours[ledStripLength][3];
 
-void setSingle(int r, int g, int b) {
-  //int colour[3] = {message.getInt(0), message.getInt(1), message.getInt(2)};
-  for (int led = 0; led < ledStripLength; led++) {
-    ledStrips.setPixelColor(led, r, g, b);
+  int colour = 0;
+  int value = 0;
+
+  //https://stackoverflow.com/questions/30806085/parsing-string-separated-by-commas-in-c-arduino
+  char* stringPtr;
+  stringPtr = strtok(settings, ",");
+  while (stringPtr != NULL)
+  {
+    //Serial.println(stringPtr);
+    if (value >= 3) {
+      value = 0;
+      colour++;
+    }  
+    colours[colour][value] = atoi(stringPtr);
+    value++;
+
+    
+    stringPtr = strtok(NULL, ",");
   }
-  ledStrips.show();
+
+  setLEDs(colours);
+  
 }
 
-void setLayout(OscMessage &message) {
+void setLEDs(int colours[][3]) {
   for (int led = 0; led < ledStripLength; led++) {
-    ledStrips.setPixelColor(led, message.getInt(led * 3), message.getInt((led * 3) + 1), message.getInt((led * 3) + 2));
+    ledStrips.setPixelColor(led, colours[led][0], colours[led][1], colours[led][2]);
   }
   ledStrips.show();
 }

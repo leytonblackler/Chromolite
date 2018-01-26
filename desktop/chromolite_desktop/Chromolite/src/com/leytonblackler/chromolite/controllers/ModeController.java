@@ -76,13 +76,11 @@ public class ModeController extends Controller implements Initializable {
     @FXML
     public void staticButtonClicked() {
         setMode(LightSettings.Mode.STATIC);
-        ArduinoController.getInstance().sendTest("22");
     }
 
     @FXML
     public void cycleButtonClicked() {
         setMode(LightSettings.Mode.CYCLE);
-        ArduinoController.getInstance().sendTest("21");
     }
 
     @FXML

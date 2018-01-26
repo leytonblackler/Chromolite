@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.main.effecthandler.effectplatforms;
 
+import com.leytonblackler.chromolite.main.utilities.arduino.ArduinoController;
 import com.leytonblackler.chromolite.main.utilities.razerchroma.RazerChromaService;
 
 import java.util.List;
@@ -18,6 +19,9 @@ public class RazerChromaEffectPlatform implements EffectPlatform {
 
     @Override
     public void setLayouts(List<int[][]> layouts) {
+        //TEMPORARY =================================================================
+        ArduinoController.getInstance().setSingleColour(layouts.get(0)[0][0], layouts.get(0)[0][1], layouts.get(0)[0][2]);
+
         razerChromaService.setSingleDevices(layouts.get(0)[0][0], layouts.get(0)[0][1], layouts.get(0)[0][2]);
         razerChromaService.setKeyboardLayout(layouts.get(0));
         razerChromaService.setMouseLayout(layouts.get(1));

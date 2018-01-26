@@ -14,6 +14,8 @@ public class ArduinoController {
         return instance;
     }
 
+    public static final int LEDS = 60;
+
     public static final int BAUD_RATE = 9600;
 
     private SerialPort serialPort;
@@ -33,14 +35,33 @@ public class ArduinoController {
     }
 
     public void setSingleColour(int r, int g, int b) {
-        //
+        int[][] layout = new int[LEDS][3];
+        for (int led = 0; led < LEDS; led++) {
+            layout[led][0] = r;
+            layout[led][1] = g;
+            layout[led][2] = b;
+        }
+        send(layoutToString(layout));
     }
 
-    public void setLayout(int[] layout) {
-        //
+    public void setLayout(int[][] layout) {
+        send(layoutToString(layout));
     }
 
-    private void send(String string) {
+    private String layoutToString(int[][] layout) {
+        String string = "";
+        for (int colour = 0 ; colour < layout.length; colour++) {
+            for (int value = 0; value < 3; value++) {
+                string += Integer.toString(layout[colour][value]);
+                if (colour != layout.length - 1 || value != 2) {
+                    string += ",";
+                }
+            }
+        }
+        return string;
+    }
+
+    private void send(String output) {
         serialPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
         try {
             Thread.sleep(5);
@@ -48,7 +69,7 @@ public class ArduinoController {
             e.printStackTrace();
         }
         PrintWriter pout = new PrintWriter(serialPort.getOutputStream());
-        pout.print(string + '$');
+        pout.print(output + '$');
         pout.flush();
     }
 
