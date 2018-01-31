@@ -10,7 +10,7 @@ public class ArduinoController {
 
     public static final int LEDS = 60;
 
-    public static final int BAUD_RATE = 290000;
+    public static final int BAUD_RATE = 520000;
 
     private SerialPort serialPort;
 
@@ -42,15 +42,8 @@ public class ArduinoController {
     }
 
     private void send(String output) {
-        try {
-            Thread.sleep(5);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
         output += '$';
-        long start = System.currentTimeMillis();
         serialPort.writeBytes(output.getBytes(), output.getBytes().length);
-        System.out.println(System.currentTimeMillis() - start);
     }
 
     public void connect() {

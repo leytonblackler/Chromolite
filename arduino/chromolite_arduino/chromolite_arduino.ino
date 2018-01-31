@@ -2,7 +2,7 @@
 #include <Adafruit_NeoPixel.h>
 
 //Define the baud rate to receive data from the desktop client.
-#define BAUD_RATE 290000
+#define BAUD_RATE 520000
 
 //Define the pin connected to the built in LED.
 #define BUILT_IN_LED 3
@@ -47,11 +47,9 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
-    String received = Serial.readStringUntil('$');
-    char settings[received.length()];
-    received.toCharArray(settings, received.length());
+    char settings[1024];
+    Serial.readBytesUntil('$', settings, sizeof(settings));
     parseSettings(settings);
-    Serial.flush();
   }
 }
 
