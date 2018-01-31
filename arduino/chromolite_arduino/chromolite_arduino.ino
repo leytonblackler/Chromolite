@@ -1,6 +1,9 @@
 #include <OscSerial.h>
 #include <Adafruit_NeoPixel.h>
 
+//Define the baud rate to receive data from the desktop client.
+#define BAUD_RATE 290000
+
 //Define the pin connected to the built in LED.
 #define BUILT_IN_LED 3
 
@@ -35,10 +38,9 @@ void setup() {
 
   //Iniitialise the LED strips.
   ledStrips.begin();
-  ledStrips.show();
 
   //Initialise the serial commuication.
-  Serial.begin(9600);
+  Serial.begin(BAUD_RATE);
   Serial.setTimeout(20);
   
 }
@@ -85,6 +87,7 @@ void parseSettings(char settings[]) {
 void setLEDs(int colours[][3]) {
   for (int led = 0; led < ledStripLength; led++) {
     ledStrips.setPixelColor(led, colours[led][0], colours[led][1], colours[led][2]);
+    //ledStrips.setPixelColor(led, 0, 255, 0);
   }
   ledStrips.show();
 }

@@ -22,7 +22,8 @@ public class ArduinoEffectPlatform implements EffectPlatform {
     @Override
     public void setLayouts(List<int[][]> layouts) {
         //TEMPORARY
-        Model.ledStripSim.setLayout(layouts.get(0));
+        Model.ledStripSim.setLayout(layouts.get(0)); //Make a unique platform for simulation? (so not linked to arduino)
+        arduinoController.setLayout(layouts.get(0));
     }
 
     @Override

@@ -10,7 +10,7 @@ import java.util.Vector;
 
 public final class DefaultSettings {
 
-    public static final int LED_STRIP_LENGTH = 30;
+    public static final int LED_STRIP_LENGTH = 60;
 
     public static final LightSettings.ColourSelector COLOUR_SELECTOR = LightSettings.ColourSelector.PRIMARY;
 

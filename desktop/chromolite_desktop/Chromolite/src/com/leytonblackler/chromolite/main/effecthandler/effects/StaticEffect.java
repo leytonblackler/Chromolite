@@ -49,32 +49,6 @@ public class StaticEffect extends Effect {
             }
             effectPlatforms[platform].setLayouts(layouts);
         }
-
-
-        /*int[][] colours = determineColours();
-        int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
-        switch (settings.getStaticStyle()) {
-            default:
-            case SOLID:
-                arduinoLayout = EffectUtilities.generateSolidLayout(settings.getLEDStripLength(), colours);
-                razerKeyboardLayout = EffectUtilities.generateSolidLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours);
-                razerMouseLayout = EffectUtilities.generateSolidLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
-                razerMousepadLayout = EffectUtilities.generateSolidLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
-                break;
-            case GRADIENT:
-                arduinoLayout = EffectUtilities.generateGradientLayout(settings.getLEDStripLength(), colours);
-                razerKeyboardLayout = EffectUtilities.generateGradientLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours);
-                razerMouseLayout = EffectUtilities.generateGradientLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
-                razerMousepadLayout = EffectUtilities.generateGradientLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
-                break;
-            case ALTERNATING:
-                arduinoLayout = EffectUtilities.generateAlternatingLayout(settings.getLEDStripLength(), colours);
-                razerKeyboardLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours);
-                razerMouseLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.MOUSE_MAX_ROWS, colours);
-                razerMousepadLayout = EffectUtilities.generateAlternatingLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours);
-                break;
-        }*/
-
         delay(100);
     }
 

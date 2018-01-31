@@ -4,7 +4,10 @@ import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class WaveEffect extends Effect {
 
@@ -21,10 +24,7 @@ public class WaveEffect extends Effect {
         OUTWARDS
     }
 
-    private int arduinoShift = 0;
-    private int razerKeyboardShift = 0;
-    private int razerMouseShift = 0;
-    private int razerMousepadShift = 0;
+    private Map<EffectPlatform, int[]> shifts = new HashMap<>();
 
     public WaveEffect(LightSettings lightSettings) {
         super(lightSettings);
@@ -33,6 +33,24 @@ public class WaveEffect extends Effect {
     @Override
     public void tick(EffectPlatform ... effectPlatforms) {
         int[][] colours = determineColours();
+        initialiseShifts(effectPlatforms);
+        for (int platform = 0; platform < effectPlatforms.length; platform++) {
+            List<int[][]> layouts = new ArrayList();
+            for (int i = 0; i < effectPlatforms[platform].getLengths().length; i++) {
+                //Get the current shift for the effect platform.
+                int shift = shifts.get(effectPlatforms[platform])[i];
+                //Process the layout for the effect platform.
+                int[][] layout = processLayout(effectPlatforms[platform].getLengths()[i], colours, shift);
+                //Set the new shift for the effect platform.
+                shift = EffectUtilities.ensureShiftWithinRange(++shift, effectPlatforms[platform].getLengths()[i]);
+                shifts.get(effectPlatforms[platform])[i] = shift;
+                layouts.add(layout);
+            }
+            effectPlatforms[platform].setLayouts(layouts);
+        }
+
+
+        //=====================================================================================================
         /*int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
 
         arduinoLayout = processLayout(lightSettings.getLEDStripLength(), colours, arduinoShift++);
@@ -60,10 +78,19 @@ public class WaveEffect extends Effect {
         if (platform == PlatformSettings.Platform.RAZER_CHROMA || lightSettings.getSyncPlatforms()) {
             //setPhilipsHue(philipsHueLayout);
         }*/
+        //=====================================================================================================
 
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(30, 100, lightSettings.getSpeed());
         delay(time);
+    }
+
+    private void initialiseShifts(EffectPlatform ... effectPlatforms) {
+        for (EffectPlatform effectPlatform : effectPlatforms) {
+            if (!shifts.containsKey(effectPlatform)) {
+                shifts.put(effectPlatform, new int[effectPlatform.getLengths().length]);
+            }
+        }
     }
 
     private int[][] processLayout(int length, int[][] colours, int shift) {
