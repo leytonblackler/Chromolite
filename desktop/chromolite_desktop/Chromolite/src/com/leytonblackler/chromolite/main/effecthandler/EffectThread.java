@@ -56,7 +56,7 @@ public class EffectThread {
                 effect = new StaticEffect(lightSettings);
                 break;
             case CYCLE:
-                //effectThread.setEffect(new CycleEffect(lightSettings));
+                effect = new CycleEffect(lightSettings);
                 break;
             case WAVE:
                 effect = new WaveEffect(lightSettings);

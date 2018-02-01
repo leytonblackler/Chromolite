@@ -58,6 +58,11 @@ public class EffectUtilities {
         return gradient;
     }
 
+    public static int[][] generateSolidLayout(int length, int[] colour) {
+        int[][] colours = { colour };
+        return generateSolidLayout(length, colours);
+    }
+
     public static int[][] generateSolidLayout(int length, int[][] colours) {
         //The RGB values for the colours that make up the solid layout.
         int[][] solid = new int[length][3];

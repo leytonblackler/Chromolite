@@ -3,6 +3,7 @@ package com.leytonblackler.chromolite.controllers.settings;
 import com.leytonblackler.chromolite.controllers.Controller;
 import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -92,5 +93,15 @@ public class CycleSettingsController extends Controller implements Initializable
         }
         choiceBox.setItems(choiceStrings);
         choiceBox.setValue(defaultChoice.toString());
+    }
+
+    @FXML
+    private void numberOfColoursChoiceBoxChanged() {
+        getSettings().setCycleNumberOfColours(CycleEffect.NumberOfColours.valueOf(numberOfColoursChoiceBox.getValue()));
+    }
+
+    @FXML
+    private void transitionChoiceBoxChanged() {
+        getSettings().setCycleTransition(CycleEffect.Transition.valueOf(transitionChoiceBox.getValue()));
     }
 }

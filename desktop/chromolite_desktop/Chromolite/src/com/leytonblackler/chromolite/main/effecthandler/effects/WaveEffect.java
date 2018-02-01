@@ -49,37 +49,6 @@ public class WaveEffect extends Effect {
             effectPlatforms[platform].setLayouts(layouts);
         }
 
-
-        //=====================================================================================================
-        /*int[][] arduinoLayout, razerKeyboardLayout, razerMouseLayout, razerMousepadLayout;
-
-        arduinoLayout = processLayout(lightSettings.getLEDStripLength(), colours, arduinoShift++);
-        razerKeyboardLayout = processLayout(RazerChromaService.KEYBOARD_MAX_COLUMNS, colours, razerKeyboardShift++);
-        razerMouseLayout = processLayout(RazerChromaService.MOUSE_MAX_ROWS, colours, razerMouseShift++);
-        razerMousepadLayout = processLayout(RazerChromaService.MOUSEPAD_MAX_LEDS, colours, razerMousepadShift++);
-
-        arduinoShift = EffectUtilities.ensureShiftWithinRange(arduinoShift, lightSettings.getLEDStripLength());
-        razerKeyboardShift = EffectUtilities.ensureShiftWithinRange(razerKeyboardShift, RazerChromaService.KEYBOARD_MAX_COLUMNS);
-        razerMouseShift = EffectUtilities.ensureShiftWithinRange(razerMouseShift, RazerChromaService.MOUSE_MAX_ROWS);
-        razerMousepadShift = EffectUtilities.ensureShiftWithinRange(razerMousepadShift, RazerChromaService.MOUSEPAD_MAX_LEDS);
-
-        PlatformSettings.Platform platform = lightSettings.getPlatform();
-
-        setLEDSimulation(arduinoLayout);
-
-        if (platform == PlatformSettings.Platform.ARDUINO || lightSettings.getSyncPlatforms()) {
-            //setArduino(arduinoLayout);
-        }
-
-        if (platform == PlatformSettings.Platform.RAZER_CHROMA || lightSettings.getSyncPlatforms()) {
-            setRazerChroma(razerKeyboardLayout[0], razerKeyboardLayout, razerMouseLayout, razerMousepadLayout);
-        }
-
-        if (platform == PlatformSettings.Platform.RAZER_CHROMA || lightSettings.getSyncPlatforms()) {
-            //setPhilipsHue(philipsHueLayout);
-        }*/
-        //=====================================================================================================
-
         //Calculate how long to wait before the next tick.
         int time = EffectUtilities.calculateDelay(30, 100, lightSettings.getSpeed());
         delay(time);
