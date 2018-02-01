@@ -4,14 +4,18 @@ import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.NumberOfColours.RANDOM;
 import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.NumberOfColours.SPECTRUM;
+import static com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect.Transition.INSTANT;
 
 public class CycleEffect extends Effect {
 
-    private static final int STEPS = 20;
+    private static final int STEPS = 40;
 
     public CycleEffect(LightSettings lightSettings) {
         super(lightSettings);
@@ -30,6 +34,8 @@ public class CycleEffect extends Effect {
         INSTANT
     }
 
+    private int[][] colours;
+
     private int currentStep = 0;
 
     private int nextColourIndex = 1;
@@ -37,10 +43,16 @@ public class CycleEffect extends Effect {
     private int[] currentColour = { 255, 0, 255 };
     private int[] nextColour = { 255, 0, 0 };
 
+    private NumberOfColours currentNumberOfColours = null;
+
     @Override
     public void tick(EffectPlatform ... effectPlatforms) {
+        if (currentNumberOfColours != lightSettings.getCycleNumberOfColours()) {
+            initialise();
+        }
 
-        int[][] colours = determineColours();
+        determineColours();
+
         processCurrentColour(colours);
 
         for (int platform = 0; platform < effectPlatforms.length; platform++) {
@@ -76,13 +88,12 @@ public class CycleEffect extends Effect {
         //==============================================================================================================
 
         //Calculate how long to wait before the next tick.
-        int time = EffectUtilities.calculateDelay(10, 50, lightSettings.getSpeed());
+        int time = EffectUtilities.calculateDelay(5, 25, lightSettings.getSpeed());
 
         delay(time);
     }
 
-    protected int[][] determineColours() {
-        int[][] colours = new int[0][0];
+    protected void determineColours() {
         switch (lightSettings.getCycleNumberOfColours()) {
             case TWO:
                 colours = new int[2][3];
@@ -99,50 +110,75 @@ public class CycleEffect extends Effect {
                 colours = EffectUtilities.SPECTRUM_COLOURS;
                 break;
             case RANDOM:
-                colours = new int[0][0];
-                colours[0] = lightSettings.getPrimaryColour();
-                colours[1] = lightSettings.getSecondaryColour();
-                colours[2] = lightSettings.getTertiaryColour();
-                break;
+                colours = new int[][] { generateRandomColour(), generateRandomColour() };
         }
-        return colours;
     }
 
     private void processCurrentColour(int[][] colours) {
-        //If the steps for the current colour/transition has reached maximum, reset to 0 and change next colour.
+
+        if (lightSettings.getCycleNumberOfColours() != RANDOM) {
+            nextColour = colours[nextColourIndex];
+        }
+
+        //If the step count for the current colour/transition has reached maximum, reset to 0 and change the next colour.
         if (currentStep >= STEPS) {
             currentStep = 0;
             nextColourIndex++;
+
+            if (lightSettings.getCycleNumberOfColours() == RANDOM) {
+                nextColour = generateRandomColour();
+                if (lightSettings.getCycleTransition() == INSTANT) {
+                    currentColour = nextColour;
+                }
+            }
         }
 
         //If the current colour is the last in the defined colours, set the next colour to be the first colour.
-        if (nextColourIndex == colours.length) {
+        if (nextColourIndex >= colours.length) {
             nextColourIndex = 0;
         }
 
-        switch (lightSettings.getCycleTransition()) {
-            case BLEND:
-                //TODO
-                break;
-            case FADE:
-                //TODO
-                break;
-            case INSTANT:
-                currentColour = colours[nextColourIndex > 0 ? nextColourIndex - 1 : colours.length - 1];
-                break;
-        }
-        //System.out.println("current: " + currentStep + " next: " + nextColourIndex);
+            switch (lightSettings.getCycleTransition()) {
+                case BLEND:
+                    //TODO
+                    break;
+                case FADE:
+                    currentColour = next(currentColour);
+                    break;
+                case INSTANT:
+                    if (lightSettings.getCycleNumberOfColours() != RANDOM) {
+                        currentColour = colours[nextColourIndex > 0 ? nextColourIndex - 1 : colours.length - 1];
+                    }
+                    break;
+            }
         currentStep++;
     }
 
-    /*
-    private void next(int[] currentColour) {
+    private int[] next(int[] currentColour) {
+        int[] newCurrentColour = new int[currentColour.length];
         int differenceR = nextColour[0] - currentColour[0];
         int differenceG = nextColour[1] - currentColour[1];
         int differenceB = nextColour[2] - currentColour[2];
-        currentColour[0] = currentColour[0] + ((differenceR * currentStep) / STEPS);
-        currentColour[1] = currentColour[1] + ((differenceG * currentStep) / STEPS);
-        currentColour[2] = currentColour[2] + ((differenceB * currentStep) / STEPS);
-        currentStep++;
-    }*/
+        newCurrentColour[0] = currentColour[0] + ((differenceR * currentStep) / STEPS);
+        newCurrentColour[1] = currentColour[1] + ((differenceG * currentStep) / STEPS);
+        newCurrentColour[2] = currentColour[2] + ((differenceB * currentStep) / STEPS);
+        return newCurrentColour;
+    }
+
+    private void initialise() {
+        currentNumberOfColours = lightSettings.getCycleNumberOfColours();
+        determineColours();
+        currentStep = 0;
+        nextColourIndex = 1;
+        currentColour = colours[0];
+        nextColour = colours[1];
+    }
+
+    private int[] generateRandomColour() {
+        float hue = new Random().nextFloat();
+        float saturation = 0.8f;//1.0 for brilliant, 0.0 for dull
+        float luminance = 1.0f; //1.0 for brighter, 0.0 for black
+        Color random = Color.getHSBColor(hue, saturation, luminance);
+        return new int[] { random.getRed(), random.getGreen(), random.getBlue() };
+    }
 }
