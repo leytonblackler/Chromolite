@@ -55,7 +55,7 @@
                       text="STROBE"
                       GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="offButton" onAction="#offButtonClicked" disable="true"
+        <ToggleButton fx:id="offButton" onAction="#offButtonClicked"
                       text="OFF"
                       GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity"/>
 

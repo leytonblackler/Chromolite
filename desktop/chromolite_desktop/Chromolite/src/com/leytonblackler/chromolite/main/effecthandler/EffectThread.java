@@ -71,7 +71,7 @@ public class EffectThread {
                 //effectThread.setEffect(new StrobeEffect(lightSettings));
                 break;
             case OFF:
-                //effectThread.setEffect(new OffEffect(lightSettings));
+                effect = new OffEffect(lightSettings);
                 break;
             case DISABLE:
                 //effectThread.setEffect(new DisableEffect(lightSettings, arduinoController, razerChromaService, ledStripSimulation));???

@@ -88,7 +88,7 @@ public class CycleEffect extends Effect {
         //==============================================================================================================
 
         //Calculate how long to wait before the next tick.
-        int time = EffectUtilities.calculateDelay(5, 25, lightSettings.getSpeed());
+        int time = EffectUtilities.calculateDelay(10, 25, lightSettings.getSpeed());
 
         delay(time);
     }

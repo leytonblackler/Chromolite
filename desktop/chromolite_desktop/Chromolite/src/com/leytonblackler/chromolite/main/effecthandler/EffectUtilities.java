@@ -13,6 +13,8 @@ public class EffectUtilities {
             { 128, 0, 128 }
     };
 
+    public static final int[] BLACK = { 0, 0, 0 };
+
     public static int calculateDelay(int min, int max, int percent) {
         //Requires that the minimum delay is less than the maximum delay and the percentage is valid.
         if (min > max || percent < 0 || percent > 100) {
