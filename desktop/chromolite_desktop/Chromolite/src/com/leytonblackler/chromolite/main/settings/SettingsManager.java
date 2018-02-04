@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.settings;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.ScanEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.categories.AppConnectSettings;
@@ -262,6 +263,16 @@ public class SettingsManager {
         platformSettings.setSyncPlatforms(syncPlatforms);
         observers.forEach((observer) -> observer.updateModes(this));
         observers.forEach((observer) -> observer.updatePlatformSettings(this));
+    }
+
+    public void setScanSize(ScanEffect.Size scanSize) {
+        getCurrentLightSettings().setScanSize(scanSize);
+        observers.forEach((observer) -> observer.updateModeSettings(this));
+    }
+
+    public void setScanBackground(boolean scanBackground) {
+        getCurrentLightSettings().setScanBackground(scanBackground);
+        observers.forEach((observer) -> observer.updateModeSettings(this));
     }
 
     /*public void setIp(String ip) {

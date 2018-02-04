@@ -3,6 +3,7 @@ package com.leytonblackler.chromolite.main.effecthandler.effects;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
+import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ public class ScanEffect extends Effect {
     private final int MEDIUM_SIZE_PERCENT = 15;
     private final int WIDE_SIZE_PERCENT = 50;
 
-    private final int POSITION_CHANGE_PERCENT = 10;
+    private final int POSITION_CHANGE_PERCENT = 5;
 
     private double positionChange = POSITION_CHANGE_PERCENT;
 
@@ -56,11 +57,21 @@ public class ScanEffect extends Effect {
 
     private int[][] processLayout(int length, double positionPercent, int[][] colours) {
 
-        //DIFFERENT RANGE FOR DIFFERENT SIZE
-        //switch (Size) {
-        //ASSUMING MEDIUM:
+        int sizePercent = NARROW_SIZE_PERCENT;
 
-        int width = calculateWidth(length, MEDIUM_SIZE_PERCENT);
+        switch (lightSettings.getScanSize()) {
+            case NARROW:
+                sizePercent = NARROW_SIZE_PERCENT;
+                break;
+            case MEDIUM:
+                sizePercent = MEDIUM_SIZE_PERCENT;
+                break;
+            case WIDE:
+                sizePercent = WIDE_SIZE_PERCENT;
+                break;
+        }
+
+        int width = calculateWidth(length, sizePercent);
         int maxIndex = length - width;
         int start = (int) (maxIndex * (positionPercent / 100));
         int end = start + width;
@@ -86,8 +97,7 @@ public class ScanEffect extends Effect {
     protected int[][] determineColours() {
         int[][] colours = new int[2][3];
         colours[0] = lightSettings.getPrimaryColour();
-        //IF BACKGROUND CHECKBOX IS CHECKED
-        if (true) {
+        if (lightSettings.getScanBackground()) {
             colours[1] = lightSettings.getSecondaryColour();
         } else {
             colours[1] = EffectUtilities.BLACK;

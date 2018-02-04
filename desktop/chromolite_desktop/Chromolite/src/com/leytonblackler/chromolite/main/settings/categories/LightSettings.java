@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.settings.categories;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.ScanEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
@@ -50,6 +51,9 @@ public class LightSettings {
 
     private WaveEffect.NumberOfColours waveNumberOfColours = DefaultSettings.WAVE_NUMBER_OF_COLOURS;
     private WaveEffect.Direction waveDirection = DefaultSettings.WAVE_DIRECTION;
+
+    private ScanEffect.Size scanSize = DefaultSettings.SCAN_SIZE;
+    private boolean scanBackground = DefaultSettings.SCAN_BACKGROUND;
 
     /*
     Accessor Methods
@@ -114,6 +118,13 @@ public class LightSettings {
     }
     public WaveEffect.Direction getWaveDirection() {
         return waveDirection;
+    }
+
+    public ScanEffect.Size getScanSize() {
+        return scanSize;
+    }
+    public boolean getScanBackground() {
+        return scanBackground;
     }
 
     /*
@@ -185,6 +196,13 @@ public class LightSettings {
     }
     public void setWaveDirection(WaveEffect.Direction waveDirection) {
         this.waveDirection = waveDirection;
+    }
+
+    public void setScanSize(ScanEffect.Size scanSize) {
+        this.scanSize = scanSize;
+    }
+    public void setScanBackground(boolean scanBackground) {
+        this.scanBackground = scanBackground;
     }
 
 }

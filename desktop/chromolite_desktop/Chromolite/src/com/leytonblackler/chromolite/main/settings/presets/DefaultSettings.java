@@ -1,6 +1,7 @@
 package com.leytonblackler.chromolite.main.settings.presets;
 
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
+import com.leytonblackler.chromolite.main.effecthandler.effects.ScanEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.StaticEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
@@ -35,6 +36,9 @@ public final class DefaultSettings {
 
     public static final WaveEffect.NumberOfColours WAVE_NUMBER_OF_COLOURS = WaveEffect.NumberOfColours.SPECTRUM;
     public static final WaveEffect.Direction WAVE_DIRECTION = WaveEffect.Direction.RIGHT;
+
+    public static final ScanEffect.Size SCAN_SIZE = ScanEffect.Size.MEDIUM;
+    public static final boolean SCAN_BACKGROUND = true;
 
     public static final PlatformSettings.Platform PLATFORM = PlatformSettings.Platform.ARDUINO;
     public static final boolean SYNC_PLATFORMS = true;

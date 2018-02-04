@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.leytonblackler.chromolite.controllers.settings.ScanSettingsController"
+      spacing="$PADDING" prefHeight="${PADDING * 3}">
+
+    <!-- CONSTANTS -->
+    <fx:define>
+        <Double fx:id="WINDOW_WIDTH" fx:value="560"/>
+        <Double fx:id="WINDOW_HEIGHT" fx:value="750"/>
+        <Double fx:id="HEADER_HEIGHT" fx:value="30"/>
+        <Double fx:id="SPECTRUM_HEIGHT" fx:value="335"/>
+        <Double fx:id="PADDING" fx:value="15"/>
+        <Double fx:id="BUTTON_COLOURS_ARC_SIZE" fx:value="8"/>
+        <Double fx:id="BUTTON_COLOURS_HEIGHT" fx:value="3"/>
+        <Double fx:id="BUTTON_COLOURS_WIDTH" fx:value="35"/>
+
+        <Double fx:id="SPECTRUM_INDICATOR_RADIUS" fx:value="5"/>
+        <Double fx:id="SPECTRUM_INDICATOR_STROKE" fx:value="1.2"/>
+    </fx:define>
+
+    <GridPane hgap="$PADDING">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+            <ColumnConstraints percentWidth="25" halignment="CENTER"/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints percentHeight="50" valignment="CENTER"/>
+            <RowConstraints percentHeight="50" valignment="CENTER"/>
+        </rowConstraints>
+
+        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="BRIGHTNESS"/>
+            <Label fx:id="brightnessPercentLabel" text="0%"/>
+        </HBox>
+        <HBox alignment="CENTER" spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="SPEED"/>
+            <Label fx:id="speedPercentLabel" text="0%"/>
+        </HBox>
+        <Label text="WIDTH" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Label text="BACKGROUND" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="0" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5">
+            <Slider fx:id="brightnessSlider" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="1" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5">
+            <Slider fx:id="speedSlider" maxWidth="Infinity"/>
+        </VBox>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="2" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5" GridPane.hgrow="ALWAYS" >
+            <ChoiceBox fx:id="sizeChoiceBox" value="SPECTRUM" maxWidth="Infinity" onAction="#sizeChoiceBoxChanged"/>
+        </VBox>
+
+        <VBox prefHeight="${PADDING * 2.5}"
+              GridPane.columnIndex="3" GridPane.rowIndex="1"
+              alignment="CENTER" spacing="5" GridPane.hgrow="ALWAYS">
+            <HBox alignment="CENTER">
+                <CheckBox fx:id="backgroundCheckBox" onAction="#backgroundCheckBoxClicked" selected="false"/>
+            </HBox>
+        </VBox>
+
+    </GridPane>
+
+</VBox>

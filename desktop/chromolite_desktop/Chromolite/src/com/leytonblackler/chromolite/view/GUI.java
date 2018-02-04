@@ -64,7 +64,16 @@ public class GUI extends SettingsObserver {
     private Controller waveSettingsController;
     private Pane waveSettingsPane;
 
-    private Pane disableSettingsPane;
+    private Controller musicSettingsController;
+    private Pane musicSettingsPane;
+
+    private Controller scanSettingsController;
+    private Pane scanSettingsPane;
+
+    private Controller strobeSettingsController;
+    private Pane strobeSettingsPane;
+
+    private Pane emptySettingsPane;
 
     public GUI(Stage stage, SettingsManager settings) {
         //Set the settings instance the controllers modify.
@@ -160,8 +169,20 @@ public class GUI extends SettingsObserver {
         waveSettingsController = waveSettings.getValue();
         waveSettingsPane = waveSettings.getKey();
 
-        Pair<Pane, Controller> disableSettings = loadFXMLPane(null, "view/settings/DisableSettings.fxml");
-        disableSettingsPane = disableSettings.getKey();
+        /*Pair<Pane, Controller> musicSettings = loadFXMLPane(null, "view/settings/MusicSettings.fxml");
+        musicSettingsController = musicSettings.getValue();
+        musicSettingsPane = musicSettings.getKey();*/
+
+        Pair<Pane, Controller> scanSettings = loadFXMLPane(null, "view/settings/ScanSettings.fxml");
+        scanSettingsController = scanSettings.getValue();
+        scanSettingsPane = scanSettings.getKey();
+
+        /*Pair<Pane, Controller> strobeSettings = loadFXMLPane(null, "view/settings/StrobeSettings.fxml");
+        strobeSettingsController = strobeSettings.getValue();
+        strobeSettingsPane = strobeSettings.getKey();*/
+
+        Pair<Pane, Controller> emptySettings = loadFXMLPane(null, "view/settings/DisableSettings.fxml");
+        emptySettingsPane = emptySettings.getKey();
     }
 
     private Scene createShadowedScene(Parent contents) {
@@ -340,8 +361,20 @@ public class GUI extends SettingsObserver {
             case WAVE:
                 setModeSettingsPane(waveSettingsPane, waveSettingsController, settings);
                 break;
+            case MUSIC:
+                setModeSettingsPane(musicSettingsPane, musicSettingsController, settings);
+                break;
+            case SCAN:
+                setModeSettingsPane(scanSettingsPane, scanSettingsController, settings);
+                break;
+            case STROBE:
+                setModeSettingsPane(strobeSettingsPane, strobeSettingsController, settings);
+                break;
+            case OFF:
+                setModeSettingsPane(emptySettingsPane, null, settings);
+                break;
             case DISABLE:
-                setModeSettingsPane(disableSettingsPane, null, settings);
+                setModeSettingsPane(emptySettingsPane, null, settings);
                 break;
         }
     }
