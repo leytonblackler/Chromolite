@@ -132,6 +132,18 @@ public class EffectUtilities {
         return mirrored;
     }
 
+    public static int[][] setRange(int[][] layout, int start, int end, int[] colour) {
+        int[][] modified = new int[layout.length][3];
+        for (int i = 0; i < layout.length; i++) {
+            if (i >= start && i <= end) {
+                modified[i] = colour;
+            } else {
+                modified[i] = layout[i];
+            }
+        }
+        return modified;
+    }
+
     /**
      * Ensures that the given shift value is within the given range.
      * @param shift The current shift value.

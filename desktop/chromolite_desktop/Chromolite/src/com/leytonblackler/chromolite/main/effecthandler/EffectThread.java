@@ -65,7 +65,7 @@ public class EffectThread {
                 //effectThread.setEffect(new MusicEffect(lightSettings));
                 break;
             case SCAN:
-                //effectThread.setEffect(new ScanEffect(lightSettings));
+                effect = new ScanEffect(lightSettings);
                 break;
             case STROBE:
                 //effectThread.setEffect(new StrobeEffect(lightSettings));
