@@ -58,13 +58,28 @@
         </ToggleButton>
 
         <VBox prefHeight="${PADDING * 2.5}"
-              GridPane.columnIndex="3" GridPane.rowIndex="0"
+              GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.rowSpan="2"
               alignment="CENTER" spacing="5">
             <Label text="SYNC PLATFORMS"/>
             <HBox alignment="CENTER">
                 <CheckBox fx:id="syncPlatformsCheckBox" onAction="#syncPlatformsCheckBoxClicked" selected="false"/>
             </HBox>
         </VBox>
+
+        <ToggleButton fx:id="arduinoOptionsButton" onAction="#arduinoOptionsButtonClicked" text="OPTIONS"
+                      prefHeight="${PADDING * 1.25}"
+                      GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity">
+        </ToggleButton>
+
+        <ToggleButton fx:id="razerOptionsButton" onAction="#razerOptionsButtonClicked" text="OPTIONS"
+                      prefHeight="${PADDING * 1.25}"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity">
+        </ToggleButton>
+
+        <ToggleButton fx:id="hueOptionsButton" onAction="#hueOptionsButtonClicked" text="OPTIONS"
+                      prefHeight="${PADDING * 1.25}"
+                      GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity">
+        </ToggleButton>
 
     </GridPane>
 

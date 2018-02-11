@@ -26,6 +26,15 @@ public class PlatformsController  extends Controller implements Initializable {
     private ToggleButton hueButton;
 
     @FXML
+    private ToggleButton arduinoOptionsButton;
+
+    @FXML
+    private ToggleButton razerOptionsButton;
+
+    @FXML
+    private ToggleButton hueOptionsButton;
+
+    @FXML
     private CheckBox syncPlatformsCheckBox;
 
     @FXML
@@ -73,6 +82,21 @@ public class PlatformsController  extends Controller implements Initializable {
     @FXML
     private void syncPlatformsCheckBoxClicked() {
         getSettings().setSyncPlatforms(syncPlatformsCheckBox.isSelected());
+    }
+
+    @FXML
+    private void arduinoOptionsButtonClicked() {
+        arduinoOptionsButton.setSelected(false);
+    }
+
+    @FXML
+    private void razerOptionsButtonClicked() {
+        razerOptionsButton.setSelected(false);
+    }
+
+    @FXML
+    private void hueOptionsButtonClicked() {
+        hueOptionsButton.setSelected(false);
     }
 
     private void setButtonSelected(boolean selected, ToggleButton button, Image[] images, ImageView buttonImage) {
