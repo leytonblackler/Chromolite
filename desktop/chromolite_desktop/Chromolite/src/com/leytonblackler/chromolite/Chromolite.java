@@ -35,7 +35,7 @@ public class Chromolite extends Application {
         settings = new SettingsManager();
 
         GUI gui = new GUI(stage, settings);
-        settings.addObserver(gui);
+        settings.addObserver(gui.getMainWindow());
 
         model = new Model(settings, ledStripSimulation);
         settings.addObserver(model);
