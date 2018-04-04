@@ -1,0 +1,11 @@
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\bin\Debug\RazerChromaService.exe.config
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\bin\Debug\RazerChromaService.exe
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\bin\Debug\RazerChromaService.pdb
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\bin\Debug\Corale.Colore.dll
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\bin\Debug\Corale.Colore.xml
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\obj\Debug\RazerChromaService.csprojResolveAssemblyReference.cache
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\obj\Debug\RazerChromaService.Properties.Resources.resources
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\obj\Debug\RazerChromaService.csproj.GenerateResource.Cache
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\obj\Debug\RazerChromaService.csproj.CoreCompileInputs.cache
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\obj\Debug\RazerChromaService.exe
+D:\Google Drive\GitHub\Chromolite\desktop\chromolite_desktop\RazerChromaService\RazerChromaService\obj\Debug\RazerChromaService.pdb

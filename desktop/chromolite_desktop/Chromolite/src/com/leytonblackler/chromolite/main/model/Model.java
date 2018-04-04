@@ -60,16 +60,11 @@ public class Model extends SettingsObserver {
     }
 
     @Override
-    public void updateSpectrum(SettingsManager settings) {
-
+    public void update(SettingsManager settings) {
+        updateModes(settings);
+        updatePlatformSettings(settings);
     }
 
-    @Override
-    public void updateColours(SettingsManager settings) {
-
-    }
-
-    @Override
     public void updateModes(SettingsManager settings) {
         if (allPlatformsThread.getCurrentMode() != settings.getMode()) {
             allPlatformsThread.setEffect(settings.getCurrentLightSettings());
@@ -84,13 +79,6 @@ public class Model extends SettingsObserver {
             philipsHuePlatformThread.setEffect(settings.getPhilipsHueSettings());
         }
     }
-
-    @Override
-    public void updateModeSettings(SettingsManager settings) {
-
-    }
-
-    @Override
     public void updatePlatformSettings(SettingsManager settings) {
         if (settings.getSyncPlatforms()) {
             allPlatformsThread.setEffect(settings.getCurrentLightSettings());
@@ -108,15 +96,5 @@ public class Model extends SettingsObserver {
             razerChromaPlatformThread.start();
             philipsHuePlatformThread.start();
         }
-    }
-
-    @Override
-    public void updateGeneralSettings(SettingsManager settings) {
-
-    }
-
-    @Override
-    public void updateAndroidAppConnection(SettingsManager settings) {
-
     }
 }

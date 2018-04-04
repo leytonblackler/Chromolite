@@ -24,7 +24,7 @@ public class GUI {
         fontPath = fontPath.replaceAll("%20", " ");
         Font.loadFont(fontPath, 10);
 
-        mainWindow = new MainWindow(stage);
+        mainWindow = new MainWindow(stage, "images/logo.png");
     }
 
     public Window getMainWindow() {

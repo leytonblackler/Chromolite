@@ -1,5 +1,6 @@
 package com.leytonblackler.chromolite.main.effecthandler.effects;
 
+import com.leytonblackler.chromolite.main.effecthandler.effects.Effect;
 import com.leytonblackler.chromolite.main.effecthandler.EffectUtilities;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;

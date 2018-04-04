@@ -3,9 +3,6 @@ package com.leytonblackler.chromolite.main.effecthandler.effects;
 import com.leytonblackler.chromolite.main.effecthandler.effectplatforms.EffectPlatform;
 import com.leytonblackler.chromolite.main.settings.categories.LightSettings;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Effect {
 
     protected LightSettings lightSettings;

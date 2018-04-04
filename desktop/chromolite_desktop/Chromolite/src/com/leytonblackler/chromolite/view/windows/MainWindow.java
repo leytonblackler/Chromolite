@@ -54,8 +54,8 @@ public class MainWindow extends Window {
 
     private Pane emptySettingsPane;
 
-    public MainWindow(Stage stage) {
-        super(stage);
+    public MainWindow(Stage stage, String pathToImage) {
+        super(stage, pathToImage);
         Chromolite.getInstance().setLEDStripSimulation((LEDStripSimulationController) ledStripSimulationController);
     }
 
@@ -123,22 +123,14 @@ public class MainWindow extends Window {
     }
 
     @Override
-    public void updateSpectrum(SettingsManager settings) {
+    public void update(SettingsManager settings) {
         spectrumController.update(settings);
-    }
-
-    @Override
-    public void updateColours(SettingsManager settings) {
         coloursButtonsController.update(settings);
-    }
-
-    @Override
-    public void updateModes(SettingsManager settings) {
         modeController.update(settings);
-    }
+        platformsController.update(settings);
+        generalSettingsController.update(settings);
+        appConnectController.update(settings);
 
-    @Override
-    public void updateModeSettings(SettingsManager settings) {
         switch (settings.getMode()) {
             case STATIC:
                 setModeSettingsPane(staticSettingsPane, staticSettingsController, settings);
@@ -173,21 +165,6 @@ public class MainWindow extends Window {
         if (controller != null) {
             controller.update(settings);
         }
-    }
-
-    @Override
-    public void updatePlatformSettings(SettingsManager settings) {
-        platformsController.update(settings);
-    }
-
-    @Override
-    public void updateGeneralSettings(SettingsManager settings) {
-        generalSettingsController.update(settings);
-    }
-
-    @Override
-    public void updateAndroidAppConnection(SettingsManager settings) {
-        appConnectController.update(settings);
     }
 
 }
