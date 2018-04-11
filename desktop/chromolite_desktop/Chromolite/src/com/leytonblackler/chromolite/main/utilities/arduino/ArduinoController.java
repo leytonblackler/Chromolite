@@ -48,6 +48,10 @@ public class ArduinoController {
 
     public void connect() {
         //TODO: Select port / avoid exception if no ports available
+        if(SerialPort.getCommPorts().length == 0) {
+            return;
+        }
+
         serialPort = SerialPort.getCommPorts()[0];
         serialPort.setBaudRate(BAUD_RATE);
         if (serialPort.openPort()) {
