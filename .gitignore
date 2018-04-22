@@ -1,3 +1,4 @@
 desktop/chromolite_desktop/Chromolite/out/
 *.xml
 *.xml___jb_tmp___
+*.DS_Store
