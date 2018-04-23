@@ -6,7 +6,76 @@
     Author: Riley Blair - https://github.com/Riley-Blair
 -->
 
+<div class="row title-bar d-flex justify-content-center align-items-center">
+    <img src="../assets/images/logo.png" alt="Chromolite" routerLink="['/']">
+</div>
+
 <router-outlet name="spectrum"></router-outlet>
+
+<div class="settings">
+    <div class="row">
+        <div class="col-12">
+            <h6>Modes</h6>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let mode of allSettings.modes; index as index;">
+            <button type="submit" class="btn btn-default w-100" [ngClass]="{'btn-selected': settings.mode==mode.name, 'btn-disabled': !mode.enabled}" (click)="setMode(index)">{{mode.name}}</button>
+        </div>
+    </div>
+</div>
+
+<div class="settings">
+    <div class="row">
+        <div class="col-12">
+            <h6>Mode Settings</h6>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <button type="submit" class="btn btn-default btn-selected w-100">Brightness</button>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <button type="submit" class="btn btn-default w-100">Style</button>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <button type="submit" class="btn btn-default w-100">Number of Colours</button>
+        </div>
+    </div>
+</div>
+
+<div class="settings platforms">
+    <div class="row margin-bottom-0">
+        <div class="col-12">
+            <h6>Platforms</h6>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let platform of allSettings.platforms">
+            <button type="submit" class="btn btn-default w-100" [ngClass]="{'btn-disabled': !platform.enabled}"><img [src]="'../assets/images/' + platform.icon + '_' + (settings.platforms[platform.name] ? 'dark.png' : 'light.png')" [alt]="platform.name">{{platform.name | removeHyphens}}</button>
+            <button type="submit" class="btn btn-small w-100" [routerLink]="[{ outlets: { modal: 'settings/' + platform.name } }]">Options</button>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            Sync Platforms
+        </div>
+    </div>
+</div>
+
+<div class="settings">
+    <div class="row">
+        <div class="col-12">
+            <h6>General Settings</h6>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let setting of allSettings.general">
+            <button type="submit" class="btn btn-default w-100" [ngClass]="{'btn-disabled': !setting.enabled}">{{setting.name | removeHyphens}}</button>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            Start Minimised
+        </div>
+    </div>
+</div>
 
 <router-outlet name="simulation"></router-outlet>
 

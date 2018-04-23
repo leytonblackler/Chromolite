@@ -21,15 +21,19 @@ import { ArduinoComponent } from './settings/arduino/arduino.component';
 import { RazerChromaComponent } from './settings/razer-chroma/razer-chroma.component';
 import { PhillipsHueComponent } from './settings/phillips-hue/phillips-hue.component';
 
+/* Pipe Imports */
+import { RemoveHyphensPipe } from './pipes/remove-hyphens.pipe';
+
 /* Routing Definitions */
 const routes: Routes = [
-    { path: '', component: DashboardComponent,
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: DashboardComponent,
         children: [
             { path: '', component: SpectrumComponent, outlet: 'spectrum' },
             { path: '', component: SimulationComponent, outlet: 'simulation' },
             { path: 'settings/arduino', component: ArduinoComponent, outlet: 'modal' },
-            { path: 'settings/razer', component: RazerChromaComponent, outlet: 'modal' },
-            { path: 'settings/hue', component: PhillipsHueComponent, outlet: 'modal' },
+            { path: 'settings/razer-chroma', component: RazerChromaComponent, outlet: 'modal' },
+            { path: 'settings/phillips-hue', component: PhillipsHueComponent, outlet: 'modal' },
         ]
     },
     { path: '**', redirectTo: '' }
@@ -43,7 +47,8 @@ const routes: Routes = [
         SimulationComponent,
         ArduinoComponent,
         RazerChromaComponent,
-        PhillipsHueComponent
+        PhillipsHueComponent,
+        RemoveHyphensPipe
     ],
     imports: [
         BrowserModule,

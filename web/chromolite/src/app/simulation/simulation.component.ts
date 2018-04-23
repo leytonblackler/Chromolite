@@ -28,12 +28,26 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
  */
 export class SimulationComponent {
 
+    leds: number[];
+
     /**
      *  Initialises the RGB LED simulation to reflect the default Chromolite settings.
      *
      *  @param parent - The dashboard component that this component is rendered inside.
      */
     constructor(public parent: DashboardComponent) {
+        this.onPageResize();
+    }
 
+    /**
+     *  Resize function that is triggered whenever the simulation component's page container is
+     *  resized. From this we can access the current page width and height and perform any
+     *  necessary functions depending on the size of the page.
+     */
+    onPageResize(): void {
+        this.leds = [];
+        for (let index = 0; index < (window.innerWidth - 40) / 20; index++) {
+            this.leds.push(index)
+        }
     }
 }
