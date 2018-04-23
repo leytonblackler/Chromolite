@@ -1,0 +1,22 @@
+<!--
+    Chomolite Dashboard Component Markup
+    Copyright (c) 2018
+
+    Last Updated: 23/04/2018
+    Author: Riley Blair - https://github.com/Riley-Blair
+-->
+
+<router-outlet name="spectrum"></router-outlet>
+
+<router-outlet name="simulation"></router-outlet>
+
+<div id="modal" class="modal fade" role="dialog" [ngClass]="{'show': route.url.includes('settings')}">
+    <div class="modal-backdrop fade show" [routerLink]="['/']"></div>
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close cursor-pointer" [routerLink]="['/']">&times;</button>
+            <router-outlet name="modal"></router-outlet>
+        </div>
+    </div>
+</div>

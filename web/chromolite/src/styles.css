@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ *  Chromolite Global Stylesheet
+ *  Copyright (c) 2018
+ *
+ *  Last Updated: 23/04/2018
+ *  Author: Riley Blair - https://github.com/Riley-Blair
+ */
+
+/**
+ *  1. Typography
+ *  2. Modals
+ *  3. Buttons
+ *  4. Animations
+ *  5. Reset
+ */
+
+/* 1. Typography */
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('assets/fonts/Roboto-Black.ttf');
+}
+@font-face {
+    font-family: Roboto-Blod;
+    src: url('assets/fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('assets/fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('assets/fonts/Roboto-Regular.ttf');
+}
+* {
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    outline: none;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #121B25;
+}
+h1 {
+    font-family: Roboto-Bold;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+h2 {
+    font-family: Roboto-Medium;
+    font-size: 28px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+h3 {
+    font-family: Roboto-Regular;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+h4 {
+    font-family: Roboto-Regular;
+    font-size: 20px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+h5 {
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+h6 {
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+p {
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+.sub-text {
+    font-family: Roboto-Regular;
+    font-size: 10px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+a {
+    color: #FFFFFF;
+}
+a:hover {
+    color: #FFFFFF !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+.error {
+    color: #E80000;
+}
+
+/* 2. Modals */
+
+.show {
+    display: block;
+}
+.modal-backdrop {
+    z-index: 0;
+}
+.modal-content {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    padding: 20px;
+    margin: 20px;
+}
+.modal-dialog {
+    min-width: 40%;
+}
+@media (max-width: 767.98px) {
+    .modal-dialog {
+        margin: 0px;
+        max-width: none;
+    }
+    .modal-content {
+        margin: 0px;
+        height: 100vh;
+        border-radius: 0px;
+    }
+}
+
+/* 3. Buttons */
+
+/* 4. Animations */
+
+/* 5. Reset */
