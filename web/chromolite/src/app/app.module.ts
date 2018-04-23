@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 /* Component Imports */
 import { AppComponent } from './app.component';
@@ -53,7 +54,8 @@ const routes: Routes = [
     imports: [
         BrowserModule,
         RouterModule.forRoot(routes, {initialNavigation: true}),
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

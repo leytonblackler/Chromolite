@@ -43,6 +43,8 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #121B25;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 h1 {
     font-family: Roboto-Bold;
@@ -87,10 +89,10 @@ p {
     margin-bottom: 0px;
 }
 .sub-text {
-    font-family: Roboto-Regular;
-    font-size: 10px;
+    text-transform: uppercase;
+    font-family: Roboto-Medium;
     color: #FFFFFF;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 a {
     color: #FFFFFF;
@@ -118,6 +120,7 @@ a:hover {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
     padding: 20px;
     margin: 20px;
+    background-color: #121B25;
 }
 .modal-dialog {
     min-width: 40%;

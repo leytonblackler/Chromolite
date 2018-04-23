@@ -70,7 +70,7 @@ export class DashboardComponent {
             },
             'mode': 'static',
             'brightness': 100,
-            'style': 'solid',
+            'speed': 50,
             'numberOfColours': 1,
             'platforms': {
                 'arduino': false,
@@ -93,5 +93,9 @@ export class DashboardComponent {
         if (this.allSettings.modes[index].enabled) {
             this.settings.mode = this.allSettings.modes[index].name;
         }
+    }
+
+    updateBrightness(event: any) {
+        console.log(event)
     }
 }

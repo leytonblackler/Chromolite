@@ -46,7 +46,7 @@ export class SimulationComponent {
      */
     onPageResize(): void {
         this.leds = [];
-        for (let index = 0; index < (window.innerWidth - 40) / 20; index++) {
+        for (let index = 0; index < (window.innerWidth - 40) / 20 - 1; index++) {
             this.leds.push(index)
         }
     }
