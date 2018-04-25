@@ -29,7 +29,12 @@
 27. 25/04/2018 12pm-1pm: Refactoring of controller methods.
 28. 25/04/2018 1pm-2pm: Integration with Angular app.
 29. 25/04/2018 2pm-3pm: Integration with Angular app.
-30. 25/04/2018 6pm-7pm: Worked on system overview diagrams for new architecture.
-31. 25/04/2018 7pm-8pm: Worked on system overview diagrams for new architecture.
-32. 25/04/2018 8pm-9pm: Fixed some issues with connecting to the API.
-33. 25/04/2018 9pm-10pm: Angular web-server and REST API web-server set up to work in parallel.
+30. 25/04/2018 3pm-4pm: Discussed API and server structure with project creator.
+31. 25/04/2018 4pm-5pm: Discussed API and server structure with project creator.
+32. 25/04/2018 6pm-7pm: Worked on system overview diagrams for new architecture.
+33. 25/04/2018 7pm-8pm: Worked on system overview diagrams for new architecture.
+34. 25/04/2018 8pm-9pm: Fixed some issues with connecting to the API.
+35. 25/04/2018 9pm-10pm: Angular web-server and REST API web-server set up to work in parallel.
+36. 25/04/2018 10pm-11pm: Improvements to the web interface.
+37. 25/04/2018 11pm-12am: Improvements to the web interface.
+38. 26/04/2018 12am-1am: Documentation updates.

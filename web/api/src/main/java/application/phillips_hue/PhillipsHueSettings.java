@@ -20,11 +20,13 @@ public class PhillipsHueSettings extends Settings {
        super(colours, platforms, mode, brightness, speed, numberOfColours);
     }
     
+    /**
+	 * Default constructor required by the Spring framework.
+	 */
     public PhillipsHueSettings() { }
 
 	@Override
 	public void output() {
-		// TODO Auto-generated method stub
-		System.out.print("Output Phillips Hue");
+		System.out.println("Output sent to Phillips Hue");
 	}
 }
