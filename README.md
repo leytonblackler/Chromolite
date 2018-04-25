@@ -5,7 +5,9 @@ Riley Blair (300371586)
 
 The Chromolite project and repository consists of four major components. These are an Android application, desktop application, Arduino application and a web application. The architectural changes I implemented to the Chromolite project was the addition of a web-interface, web-server, as well as the development of a REST API and REST API server used to communicate with the connected RGB LED IoT devices.
 
-Due to the project not being very well documented prior to my work on it,
+Due to the project not being very well documented prior to my work on it, I have included a number of UML class diagrams outlining the classes involved with the existing project architecture. These diagrams are available within the `documentation` folder.
+
+All contents of the `documentation` and `web` folders at the top level of the project repository contain my work for this assignment.
 
 ## 2. Running The Project
 
@@ -19,7 +21,7 @@ The REST API server requires a number of Spring framework dependencies to be ins
 
 Once both sets of dependencies are installed, the web server should be operational at http://localhost:4200 and the REST API server should be operational at http://localhost:8080. Upon hitting an API endpoint, the result will be output to the command line. With the response output to the browser's JavaScript console. Navigating to http://localhost:4200 should display the web interface for Chromolite. Navigating to http://localhost:8080 should present an error. This is the intended functionality as this is not a valid endpoint and no valid JSON settings payload would have been provided.
 
-*Note: Cross-Origin Restrictions MUST BE DISABLED in the browser prior to testing the project.* This is due to the web server and REST API server running on a local machine. On an actual deployed environment, cross-origin restrictions will be handled automatically by the hosted server.
+**Note: Cross-Origin Restrictions MUST BE DISABLED in the browser prior to testing the project.** This is due to the web server and REST API server running on a local machine. On an actual deployed environment, cross-origin restrictions will be handled automatically by the hosted server.
 
 Both servers will run simultaneously and should be terminated correctly when needed. If not terminated correctly, both servers will continue to run in the background until the computer is switched off.
 
