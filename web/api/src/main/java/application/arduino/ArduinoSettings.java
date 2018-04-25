@@ -2,9 +2,9 @@ package application.arduino;
 
 import java.util.Map;
 
-import application.AbstractSettings;
+import application.Settings;
 
-public class ArduinoSettings extends AbstractSettings {
+public class ArduinoSettings extends Settings {
 	/**
 	 * Creates a new Arduino settings instance and sends the input information to the connected Arduino in the correct format. 
 	 * This API simply converts JSON input into the appropriate output format for the connected IoT device.
@@ -20,11 +20,13 @@ public class ArduinoSettings extends AbstractSettings {
        super(colours, platforms, mode, brightness, speed, numberOfColours);
     }
     
+    /**
+	 * Default constructor required by the Spring framework.
+	 */
     public ArduinoSettings() { }
 
 	@Override
 	public void output() {
-		// TODO Auto-generated method stub
-		System.out.println("Output Arduino");
+		System.out.println("Output To Arduino");
 	}
 }

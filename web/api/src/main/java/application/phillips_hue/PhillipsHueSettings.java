@@ -2,9 +2,9 @@ package application.phillips_hue;
 
 import java.util.Map;
 
-import application.AbstractSettings;
+import application.Settings;
 
-public class PhillipsHueSettings extends AbstractSettings {
+public class PhillipsHueSettings extends Settings {
 	/**
 	 * Creates a new Phillips Hue settings instance and sends the input information to the Phillips Hue devices in the correct format. 
 	 * This API simply converts JSON input into the appropriate output format for the connected IoT device.

@@ -2,9 +2,9 @@ package application.razer_chroma;
 
 import java.util.Map;
 
-import application.AbstractSettings;
+import application.Settings;
 
-public class RazerChromaSettings extends AbstractSettings {
+public class RazerChromaSettings extends Settings {
 	/**
 	 * Creates a new Razer Chroma settings instance and sends the input information to the Razer Chroma peripherals in the correct format. 
 	 * This API simply converts JSON input into the appropriate output format for the connected IoT device.

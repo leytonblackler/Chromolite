@@ -2,30 +2,22 @@ package application;
 
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.Module.SetupContext;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.module.SimpleAbstractTypeResolver;
-
-import application.arduino.ArduinoSettings;
-import application.razer_chroma.RazerChromaSettings;
-
-@JsonDeserialize(as = RazerChromaSettings.class)
-public abstract class AbstractSettings {
-	private long id;
-	private Map<String, Object> colours;
-	private Map<String, Object> platforms;
-	private String mode;
-	private int brightness;
-	private int speed;
-	private int numberOfColours;
+public abstract class Settings {
+	protected long id;
+	protected Map<String, Object> colours;
+	protected Map<String, Object> platforms;
+	protected String mode;
+	protected int brightness;
+	protected int speed;
+	protected int numberOfColours;
 	
 	/**
 	 * Default constructor required by the Spring framework.
 	 */
-	public AbstractSettings() { }
+	public Settings() { }
     
 	/**
-	 * Creates a new AbstractSettings instance and sends the input information to the connected devices in the correct format. 
+	 * Creates a new abstract Settings instance to be implemented as appropriate by each settings implementation. 
 	 * This API simply converts JSON input into the appropriate output format for the connected IoT device.
 	 * 
 	 * @param colours - A map of primary, secondary and tertiary colours to their RGB values.
@@ -34,7 +26,7 @@ public abstract class AbstractSettings {
 	 * @param speed - The speed at which the specified mode animation should run at (0-100).
 	 * @param numberOfColours - The number of colours to use in the output from the three available colours (1-3).
 	 */
-    public AbstractSettings(Map<String, Object> colours, Map<String, Object> platforms, String mode, int brightness, int speed, int numberOfColours) {
+    public Settings(Map<String, Object> colours, Map<String, Object> platforms, String mode, int brightness, int speed, int numberOfColours) {
         this.colours = colours;
         this.platforms = platforms;
         this.mode = mode;
@@ -171,5 +163,9 @@ public abstract class AbstractSettings {
     	this.numberOfColours = numberOfColours;
     }
     
+    /**
+     * Outputs the current settings to the connected device. This is an abstract class as each output implementation is different and 
+     * is based upon the formatting and data structures required by each type of connected IoT device. 
+     */
     public abstract void output();
 }

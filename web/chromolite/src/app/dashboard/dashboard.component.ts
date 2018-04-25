@@ -74,14 +74,25 @@ export class DashboardComponent {
             'numberOfColours': 1,
             'platforms': {
                 'arduino': false,
-                'razer chroma': false,
-                'phillips hue': false
+                'chroma': false,
+                'hue': false
             },
             'sync': false,
             'minimised': false
         };
 
-        http.post('http://localhost:8080/global', this.settings).subscribe(res => {
+
+        http.post('http://localhost:8080/arduino', this.settings).subscribe(res => {
+            console.log("Result: ", res)
+        }, err => {
+            console.log("Error: ", err)
+        });
+        http.post('http://localhost:8080/hue', this.settings).subscribe(res => {
+            console.log("Result: ", res)
+        }, err => {
+            console.log("Error: ", err)
+        });
+        http.post('http://localhost:8080/chroma', this.settings).subscribe(res => {
             console.log("Result: ", res)
         }, err => {
             console.log("Error: ", err)
@@ -101,7 +112,14 @@ export class DashboardComponent {
         }
     }
 
-    updateBrightness(event: any) {
-        console.log(event)
+    /**
+     *  Sends a request to the REST API web server for the global settings to be updated.
+     */
+    updateGlobalSettings(): void {
+        this.http.post('http://localhost:8080/global', this.settings).subscribe(res => {
+            console.log("Result: ", res)
+        }, err => {
+            console.log("Error: ", err)
+        });
     }
 }
