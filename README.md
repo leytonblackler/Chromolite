@@ -9,6 +9,8 @@ Due to the project not being very well documented prior to my work on it, I have
 
 All contents of the `documentation` and `web` folders at the top level of the project repository contain my work for this assignment.
 
+In ragards to the web interface I developed for this project, some functional aspects are not fully implemented. Features such as the RGB colour selection spectrum and the LED simulation are not implemented in any of the existing Chromolite applications, and as the SWEN301 project was to implement architectural changes as opposed to add functionality, these were not implemented fully, but instead implements to the same level of functionality as was present in the initial project repository.
+
 ## 2. Running The Project
 
 Because this project requires hardware elements to be connected, all tests and aspects of the project can be executed at once. I am assuming here that the markers of this assignment will likely not have the required hardware for the project to be executed end-to-end, and will likely not have everything required to run the desktop server or Android application in their current state. The architecture change I have implemented however, including Angular web server and Spring REST API server can be run independently of the Arduino and connected IoT devices.
@@ -44,3 +46,5 @@ The initial project did not contain any test cases, and therefore the project re
 * As this project requires a considerable amount of specialist hardware in order to run fully, I am more than happy to provide further evidence of the project working in a full end-to-end capacity if required.
 
 * The original project is based within GitHub (https://github.com/leytonblackler/Chromolite) with my fork of the repository based on my own GitHub account (https://github.com/Riley-Blair/Chromolite). My fork of the repository was then mirrored to my ECS GitLab account in order to have a version of the project accessible within the GitLab environment as required by the project guidelines.
+
+* Please also note that the README.md file within the original project's repository is not up to date with the current version of the project. This includes the screenshots of the interface which are from a previous version of the Chromolite desktop application.
