@@ -34,21 +34,21 @@
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div class="sub-text">Brightness {{settings.brightness}}%</div>
-                    <input type="range" min="0" max="100" class="slider" [(ngModel)]="settings.brightness">
+                    <input type="range" min="0" max="100" class="slider" [(ngModel)]="settings.brightness" (ngModelChange)="updateGlobalSettings()">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div class="sub-text">Speed {{settings.speed}}%</div>
-                    <input type="range" min="0" max="100" class="slider" [(ngModel)]="settings.speed">
+                    <input type="range" min="0" max="100" class="slider" [(ngModel)]="settings.speed" (ngModelChange)="updateGlobalSettings()">
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="d-flex flex-column justify-content-center align-items-center">
                     <div class="sub-text">Number of Colours: {{settings.numberOfColours}}</div>
-                    <input type="range" min="1" max="3" class="slider" [(ngModel)]="settings.numberOfColours">
+                    <input type="range" min="1" max="3" class="slider" [(ngModel)]="settings.numberOfColours" (ngModelChange)="updateGlobalSettings()">
                 </div>
             </div>
         </div>
@@ -61,8 +61,8 @@
             <h6>Platforms</h6>
         </div>
 
-        <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let platform of allSettings.platforms">
-            <button type="submit" class="btn btn-default w-100" [ngClass]="{'btn-disabled': !platform.enabled}"><img [src]="'../assets/images/' + platform.icon + '_' + (settings.platforms[platform.name] ? 'dark.png' : 'light.png')" [alt]="platform.name">{{platform.name | removeHyphens}}</button>
+        <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let platform of allSettings.platforms; index as index;">
+            <button type="submit" class="btn btn-default w-100" (click)="setPlatform(index)" [ngClass]="{'btn-disabled': !platform.enabled, 'btn-selected': settings.platforms[platform.name]}"><img [src]="'../assets/images/' + platform.icon + '_' + (settings.platforms[platform.name] ? 'dark.png' : 'light.png')" [alt]="platform.name">{{platform.name | removeHyphens}}</button>
             <button type="submit" class="btn btn-small w-100" [routerLink]="[{ outlets: { modal: 'settings/' + platform.name } }]">Options</button>
         </div>
 
@@ -79,11 +79,29 @@
         </div>
 
         <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let setting of allSettings.general">
-            <button type="submit" class="btn btn-default w-100" [ngClass]="{'btn-disabled': !setting.enabled}">{{setting.name | removeHyphens}}</button>
+            <button type="submit" class="btn btn-default w-100" [ngClass]="{'btn-disabled': !setting.enabled}" (click)="generalSettingsClicked(setting.name)">{{setting.name | removeHyphens}}</button>
         </div>
 
         <div class="col-md-3 col-sm-6 col-xs-12">
             Start Minimised
+        </div>
+    </div>
+</div>
+
+<div class="settings">
+    <div class="row">
+        <div class="col-12">
+            <h6>Server Settings</h6>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <label for="ipAddress">IP Address</label>
+            <input type="text" name="ipAddress" [(ngModel)]="ipAddress" placeholder="IP Address (eg: localhost)" class="sub-text">
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <label for="port" class="sub-text">Port</label>
+            <input type="text" name="port" [(ngModel)]="port" placeholder="Port (eg: 8080)" class="sub-text">
         </div>
     </div>
 </div>

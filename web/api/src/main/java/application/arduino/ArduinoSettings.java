@@ -27,6 +27,6 @@ public class ArduinoSettings extends Settings {
 
 	@Override
 	public void output() {
-		System.out.println("Output To Arduino");
+		System.out.println("Output sent to Arduino");
 	}
 }

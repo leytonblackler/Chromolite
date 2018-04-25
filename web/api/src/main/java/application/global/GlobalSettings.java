@@ -38,11 +38,11 @@ public class GlobalSettings extends Settings {
 			ArduinoSettings arduinoSettings  = new ArduinoSettings(colours, platforms, mode, brightness, speed, numberOfColours);
 			arduinoSettings.output();
 		}
-		if (platforms.get("hue").equals(true)) {
+		if (platforms.get("phillips-hue").equals(true)) {
 			PhillipsHueSettings hueSettings  = new PhillipsHueSettings(colours, platforms, mode, brightness, speed, numberOfColours);
 			hueSettings.output();
 		}
-		if (platforms.get("chroma").equals(true)) {
+		if (platforms.get("razer-chroma").equals(true)) {
 			RazerChromaSettings chromaSettings  = new RazerChromaSettings(colours, platforms, mode, brightness, speed, numberOfColours);
 			chromaSettings.output();
 		}

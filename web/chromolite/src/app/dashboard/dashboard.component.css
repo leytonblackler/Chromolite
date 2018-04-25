@@ -46,3 +46,14 @@
     margin-left: 0px;
     margin-right: 0px;
 }
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    color: #FFFFFF;
+    background-color: #253447;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+}

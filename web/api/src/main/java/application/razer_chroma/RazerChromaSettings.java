@@ -20,11 +20,13 @@ public class RazerChromaSettings extends Settings {
        super(colours, platforms, mode, brightness, speed, numberOfColours);
     }
     
+    /**
+	 * Default constructor required by the Spring framework.
+	 */
     public RazerChromaSettings() { }
 
 	@Override
 	public void output() {
-		// TODO Auto-generated method stub
-		System.out.print("Output Razer Chroma");
+		System.out.println("Output sent to Razer Chroma");
 	}
 }
