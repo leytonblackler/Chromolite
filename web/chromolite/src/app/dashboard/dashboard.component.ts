@@ -80,6 +80,12 @@ export class DashboardComponent {
             'sync': false,
             'minimised': false
         };
+
+        http.post('http://localhost:8080/global', this.settings).subscribe(res => {
+            console.log("Result: ", res)
+        }, err => {
+            console.log("Error: ", err)
+        });
     }
 
     /**

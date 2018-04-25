@@ -1,3 +1,7 @@
-/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/hello/Greeting.java
-/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/hello/GreetingController.java
-/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/hello/Application.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/Controller.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/phillips_hue/PhillipsHueSettings.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/razer_chroma/RazerChromaSettings.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/arduino/ArduinoSettings.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/AbstractSettings.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/GlobalSettings.java
+/Users/riley-blair/Desktop/Victoria University/Courses/2018/Trimester 1/SWEN301 - Software Engineering/Assignments/Assignment 2/Chromolite/web/api/src/main/java/application/Application.java
