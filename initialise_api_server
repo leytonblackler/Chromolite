@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd web/api/
+./mvnw spring-boot:run
