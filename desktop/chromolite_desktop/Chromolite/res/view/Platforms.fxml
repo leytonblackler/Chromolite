@@ -66,21 +66,6 @@
             </HBox>
         </VBox>
 
-        <ToggleButton fx:id="arduinoOptionsButton" onAction="#arduinoOptionsButtonClicked" text="OPTIONS"
-                      prefHeight="${PADDING * 1.25}"
-                      GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity">
-        </ToggleButton>
-
-        <ToggleButton fx:id="razerOptionsButton" onAction="#razerOptionsButtonClicked" text="OPTIONS"
-                      prefHeight="${PADDING * 1.25}"
-                      GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity">
-        </ToggleButton>
-
-        <ToggleButton fx:id="hueOptionsButton" onAction="#hueOptionsButtonClicked" text="OPTIONS"
-                      prefHeight="${PADDING * 1.25}"
-                      GridPane.rowIndex="1" GridPane.columnIndex="2" maxWidth="Infinity">
-        </ToggleButton>
-
     </GridPane>
 
 </VBox>
