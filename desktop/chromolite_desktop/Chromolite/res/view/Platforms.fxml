@@ -44,7 +44,7 @@
                 <Insets left="5"/>
             </padding>
         </ComboBox>-->
-        <ChoiceBox fx:id="platformChoiceBox"
+        <ChoiceBox fx:id="platformsChoiceBox"
                    value="ARDUINO"
                    prefHeight="${PADDING * 2.5}"
                    onAction="#platformChoiceBoxChanged"

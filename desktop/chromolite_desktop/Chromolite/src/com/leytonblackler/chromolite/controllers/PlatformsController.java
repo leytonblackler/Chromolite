@@ -1,8 +1,11 @@
 package com.leytonblackler.chromolite.controllers;
 
+import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
 import com.leytonblackler.chromolite.main.settings.categories.PlatformSettings;
+import com.leytonblackler.chromolite.view.GUIUtilities;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -21,10 +24,8 @@ import java.util.ResourceBundle;
 
 public class PlatformsController  extends Controller implements Initializable {
 
-    private static final String[] PLATFORMS = { "ARDUINO", "RAZER CHROMA", "PHILIPS HUE", "NANOLEAF" };
-
     @FXML
-    private ComboBox platformComboBox;
+    private ChoiceBox platformsChoiceBox;
 
     @FXML
     private ImageView platformIcon;
@@ -45,6 +46,8 @@ public class PlatformsController  extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        GUIUtilities.initialiseChoiceBox(platformsChoiceBox, PlatformSettings.Platform.values(), PlatformSettings.Platform.ARDUINO);
+
         arduinoLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/arduino_logo_light.png").toExternalForm());
         arduinoLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/arduino_logo_dark.png").toExternalForm());
 
@@ -93,11 +96,6 @@ public class PlatformsController  extends Controller implements Initializable {
     @FXML
     private void syncPlatformsCheckBoxClicked() {
         getSettings().setSyncPlatforms(syncPlatformsCheckBox.isSelected());
-    }
-
-    private void setButtonSelected(boolean selected, ToggleButton button, Image[] images, ImageView buttonImage) {
-        button.setSelected(selected);
-        buttonImage.setImage(images[selected ? 1 : 0]);
     }
 
     @Override

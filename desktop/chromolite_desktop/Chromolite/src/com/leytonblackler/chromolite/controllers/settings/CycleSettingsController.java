@@ -5,6 +5,7 @@ import com.leytonblackler.chromolite.Chromolite;
 import com.leytonblackler.chromolite.main.effecthandler.effects.CycleEffect;
 import com.leytonblackler.chromolite.main.effecthandler.effects.WaveEffect;
 import com.leytonblackler.chromolite.main.settings.SettingsManager;
+import com.leytonblackler.chromolite.view.GUIUtilities;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -41,15 +42,12 @@ public class CycleSettingsController extends Controller implements Initializable
     @FXML
     private ChoiceBox<String> transitionChoiceBox;
 
-    /*@FXML
-    private CheckBox syncWithRazerCheckBox;*/
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        initialiseChoiceBox(numberOfColoursChoiceBox, CycleEffect.NumberOfColours.values(), CycleEffect.NumberOfColours.SPECTRUM);
+        GUIUtilities.initialiseChoiceBox(numberOfColoursChoiceBox, CycleEffect.NumberOfColours.values(), CycleEffect.NumberOfColours.SPECTRUM);
 
-        initialiseChoiceBox(transitionChoiceBox, CycleEffect.Transition.values(), CycleEffect.Transition.BLEND);
+        GUIUtilities.initialiseChoiceBox(transitionChoiceBox, CycleEffect.Transition.values(), CycleEffect.Transition.BLEND);
 
         //initialiseChoiceBox(directionChoiceBox, Directions.values(), Directions.LEFT);
 
@@ -84,15 +82,6 @@ public class CycleSettingsController extends Controller implements Initializable
     @Override
     public void update(SettingsManager settings) {
         //
-    }
-
-    private void initialiseChoiceBox(ChoiceBox choiceBox, Enum[] choices, Enum defaultChoice) {
-        ObservableList<String> choiceStrings = FXCollections.observableArrayList();
-        for (Enum choice : choices) {
-            choiceStrings.add(choice.toString());
-        }
-        choiceBox.setItems(choiceStrings);
-        choiceBox.setValue(defaultChoice.toString());
     }
 
     @FXML

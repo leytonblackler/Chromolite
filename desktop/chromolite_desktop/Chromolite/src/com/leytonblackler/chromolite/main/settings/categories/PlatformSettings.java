@@ -5,9 +5,21 @@ import com.leytonblackler.chromolite.main.settings.presets.DefaultSettings;
 public class PlatformSettings {
 
     public enum Platform {
-        ARDUINO,
-        RAZER_CHROMA,
-        PHILIPS_HUE
+        ARDUINO("ARDUINO"),
+        RAZER_CHROMA("RAZER CHROMA"),
+        PHILIPS_HUE("PHILIPS HUE"),
+        NANOLEAF("NANOLEAF");
+
+        private String label;
+
+        Platform(String label) {
+            this.label = label;
+        }
+
+        @Override
+        public String toString() {
+            return this.label;
+        }
     }
 
     private Platform platform = DefaultSettings.PLATFORM;

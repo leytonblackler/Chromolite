@@ -1,10 +1,13 @@
 package com.leytonblackler.chromolite.view;
 
 import com.leytonblackler.chromolite.controllers.Controller;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -143,6 +146,15 @@ public class GUIUtilities {
         label.translateYProperty().setValue(15 / 2); //FXML PAD VALUE USED HERE, NEEDS DYNAMIC SOLUTION
         titleBox.getChildren().add(label);
         pane.getChildren().add(titleBox);
+    }
+
+    public static void initialiseChoiceBox(ChoiceBox choiceBox, Enum[] choices, Enum defaultChoice) {
+        ObservableList<String> choiceStrings = FXCollections.observableArrayList();
+        for (Enum choice : choices) {
+            choiceStrings.add(choice.toString());
+        }
+        choiceBox.setItems(choiceStrings);
+        choiceBox.setValue(defaultChoice.toString());
     }
 
 }
