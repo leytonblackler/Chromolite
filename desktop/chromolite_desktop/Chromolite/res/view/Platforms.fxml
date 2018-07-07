@@ -5,6 +5,9 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.leytonblackler.chromolite.controllers.PlatformsController" spacing="$PADDING">
@@ -33,32 +36,32 @@
             <ColumnConstraints percentWidth="25"/>
         </columnConstraints>
 
-        <ToggleButton fx:id="arduinoButton" onAction="#arduinoButtonClicked" text="ARDUINO"
-                      prefHeight="${PADDING * 2.5}"
-                      GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity">
-            <graphic>
-                <ImageView fx:id="arduinoLogo"/>
-            </graphic>
-        </ToggleButton>
+        <!--<ComboBox fx:id="platformComboBox"
+                   prefHeight="${PADDING * 2.5}"
+                   onAction="#platformComboBoxChanged"
+                   GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="1" maxWidth="Infinity">
+            <padding>
+                <Insets left="5"/>
+            </padding>
+        </ComboBox>-->
+        <ChoiceBox fx:id="platformChoiceBox"
+                   value="ARDUINO"
+                   prefHeight="${PADDING * 2.5}"
+                   onAction="#platformChoiceBoxChanged"
+                   GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="1" maxWidth="Infinity"/>
 
-        <ToggleButton fx:id="razerButton" onAction="#razerButtonClicked" text="RAZER CHROMA"
-                      prefHeight="${PADDING * 2.5}"
-                      GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity">
-            <graphic>
-                <ImageView fx:id="razerLogo" translateX="${-PADDING/3}"/>
-            </graphic>
-        </ToggleButton>
+        <HBox prefHeight="${PADDING * 2.5}"
+              GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity" alignment="CENTER">
+            <ImageView fx:id="platformIcon"/>
+        </HBox>
 
-        <ToggleButton fx:id="hueButton" onAction="#hueButtonClicked" text="PHILIPS HUE" disable="true"
+        <ToggleButton fx:id="optionsButton" onAction="#optionsButtonClicked" text="OPTIONS"
                       prefHeight="${PADDING * 2.5}"
                       GridPane.rowIndex="0" GridPane.columnIndex="2" maxWidth="Infinity">
-            <graphic>
-                <ImageView fx:id="hueLogo" translateX="${-PADDING/4}"/>
-            </graphic>
         </ToggleButton>
 
         <VBox prefHeight="${PADDING * 2.5}"
-              GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.rowSpan="2"
+              GridPane.columnIndex="3" GridPane.rowIndex="0"
               alignment="CENTER" spacing="5">
             <Label text="SYNC PLATFORMS"/>
             <HBox alignment="CENTER">

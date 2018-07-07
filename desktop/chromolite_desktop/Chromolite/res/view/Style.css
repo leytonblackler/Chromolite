@@ -66,6 +66,7 @@
     -fx-background-radius: 0.25em, 0.25em, 0.166667em; /* 3 3 2 */
 }
 
+/* Choice/Combo Box General */
 .choice-box {
     -fx-background-color: -fx-shadow-highlight-color,
     -fx-outer-border,
@@ -80,34 +81,116 @@
     -fx-font-family: "Roboto";
     -fx-font-size: 7pt;
 }
+.combo-box {
+    -fx-background-color: -fx-shadow-highlight-color,
+    -fx-outer-border,
+    -fx-inner-border,
+    -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
 
+    -fx-text-fill: #bcc4cc;
+    -fx-background-color: #253447;
+    -fx-mark-color: #bcc4cc;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 7pt;
+}
+
+/* Choice/Combo Box Hover */
 .choice-box:hover {
     -fx-background-color: #2c3b4f;
 }
+.combo-box:hover {
+    -fx-background-color: #2c3b4f;
+}
 
+/* Choice/Combo Box Pressed */
 .choice-box:pressed {
     -fx-background-color: #253447;
 }
+.combo-box:pressed {
+    -fx-background-color: #253447;
+}
 
+/* Choice/Combo Box Menu */
 .choice-box .context-menu {
     -fx-background-color: #2c3b4f;
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-radius: 3px, 3px, 3px, 3px;
 }
+.combo-box .combo-box-popup .list-view, .combo-box .combo-box-popup .list-cell {
+    -fx-background-color: #2c3b4f;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
+}
 
+/* Choice/Combo Box Menu Hover */
 .choice-box .menu-item:focused {
     -fx-background-color: #03a9f4;
     -fx-focused-mark-color: #2c3b4f;
     -fx-background-radius: 2px, 2px, 2px, 2px;
 }
-
+.combo-box .combo-box-popup .list-cell:hover {
+    -fx-background-color: #03a9f4;
+    -fx-focused-mark-color: #2c3b4f;
+    -fx-background-radius: 2px, 2px, 2px, 2px;
+}
 .choice-box .menu-item > .label {
+    -fx-text-fill: #bcc4cc;
+}
+.combo-box .combo-box-popup .list-cell > .label {
     -fx-text-fill: #bcc4cc;
 }
 
 .choice-box .menu-item:focused > .label {
     -fx-text-fill: #2c3b4f;
 }
+.combo-box .combo-box-popup .list-cell:hover > .label {
+    -fx-text-fill: #2c3b4f;
+}
+
+/*.combo-box {
+    -fx-background-color: -fx-shadow-highlight-color,
+    -fx-outer-border,
+    -fx-inner-border,
+    -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
+
+    -fx-text-fill: #bcc4cc;
+    -fx-background-color: #253447;
+    -fx-mark-color: #bcc4cc;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 7pt;
+}
+
+.combo-box:hover {
+    -fx-background-color: #2c3b4f;
+}
+
+.combo-box:pressed {
+    -fx-background-color: #253447;
+}
+
+.combo-box .context-menu {
+    -fx-background-color: #2c3b4f;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 3px, 3px;
+}
+
+.combo-box .menu-item:focused {
+    -fx-background-color: #03a9f4;
+    -fx-focused-mark-color: #2c3b4f;
+    -fx-background-radius: 2px, 2px, 2px, 2px;
+}
+
+.combo-box .menu-item > .label {
+    -fx-text-fill: #bcc4cc;
+}
+
+.combo-box .menu-item:focused > .label {
+    -fx-text-fill: #2c3b4f;
+}*/
 
 .check-box .box {
     -fx-background-color: -fx-shadow-highlight-color,
