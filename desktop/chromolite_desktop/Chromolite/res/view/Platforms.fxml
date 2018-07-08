@@ -48,7 +48,9 @@
                    value="ARDUINO"
                    prefHeight="${PADDING * 2.5}"
                    onAction="#platformChoiceBoxChanged"
-                   GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="1" maxWidth="Infinity"/>
+                   GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="1" maxWidth="Infinity">
+
+        </ChoiceBox>
 
         <HBox prefHeight="${PADDING * 2.5}"
               GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity" alignment="CENTER">

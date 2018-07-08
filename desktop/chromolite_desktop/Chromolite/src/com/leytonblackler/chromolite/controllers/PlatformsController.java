@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.NodeOrientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -85,12 +86,31 @@ public class PlatformsController  extends Controller implements Initializable {
 
     @FXML
     private void platformChoiceBoxChanged() {
-        //
+        getSettings().setPlatform(PlatformSettings.Platform.valueOf(this.platformsChoiceBox.getValue().toString().replace(' ', '_')));
     }
 
     @FXML
     private void optionsButtonClicked() {
         //
+    }
+
+    private void updateChoiceBoxPadding(PlatformSettings.Platform platform) {
+        int left = 0;
+        switch (platform) {
+            case ARDUINO:
+                left = 37;
+                break;
+            case RAZER_CHROMA:
+                left = 22;
+                break;
+            case PHILIPS_HUE:
+                left = 29;
+                break;
+            case NANOLEAF:
+                left = 26;
+                break;
+        }
+        this.platformsChoiceBox.setPadding(new Insets(0, 0, 0, left));
     }
 
     @FXML
@@ -100,6 +120,8 @@ public class PlatformsController  extends Controller implements Initializable {
 
     @Override
     public void update(SettingsManager settings) {
+        updateChoiceBoxPadding(settings.getPlatform());
+
         syncPlatformsCheckBox.setSelected(settings.getSyncPlatforms());
         switch (settings.getPlatform()) {
             case ARDUINO:
