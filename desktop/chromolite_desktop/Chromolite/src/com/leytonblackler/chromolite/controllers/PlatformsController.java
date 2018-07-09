@@ -56,8 +56,6 @@ public class PlatformsController  extends Controller implements Initializable {
         hueLogoImage = new Image(getClass().getClassLoader().getResource("images/hue_logo.png").toExternalForm());
 
         nanoleafLogoImage = new Image(getClass().getClassLoader().getResource("images/nanoleaf_logo.png").toExternalForm());
-
-        platformIcon.setImage(arduinoLogoImage);
     }
 
     @FXML
@@ -112,23 +110,28 @@ public class PlatformsController  extends Controller implements Initializable {
     @Override
     public void update(SettingsManager settings) {
         updateChoiceBoxPadding(settings.getPlatform());
-
         syncPlatformsCheckBox.setSelected(settings.getSyncPlatforms());
         switch (settings.getPlatform()) {
             case ARDUINO:
+                platformIcon.setImage(arduinoLogoImage);
                 //setButtonSelected(true, arduinoButton, arduinoLogoImages, arduinoLogo);
                 //setButtonSelected(false, razerButton, razerLogoImages, razerLogo);
                 //setButtonSelected(false, hueButton, hueLogoImages, hueLogo);
                 break;
             case RAZER_CHROMA:
+                platformIcon.setImage(razerLogoImage);
                 //setButtonSelected(false, arduinoButton, arduinoLogoImages, arduinoLogo);
                 //setButtonSelected(true, razerButton, razerLogoImages, razerLogo);
                 //setButtonSelected(false, hueButton, hueLogoImages, hueLogo);
                 break;
             case PHILIPS_HUE:
+                platformIcon.setImage(hueLogoImage);
                 //setButtonSelected(false, arduinoButton, arduinoLogoImages, arduinoLogo);
                 //setButtonSelected(false, razerButton, razerLogoImages, razerLogo);
                 //setButtonSelected(true, hueButton, hueLogoImages, hueLogo);
+                break;
+            case NANOLEAF:
+                platformIcon.setImage(nanoleafLogoImage);
                 break;
         }
     }
