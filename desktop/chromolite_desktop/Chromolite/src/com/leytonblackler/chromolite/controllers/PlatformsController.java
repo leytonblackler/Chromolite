@@ -37,36 +37,27 @@ public class PlatformsController  extends Controller implements Initializable {
     @FXML
     private ToggleButton optionsButton;
 
-    private Image[] arduinoLogoImages = new Image[2];
+    private Image arduinoLogoImage;
 
-    private Image[] razerLogoImages = new Image[2];
+    private Image razerLogoImage;
 
-    private Image[] hueLogoImages = new Image[2];
+    private Image hueLogoImage;
 
-    private Image[] nanoleafLogoImages = new Image[2];
+    private Image nanoleafLogoImage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         GUIUtilities.initialiseChoiceBox(platformsChoiceBox, PlatformSettings.Platform.values(), PlatformSettings.Platform.ARDUINO);
 
-        arduinoLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/arduino_logo_light.png").toExternalForm());
-        arduinoLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/arduino_logo_dark.png").toExternalForm());
+        arduinoLogoImage = new Image(getClass().getClassLoader().getResource("images/arduino_logo.png").toExternalForm());
 
-        razerLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/razer_logo_light.png").toExternalForm());
-        razerLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/razer_logo_dark.png").toExternalForm());
+        razerLogoImage = new Image(getClass().getClassLoader().getResource("images/razer_logo.png").toExternalForm());
 
-        hueLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/hue_logo_light.png").toExternalForm());
-        hueLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/hue_logo_dark.png").toExternalForm());
+        hueLogoImage = new Image(getClass().getClassLoader().getResource("images/hue_logo.png").toExternalForm());
 
-        nanoleafLogoImages[0] = new Image(getClass().getClassLoader().getResource("images/nanoleaf_logo_light.png").toExternalForm());
-        nanoleafLogoImages[1] = new Image(getClass().getClassLoader().getResource("images/nanoleaf_logo_dark.png").toExternalForm());
+        nanoleafLogoImage = new Image(getClass().getClassLoader().getResource("images/nanoleaf_logo.png").toExternalForm());
 
-        platformIcon.setImage(arduinoLogoImages[0]);
-
-        /*platformComboBox.setItems(FXCollections.observableArrayList(PLATFORMS));
-        platformComboBox.setCellFactory(param -> new PlatformListCell());
-        platformComboBox.setButtonCell(new PlatformListCell());
-        platformComboBox.setValue(PLATFORMS[0]);*/
+        platformIcon.setImage(arduinoLogoImage);
     }
 
     @FXML
@@ -107,7 +98,7 @@ public class PlatformsController  extends Controller implements Initializable {
                 left = 29;
                 break;
             case NANOLEAF:
-                left = 26;
+                left = 27;
                 break;
         }
         this.platformsChoiceBox.setPadding(new Insets(0, 0, 0, left));
