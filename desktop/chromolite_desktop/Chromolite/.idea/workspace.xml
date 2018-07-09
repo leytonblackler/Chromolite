@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c472a6c4-74ee-4b6d-bc6c-2793a2a71498" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/res/images/hue_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/images/hue_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/PlatformsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/leytonblackler/chromolite/controllers/PlatformsController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -921,12 +922,12 @@
       <workItem from="1528761070484" duration="10000" />
       <workItem from="1530850111978" duration="24420000" />
       <workItem from="1531030248169" duration="6880000" />
-      <workItem from="1531118783981" duration="2510000" />
+      <workItem from="1531118783981" duration="2996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="608873000" />
+    <option name="totallyTimeSpent" value="609359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
