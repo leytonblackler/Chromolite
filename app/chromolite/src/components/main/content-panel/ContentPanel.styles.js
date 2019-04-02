@@ -1,6 +1,7 @@
 const styles = theme => ({
   root: {
-    display: 'flex'
+    flexGrow: 1,
+    backgroundColor: '#12161B'
   }
 });
 
