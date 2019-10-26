@@ -1,0 +1,10 @@
+body > #root > div {
+  height: 100vh;
+}
+
+body {
+  font-family: "Circular", sans-serif;
+  padding: 0px;
+  margin: 0px;
+  background-color: transparent;
+}
