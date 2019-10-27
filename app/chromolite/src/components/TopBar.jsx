@@ -6,7 +6,6 @@ const LOGO_PATH = "/images/logo.png";
 
 class TopBar extends Component {
   render() {
-    console.log(WINDOW_RADIUS);
     return (
       <MainContainer>
         <Logo src={LOGO_PATH} alt="Logo" />

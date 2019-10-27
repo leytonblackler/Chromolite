@@ -14,6 +14,7 @@ function createWindow() {
     frame: false,
     transparent: true,
     resizable: false,
+    hasShadow: true,
     webPreferences: {}
   });
 

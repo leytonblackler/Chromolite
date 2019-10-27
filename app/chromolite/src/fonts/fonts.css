@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "Circular";
+  font-style: normal;
+  font-weight: 400; /* Normal */
+  src: url(./circular/CircularStd-Book.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Circular";
+  font-style: normal;
+  font-weight: 600; /* Medium */
+  src: url(./circular/CircularStd-Black.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Circular";
+  font-style: normal;
+  font-weight: 700; /* Bold */
+  src: url(./circular/CircularStd-Black.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "Circular";
+  font-style: normal;
+  font-weight: 900; /* Black */
+  src: url(./circular/CircularStd-Black.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 100; /* Thin */
+  src: url(./proxima-nova/ProximaNovaThin.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 200; /* Light */
+  src: url(./proxima-nova/ProximaNovaLight.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 400; /* Regular */
+  src: url(./proxima-nova/ProximaNovaRegular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 600; /* Semi-bold */
+  src: url(./proxima-nova/ProximaNovaSemibold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 700; /* Bold */
+  src: url(./proxima-nova/ProximaNovaBold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 800; /* Extra-bold */
+  src: url(./proxima-nova/ProximaNovaExtrabold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  font-style: normal;
+  font-weight: 900; /* Black */
+  src: url(./proxima-nova/ProximaNovaBlack.otf) format("opentype");
+}
