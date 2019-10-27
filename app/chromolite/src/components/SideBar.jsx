@@ -9,7 +9,6 @@ class SideBar extends Component {
   render() {
     return (
       <MainContainer>
-        <SideBarIndicator />
         <SideBarButton />
         <SideBarButton />
         <SideBarButton />
@@ -26,3 +25,5 @@ const MainContainer = styled.div`
 `;
 
 export default SideBar;
+
+// <SideBarIndicator />

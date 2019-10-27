@@ -1,3 +1,14 @@
+// import {
+//   WINDOW_WIDTH,
+//   WINDOW_HEIGHT,
+//   WINDOW_SHADOW_SIZE
+// } from "./constants.js";
+
+// TODO: Fix above import instead of using constants below.
+const WINDOW_WIDTH = 1200;
+const WINDOW_HEIGHT = 700;
+const WINDOW_SHADOW_SIZE = 15;
+
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
@@ -9,8 +20,8 @@ let mainWindow;
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 700,
+    width: WINDOW_WIDTH + 2 * WINDOW_SHADOW_SIZE,
+    height: WINDOW_HEIGHT + 2 * WINDOW_SHADOW_SIZE,
     frame: false,
     transparent: true,
     resizable: false,
