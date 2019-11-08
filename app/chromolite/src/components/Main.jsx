@@ -1,18 +1,34 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import TopBar from "./TopBar";
-import SideBar from "./SideBar";
+import Header from "./header/Header";
+import NavigationTabs from "./navigation-tabs/NavigationTabs";
 import ContentArea from "./ContentArea";
 
-import { WINDOW_RADIUS, TOP_BAR_HEIGHT } from "../constants";
+import SECTIONS from "../config/sections";
+
+import { WINDOW_RADIUS, HEADER_HEIGHT } from "../constants";
 
 class Main extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeSectionId: SECTIONS[0].id };
+  }
+
+  onTabClicked = sectionId => {
+    this.setState({ activeSectionId: sectionId });
+  };
+
   render() {
+    const { activeSectionId } = this.state;
     return (
       <MainContainer>
-        <TopBar />
+        <Header />
         <LowerContainer>
-          <SideBar />
+          <NavigationTabs
+            sections={SECTIONS}
+            activeSectionId={activeSectionId}
+            onTabClicked={this.onTabClicked}
+          />
           <ContentArea />
         </LowerContainer>
       </MainContainer>
@@ -26,7 +42,7 @@ const MainContainer = styled.div`
 `;
 
 const LowerContainer = styled.div`
-  height: calc(100% - ${TOP_BAR_HEIGHT}px);
+  height: calc(100% - ${HEADER_HEIGHT}px);
   display: flex;
   flex-direction: row;
 `;
