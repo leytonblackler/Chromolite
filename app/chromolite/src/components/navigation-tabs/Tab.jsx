@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import {
   NAVIGATION_TAB_HEIGHT,
   NAVIGATION_TAB_SPACING,
+  LETTER_SPACING,
   BASE_FONT_SIZE,
   ACCENT_COLOR,
   TEXT_COLOR,
@@ -54,7 +55,7 @@ const MainContainer = styled(motion.div)`
 const Text = styled(motion.div)`
   text-transform: uppercase;
   font-size: ${BASE_FONT_SIZE}pt;
-  letter-spacing: 1.4px;
+  letter-spacing: ${LETTER_SPACING}px;
   font-weight: 600;
   margin-left: 10px;
   white-space: nowrap;

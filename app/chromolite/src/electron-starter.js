@@ -5,8 +5,8 @@
 // } from "./constants.js";
 
 // TODO: Fix above import instead of using constants below.
-const WINDOW_WIDTH = 1000;
-const WINDOW_HEIGHT = 620;
+const WINDOW_WIDTH = 1100;
+const WINDOW_HEIGHT = 650;
 const WINDOW_SHADOW_SIZE = 15;
 
 // Modules to control application life and create native browser window
