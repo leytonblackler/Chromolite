@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import posed from "react-pose";
+import { motion } from "framer-motion";
 
-import { PANEL_COLOURS, TEXT_COLOR, HEADER_HEIGHT } from "../../constants";
+import {
+  PANEL_COLOURS,
+  TEXT_COLOR,
+  HEADER_HEIGHT
+} from "../../config/constants";
 
 class HeaderButton extends Component {
   render() {
@@ -11,14 +15,18 @@ class HeaderButton extends Component {
     const Icon = icon;
 
     return (
-      <MainContainer onClick={onClick}>
+      <MainContainer
+        onClick={onClick}
+        whileHover={{ backgroundColor: PANEL_COLOURS[3] }}
+      >
         <Icon fill={TEXT_COLOR} width="20px" height="20px" />
       </MainContainer>
     );
   }
 }
 
-const MainContainer = posed(styled.div`
+const MainContainer = styled(motion.div)`
+  background-color: ${PANEL_COLOURS[0]};
   -webkit-app-region: no-drag;
   width: ${HEADER_HEIGHT * 0.6}px;
   height: ${HEADER_HEIGHT * 0.6}px;
@@ -28,14 +36,6 @@ const MainContainer = posed(styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-`)({
-  hoverable: true,
-  init: {
-    backgroundColor: PANEL_COLOURS[0]
-  },
-  hover: {
-    backgroundColor: PANEL_COLOURS[3]
-  }
-});
+`;
 
 export default HeaderButton;

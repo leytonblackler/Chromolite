@@ -6,7 +6,7 @@ import ContentArea from "./ContentArea";
 
 import SECTIONS from "../config/sections";
 
-import { WINDOW_RADIUS, HEADER_HEIGHT } from "../constants";
+import { WINDOW_RADIUS, HEADER_HEIGHT } from "../config/constants";
 
 class Main extends Component {
   constructor(props) {

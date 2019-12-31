@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { WINDOW_RADIUS, HEADER_HEIGHT } from "../../constants";
+import { WINDOW_RADIUS, HEADER_HEIGHT } from "../../config/constants";
 import HeaderButton from "./HeaderButton";
 import { ReactComponent as MinimiseIcon } from "../../icons/minimise.svg";
 import { ReactComponent as CloseIcon } from "../../icons/close.svg";

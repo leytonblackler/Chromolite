@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import { WINDOW_RADIUS, WINDOW_SHADOW_SIZE } from "../constants";
+import { WINDOW_RADIUS, WINDOW_SHADOW_SIZE } from "../config/constants";
 
 class WindowShadow extends Component {
   render() {

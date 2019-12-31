@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import { WINDOW_RADIUS } from "../constants";
+import { WINDOW_RADIUS } from "../config/constants";
 
-class SideBar extends Component {
+class ContentArea extends Component {
   render() {
     return <MainContainer>placeholder text</MainContainer>;
   }
@@ -16,4 +16,4 @@ const MainContainer = styled.div`
   border-radius: 0px 0px ${WINDOW_RADIUS}px 0px;
 `;
 
-export default SideBar;
+export default ContentArea;

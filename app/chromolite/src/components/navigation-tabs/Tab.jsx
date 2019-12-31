@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import posed from "react-pose";
+import { motion } from "framer-motion";
 
 import {
   NAVIGATION_TAB_HEIGHT,
@@ -9,39 +9,37 @@ import {
   ACCENT_COLOR,
   TEXT_COLOR,
   PANEL_COLOURS
-} from "../../constants";
+} from "../../config/constants";
 
 class Tab extends Component {
-  constructor(props) {
-    super(props);
-
-    const { icon } = this.props;
-
-    this.Icon = posed(icon)({
-      active: { fill: ACCENT_COLOR },
-      inactive: { fill: TEXT_COLOR }
-    });
-  }
-
   render() {
-    const { active, label, onClick } = this.props;
+    const { active, icon, label, onClick } = this.props;
 
-    const Icon = this.Icon;
+    const Icon = icon;
 
     return (
-      <MainContainer onClick={onClick}>
+      <MainContainer
+        whileHover={{ backgroundColor: PANEL_COLOURS[2] }}
+        onClick={onClick}
+      >
         <Icon
-          pose={active ? "active" : "inactive"}
+          fill={active ? ACCENT_COLOR : TEXT_COLOR}
           width="16px"
           height="16px"
         />
-        <Text pose={active ? "active" : "inactive"}>{label}</Text>
+        <Text
+          initial={false}
+          animate={{ color: active ? ACCENT_COLOR : TEXT_COLOR }}
+        >
+          {label}
+        </Text>
       </MainContainer>
     );
   }
 }
 
-const MainContainer = posed(styled.div`
+const MainContainer = styled(motion.div)`
+  background-color: ${PANEL_COLOURS[1]};
   height: ${NAVIGATION_TAB_HEIGHT}px;
   display: flex;
   flex-direction: row;
@@ -51,23 +49,15 @@ const MainContainer = posed(styled.div`
   padding-left: 20px;
   padding-right: 20px;
   cursor: pointer;
-`)({
-  hoverable: true,
-  init: {
-    backgroundColor: PANEL_COLOURS[1]
-  },
-  hover: {
-    backgroundColor: PANEL_COLOURS[2]
-  }
-});
+`;
 
-const Text = posed(styled.div`
+const Text = styled(motion.div)`
   text-transform: uppercase;
   font-size: ${BASE_FONT_SIZE}pt;
   letter-spacing: 1.4px;
   font-weight: 600;
   margin-left: 10px;
   white-space: nowrap;
-`)({ active: { color: ACCENT_COLOR }, inactive: { color: TEXT_COLOR } });
+`;
 
 export default Tab;

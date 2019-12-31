@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Tab from "./Tab";
 import ActiveTabIndicator from "./ActiveTabIndicator";
 
-import { WINDOW_RADIUS } from "../../constants";
+import { WINDOW_RADIUS } from "../../config/constants";
 
 const NavigationTabs = props => {
   const { sections, activeSectionId } = props;
