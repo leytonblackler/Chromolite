@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Header from "./header/Header";
 import NavigationTabs from "./navigation-tabs/NavigationTabs";
-import ContentArea from "./ContentArea";
-
 import SECTIONS from "../config/sections";
+import GlobalOptions from "./sections/global-options/GlobalOptions";
 
-import { WINDOW_RADIUS, HEADER_HEIGHT } from "../config/constants";
+import { PANEL_MARGINS } from "../config/constants";
 
 class Main extends Component {
   constructor(props) {
@@ -22,15 +20,14 @@ class Main extends Component {
     const { activeSectionId } = this.state;
     return (
       <MainContainer>
-        <Header />
-        <LowerContainer>
-          <NavigationTabs
-            sections={SECTIONS}
-            activeSectionId={activeSectionId}
-            onTabClicked={this.onTabClicked}
-          />
-          <ContentArea />
-        </LowerContainer>
+        <NavigationTabs
+          sections={SECTIONS}
+          activeSectionId={activeSectionId}
+          onTabClicked={this.onTabClicked}
+        />
+        <SectionContainer>
+          <GlobalOptions />
+        </SectionContainer>
       </MainContainer>
     );
   }
@@ -38,13 +35,16 @@ class Main extends Component {
 
 const MainContainer = styled.div`
   height: 100%;
-  border-radius: ${WINDOW_RADIUS}px;
-`;
-
-const LowerContainer = styled.div`
-  height: calc(100% - ${HEADER_HEIGHT}px);
   display: flex;
   flex-direction: row;
+`;
+
+const SectionContainer = styled.div`
+  height: calc(100% - 2 * ${PANEL_MARGINS}px);
+  width: calc(100% - 2 * ${PANEL_MARGINS}px);
+  background-color: #12161b;
+  overflow: hidden;
+  padding: ${PANEL_MARGINS}px;
 `;
 
 export default Main;

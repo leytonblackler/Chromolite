@@ -48,11 +48,6 @@ const MainContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
 }
 `;
 

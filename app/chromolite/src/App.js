@@ -1,13 +1,13 @@
 import React from "react";
 import WindowShadow from "./components/WindowShadow";
-import Main from "./components/Main";
+import WindowContent from "./components/WindowContent";
 import "./App.css";
 import "./fonts/fonts.css";
 
 function App() {
   return (
     <WindowShadow>
-      <Main />
+      <WindowContent />
     </WindowShadow>
   );
 }
