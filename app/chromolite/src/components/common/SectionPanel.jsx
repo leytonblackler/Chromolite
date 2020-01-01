@@ -15,6 +15,7 @@ const SectionPanel = ({ title, titleContent, children, width }) => {
     <MainContainer width={width}>
       <TitleArea>
         <PanelTitle>{title}</PanelTitle>
+        {titleContent}
       </TitleArea>
       <ContentContainer>{children}</ContentContainer>
     </MainContainer>
@@ -41,6 +42,7 @@ const TitleArea = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  height: ${PANEL_MARGINS}px;
   padding-bottom: ${PANEL_MARGINS}px;
 `;
 

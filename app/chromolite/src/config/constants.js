@@ -6,6 +6,7 @@ export const WINDOW_RADIUS = 10;
 export const PANEL_RADIUS = 8;
 export const PANEL_MARGINS = 15;
 export const BASE_FONT_SIZE = 7;
+export const BASE_FONT_WEIGHT = 600;
 export const LETTER_SPACING = 1.3;
 export const NAVIGATION_TAB_HEIGHT = 55;
 export const NAVIGATION_TAB_SPACING = 0;

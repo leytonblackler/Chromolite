@@ -7,6 +7,7 @@ import {
   NAVIGATION_TAB_SPACING,
   LETTER_SPACING,
   BASE_FONT_SIZE,
+  BASE_FONT_WEIGHT,
   ACCENT_COLOR,
   TEXT_COLOR,
   PANEL_COLOURS
@@ -56,7 +57,7 @@ const Text = styled(motion.div)`
   text-transform: uppercase;
   font-size: ${BASE_FONT_SIZE}pt;
   letter-spacing: ${LETTER_SPACING}px;
-  font-weight: 600;
+  font-weight: ${BASE_FONT_WEIGHT};
   margin-left: 10px;
   white-space: nowrap;
 `;

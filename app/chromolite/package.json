@@ -5,7 +5,11 @@
   "dependencies": {
     "@material-ui/core": "^4.5.1",
     "@mdi/font": "^4.5.95",
+    "@mdi/js": "^4.7.95",
+    "@mdi/react": "^1.2.1",
+    "color": "^3.1.2",
     "electron": "^7.0.0",
+    "firebase": "^7.6.1",
     "framer-motion": "^1.7.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
