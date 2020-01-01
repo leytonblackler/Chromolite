@@ -4,6 +4,12 @@ import SectionPanel from "../../../common/SectionPanel";
 import Button from "../../../common/Button";
 import Spacer from "../../../common/Spacer";
 import { mdiChevronDown as ChevronDownIcon } from "@mdi/js";
+const { ipcRenderer } = window.require("electron");
+
+const resizeWindow = () => {
+  console.log("resizing window...");
+  ipcRenderer.send("resize-window", { width: 300, height: 300 });
+};
 
 const TitleContent = () => (
   <TitleButtonsContainer>
@@ -11,7 +17,7 @@ const TitleContent = () => (
     <Spacer />
     <Button text="Select All" />
     <Spacer />
-    <Button text="Deselect All" />
+    <Button text="Deselect All" onClick={resizeWindow} />
   </TitleButtonsContainer>
 );
 

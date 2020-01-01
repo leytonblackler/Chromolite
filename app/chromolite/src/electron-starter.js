@@ -10,7 +10,7 @@ const WINDOW_HEIGHT = 650;
 const WINDOW_SHADOW_SIZE = 15;
 
 // Modules to control application life and create native browser window
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -26,7 +26,9 @@ function createWindow() {
     transparent: true,
     resizable: false,
     hasShadow: true,
-    webPreferences: {}
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
 
   // and load the index.html of the app.
@@ -42,6 +44,12 @@ function createWindow() {
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  // Create a listener to dynamically resize the window.
+  ipcMain.on("resize-window", (e, size) => {
+    mainWindow.setBounds(size);
+    mainWindow.center();
   });
 }
 

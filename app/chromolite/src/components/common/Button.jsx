@@ -13,12 +13,13 @@ import {
   BASE_FONT_WEIGHT
 } from "../../config/constants";
 
-const Button = ({ type, text, icon, iconPosition }) => {
+const Button = ({ onClick, type, text, icon, iconPosition }) => {
   return (
     <MainContainer
+      onClick={onClick}
       whileHover={{
         backgroundColor: Color(ACCENT_COLOR)
-          .fade(0.8)
+          .fade(0.75)
           .string()
       }}
     >
@@ -80,6 +81,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
   type: PropTypes.oneOf(["solid", "outlined"]).isRequired,
   text: PropTypes.string.isRequired,
   icon: PropTypes.any,
