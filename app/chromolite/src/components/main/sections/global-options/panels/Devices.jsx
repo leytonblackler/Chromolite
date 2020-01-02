@@ -28,16 +28,23 @@ const TitleContent = () => (
       size="small"
       icon={ChevronDownIcon}
       iconPosition="right"
+      onClick={() => console.log("Sort by button clicked.")}
     />
     <Spacer />
-    <Button type="outlined" color="blue" size="small" text="Select All" />
+    <Button
+      type="outlined"
+      color="blue"
+      size="small"
+      text="Select All"
+      onClick={() => console.log("Select all button clicked.")}
+    />
     <Spacer />
     <Button
       type="outlined"
       color="blue"
       size="small"
       text="Deselect All"
-      onClick={resizeWindow}
+      onClick={() => console.log("Deselect button clicked.")}
     />
   </TitleButtonsContainer>
 );

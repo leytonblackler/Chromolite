@@ -1,5 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import Login from "./login/Login";
@@ -10,13 +16,30 @@ import {
   PANEL_COLORS
 } from "../config/constants";
 
+// componentDidUpdate(prevProps) {
+//   if (this.props.location !== prevProps.location) {
+//     this.onRouteChanged();
+//   }
+// }
+
+// onRouteChanged() {
+//   console.log("ROUTE CHANGED");
+//   // TODO: Resize window depending on login page vs main pages.
+// }
+
 const WindowContent = () => (
-  <MainContainer>
-    <Header />
-    <ContentArea>
-      <Login />
-    </ContentArea>
-  </MainContainer>
+  <Router>
+    <MainContainer>
+      <Header />
+      <ContentArea>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/main" component={Main} />
+          <Redirect from="/" to="/error" />
+        </Switch>
+      </ContentArea>
+    </MainContainer>
+  </Router>
 );
 
 const MainContainer = styled.div`

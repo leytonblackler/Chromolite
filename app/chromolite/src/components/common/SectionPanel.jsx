@@ -55,7 +55,7 @@ SectionPanel.propTypes = {
   title: PropTypes.string.isRequired,
   titleContent: PropTypes.node,
   children: PropTypes.node.isRequired,
-  width: PropTypes.number.isRequired
+  width: PropTypes.number
 };
 
 export default SectionPanel;
