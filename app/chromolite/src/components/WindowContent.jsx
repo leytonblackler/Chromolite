@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./header/Header";
-import Main from "./Main";
-import Login from "./Login";
+import Main from "./main/Main";
+import Login from "./login/Login";
 
-import { WINDOW_RADIUS, HEADER_HEIGHT } from "../config/constants";
+import {
+  WINDOW_RADIUS,
+  HEADER_HEIGHT,
+  PANEL_COLORS
+} from "../config/constants";
 
 const WindowContent = () => (
   <MainContainer>
@@ -24,6 +28,7 @@ const MainContainer = styled.div`
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  background-color: ${PANEL_COLORS[0]};
 `;
 
 const ContentArea = styled.div`

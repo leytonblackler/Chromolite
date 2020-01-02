@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -7,7 +7,7 @@ import {
   NAVIGATION_TAB_INDICATOR_HEIGHT,
   NAVIGATION_TAB_HEIGHT,
   ACCENT_COLOR
-} from "../../config/constants";
+} from "../../../config/constants";
 
 const calculateMarginTop = activeSectionId =>
   (NAVIGATION_TAB_HEIGHT - NAVIGATION_TAB_INDICATOR_HEIGHT) / 2 +

@@ -1,12 +1,14 @@
 // import {
-//   WINDOW_WIDTH,
-//   WINDOW_HEIGHT,
+//   MAIN_WINDOW_WIDTH,
+//   MAIN_WINDOW_HEIGHT,
 //   WINDOW_SHADOW_SIZE
 // } from "./constants.js";
 
 // TODO: Fix above import instead of using constants below.
-const WINDOW_WIDTH = 1100;
-const WINDOW_HEIGHT = 650;
+const LOGIN_WINDOW_WIDTH = 300;
+const LOGIN_WINDOW_HEIGHT = 400;
+const MAIN_WINDOW_WIDTH = 1100;
+const MAIN_WINDOW_HEIGHT = 650;
 const WINDOW_SHADOW_SIZE = 15;
 
 // Modules to control application life and create native browser window
@@ -20,8 +22,8 @@ let mainWindow;
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: WINDOW_WIDTH + 2 * WINDOW_SHADOW_SIZE,
-    height: WINDOW_HEIGHT + 2 * WINDOW_SHADOW_SIZE,
+    width: LOGIN_WINDOW_WIDTH + 2 * WINDOW_SHADOW_SIZE,
+    height: LOGIN_WINDOW_HEIGHT + 2 * WINDOW_SHADOW_SIZE,
     frame: false,
     transparent: true,
     resizable: false,

@@ -1,5 +1,5 @@
 import React from "react";
-import SectionPanel from "../../../common/SectionPanel";
+import SectionPanel from "../../../../common/SectionPanel";
 
 const MainContent = () => <div>main content</div>;
 

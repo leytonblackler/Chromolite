@@ -6,7 +6,7 @@ import PanelTitle from "./PanelTitle";
 import {
   PANEL_MARGINS,
   PANEL_RADIUS,
-  PANEL_COLOURS
+  PANEL_COLORS
 } from "../../config/constants";
 
 const SectionPanel = ({ title, titleContent, children, width }) => {
@@ -32,7 +32,7 @@ const MainContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  background-color: ${PANEL_COLOURS[1]};
+  background-color: ${PANEL_COLORS[1]};
   flex-grow: 1;
   border-radius: ${PANEL_RADIUS}px;
 `;

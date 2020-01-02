@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import EffectConfiguration from "./panels/EffectConfiguration";
 import Devices from "./panels/Devices";
-import Spacer from "../../common/Spacer";
+import Spacer from "../../../common/Spacer";
 
 const GlobalOptions = () => {
   //

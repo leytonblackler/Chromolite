@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 import {
-  PANEL_COLOURS,
+  PANEL_COLORS,
   TEXT_COLOR,
   HEADER_HEIGHT
 } from "../../config/constants";
@@ -17,7 +17,7 @@ class HeaderButton extends Component {
     return (
       <MainContainer
         onClick={onClick}
-        whileHover={{ backgroundColor: PANEL_COLOURS[3] }}
+        whileHover={{ backgroundColor: PANEL_COLORS[3] }}
       >
         <Icon fill={TEXT_COLOR} width="20px" height="20px" />
       </MainContainer>
@@ -26,7 +26,7 @@ class HeaderButton extends Component {
 }
 
 const MainContainer = styled(motion.div)`
-  background-color: ${PANEL_COLOURS[0]};
+  background-color: ${PANEL_COLORS[0]};
   -webkit-app-region: no-drag;
   width: ${HEADER_HEIGHT * 0.6}px;
   height: ${HEADER_HEIGHT * 0.6}px;

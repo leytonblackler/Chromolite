@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Tab from "./Tab";
 import ActiveTabIndicator from "./ActiveTabIndicator";
 
-import { WINDOW_RADIUS, PANEL_COLOURS } from "../../config/constants";
+import { WINDOW_RADIUS, PANEL_COLORS } from "../../../config/constants";
 
 const NavigationTabs = props => {
   const { sections, activeSectionId } = props;
@@ -28,7 +28,7 @@ const NavigationTabs = props => {
 
 const MainContainer = styled.div`
   height: 100%;
-  background-color: ${PANEL_COLOURS[1]};
+  background-color: ${PANEL_COLORS[1]};
   border-radius: 0px 0px 0px ${WINDOW_RADIUS}px;
 `;
 

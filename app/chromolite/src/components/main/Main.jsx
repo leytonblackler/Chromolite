@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import NavigationTabs from "./navigation-tabs/NavigationTabs";
-import SECTIONS from "../config/sections";
+import SECTIONS from "../../config/sections";
 import GlobalOptions from "./sections/global-options/GlobalOptions";
 
-import { PANEL_MARGINS } from "../config/constants";
+import { PANEL_MARGINS } from "../../config/constants";
 
 class Main extends Component {
   constructor(props) {
@@ -42,7 +42,6 @@ const MainContainer = styled.div`
 const SectionContainer = styled.div`
   height: calc(100% - 2 * ${PANEL_MARGINS}px);
   width: calc(100% - 2 * ${PANEL_MARGINS}px);
-  background-color: #12161b;
   overflow: hidden;
   padding: ${PANEL_MARGINS}px;
 `;

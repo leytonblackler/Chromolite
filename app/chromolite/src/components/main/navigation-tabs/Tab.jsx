@@ -10,8 +10,8 @@ import {
   BASE_FONT_WEIGHT,
   ACCENT_COLOR,
   TEXT_COLOR,
-  PANEL_COLOURS
-} from "../../config/constants";
+  PANEL_COLORS
+} from "../../../config/constants";
 
 class Tab extends Component {
   render() {
@@ -21,7 +21,7 @@ class Tab extends Component {
 
     return (
       <MainContainer
-        whileHover={{ backgroundColor: PANEL_COLOURS[2] }}
+        whileHover={{ backgroundColor: PANEL_COLORS[2] }}
         onClick={onClick}
       >
         <Icon
@@ -41,7 +41,7 @@ class Tab extends Component {
 }
 
 const MainContainer = styled(motion.div)`
-  background-color: ${PANEL_COLOURS[1]};
+  background-color: ${PANEL_COLORS[1]};
   height: ${NAVIGATION_TAB_HEIGHT}px;
   display: flex;
   flex-direction: row;

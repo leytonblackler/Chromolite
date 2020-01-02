@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import SectionPanel from "../../../common/SectionPanel";
-import Button from "../../../common/Button";
-import Spacer from "../../../common/Spacer";
+import SectionPanel from "../../../../common/SectionPanel";
+import Button from "../../../../common/Button";
+import Spacer from "../../../../common/Spacer";
 import { mdiChevronDown as ChevronDownIcon } from "@mdi/js";
 
 const resizeWindow = () => {
@@ -21,11 +21,24 @@ const resizeWindow = () => {
 
 const TitleContent = () => (
   <TitleButtonsContainer>
-    <Button text="Sort By" icon={ChevronDownIcon} iconPosition="right" />
+    <Button
+      text="Sort By"
+      type="outlined"
+      color="blue"
+      size="small"
+      icon={ChevronDownIcon}
+      iconPosition="right"
+    />
     <Spacer />
-    <Button text="Select All" />
+    <Button type="outlined" color="blue" size="small" text="Select All" />
     <Spacer />
-    <Button text="Deselect All" onClick={resizeWindow} />
+    <Button
+      type="outlined"
+      color="blue"
+      size="small"
+      text="Deselect All"
+      onClick={resizeWindow}
+    />
   </TitleButtonsContainer>
 );
 
