@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
+  HashRouter,
   Switch,
   Route,
-  Redirect
+  Redirect,
+  useHistory
 } from "react-router-dom";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import Login from "./login/Login";
+import Splash from "./login/screens/Splash";
 
 import {
   WINDOW_RADIUS,
@@ -27,20 +30,35 @@ import {
 //   // TODO: Resize window depending on login page vs main pages.
 // }
 
+// Use a HashRouter if running in an electron instance, otherwise use BrowserRouter.
+const Router = ({ children }) => {
+  const userAgent = navigator.userAgent.toLowerCase();
+  if (userAgent.indexOf(" electron/") > -1) {
+    console.log("Using HashRouter.");
+    return <HashRouter>{children}</HashRouter>;
+  } else {
+    console.log("Using BrowserRouter.");
+    return <BrowserRouter>{children}</BrowserRouter>;
+  }
+};
+
 const WindowContent = () => (
   <Router>
     <MainContainer>
       <Header />
       <ContentArea>
         <Switch>
+          <Route path="/loading" component={Splash} />
           <Route path="/login" component={Login} />
           <Route path="/main" component={Main} />
-          <Redirect from="/" to="/error" />
+          <Redirect from="*" to="/login" />
         </Switch>
       </ContentArea>
     </MainContainer>
   </Router>
 );
+
+// <Redirect from="/" to="/login" />
 
 const MainContainer = styled.div`
   height: 100%;
