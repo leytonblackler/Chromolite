@@ -24,10 +24,15 @@ const colors = {
 
 const getHoverColor = (type, color) => {
   if (type === "solid") {
-    return Color(colors[color])
-      .lighten(0.25)
-      .rgb()
-      .string();
+    return color === "white"
+      ? Color(colors["white"])
+          .darken(0.15)
+          .rgb()
+          .string()
+      : Color(colors[color])
+          .lighten(0.25)
+          .rgb()
+          .string();
   } else if (type === "outlined") {
     return Color(colors[color])
       .fade(0.75)
@@ -37,13 +42,29 @@ const getHoverColor = (type, color) => {
 
 const getTextColor = (type, color) => {
   if (type === "solid") {
-    return color === "blue" ? PANEL_COLORS[0] : TEXT_COLOR;
+    if (color === "blue") {
+      return PANEL_COLORS[0];
+    } else if (color === "white") {
+      return PANEL_COLORS[0];
+    } else {
+      return TEXT_COLOR;
+    }
   } else if (type === "outlined") {
     return colors[color];
   }
 };
 
-const Button = ({ onClick, type, color, size, text, icon, iconPosition }) => {
+const Button = ({
+  onClick,
+  type,
+  color,
+  size,
+  text,
+  icon,
+  iconPosition,
+  adornment,
+  adornmentPosition
+}) => {
   const hoverColor = getHoverColor(type, color);
   const textColor = getTextColor(type, color);
   return (
@@ -60,12 +81,14 @@ const Button = ({ onClick, type, color, size, text, icon, iconPosition }) => {
       {icon && iconPosition === "left" && (
         <LeftIcon size={0.65} path={icon} color={textColor} />
       )}
-      <Text type={type} color={textColor}>
+      {adornmentPosition === "left" && adornment}
+      <Text color={textColor} size={size}>
         {text}
       </Text>
       {icon && iconPosition === "right" && (
         <RightIcon size={0.65} path={icon} color={textColor} />
       )}
+      {adornmentPosition === "right" && adornment}
     </MainContainer>
   );
 };
@@ -108,14 +131,17 @@ const Text = styled(motion.div)`
   text-transform: uppercase;
   white-space: nowrap;
   color: ${({ color }) => color};
-  font-size: ${BASE_FONT_SIZE}pt;
+  font-size: ${({ size }) =>
+    size === "small" ? BASE_FONT_SIZE : BASE_FONT_SIZE + 1}pt;
   font-weight: ${BASE_FONT_WEIGHT};
   letter-spacing: ${LETTER_SPACING}px;
 `;
 
 Button.defaultProps = {
   icon: null,
-  iconPosition: "left"
+  iconPosition: "left",
+  adornment: null,
+  adornmentPosition: "left"
 };
 
 Button.propTypes = {
@@ -125,7 +151,9 @@ Button.propTypes = {
   size: PropTypes.oneOf(["small", "large"]).isRequired,
   text: PropTypes.string.isRequired,
   icon: PropTypes.any,
-  iconPosition: PropTypes.string
+  iconPosition: PropTypes.oneOf(["left", "right"]),
+  adornment: PropTypes.any,
+  adornmentPosition: PropTypes.oneOf(["left", "right"])
 };
 
 export default Button;

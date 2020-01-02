@@ -1,4 +1,4 @@
-export const LOGIN_WINDOW_WIDTH = 300;
+export const LOGIN_WINDOW_WIDTH = 350;
 export const LOGIN_WINDOW_HEIGHT = 400;
 export const MAIN_WINDOW_WIDTH = 1100;
 export const MAIN_WINDOW_HEIGHT = 650;

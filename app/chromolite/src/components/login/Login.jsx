@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Button from "../common/Button";
 import Spacer from "../common/Spacer";
+import { ReactComponent as GoogleLogo } from "../../icons/google_logo.svg";
 import { PANEL_MARGINS } from "../../config/constants";
 
 class Login extends Component {
@@ -13,13 +14,21 @@ class Login extends Component {
           type="solid"
           color="grey"
           size="large"
+          onClick={() => console.log("Sign in with email button clicked.")}
         />
         <Spacer />
         <Button
           text="Sign in With Google"
           type="solid"
-          color="grey"
+          color="white"
           size="large"
+          adornment={
+            <GoogleLogoContainer>
+              <GoogleLogo />
+            </GoogleLogoContainer>
+          }
+          adornmentPosition="left"
+          onClick={() => console.log("Sign in with Google button clicked.")}
         />
         <Spacer />
         <Button
@@ -27,6 +36,7 @@ class Login extends Component {
           type="solid"
           color="grey"
           size="large"
+          onClick={() => console.log("Create an account button clicked.")}
         />
         <Spacer />
         <Button
@@ -34,11 +44,19 @@ class Login extends Component {
           type="solid"
           color="grey"
           size="large"
+          onClick={() =>
+            console.log("Continue without account button clicked.")
+          }
         />
       </MainContainer>
     );
   }
 }
+
+const GoogleLogoContainer = styled.div`
+  margin-right: 10px;
+  display: flex;
+`;
 
 const MainContainer = styled.div`
   // height: calc(100% - (2 * ${PANEL_MARGINS}px));

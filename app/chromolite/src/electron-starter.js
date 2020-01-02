@@ -5,7 +5,7 @@
 // } from "./constants.js";
 
 // TODO: Fix above import instead of using constants below.
-const LOGIN_WINDOW_WIDTH = 300;
+const LOGIN_WINDOW_WIDTH = 350;
 const LOGIN_WINDOW_HEIGHT = 400;
 const MAIN_WINDOW_WIDTH = 1100;
 const MAIN_WINDOW_HEIGHT = 650;
