@@ -79,14 +79,24 @@ const Button = ({
       size={size}
     >
       {icon && iconPosition === "left" && (
-        <LeftIcon size={0.65} path={icon} color={textColor} />
+        <LeftIcon
+          size={0.65}
+          path={icon}
+          color={textColor}
+          padding={size === "small" ? 2 : 6}
+        />
       )}
       {adornmentPosition === "left" && adornment}
       <Text color={textColor} size={size}>
         {text}
       </Text>
       {icon && iconPosition === "right" && (
-        <RightIcon size={0.65} path={icon} color={textColor} />
+        <RightIcon
+          size={0.65}
+          path={icon}
+          color={textColor}
+          padding={size === "small" ? 2 : 6}
+        />
       )}
       {adornmentPosition === "right" && adornment}
     </MainContainer>
@@ -95,7 +105,13 @@ const Button = ({
 
 const MainContainer = styled(motion.div)`
   border-style: solid;
-  border-width: 1px;
+  border-width: ${({ type }) => {
+    if (type === "solid") {
+      return 0;
+    } else if (type === "outlined") {
+      return "1px";
+    }
+  }};
   border-color: ${({ color }) => colors[color]};
   background-color: ${({ type, color }) => {
     if (type === "solid") {
@@ -118,12 +134,12 @@ const MainContainer = styled(motion.div)`
 `;
 
 const LeftIcon = styled(Icon)`
-  padding-right: 2px;
+  padding-right: ${({ padding }) => padding}px;
   margin-left: -2px;
 `;
 
 const RightIcon = styled(Icon)`
-  padding-left: 2px;
+  padding-left: ${({ padding }) => padding}px;
   margin-right: -2px;
 `;
 

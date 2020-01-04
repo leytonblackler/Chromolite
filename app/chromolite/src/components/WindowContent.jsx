@@ -1,64 +1,96 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import {
-  BrowserRouter,
-  HashRouter,
-  Switch,
-  Route,
-  Redirect,
-  useHistory
-} from "react-router-dom";
+import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import Header from "./header/Header";
 import Main from "./main/Main";
 import Login from "./login/Login";
-import Splash from "./login/screens/Splash";
+import Loading from "./common/Loading";
+import { useSelector } from "react-redux";
 
 import {
   WINDOW_RADIUS,
   HEADER_HEIGHT,
-  PANEL_COLORS
+  PANEL_COLORS,
+  LOGIN_WINDOW_WIDTH,
+  LOGIN_WINDOW_HEIGHT,
+  MAIN_WINDOW_WIDTH,
+  MAIN_WINDOW_HEIGHT
 } from "../config/constants";
 
-// componentDidUpdate(prevProps) {
-//   if (this.props.location !== prevProps.location) {
-//     this.onRouteChanged();
-//   }
-// }
-
-// onRouteChanged() {
-//   console.log("ROUTE CHANGED");
-//   // TODO: Resize window depending on login page vs main pages.
-// }
-
-// Use a HashRouter if running in an electron instance, otherwise use BrowserRouter.
-const Router = ({ children }) => {
+const resizeWindow = (width, height) => {
+  // Only resize the window if running in an electron instance.
   const userAgent = navigator.userAgent.toLowerCase();
   if (userAgent.indexOf(" electron/") > -1) {
-    console.log("Using HashRouter.");
-    return <HashRouter>{children}</HashRouter>;
+    const { ipcRenderer } = window.require("electron");
+    ipcRenderer.send("resize-window", { width: width, height: height });
   } else {
-    console.log("Using BrowserRouter.");
-    return <BrowserRouter>{children}</BrowserRouter>;
+    console.warn(
+      "An electron instance was not detected, window resize request ignored."
+    );
   }
 };
 
-const WindowContent = () => (
-  <Router>
+const ProtectedRoute = ({
+  component: Component,
+  isAuthenticated,
+  isVerifying,
+  ...rest
+}) => {
+  const location = useLocation();
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        isVerifying ? (
+          <Loading />
+        ) : isAuthenticated ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/login" from={location.pathname} />
+        )
+      }
+    />
+  );
+};
+
+const WindowContent = () => {
+  const [currentWindowSize, setCurrentWindowSize] = useState("small");
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const isVerifying = useSelector(state => state.auth.isVerifying);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      if (currentWindowSize === "small") {
+        setCurrentWindowSize("large");
+        resizeWindow(MAIN_WINDOW_WIDTH, MAIN_WINDOW_HEIGHT);
+      }
+    } else {
+      if (currentWindowSize === "large") {
+        setCurrentWindowSize("small");
+        resizeWindow(LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);
+      }
+    }
+  }, [isAuthenticated, currentWindowSize]);
+
+  return (
     <MainContainer>
       <Header />
       <ContentArea>
         <Switch>
-          <Route path="/loading" component={Splash} />
+          <ProtectedRoute
+            path="/"
+            exact
+            isAuthenticated={isAuthenticated}
+            isVerifying={isVerifying}
+            component={Main}
+          />
           <Route path="/login" component={Login} />
-          <Route path="/main" component={Main} />
-          <Redirect from="*" to="/login" />
+          <Redirect from="*" to="/" />
         </Switch>
       </ContentArea>
     </MainContainer>
-  </Router>
-);
-
-// <Redirect from="/" to="/login" />
+  );
+};
 
 const MainContainer = styled.div`
   height: 100%;

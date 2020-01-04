@@ -50,19 +50,19 @@ function createWindow() {
 
   // Create a listener to dynamically resize the window.
   ipcMain.on("resize-window", (e, size) => {
+    mainWindow.hide();
     mainWindow.setBounds(size);
     mainWindow.center();
+    mainWindow.show();
   });
 }
+
+app.disableHardwareAcceleration();
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on("ready", function() {
-  setTimeout(function() {
-    createWindow();
-  }, 300);
-});
+app.on("ready", () => setTimeout(() => createWindow(), 400));
 
 // Quit when all windows are closed.
 app.on("window-all-closed", function() {

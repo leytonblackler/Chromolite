@@ -1,32 +1,29 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import { Switch, Route, Redirect, useLocation } from "react-router-dom";
-import { PANEL_MARGINS } from "../../config/constants";
-
-const screenVariants = {
-  initial: {
-    opacity: 0,
-    x: "-100vw",
-    scale: 0.8
-  },
-  in: {
-    opacity: 1,
-    x: 0,
-    scale: 1
-  },
-  out: {
-    opacity: 0,
-    x: "100vw",
-    scale: 1.2
-  }
-};
 
 const screenTransition = {
   type: "tween",
   ease: "anticipate",
-  duration: 0.5
+  duration: 0.4
 };
+
+const screenVariants = (enterDirection, exitDirection) => ({
+  initial: {
+    opacity: 0,
+    x: enterDirection === "left" ? "-100vw" : "100vw"
+  },
+  in: {
+    opacity: 1,
+    x: 0
+  },
+  out: {
+    opacity: 0,
+    x: exitDirection === "left" ? "-100vw" : "100vw"
+  }
+});
 
 const ScreenTransitionHandler = ({ screens, basePath }) => {
   const location = useLocation();
@@ -45,7 +42,10 @@ const ScreenTransitionHandler = ({ screens, basePath }) => {
                     initial="initial"
                     animate="in"
                     exit="out"
-                    variants={screenVariants}
+                    variants={screenVariants(
+                      screen.enterDirection,
+                      screen.exitDirection
+                    )}
                     transition={screenTransition}
                   >
                     <ScreenComponent />
@@ -61,6 +61,9 @@ const ScreenTransitionHandler = ({ screens, basePath }) => {
   );
 };
 
+// <Switch location={location} key={location.pathname}></Switch>
+//
+
 const MainContainer = styled.div`
   position: relative;
 `;
@@ -69,5 +72,10 @@ const TransitionableScreen = styled(motion.div)`
   width: 100%;
   position: absolute;
 `;
+
+ScreenTransitionHandler.propTypes = {
+  screens: PropTypes.array.isRequired,
+  basePath: PropTypes.string.isRequired
+};
 
 export default ScreenTransitionHandler;

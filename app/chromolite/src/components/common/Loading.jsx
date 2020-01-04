@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ClipLoader } from "react-spinners";
-import { ACCENT_COLOR } from "../../../config/constants";
+import { ACCENT_COLOR } from "../../config/constants";
 
 const Loading = () => {
   console.log("Loading...");

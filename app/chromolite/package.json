@@ -18,7 +18,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-spinners": "^0.7.2",
-    "redux": "^4.0.4",
+    "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.0"
   },
@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron --enable-transparent-visuals --disable-gpu ."
+    "electron": "electron --enable-transparent-visuals ."
   },
   "eslintConfig": {
     "extends": "react-app"
